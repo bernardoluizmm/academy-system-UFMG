@@ -1,0 +1,4 @@
+git config user.name "Samuel Coelho Facco"
+git config user.email "samuelfacco@ufmg.br"
+
+git config --list
