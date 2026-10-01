@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema Acadêmico: Referência da Classe Estudante</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema Acadêmico
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_estudante.html','','class_estudante-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência da Classe Estudante</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Representa o estudante e fornece acesso ao seu curso e ao semestre atual.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_estudante_8hpp_source.html">Estudante.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para Estudante:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_estudante__coll__graph.png" border="0" usemap="#a_estudante_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a8e79d64a78306f61317c21a0a22b07d8" id="r_a8e79d64a78306f61317c21a0a22b07d8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8e79d64a78306f61317c21a0a22b07d8">Estudante</a> (std::string nome, <a class="el" href="class_curso.html">Curso</a> curso, std::string semestreIngresso, SemestreAtual semestreAtual)</td></tr>
+<tr class="memdesc:a8e79d64a78306f61317c21a0a22b07d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói um estudante.  <br /></td></tr>
+<tr class="memitem:ae3b9a6b8be82f04b781a0d416457bcad" id="r_ae3b9a6b8be82f04b781a0d416457bcad"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ae3b9a6b8be82f04b781a0d416457bcad">getNome</a> () const</td></tr>
+<tr class="memdesc:ae3b9a6b8be82f04b781a0d416457bcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do estudante.  <br /></td></tr>
+<tr class="memitem:afc7b89dcf158b7e597548b5960187a15" id="r_afc7b89dcf158b7e597548b5960187a15"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afc7b89dcf158b7e597548b5960187a15">setNome</a> (const std::string &amp;nome)</td></tr>
+<tr class="memdesc:afc7b89dcf158b7e597548b5960187a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o nome do estudante.  <br /></td></tr>
+<tr class="memitem:a798b9538b500ff2e1f38d16e71a5cec4" id="r_a798b9538b500ff2e1f38d16e71a5cec4"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a798b9538b500ff2e1f38d16e71a5cec4">getSemestreIngresso</a> () const</td></tr>
+<tr class="memdesc:a798b9538b500ff2e1f38d16e71a5cec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o semestre de ingresso.  <br /></td></tr>
+<tr class="memitem:a3490a41c92d1b661d3a37a8aa9a7bff0" id="r_a3490a41c92d1b661d3a37a8aa9a7bff0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3490a41c92d1b661d3a37a8aa9a7bff0">setSemestreIngresso</a> (const std::string &amp;semestre)</td></tr>
+<tr class="memdesc:a3490a41c92d1b661d3a37a8aa9a7bff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o semestre de ingresso.  <br /></td></tr>
+<tr class="memitem:a20de5c82ec73dac00821cc6a696bb773" id="r_a20de5c82ec73dac00821cc6a696bb773"><td class="memItemLeft">const <a class="el" href="class_curso.html">Curso</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a20de5c82ec73dac00821cc6a696bb773">getCurso</a> () const</td></tr>
+<tr class="memdesc:a20de5c82ec73dac00821cc6a696bb773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso somente-leitura ao curso.  <br /></td></tr>
+<tr class="memitem:a650e1bfa170347a0980f34017ffa006e" id="r_a650e1bfa170347a0980f34017ffa006e"><td class="memItemLeft"><a class="el" href="class_curso.html">Curso</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a650e1bfa170347a0980f34017ffa006e">getCurso</a> ()</td></tr>
+<tr class="memdesc:a650e1bfa170347a0980f34017ffa006e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso mutável ao curso.  <br /></td></tr>
+<tr class="memitem:aabbaf1ad2f6cb145229d4b533438743b" id="r_aabbaf1ad2f6cb145229d4b533438743b"><td class="memItemLeft">const SemestreAtual &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aabbaf1ad2f6cb145229d4b533438743b">getSemestreAtual</a> () const</td></tr>
+<tr class="memdesc:aabbaf1ad2f6cb145229d4b533438743b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso somente-leitura ao semestre atual.  <br /></td></tr>
+<tr class="memitem:aea9065bfcd227cb71d32ed43def08721" id="r_aea9065bfcd227cb71d32ed43def08721"><td class="memItemLeft">SemestreAtual &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aea9065bfcd227cb71d32ed43def08721">getSemestreAtual</a> ()</td></tr>
+<tr class="memdesc:aea9065bfcd227cb71d32ed43def08721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso mutável ao semestre atual.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos Privados</h2></td></tr>
+<tr class="memitem:a3fd97bb77a73589022054684d4c91f73" id="r_a3fd97bb77a73589022054684d4c91f73"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a3fd97bb77a73589022054684d4c91f73">nome_</a></td></tr>
+<tr class="memitem:ad7e4423ca7f0eb8b5752879f0837e6ce" id="r_ad7e4423ca7f0eb8b5752879f0837e6ce"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ad7e4423ca7f0eb8b5752879f0837e6ce">semestreIngresso_</a></td></tr>
+<tr class="memitem:a3e9925d1d2476273bc8f46c5775ab2d5" id="r_a3e9925d1d2476273bc8f46c5775ab2d5"><td class="memItemLeft"><a class="el" href="class_curso.html">Curso</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3e9925d1d2476273bc8f46c5775ab2d5">curso_</a></td></tr>
+<tr class="memitem:a88278743716f93dff1253d62bf1e3113" id="r_a88278743716f93dff1253d62bf1e3113"><td class="memItemLeft">SemestreAtual&#160;</td><td class="memItemRight"><a class="el" href="#a88278743716f93dff1253d62bf1e3113">semestreAtual_</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Representa o estudante e fornece acesso ao seu curso e ao semestre atual. </p>
+<p>O <a class="el" href="class_estudante.html" title="Representa o estudante e fornece acesso ao seu curso e ao semestre atual.">Estudante</a> é dono do <a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a> e do SemestreAtual (composição por valor). Os acessores não-const permitem que as telas e o <a class="el" href="class_gerenciador_perfil.html" title="Classe utilitária (sem estado) para persistência do perfil em arquivo .txt.">GerenciadorPerfil</a> modifiquem esses objetos diretamente. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
+<a id="a8e79d64a78306f61317c21a0a22b07d8" name="a8e79d64a78306f61317c21a0a22b07d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e79d64a78306f61317c21a0a22b07d8">&#9670;&#160;</a></span>Estudante()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Estudante::Estudante </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_curso.html">Curso</a></td>          <td class="paramname"><span class="paramname"><em>curso</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>semestreIngresso</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SemestreAtual</td>          <td class="paramname"><span class="paramname"><em>semestreAtual</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constrói um estudante. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Nome do estudante. </td></tr>
+    <tr><td class="paramname">curso</td><td><a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a> do estudante (copiado/movido para o objeto). </td></tr>
+    <tr><td class="paramname">semestreIngresso</td><td>Semestre de ingresso (ex: "2024/01"). </td></tr>
+    <tr><td class="paramname">semestreAtual</td><td>Semestre em curso (copiado/movido para o objeto). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
+<a id="a650e1bfa170347a0980f34017ffa006e" name="a650e1bfa170347a0980f34017ffa006e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a650e1bfa170347a0980f34017ffa006e">&#9670;&#160;</a></span>getCurso() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_curso.html">Curso</a> &amp; Estudante::getCurso </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acesso mutável ao curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência ao <a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a20de5c82ec73dac00821cc6a696bb773" name="a20de5c82ec73dac00821cc6a696bb773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20de5c82ec73dac00821cc6a696bb773">&#9670;&#160;</a></span>getCurso() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_curso.html">Curso</a> &amp; Estudante::getCurso </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acesso somente-leitura ao curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência constante ao <a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ae3b9a6b8be82f04b781a0d416457bcad" name="ae3b9a6b8be82f04b781a0d416457bcad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b9a6b8be82f04b781a0d416457bcad">&#9670;&#160;</a></span>getNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Estudante::getNome </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o nome do estudante. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Nome do estudante. </dd></dl>
+
+</div>
+</div>
+<a id="aea9065bfcd227cb71d32ed43def08721" name="aea9065bfcd227cb71d32ed43def08721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9065bfcd227cb71d32ed43def08721">&#9670;&#160;</a></span>getSemestreAtual() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SemestreAtual &amp; Estudante::getSemestreAtual </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acesso mutável ao semestre atual. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência ao SemestreAtual. </dd></dl>
+
+</div>
+</div>
+<a id="aabbaf1ad2f6cb145229d4b533438743b" name="aabbaf1ad2f6cb145229d4b533438743b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbaf1ad2f6cb145229d4b533438743b">&#9670;&#160;</a></span>getSemestreAtual() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const SemestreAtual &amp; Estudante::getSemestreAtual </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acesso somente-leitura ao semestre atual. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência constante ao SemestreAtual. </dd></dl>
+
+</div>
+</div>
+<a id="a798b9538b500ff2e1f38d16e71a5cec4" name="a798b9538b500ff2e1f38d16e71a5cec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798b9538b500ff2e1f38d16e71a5cec4">&#9670;&#160;</a></span>getSemestreIngresso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Estudante::getSemestreIngresso </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o semestre de ingresso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Semestre de ingresso (ex: "2024/01"). </dd></dl>
+
+</div>
+</div>
+<a id="afc7b89dcf158b7e597548b5960187a15" name="afc7b89dcf158b7e597548b5960187a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc7b89dcf158b7e597548b5960187a15">&#9670;&#160;</a></span>setNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Estudante::setNome </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera o nome do estudante. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Novo nome. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3490a41c92d1b661d3a37a8aa9a7bff0" name="a3490a41c92d1b661d3a37a8aa9a7bff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3490a41c92d1b661d3a37a8aa9a7bff0">&#9670;&#160;</a></span>setSemestreIngresso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Estudante::setSemestreIngresso </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>semestre</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera o semestre de ingresso. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">semestre</td><td>Novo semestre de ingresso. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
+<a id="a3e9925d1d2476273bc8f46c5775ab2d5" name="a3e9925d1d2476273bc8f46c5775ab2d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e9925d1d2476273bc8f46c5775ab2d5">&#9670;&#160;</a></span>curso_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_curso.html">Curso</a> Estudante::curso_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fd97bb77a73589022054684d4c91f73" name="a3fd97bb77a73589022054684d4c91f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fd97bb77a73589022054684d4c91f73">&#9670;&#160;</a></span>nome_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Estudante::nome_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88278743716f93dff1253d62bf1e3113" name="a88278743716f93dff1253d62bf1e3113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88278743716f93dff1253d62bf1e3113">&#9670;&#160;</a></span>semestreAtual_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SemestreAtual Estudante::semestreAtual_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7e4423ca7f0eb8b5752879f0837e6ce" name="ad7e4423ca7f0eb8b5752879f0837e6ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e4423ca7f0eb8b5752879f0837e6ce">&#9670;&#160;</a></span>semestreIngresso_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Estudante::semestreIngresso_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<li>include/<a class="el" href="_estudante_8hpp_source.html">Estudante.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_estudante.html">Estudante</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
