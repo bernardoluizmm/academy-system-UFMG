@@ -11,13 +11,13 @@ class AtividadeAvaliativa {
     double _nota_obtida;
 
  public:
-    AtividadeAvaliativa(std:: string _nome, std:: string _data_entrega, double valor _valor_maximo);
+    AtividadeAvaliativa(std:: string nome, std:: string data_entrega, double valor_maximo);
     std::string getNome() const;
     std::string getDataEntrega() const;
     double getValorMaximo() const; 
     double getNotaObtida() const;
     double calcularAproveitametno() const;
     bool registrarNota(double nota);
-}
+};
 
 #endif
