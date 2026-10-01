@@ -1,0 +1,12 @@
+PROJECT_NAME           = "Sistema Acadêmico"
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = Brazilian
+INPUT                  = include src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.hpp *.cpp
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+GENERATE_LATEX         = NO
+HAVE_DOT               = YES
+CLASS_GRAPH            = YES
+UML_LOOK               = YES

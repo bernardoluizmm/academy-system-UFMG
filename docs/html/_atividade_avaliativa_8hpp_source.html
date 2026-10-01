@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema Acadêmico: Código-Fonte de include/AtividadeAvaliativa.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema Acadêmico
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_atividade_avaliativa_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AtividadeAvaliativa.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_atividade_avaliativa_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef ATIVIDADE_AVALIATIVA_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define ATIVIDADE_AVALIATIVA_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">AtividadeAvaliativa</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">   17</a></span>    std::string <a class="code hl_variable" href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">_nome</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a05636ebfe30a2f8ef235deb6cef6e8cf">   20</a></span>    std::string <a class="code hl_variable" href="class_atividade_avaliativa.html#a05636ebfe30a2f8ef235deb6cef6e8cf">_dataEntrega</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a7848660771f422112dbe6104d6ba886b">   23</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#a7848660771f422112dbe6104d6ba886b">_valorMaximo</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#aae65bc898449e97a1591b6d879102082">   26</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#aae65bc898449e97a1591b6d879102082">_notaObtida</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">   35</a></span>    <a class="code hl_function" href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">AtividadeAvaliativa</a>(<span class="keyword">const</span> std::string&amp; nome, <span class="keyword">const</span> std::string&amp; dataEntrega, <span class="keywordtype">double</span> valorMaximo);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">   41</a></span>    std::string <a class="code hl_function" href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">getNome</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#ad85c38fc343fc051ca2ab2b8a6a17f6e">   47</a></span>    std::string <a class="code hl_function" href="class_atividade_avaliativa.html#ad85c38fc343fc051ca2ab2b8a6a17f6e">getDataEntrega</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a6cee3491503410611833d03ceb4f6eb5">   53</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a6cee3491503410611833d03ceb4f6eb5">getValorMaximo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a14a75da4161c078f06093a24e919994b">   59</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a14a75da4161c078f06093a24e919994b">getNotaObtida</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a6196d7258c1d4301f7b88a18f7e3fda3">   65</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a6196d7258c1d4301f7b88a18f7e3fda3">calcularAproveitamento</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a2ac096701a6e5cf3d75d594b4b16ef81">   72</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a2ac096701a6e5cf3d75d594b4b16ef81">registrarNota</a>(<span class="keywordtype">double</span> nota);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// ATIVIDADE_AVALIATIVA_HPP</span></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a05636ebfe30a2f8ef235deb6cef6e8cf"><div class="ttname"><a href="class_atividade_avaliativa.html#a05636ebfe30a2f8ef235deb6cef6e8cf">AtividadeAvaliativa::_dataEntrega</a></div><div class="ttdeci">std::string _dataEntrega</div><div class="ttdoc">Data prevista de entrega ou aplicação (formato DD/MM/AAAA).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:20</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a14a75da4161c078f06093a24e919994b"><div class="ttname"><a href="class_atividade_avaliativa.html#a14a75da4161c078f06093a24e919994b">AtividadeAvaliativa::getNotaObtida</a></div><div class="ttdeci">double getNotaObtida() const</div><div class="ttdoc">Retorna a pontuação obtida pelo estudante.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a2ac096701a6e5cf3d75d594b4b16ef81"><div class="ttname"><a href="class_atividade_avaliativa.html#a2ac096701a6e5cf3d75d594b4b16ef81">AtividadeAvaliativa::registrarNota</a></div><div class="ttdeci">bool registrarNota(double nota)</div><div class="ttdoc">Registra ou atualiza a nota obtida na atividade.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a460ef977b4697f86ec4350e723eaf5d2"><div class="ttname"><a href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">AtividadeAvaliativa::_nome</a></div><div class="ttdeci">std::string _nome</div><div class="ttdoc">Descrição ou título da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:17</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a4e60e4143a728ca1ac93cb26973a8f27"><div class="ttname"><a href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">AtividadeAvaliativa::AtividadeAvaliativa</a></div><div class="ttdeci">AtividadeAvaliativa(const std::string &amp;nome, const std::string &amp;dataEntrega, double valorMaximo)</div><div class="ttdoc">Construtor de AtividadeAvaliativa.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a6196d7258c1d4301f7b88a18f7e3fda3"><div class="ttname"><a href="class_atividade_avaliativa.html#a6196d7258c1d4301f7b88a18f7e3fda3">AtividadeAvaliativa::calcularAproveitamento</a></div><div class="ttdeci">double calcularAproveitamento() const</div><div class="ttdoc">Calcula o aproveitamento percentual obtido na atividade.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a6857f1b75dc0c601bb3cfa8593fc47a3"><div class="ttname"><a href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">AtividadeAvaliativa::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdoc">Retorna o nome da atividade avaliativa.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a6cee3491503410611833d03ceb4f6eb5"><div class="ttname"><a href="class_atividade_avaliativa.html#a6cee3491503410611833d03ceb4f6eb5">AtividadeAvaliativa::getValorMaximo</a></div><div class="ttdeci">double getValorMaximo() const</div><div class="ttdoc">Retorna a pontuação máxima possível da atividade.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a7848660771f422112dbe6104d6ba886b"><div class="ttname"><a href="class_atividade_avaliativa.html#a7848660771f422112dbe6104d6ba886b">AtividadeAvaliativa::_valorMaximo</a></div><div class="ttdeci">double _valorMaximo</div><div class="ttdoc">Pontuação máxima que a atividade distribui.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:23</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_aae65bc898449e97a1591b6d879102082"><div class="ttname"><a href="class_atividade_avaliativa.html#aae65bc898449e97a1591b6d879102082">AtividadeAvaliativa::_notaObtida</a></div><div class="ttdeci">double _notaObtida</div><div class="ttdoc">Nota obtida pelo estudante (inicialmente 0.0).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:26</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_ad85c38fc343fc051ca2ab2b8a6a17f6e"><div class="ttname"><a href="class_atividade_avaliativa.html#ad85c38fc343fc051ca2ab2b8a6a17f6e">AtividadeAvaliativa::getDataEntrega</a></div><div class="ttdeci">std::string getDataEntrega() const</div><div class="ttdoc">Retorna a data de realização ou entrega da atividade.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_atividade_avaliativa_8hpp.html">AtividadeAvaliativa.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

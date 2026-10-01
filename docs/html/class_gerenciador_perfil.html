@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema Acadêmico: Referência da Classe GerenciadorPerfil</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema Acadêmico
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_gerenciador_perfil.html','','class_gerenciador_perfil-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência da Classe GerenciadorPerfil</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Classe utilitária (sem estado) para persistência do perfil em arquivo .txt.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_gerenciador_perfil_8hpp_source.html">GerenciadorPerfil.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para GerenciadorPerfil:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gerenciador_perfil__coll__graph.png" border="0" usemap="#a_gerenciador_perfil_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Membros públicos estáticos</h2></td></tr>
+<tr class="memitem:a5fba8ba69b2fa523889934d50872a5a3" id="r_a5fba8ba69b2fa523889934d50872a5a3"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a5fba8ba69b2fa523889934d50872a5a3">salvarPerfil</a> (const <a class="el" href="class_estudante.html">Estudante</a> &amp;estudante, const std::string &amp;caminho)</td></tr>
+<tr class="memdesc:a5fba8ba69b2fa523889934d50872a5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializa o perfil completo do estudante em um arquivo .txt.  <br /></td></tr>
+<tr class="memitem:a826409c73fddd670e07eee560fc7b8f8" id="r_a826409c73fddd670e07eee560fc7b8f8"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a826409c73fddd670e07eee560fc7b8f8">carregarPerfil</a> (<a class="el" href="class_estudante.html">Estudante</a> &amp;estudante, const std::string &amp;caminho)</td></tr>
+<tr class="memdesc:a826409c73fddd670e07eee560fc7b8f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê, valida e desserializa o perfil a partir de um arquivo .txt.  <br /></td></tr>
+<tr class="memitem:a82c9cfabae34f23901636f4a0f3c45f9" id="r_a82c9cfabae34f23901636f4a0f3c45f9"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a82c9cfabae34f23901636f4a0f3c45f9">validarFormato</a> (const std::string &amp;caminho)</td></tr>
+<tr class="memdesc:a82c9cfabae34f23901636f4a0f3c45f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o arquivo possui formato válido, sem carregar os dados.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe utilitária (sem estado) para persistência do perfil em arquivo .txt. </p>
+<p>Serializa e desserializa o perfil completo do estudante em um arquivo de texto tabular, com campos separados por ponto e vírgula (<span class="tt">;</span>). Erros são sinalizados por retorno <span class="tt">bool</span> (true = sucesso, false = erro). </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
+<a id="a826409c73fddd670e07eee560fc7b8f8" name="a826409c73fddd670e07eee560fc7b8f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a826409c73fddd670e07eee560fc7b8f8">&#9670;&#160;</a></span>carregarPerfil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GerenciadorPerfil::carregarPerfil </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_estudante.html">Estudante</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>estudante</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>caminho</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lê, valida e desserializa o perfil a partir de um arquivo .txt. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">estudante</td><td><a class="el" href="class_estudante.html" title="Representa o estudante e fornece acesso ao seu curso e ao semestre atual.">Estudante</a> que receberá os dados carregados. </td></tr>
+    <tr><td class="paramname">caminho</td><td>Caminho do arquivo de origem. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o perfil foi carregado com sucesso; false se o arquivo for inválido, corrompido ou inexistente. </dd></dl>
+
+</div>
+</div>
+<a id="a5fba8ba69b2fa523889934d50872a5a3" name="a5fba8ba69b2fa523889934d50872a5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fba8ba69b2fa523889934d50872a5a3">&#9670;&#160;</a></span>salvarPerfil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GerenciadorPerfil::salvarPerfil </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_estudante.html">Estudante</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>estudante</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>caminho</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serializa o perfil completo do estudante em um arquivo .txt. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">estudante</td><td><a class="el" href="class_estudante.html" title="Representa o estudante e fornece acesso ao seu curso e ao semestre atual.">Estudante</a> a ser salvo. </td></tr>
+    <tr><td class="paramname">caminho</td><td>Caminho do arquivo de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o arquivo foi gravado com sucesso; false em caso de erro de I/O. </dd></dl>
+
+</div>
+</div>
+<a id="a82c9cfabae34f23901636f4a0f3c45f9" name="a82c9cfabae34f23901636f4a0f3c45f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c9cfabae34f23901636f4a0f3c45f9">&#9670;&#160;</a></span>validarFormato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GerenciadorPerfil::validarFormato </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>caminho</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica se o arquivo possui formato válido, sem carregar os dados. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">caminho</td><td>Caminho do arquivo a ser verificado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o formato é válido; false caso contrário. </dd></dl>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<li>include/<a class="el" href="_gerenciador_perfil_8hpp_source.html">GerenciadorPerfil.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_gerenciador_perfil.html">GerenciadorPerfil</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
