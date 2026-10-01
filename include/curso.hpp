@@ -25,19 +25,19 @@
 class Curso 
 {
    /** @brief Nome do curso (ex: "Ciência da Computação"). */
-   std::string nome_;
+   std::string _nome;
  
     /** @brief Horas exigidas em disciplinas obrigatórias. */
-    int horasObrigatorias_;
+    int _horasObrigatorias;
  
     /** @brief Horas exigidas em disciplinas optativas. */
-    int horasOptativas_;
+    int _horasOptativas;
  
     /** @brief Horas exigidas em formação livre. */
-    int horasFormacaoLivre_;
+    int _horasFormacaoLivre;
  
     /** @brief Lista ordenada de semestres consolidados. */
-    std::vector<SemestreConsolidado> semestresConsolidados_;
+    std::vector<SemestreConsolidado> _semestresConsolidados;
 
     public:
     /**
@@ -119,7 +119,7 @@ class Curso
      *
      * @return Referência ao vetor de semestres.
      */
-    std::vector<SemestreConsolidado>& getSemestresConsolidados();
+    std::vector<SemestreConsolidado> &getSemestresConsolidados();
  
     /**
      * @brief Calcula o percentual de integralização do curso.
