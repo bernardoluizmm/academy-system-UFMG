@@ -25,6 +25,3 @@ O projeto segue o padrão C++11/14 e usa composição por valor e containers da 
 As classes se dividem em quatro grupos. As classes de base são AtividadeAvaliativa, ControleFrequencia, CategoriaDisciplina e PontoGrafico. O domínio é formado por Disciplina e pela hierarquia Semestre, com SemestreAtual e SemestreConsolidado. O modelo e a persistência ficam a cargo de Curso, Estudante e GerenciadorPerfil. A apresentação reúne Tela, TelaMenuPrincipal, TelaPerfil, TelaPainel, TelaDisciplinas, TelaAtividades, TelaFrequencia, TelaHistorico e Menu.
 
 Os cabeçalhos (.hpp), com as assinaturas e a documentação de cada classe, ficam na pasta include/, e as implementações (.cpp) ficam em src/. As pastas design/ e tests/ guardam, respectivamente, os cartões CRC e as user stories, e os testes.
-
-
-Ninguém faz commit direto na main. Cada tarefa é feita numa branch própria (feat/..., fix/..., docs/...), os commits seguem o formato prefixo: descrição no imperativo e o merge de cada Pull Request é feito por outra pessoa do grupo, depois de revisar.
