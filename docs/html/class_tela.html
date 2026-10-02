@@ -1,0 +1,563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema Acadêmico: Referência da Classe Tela</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema Acadêmico
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_tela.html','','class_tela-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência da Classe Tela<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Classe base abstrata para todas as telas do sistema.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_tela_8hpp_source.html">Tela.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para Tela:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_tela__coll__graph.png" border="0" usemap="#a_tela_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a5ffddecc37bd3346a6524666b87c1610" id="r_a5ffddecc37bd3346a6524666b87c1610"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5ffddecc37bd3346a6524666b87c1610">Tela</a> (<a class="el" href="class_estudante.html">Estudante</a> &amp;estudante)</td></tr>
+<tr class="memdesc:a5ffddecc37bd3346a6524666b87c1610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói uma tela associada a um estudante.  <br /></td></tr>
+<tr class="memitem:ac94df3eab6f4b0528461757c9c947ef0" id="r_ac94df3eab6f4b0528461757c9c947ef0"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#ac94df3eab6f4b0528461757c9c947ef0">~Tela</a> ()=default</td></tr>
+<tr class="memdesc:ac94df3eab6f4b0528461757c9c947ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual (permite destruição polimórfica).  <br /></td></tr>
+<tr class="memitem:ab2a14f6ebca0cf520967e89d12a4201f" id="r_ab2a14f6ebca0cf520967e89d12a4201f"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#ab2a14f6ebca0cf520967e89d12a4201f">executar</a> ()=0</td></tr>
+<tr class="memdesc:ab2a14f6ebca0cf520967e89d12a4201f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o fluxo da tela (virtual puro).  <br /></td></tr>
+<tr class="memitem:affeb38bb139475291766248ff97ccd0e" id="r_affeb38bb139475291766248ff97ccd0e"><td class="memItemLeft">virtual std::string&#160;</td><td class="memItemRight"><a class="el" href="#affeb38bb139475291766248ff97ccd0e">getNome</a> () const =0</td></tr>
+<tr class="memdesc:affeb38bb139475291766248ff97ccd0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome identificador da tela (virtual puro).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Membros protegidos</h2></td></tr>
+<tr class="memitem:ae1cd57ee154de5df1b4ccd38bc8059eb" id="r_ae1cd57ee154de5df1b4ccd38bc8059eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae1cd57ee154de5df1b4ccd38bc8059eb">exibirCabecalho</a> (const std::string &amp;titulo) const</td></tr>
+<tr class="memdesc:ae1cd57ee154de5df1b4ccd38bc8059eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe um cabeçalho formatado com separadores.  <br /></td></tr>
+<tr class="memitem:a9bb5d924b27bf05d532729ad6939dd27" id="r_a9bb5d924b27bf05d532729ad6939dd27"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9bb5d924b27bf05d532729ad6939dd27">exibirMensagem</a> (const std::string &amp;msg) const</td></tr>
+<tr class="memdesc:a9bb5d924b27bf05d532729ad6939dd27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe uma mensagem informativa com o prefixo [INFO].  <br /></td></tr>
+<tr class="memitem:a66cd757cec587b645f819f44ba01735d" id="r_a66cd757cec587b645f819f44ba01735d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66cd757cec587b645f819f44ba01735d">exibirErro</a> (const std::string &amp;msg) const</td></tr>
+<tr class="memdesc:a66cd757cec587b645f819f44ba01735d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe uma mensagem de erro com o prefixo [ERRO].  <br /></td></tr>
+<tr class="memitem:a369e243f0c6d180e694eecc8392bbe42" id="r_a369e243f0c6d180e694eecc8392bbe42"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a369e243f0c6d180e694eecc8392bbe42">lerOpcao</a> (int min, int max) const</td></tr>
+<tr class="memdesc:a369e243f0c6d180e694eecc8392bbe42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um inteiro do usuário, validando o intervalo [min, max].  <br /></td></tr>
+<tr class="memitem:adcb201b8427ec8d4e8ba42ee36d53842" id="r_adcb201b8427ec8d4e8ba42ee36d53842"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#adcb201b8427ec8d4e8ba42ee36d53842">lerTexto</a> (const std::string &amp;prompt) const</td></tr>
+<tr class="memdesc:adcb201b8427ec8d4e8ba42ee36d53842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um texto do usuário, exibindo um prompt.  <br /></td></tr>
+<tr class="memitem:a67cf4e2fdbc23a37cd76fcbf3745227a" id="r_a67cf4e2fdbc23a37cd76fcbf3745227a"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a67cf4e2fdbc23a37cd76fcbf3745227a">lerNumero</a> (const std::string &amp;prompt) const</td></tr>
+<tr class="memdesc:a67cf4e2fdbc23a37cd76fcbf3745227a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um número double do usuário, exibindo um prompt.  <br /></td></tr>
+<tr class="memitem:a9b54c7a550a1426698ae6722c5660e4e" id="r_a9b54c7a550a1426698ae6722c5660e4e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9b54c7a550a1426698ae6722c5660e4e">confirmar</a> (const std::string &amp;pergunta) const</td></tr>
+<tr class="memdesc:a9b54c7a550a1426698ae6722c5660e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Faz uma pergunta de sim/não ao usuário.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atributos Protegidos</h2></td></tr>
+<tr class="memitem:ad859822bbeb2812caf3957cf55d21b93" id="r_ad859822bbeb2812caf3957cf55d21b93"><td class="memItemLeft"><a class="el" href="class_estudante.html">Estudante</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad859822bbeb2812caf3957cf55d21b93">estudante_</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe base abstrata para todas as telas do sistema. </p>
+<p>Define a interface polimórfica (<a class="el" href="#ab2a14f6ebca0cf520967e89d12a4201f" title="Executa o fluxo da tela (virtual puro).">executar()</a> e <a class="el" href="#affeb38bb139475291766248ff97ccd0e" title="Retorna o nome identificador da tela (virtual puro).">getNome()</a>) e fornece helpers de I/O em terminal (cout/cin) compartilhados por herança.</p>
+<p>A <a class="el" href="class_tela.html" title="Classe base abstrata para todas as telas do sistema.">Tela</a> não é dona do <a class="el" href="class_estudante.html" title="Representa o estudante e fornece acesso ao seu curso e ao semestre atual.">Estudante</a>: apenas mantém uma referência a ele. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
+<a id="a5ffddecc37bd3346a6524666b87c1610" name="a5ffddecc37bd3346a6524666b87c1610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ffddecc37bd3346a6524666b87c1610">&#9670;&#160;</a></span>Tela()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tela::Tela </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_estudante.html">Estudante</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>estudante</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constrói uma tela associada a um estudante. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">estudante</td><td>Referência ao estudante (a <a class="el" href="class_tela.html" title="Classe base abstrata para todas as telas do sistema.">Tela</a> não é dona do objeto). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac94df3eab6f4b0528461757c9c947ef0" name="ac94df3eab6f4b0528461757c9c947ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94df3eab6f4b0528461757c9c947ef0">&#9670;&#160;</a></span>~Tela()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Tela::~Tela </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destrutor virtual (permite destruição polimórfica). </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
+<a id="a9b54c7a550a1426698ae6722c5660e4e" name="a9b54c7a550a1426698ae6722c5660e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b54c7a550a1426698ae6722c5660e4e">&#9670;&#160;</a></span>confirmar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tela::confirmar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>pergunta</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Faz uma pergunta de sim/não ao usuário. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pergunta</td><td>Pergunta a ser exibida. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o usuário confirmar; false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="ab2a14f6ebca0cf520967e89d12a4201f" name="ab2a14f6ebca0cf520967e89d12a4201f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a14f6ebca0cf520967e89d12a4201f">&#9670;&#160;</a></span>executar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Tela::executar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executa o fluxo da tela (virtual puro). </p>
+<dl class="section return"><dt>Retorna</dt><dd>true para voltar ao menu principal. </dd></dl>
+
+</div>
+</div>
+<a id="ae1cd57ee154de5df1b4ccd38bc8059eb" name="ae1cd57ee154de5df1b4ccd38bc8059eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1cd57ee154de5df1b4ccd38bc8059eb">&#9670;&#160;</a></span>exibirCabecalho()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tela::exibirCabecalho </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>titulo</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exibe um cabeçalho formatado com separadores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">titulo</td><td>Título a ser exibido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a66cd757cec587b645f819f44ba01735d" name="a66cd757cec587b645f819f44ba01735d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66cd757cec587b645f819f44ba01735d">&#9670;&#160;</a></span>exibirErro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tela::exibirErro </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exibe uma mensagem de erro com o prefixo [ERRO]. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Mensagem de erro a ser exibida. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9bb5d924b27bf05d532729ad6939dd27" name="a9bb5d924b27bf05d532729ad6939dd27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb5d924b27bf05d532729ad6939dd27">&#9670;&#160;</a></span>exibirMensagem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tela::exibirMensagem </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exibe uma mensagem informativa com o prefixo [INFO]. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Mensagem a ser exibida. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="affeb38bb139475291766248ff97ccd0e" name="affeb38bb139475291766248ff97ccd0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affeb38bb139475291766248ff97ccd0e">&#9670;&#160;</a></span>getNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Tela::getNome </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna o nome identificador da tela (virtual puro). </p>
+<dl class="section return"><dt>Retorna</dt><dd>Nome da tela. </dd></dl>
+
+</div>
+</div>
+<a id="a67cf4e2fdbc23a37cd76fcbf3745227a" name="a67cf4e2fdbc23a37cd76fcbf3745227a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67cf4e2fdbc23a37cd76fcbf3745227a">&#9670;&#160;</a></span>lerNumero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Tela::lerNumero </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>prompt</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lê um número double do usuário, exibindo um prompt. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prompt</td><td>Texto exibido antes da leitura. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Número digitado pelo usuário. </dd></dl>
+
+</div>
+</div>
+<a id="a369e243f0c6d180e694eecc8392bbe42" name="a369e243f0c6d180e694eecc8392bbe42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369e243f0c6d180e694eecc8392bbe42">&#9670;&#160;</a></span>lerOpcao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Tela::lerOpcao </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lê um inteiro do usuário, validando o intervalo [min, max]. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>Menor valor aceito. </td></tr>
+    <tr><td class="paramname">max</td><td>Maior valor aceito. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Inteiro lido dentro do intervalo. </dd></dl>
+
+</div>
+</div>
+<a id="adcb201b8427ec8d4e8ba42ee36d53842" name="adcb201b8427ec8d4e8ba42ee36d53842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb201b8427ec8d4e8ba42ee36d53842">&#9670;&#160;</a></span>lerTexto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Tela::lerTexto </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>prompt</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lê um texto do usuário, exibindo um prompt. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prompt</td><td>Texto exibido antes da leitura. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Texto digitado pelo usuário. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
+<a id="ad859822bbeb2812caf3957cf55d21b93" name="ad859822bbeb2812caf3957cf55d21b93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad859822bbeb2812caf3957cf55d21b93">&#9670;&#160;</a></span>estudante_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_estudante.html">Estudante</a>&amp; Tela::estudante_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<li>include/<a class="el" href="_tela_8hpp_source.html">Tela.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_tela.html">Tela</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
