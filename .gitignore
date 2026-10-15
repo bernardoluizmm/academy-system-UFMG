@@ -3,3 +3,12 @@
 *.out
 .vscode/
 .DS_Store
+
+# Artefatos de compilação e testes
+build/*
+!build/.gitkeep
+coverage/
+*.gcda
+*.gcno
+*.gcov
+teste_*_temp.txt
