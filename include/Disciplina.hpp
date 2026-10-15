@@ -2,6 +2,9 @@
 #define DISCIPLINA_HPP
 #include <string>
 #include <vector>
+#include "AtividadeAvaliativa.hpp"
+#include "ControleFrequencia.hpp"
+#include "CategoriaDisciplina.hpp"
 
 class Disciplina {
 
