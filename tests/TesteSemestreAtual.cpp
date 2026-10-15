@@ -1,7 +1,8 @@
 #include "doctest.h"
 #include "SemestreAtual.hpp"
 
-TEST_CASE("SemestreAtual - Construtor e Getters (Casos Base)") {
+TEST_CASE("SemestreAtual - Construtor e Getters (Casos Base)") 
+{
     SemestreAtual semestre("2026/1");
 
     CHECK(semestre.getPeriodo() == "2026/1");
@@ -9,7 +10,8 @@ TEST_CASE("SemestreAtual - Construtor e Getters (Casos Base)") {
     CHECK(semestre.getNSG() == doctest::Approx(0.0));
 }
 
-TEST_CASE("SemestreAtual - Adicionar e Remover Disciplinas") {
+TEST_CASE("SemestreAtual - Adicionar e Remover Disciplinas") 
+{
     SemestreAtual semestre("2026/1");
 
     Disciplina d1("PDS2", "DCC204", "Douglas", "ICEx", CategoriaDisciplina::OBRIGATORIA, 60, 15);
@@ -22,20 +24,23 @@ TEST_CASE("SemestreAtual - Adicionar e Remover Disciplinas") {
     semestre.adicionarDisciplina(d2);
     CHECK(semestre.getDisciplinas().size() == 2);
 
-    SUBCASE("Remover disciplina valida") {
+    SUBCASE("Remover disciplina valida") 
+    {
         CHECK(semestre.removerDisciplina(0) == true);
         CHECK(semestre.getDisciplinas().size() == 1);
         CHECK(semestre.getDisciplinas()[0].getCodigo() == "DCC205");
     }
 
-    SUBCASE("Remover disciplina com indice invalido") {
+    SUBCASE("Remover disciplina com indice invalido") 
+    {
         CHECK(semestre.removerDisciplina(-1) == false);
         CHECK(semestre.removerDisciplina(10) == false);
         CHECK(semestre.getDisciplinas().size() == 2);
     }
 }
 
-TEST_CASE("SemestreAtual - Calculo de NSG Polimorfico") {
+TEST_CASE("SemestreAtual - Calculo de NSG Polimorfico") 
+{
     SemestreAtual semestre("2026/1");
 
     Disciplina d1("D1", "C1", "P", "S", CategoriaDisciplina::OBRIGATORIA, 60, 15);

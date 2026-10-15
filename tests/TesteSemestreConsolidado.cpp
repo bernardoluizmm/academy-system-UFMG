@@ -1,7 +1,8 @@
 #include "doctest.h"
 #include "SemestreConsolidado.hpp"
 
-TEST_CASE("SemestreConsolidado - Construtor e Getters (Casos Base)") {
+TEST_CASE("SemestreConsolidado - Construtor e Getters (Casos Base)") 
+{
     Disciplina d1("Calculo I", "MAT001", "Prof", "ICEx", CategoriaDisciplina::OBRIGATORIA, 60, 15);
     Disciplina d2("Algebra Linear", "MAT038", "Prof", "ICEx", CategoriaDisciplina::OBRIGATORIA, 60, 15);
     std::vector<Disciplina> discList = {d1, d2};
@@ -14,7 +15,8 @@ TEST_CASE("SemestreConsolidado - Construtor e Getters (Casos Base)") {
     CHECK(consolidado.calcularTotalHoras() == 120);
 }
 
-TEST_CASE("SemestreConsolidado - Alterar NSG e Polimorfismo") {
+TEST_CASE("SemestreConsolidado - Alterar NSG e Polimorfismo") 
+{
     std::vector<Disciplina> vazias;
     SemestreConsolidado consolidado("2024/1", 70.0, vazias);
 
@@ -27,7 +29,8 @@ TEST_CASE("SemestreConsolidado - Alterar NSG e Polimorfismo") {
     CHECK(semPtr->getPeriodo() == "2024/1");
 }
 
-TEST_CASE("SemestreConsolidado - Semestre sem disciplinas (Casos Limite)") {
+TEST_CASE("SemestreConsolidado - Semestre sem disciplinas (Casos Limite)") 
+{
     std::vector<Disciplina> vazias;
     SemestreConsolidado consolidado("2023/1", 0.0, vazias);
 
