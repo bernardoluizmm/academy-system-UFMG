@@ -1,7 +1,8 @@
 #include "doctest.h"
 #include "Curso.hpp"
 
-TEST_CASE("Curso - Construtor e Getters/Setters (Casos Base)") {
+TEST_CASE("Curso - Construtor e Getters/Setters (Casos Base)") 
+{
     Curso curso("Ciencia da Computacao", 2400, 600, 300);
 
     CHECK(curso.getNome() == "Ciencia da Computacao");
@@ -19,7 +20,8 @@ TEST_CASE("Curso - Construtor e Getters/Setters (Casos Base)") {
     CHECK(curso.getTotalHorasExigidas() == 3400);
 }
 
-TEST_CASE("Curso - Adicionar e Remover Semestres Consolidados") {
+TEST_CASE("Curso - Adicionar e Remover Semestres Consolidados") 
+{
     Curso curso("Engenharia de Software", 2000, 500, 200);
 
     std::vector<Disciplina> discs;
@@ -33,20 +35,23 @@ TEST_CASE("Curso - Adicionar e Remover Semestres Consolidados") {
     curso.adicionarSemestreConsolidado(s2);
     CHECK(curso.getSemestresConsolidados().size() == 2);
 
-    SUBCASE("Remocao com indice valido") {
+    SUBCASE("Remocao com indice valido") 
+    {
         CHECK(curso.removerSemestreConsolidado(0) == true);
         CHECK(curso.getSemestresConsolidados().size() == 1);
         CHECK(curso.getSemestresConsolidados()[0].getPeriodo() == "2024/2");
     }
 
-    SUBCASE("Remocao com indice invalido") {
+    SUBCASE("Remocao com indice invalido") 
+    {
         CHECK(curso.removerSemestreConsolidado(-1) == false);
         CHECK(curso.removerSemestreConsolidado(10) == false);
         CHECK(curso.getSemestresConsolidados().size() == 2);
     }
 }
 
-TEST_CASE("Curso - Calculo de Percentuais de Integralizacao e Grafico") {
+TEST_CASE("Curso - Calculo de Percentuais de Integralizacao e Grafico") 
+{
     Curso curso("Matematica Computacional", 100, 50, 50); // Total: 200 horas
 
     Disciplina dObr("D1", "C1", "P", "S", CategoriaDisciplina::OBRIGATORIA, 50, 10);
