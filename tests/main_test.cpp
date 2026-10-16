@@ -14,7 +14,8 @@
 #ifndef _isatty
 #define _isatty isatty
 #endif
-inline struct tm* gmtime_s_compat(struct tm* _tm, const time_t* _time) {
+inline struct tm* gmtime_s_compat(struct tm* _tm, const time_t* _time) 
+{
     struct tm* res = gmtime(_time);
     if (res && _tm) {
         *_tm = *res;
