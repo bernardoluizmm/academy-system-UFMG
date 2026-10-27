@@ -61,3 +61,23 @@ SemestreAtual* HistoricoEscolar::getSemestreAtual()
 {
     return this->_semestreAtual;
 }
+
+void HistoricoEscolar::consolidarSemestreAtual(bool trancado) 
+{
+    if (this->_semestreAtual == nullptr) 
+    {
+        return;
+    }
+    std::string idAtual = this->_semestreAtual->getIdentificador();
+    float nsgFinal = trancado ? 0.0f : this->_semestreAtual->calcularNSG();
+    int hObrig = trancado ? 0 : this->_semestreAtual->getHorasObrigatorias();
+    int hOpt = trancado ? 0 : this->_semestreAtual->getHorasOptativas();
+    int hLivre = trancado ? 0 : this->_semestreAtual->getHorasFormacaoLivre();
+
+    SemestreConsolidado novoConsolidado(idAtual, nsgFinal, hObrig, hOpt, hLivre, trancado);
+    this->_semestresPassados.push_back(novoConsolidado);
+
+    std::string proximoId = Semestre::proximoIdentificadorSemestre(idAtual);
+    delete this->_semestreAtual;
+    this->_semestreAtual = new SemestreAtual(proximoId);
+}
