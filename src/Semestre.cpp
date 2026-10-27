@@ -62,3 +62,40 @@ int Semestre::extrairPeriodo(const std::string& idStr)
 {
     return (idStr[5] - '0') * 10 + (idStr[6] - '0');
 }
+
+void Semestre::validarNSG(float nsg) 
+{
+    if (nsg < 0.0f || nsg > 100.0f) 
+    {
+        throw std::invalid_argument("O NSG deve estar entre 0 e 100.");
+    }
+}
+
+void Semestre::validarHoras(int horas) 
+{
+    if (horas < 0 || horas % 15 != 0) 
+    {
+        throw std::invalid_argument("A carga horaria deve ser maior ou igual a 0 e divisivel por 15.");
+    }
+}
+
+void Semestre::validarIntervaloSemestres(const std::string& semIngresso, const std::string& semAtual) 
+{
+    if (!Semestre::validarFormatoIdentificador(semIngresso) || !Semestre::validarFormatoIdentificador(semAtual)) 
+    {
+        throw std::invalid_argument("Formato de semestre invalido. Use AAAA/01 ou AAAA/02.");
+    }
+    int anoIngresso = Semestre::extrairAno(semIngresso);
+    int perIngresso = Semestre::extrairPeriodo(semIngresso);
+    int anoAtual = Semestre::extrairAno(semAtual);
+    int perAtual = Semestre::extrairPeriodo(semAtual);
+
+    if (anoAtual < anoIngresso || (anoAtual == anoIngresso && perAtual < perIngresso)) 
+    {
+        throw std::invalid_argument("O semestre atual nao pode ser anterior ao semestre de ingresso.");
+    }
+    if ((anoAtual - anoIngresso) > 9) 
+    {
+        throw std::invalid_argument("O ano de ingresso e o ano do semestre atual nao podem ter mais de 9 anos de diferenca.");
+    }
+}
