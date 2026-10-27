@@ -81,3 +81,25 @@ void HistoricoEscolar::consolidarSemestreAtual(bool trancado)
     delete this->_semestreAtual;
     this->_semestreAtual = new SemestreAtual(proximoId);
 }
+
+float HistoricoEscolar::calcularNSGMedio() const 
+{
+    float somaNSG = 0.0f;
+    int qtdValidos = 0;
+
+    for (std::vector<SemestreConsolidado>::const_iterator it = this->_semestresPassados.begin();
+         it != this->_semestresPassados.end(); ++it) 
+    {
+        if (!it->isTrancado()) 
+        {
+            somaNSG += it->calcularNSG();
+            qtdValidos++;
+        }
+    }
+
+    if (qtdValidos == 0) 
+    {
+        return 0.0f;
+    }
+    return somaNSG / static_cast<float>(qtdValidos);
+}
