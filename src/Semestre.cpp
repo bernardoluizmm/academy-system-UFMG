@@ -99,3 +99,18 @@ void Semestre::validarIntervaloSemestres(const std::string& semIngresso, const s
         throw std::invalid_argument("O ano de ingresso e o ano do semestre atual nao podem ter mais de 9 anos de diferenca.");
     }
 }
+
+std::string Semestre::proximoIdentificadorSemestre(const std::string& idAtual) 
+{
+    int ano = Semestre::extrairAno(idAtual);
+    int periodo = Semestre::extrairPeriodo(idAtual);
+    std::ostringstream fluxo;
+    if (periodo == 1) 
+    {
+        fluxo << ano << "/02";
+    } else 
+    {
+        fluxo << (ano + 1) << "/01";
+    }
+    return fluxo.str();
+}
