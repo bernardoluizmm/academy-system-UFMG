@@ -1,5 +1,6 @@
 #include "Estudante.hpp"
 #include <stdexcept>
+#include <sstream>
 
 Estudante::Estudante() : _nome("Estudante") {}
 
@@ -94,4 +95,13 @@ float Estudante::calcularPercentualFormacaoLivre() const
     float pct = (static_cast<float>(this->_historico.calcularTotalHorasFormacaoLivre()) /
                  static_cast<float>(req)) * 100.0f;
     return (pct > 100.0f) ? 100.0f : pct;
+}
+
+std::string Estudante::serializar() const 
+{
+    std::ostringstream oss;
+    oss << "ESTUDANTE|" << this->_nome << "\n";
+    oss << this->_curso.serializar() << "\n";
+    oss << this->_historico.serializar();
+    return oss.str();
 }
