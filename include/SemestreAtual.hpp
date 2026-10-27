@@ -67,6 +67,48 @@ public:
      * @param tipo Tipo ("Obrigatoria", "Optativa" ou "Formacao Livre").
      * @param horarioDias Horários e dias das aulas.
      */
+    void adicionarDisciplina(const std::string& codigo,
+                             const std::string& codigoTurma,
+                             const std::string& nome,
+                             const std::string& professor,
+                             const std::string& salaBloco,
+                             int cargaHoraria,
+                             int duracaoAulaMinutos,
+                             const std::string& tipo,
+                             const std::string& horarioDias);
+
+    /**
+     * @brief Adiciona uma disciplina já construída.
+     * @param disciplina Disciplina a adicionar.
+     * @throws std::invalid_argument Se já existir disciplina com o mesmo ID.
+     */
+    void adicionarDisciplina(const Disciplina& disciplina);
+
+    /**
+     * @brief Remove uma disciplina pelo ID.
+     * @param idDisciplina ID da disciplina.
+     * @throws std::invalid_argument Se não for encontrada.
+     */
+    void removerDisciplina(int idDisciplina);
+
+    /**
+     * @brief Busca uma disciplina pelo ID.
+     * @param idDisciplina ID da disciplina.
+     * @return Ponteiro para a disciplina, ou nullptr se não existir.
+     */
+    Disciplina* buscarDisciplina(int idDisciplina);
+
+    /** @brief Retorna as disciplinas (somente leitura). */
+    const std::vector<Disciplina>& getDisciplinas() const;
+
+    /** @brief Retorna as disciplinas (acesso editável). */
+    std::vector<Disciplina>& getDisciplinasEditavel();
+
+    /**
+     * @brief Serializa o semestre e suas disciplinas em texto.
+     * @return Texto iniciado por SEMESTRE_ATUAL|id, seguido das disciplinas.
+     */
+    std::string serializar() const;
 
 };
 
