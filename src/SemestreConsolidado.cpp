@@ -46,3 +46,21 @@ void SemestreConsolidado::setHorasFormacaoLivre(int horasFormacaoLivre)
     Semestre::validarHoras(horasFormacaoLivre);
     this->_horasFormacaoLivre = horasFormacaoLivre;
 }
+
+float SemestreConsolidado::calcularNSG() const 
+{
+    if (this->_trancado) 
+    {
+        return 0.0f;
+    }
+    return this->_nsgFixo;
+}
+
+int SemestreConsolidado::getHorasIntegralizadas() const 
+{
+    if (this->_trancado) 
+    {
+        return 0;
+    }
+    return this->_horasObrigatorias + this->_horasOptativas + this->_horasFormacaoLivre;
+}
