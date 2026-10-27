@@ -35,3 +35,46 @@ std::string MenuDisciplina::escolherTipoDisciplina()
         std::cout << "[ERRO] Opcao invalida. Escolha 1, 2 ou 3.\n";
     }
 }
+
+void MenuDisciplina::exibir() 
+{
+    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
+
+    std::cout << "\n========================================================================\n";
+    std::cout << "                      GERENCIAMENTO DE DISCIPLINAS                      \n";
+    std::cout << "========================================================================\n";
+
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
+    } else 
+    {
+        std::cout << std::left
+                  << std::setw(4)  << "ID"
+                  << std::setw(10) << "Codigo"
+                  << std::setw(8)  << "Turma"
+                  << std::setw(26) << "Nome"
+                  << std::setw(8)  << "CH"
+                  << std::setw(16) << "Tipo" << "\n";
+        std::cout << "------------------------------------------------------------------------\n";
+
+        const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+        for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
+        {
+            std::cout << std::left
+                      << std::setw(4)  << it->getId()
+                      << std::setw(10) << it->getCodigo().substr(0, 8)
+                      << std::setw(8)  << it->getCodigoTurma().substr(0, 6)
+                      << std::setw(26) << it->getNome().substr(0, 24)
+                      << std::setw(8)  << (std::to_string(it->getCargaHoraria()) + "h")
+                      << std::setw(16) << it->getTipo() << "\n";
+        }
+    }
+
+    std::cout << "========================================================================\n";
+    std::cout << "1 - Criar nova disciplina\n";
+    std::cout << "2 - Editar disciplina existente\n";
+    std::cout << "3 - Apagar disciplina existente\n";
+    std::cout << "0 - Voltar ao Menu Principal\n";
+    std::cout << "========================================================================\n";
+}
