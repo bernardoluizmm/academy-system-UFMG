@@ -30,3 +30,22 @@ float SemestreAtual::calcularNSG() const
         return 0.0f;
     }
     return somaPonderada / static_cast<float>(somaCargaHoraria);
+}
+
+    int SemestreAtual::getHorasIntegralizadas() const 
+{
+    return this->getHorasObrigatorias() + this->getHorasOptativas() + this->getHorasFormacaoLivre();
+}
+
+int SemestreAtual::getHorasObrigatorias() const 
+{
+    int soma = 0;
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getTipo() == "Obrigatoria" && it->avaliacoes().obterNotaTotalParcial() >= 60.0f) 
+        {
+            soma += it->getCargaHoraria();
+        }
+    }
+    return soma;
+}
