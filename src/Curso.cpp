@@ -1,5 +1,6 @@
 #include "Curso.hpp"
 #include "Semestre.hpp"
+#include <stdexcept>
 
 Curso::Curso() 
     : _opcaoCurso(1),
@@ -101,3 +102,34 @@ void Curso::setSemestreIngresso(const std::string& semIngresso)
     this->_semestreIngresso = semIngresso;
 }
 
+void Curso::configurarHorasPorCurriculo() 
+{
+    int anoIngresso = Semestre::extrairAno(this->_semestreIngresso);
+    if (this->_opcaoCurso == 1) 
+    {
+        this->_nome = "Ciencia da Computacao";
+        if (anoIngresso < 2025) 
+        {
+            this->_horasTotaisObrigatorias = 2040;
+            this->_horasTotaisOptativas = 1020;
+            this->_horasTotaisFormacaoLivre = 60;
+            this->_horasAdicionais = 120;
+            this->_horasTotaisCurso = 3240;
+        } else 
+        {
+            this->_horasTotaisObrigatorias = 1980;
+            this->_horasTotaisOptativas = 1110;
+            this->_horasTotaisFormacaoLivre = 120;
+            this->_horasAdicionais = 0;
+            this->_horasTotaisCurso = 3210;
+        }
+    } else 
+    {
+        this->_nome = "Sistemas de Informacao";
+        this->_horasTotaisObrigatorias = 2100;
+        this->_horasTotaisOptativas = 780;
+        this->_horasTotaisFormacaoLivre = 120;
+        this->_horasAdicionais = 0;
+        this->_horasTotaisCurso = 3000;
+    }
+}
