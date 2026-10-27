@@ -46,3 +46,26 @@ void Disciplina::atualizarLimiteFaltas()
     int novoMax = CalcularMaxFaltas::calcularDiasMaximosFalta(this->_cargaHoraria, this->_duracaoAulaMinutos);
     this->_frequencia.setMaxFaltas(novoMax);
 }
+
+his->_id; 
+}
+std::string Disciplina::getCodigo() const 
+{ 
+    return this->_codigo; 
+}
+std::string Disciplina::getCodigoTurma() const 
+{ 
+    return this->_codigoTurma; 
+}
+std::string Disciplina::getNome() const 
+{ 
+    return this->_nome; 
+}
+std::string Disciplina::getProfessor() const 
+{ 
+    return this->_professor; 
+}
+std::string Disciplina::getSalaBloco() const 
+{ 
+    return this->_salaBloco; 
+}
