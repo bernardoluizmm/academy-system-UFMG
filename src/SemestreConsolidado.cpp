@@ -64,3 +64,18 @@ int SemestreConsolidado::getHorasIntegralizadas() const
     }
     return this->_horasObrigatorias + this->_horasOptativas + this->_horasFormacaoLivre;
 }
+
+int SemestreConsolidado::getHorasObrigatorias() const 
+{
+    return this->_trancado ? 0 : this->_horasObrigatorias;
+}
+
+int SemestreConsolidado::getHorasOptativas() const 
+{
+    return this->_trancado ? 0 : this->_horasOptativas;
+}
+
+int SemestreConsolidado::getHorasFormacaoLivre() const 
+{
+    return this->_trancado ? 0 : this->_horasFormacaoLivre;
+}
