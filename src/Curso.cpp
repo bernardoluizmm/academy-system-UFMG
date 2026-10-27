@@ -1,6 +1,7 @@
 #include "Curso.hpp"
 #include "Semestre.hpp"
 #include <stdexcept>
+#include <sstream>
 
 Curso::Curso() 
     : _opcaoCurso(1),
@@ -132,4 +133,11 @@ void Curso::configurarHorasPorCurriculo()
         this->_horasAdicionais = 0;
         this->_horasTotaisCurso = 3000;
     }
+}
+
+std::string Curso::serializar() const 
+{
+    std::ostringstream oss;
+    oss << "CURSO|" << this->_opcaoCurso << "|" << this->_semestreIngresso;
+    return oss.str();
 }
