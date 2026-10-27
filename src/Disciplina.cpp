@@ -1,0 +1,48 @@
+#include "Disciplina.hpp"
+#include "CalculadorMaxFaltas.hpp" 
+#include <stdexcept>
+#include <sstream>
+
+Disciplina::Disciplina(int id,
+                       const std::string& codigo,
+                       const std::string& codigoTurma,
+                       const std::string& nome,
+                       const std::string& professor,
+                       const std::string& salaBloco,
+                       int cargaHoraria,
+                       int duracaoAulaMinutos,
+                       const std::string& tipo,
+                       const std::string& horarioDias)
+    : _id(id),
+      _cargaHoraria(cargaHoraria),
+      _duracaoAulaMinutos(duracaoAulaMinutos),
+      _frequencia(CalcularMaxFaltas::calcularDiasMaximosFalta(cargaHoraria, duracaoAulaMinutos)), 
+      _avaliacoes() 
+{
+    if (id < 0) 
+    {
+        throw std::invalid_argument("ID da disciplina invalido.");
+    }
+    if (cargaHoraria <= 0 || cargaHoraria % 15 != 0) 
+    {
+        throw std::invalid_argument("A carga horaria deve ser maior que zero e divisivel por 15.");
+    }
+    if (duracaoAulaMinutos < 50) 
+    {
+        throw std::invalid_argument("A duracao da aula deve ser de, no minimo, 50 minutos.");
+    }
+
+    this->setCodigo(codigo);
+    this->setCodigoTurma(codigoTurma);
+    this->setNome(nome);
+    this->setProfessor(professor);
+    this->setSalaBloco(salaBloco);
+    this->setTipo(tipo);
+    this->setHorarioDias(horarioDias);
+}
+
+void Disciplina::atualizarLimiteFaltas() 
+{
+    int novoMax = CalcularMaxFaltas::calcularDiasMaximosFalta(this->_cargaHoraria, this->_duracaoAulaMinutos);
+    this->_frequencia.setMaxFaltas(novoMax);
+}
