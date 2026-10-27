@@ -5,3 +5,5 @@
 
 MenuInicial::MenuInicial(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
     : Menu(estudante, gerenciadorArquivo) {}
+
+MenuInicial::~MenuInicial() {}
