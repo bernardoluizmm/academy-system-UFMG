@@ -321,3 +321,42 @@ void MenuDisciplina::fluxoEditarDisciplina()
         }
     }
 }
+
+void MenuDisciplina::fluxoApagarDisciplina() 
+{
+    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << "[AVISO] Nao ha disciplinas cadastradas para apagar.\n";
+        return;
+    }
+
+    int idDisc = this->entradaSanitizada<int>("Informe o ID da disciplina que deseja apagar (0 para cancelar): ");
+    if (idDisc == 0) 
+    {
+        return;
+    }
+
+    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    if (disc == nullptr) 
+    {
+        std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
+        return;
+    }
+
+    int confirmacao = this->entradaSanitizada<int>("Tem certeza que deseja apagar '" + disc->getNome() + "'? (1 - Sim / 2 - Nao): ");
+    if (confirmacao == 1) 
+    {
+        try 
+        {
+            semAtual->removerDisciplina(idDisc);
+            std::cout << "Disciplina apagada com sucesso!\n";
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    } else 
+    {
+        std::cout << "Operacao cancelada.\n";
+    }
+}
