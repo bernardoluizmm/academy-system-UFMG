@@ -7,4 +7,8 @@ int main()
         Estudante estudante;
         GerenciadorArquivo gerenciadorArquivo("savePerfilEstudante.txt");
         SeletorMenu seletor(estudante, gerenciadorArquivo);
+        
+        seletor.executar();
+    
+    return 0;
 }
