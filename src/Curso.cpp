@@ -26,3 +26,43 @@ Curso::Curso(int opcaoCurso, const std::string& semestreIngresso)
 {
     this->inicializarCurso(opcaoCurso, semestreIngresso);
 }
+
+int Curso::getOpcaoCurso() const 
+{ 
+    return this->_opcaoCurso; 
+}
+
+std::string Curso::getNome() const 
+{ 
+    return this->_nome; 
+}
+
+std::string Curso::getSemestreIngresso() const 
+{ 
+    return this->_semestreIngresso; 
+}
+
+int Curso::getHorasTotaisObrigatorias() const 
+{ 
+    return this->_horasTotaisObrigatorias; 
+}
+
+int Curso::getHorasTotaisOptativas() const 
+{ 
+    return this->_horasTotaisOptativas; 
+}
+
+int Curso::getHorasTotaisFormacaoLivre() const 
+{ 
+    return this->_horasTotaisFormacaoLivre; 
+}
+
+int Curso::getHorasAdicionais() const 
+{ 
+    return this->_horasAdicionais; 
+}
+
+int Curso::getHorasTotaisCurso() const 
+{ 
+    return this->_horasTotaisCurso; 
+}
