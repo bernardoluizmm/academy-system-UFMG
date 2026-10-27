@@ -49,6 +49,51 @@ public:
      * @throws std::invalid_argument Se fora do intervalo.
      */
 
+    void setNSGFixo(float nsgFixo);
+
+    /**
+     * @brief Define as horas obrigatórias.
+     * @param horasObrigatorias Valor não negativo e divisível por 15.
+     * @throws std::invalid_argument Se inválido.
+     */
+    void setHorasObrigatorias(int horasObrigatorias);
+
+    /**
+     * @brief Define as horas optativas.
+     * @param horasOptativas Valor não negativo e divisível por 15.
+     * @throws std::invalid_argument Se inválido.
+     */
+    void setHorasOptativas(int horasOptativas);
+
+    /**
+     * @brief Define as horas de formação livre.
+     * @param horasFormacaoLivre Valor não negativo e divisível por 15.
+     * @throws std::invalid_argument Se inválido.
+     */
+    void setHorasFormacaoLivre(int horasFormacaoLivre);
+
+    /** @brief Retorna o NSG fixo (0 se trancado). */
+    virtual float calcularNSG() const override;
+
+    /** @brief Retorna o total de horas integralizadas (0 se trancado). */
+    virtual int getHorasIntegralizadas() const override;
+
+    /** @brief Retorna as horas obrigatórias (0 se trancado). */
+    virtual int getHorasObrigatorias() const override;
+
+    /** @brief Retorna as horas optativas (0 se trancado). */
+    virtual int getHorasOptativas() const override;
+
+    /** @brief Retorna as horas de formação livre (0 se trancado). */
+    virtual int getHorasFormacaoLivre() const override;
+
+    /**
+     * @brief Serializa o semestre em texto.
+     * @return Linha no formato
+     *         SEMESTRE_CONSOLIDADO|id|nsg|obrig|optat|livre|trancado.
+     */
+    std::string serializar() const;
+
 };
 
 #endif
