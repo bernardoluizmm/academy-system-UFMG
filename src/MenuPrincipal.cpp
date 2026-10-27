@@ -95,3 +95,19 @@ void MenuPrincipal::exibirTabelaGeralDisciplinas() const
                   << std::setw(10) << it->frequencia().getMaxFaltas() << "\n";
     }
 }
+void MenuPrincipal::exibir() 
+{
+    this->exibirResumoAcademico();
+    this->exibirTabelaGeralDisciplinas();
+
+    std::cout << "\n==============================================================================================\n";
+    std::cout << "                                  OPCOES DO MENU PRINCIPAL                                    \n";
+    std::cout << "==============================================================================================\n";
+    std::cout << "1 - Gerenciar Disciplinas (Adicionar / Editar / Apagar)\n";
+    std::cout << "2 - Gerenciar Atividades Avaliativas (Adicionar / Lancar Nota / Editar / Apagar)\n";
+    std::cout << "3 - Gerenciar Frequencia e Faltas\n";
+    std::cout << "4 - Ver Detalhamento de Disciplinas e Atividades Avaliativas\n";
+    std::cout << "5 - Consolidar Semestre Atual e Iniciar Proximo Semestre\n";
+    std::cout << "0 - Salvar e Sair\n";
+    std::cout << "==============================================================================================\n";
+}
