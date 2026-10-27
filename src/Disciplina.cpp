@@ -69,3 +69,19 @@ std::string Disciplina::getSalaBloco() const
 { 
     return this->_salaBloco; 
 }
+int Disciplina::getCargaHoraria() const 
+{ 
+    return this->_cargaHoraria; 
+}
+int Disciplina::getDuracaoAulaMinutos() const 
+{ 
+    return this->_duracaoAulaMinutos; 
+}
+std::string Disciplina::getTipo() const 
+{ 
+    return this->_tipo; 
+}
+std::string Disciplina::getHorarioDias() const 
+{ 
+    return this->_horarioDias; 
+}
