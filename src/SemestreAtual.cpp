@@ -126,3 +126,13 @@ std::vector<Disciplina>& SemestreAtual::getDisciplinasEditavel()
 {
     return this->_disciplinas;
 }
+std::string SemestreAtual::serializar() const 
+{
+    std::ostringstream oss;
+    oss << "SEMESTRE_ATUAL|" << getIdentificador() << "\n";
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        oss << it->serializar();
+    }
+    return oss.str();
+}
