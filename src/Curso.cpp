@@ -66,3 +66,12 @@ int Curso::getHorasTotaisCurso() const
 { 
     return this->_horasTotaisCurso; 
 }
+
+void Curso::inicializarCurso(int opcao, const std::string& semIngresso) 
+{
+    this->setOpcaoCurso(opcao);
+    this->setSemestreIngresso(semIngresso);
+    this->configurarHorasPorCurriculo();
+    this->_configurado = true;
+}
+
