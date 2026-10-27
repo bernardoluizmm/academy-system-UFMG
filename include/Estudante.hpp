@@ -27,7 +27,7 @@ private:
 public:
     /**
      * @brief Construtor padrão da classe Estudante.
-     * @details Inicializa o estudante com o nome padrão "Estudante", além de instâncias
+     * @details Inicializa o estudante com o pseudonome padrão "Estudante", além de instâncias
      *          padrão de Curso e HistoricoEscolar.
      */
     Estudante();
