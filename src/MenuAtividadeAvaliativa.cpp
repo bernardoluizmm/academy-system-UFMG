@@ -148,3 +148,56 @@ void MenuAtividadeAvaliativa::exibirAtividadesDaDisciplina(const Disciplina& dis
                   << std::setw(8)  << it->obterMedia() << "\n";
     }
 }
+void MenuAtividadeAvaliativa::fluxoCriarAtividade() 
+{
+    Disciplina* disc = this->selecionarDisciplina();
+    if (disc == nullptr) 
+    {
+        return;
+    }
+
+    std::cout << "\n--- NOVA ATIVIDADE EM: " << disc->getNome() << " ---\n";
+    AtividadeAvaliativa rascunho(0, "ATIV", "01/01", 1.0f);
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setNome(this->entradaSanitizada<std::string>("Nome da atividade avaliativa: "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setData(this->entradaSanitizada<std::string>("Data da atividade (formato DD/MM): "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            float valor = this->entradaSanitizada<float>("Valor da atividade (pontos): ");
+            rascunho.setValorMaximo(valor);
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    disc->avaliacoes().adicionarAtividade(rascunho.getNome(),
+                                          rascunho.getData().getDataValidada(),
+                                          rascunho.getValorMaximo());
+    std::cout << "Atividade '" << rascunho.getNome() << "' adicionada com sucesso!\n";
+}
