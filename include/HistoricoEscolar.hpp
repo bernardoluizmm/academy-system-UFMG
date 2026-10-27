@@ -42,6 +42,66 @@ public:
 
     /** @brief Destrutor. Libera o semestre atual. */
     ~HistoricoEscolar();
-    };
+     /**
+     * @brief Adiciona um semestre consolidado ao histórico.
+     * @param semestre Semestre a adicionar.
+     */
+    void adicionarSemestreConsolidado(const SemestreConsolidado& semestre);
+
+    /** @brief Retorna os semestres consolidados. */
+    const std::vector<SemestreConsolidado>& getSemestresPassados() const;
+
+    /** @brief Remove todos os semestres consolidados. */
+    void limparSemestresPassados();
+
+    /** @brief Retorna o semestre atual (editável). */
+    SemestreAtual* getSemestreAtual();
+
+    /** @brief Retorna o semestre atual (somente leitura). */
+    const SemestreAtual* getSemestreAtual() const;
+
+    /**
+     * @brief Substitui o semestre atual por um novo, vazio.
+     * @param identificador Identificador do novo semestre.
+     * @throws std::invalid_argument Se o identificador for inválido.
+     */
+    void definirSemestreAtual(const std::string& identificador);
+
+    /**
+     * @brief Consolida o semestre atual e inicia o semestre seguinte.
+     * @param trancado Se true, o semestre é registrado como trancado (valores zerados).
+     */
+    void consolidarSemestreAtual(bool trancado = false);
+
+    /**
+     * @brief Calcula a média simples dos NSG dos semestres não trancados.
+     * @return NSG médio (0 se não houver semestres válidos).
+     */
+    float calcularNSGMedio() const;
+
+    /**
+     * @brief Calcula o NSG global ponderado pelas horas integralizadas.
+     * @return NSG global (0 se não houver horas).
+     */
+    float calcularNSGGlobal() const;
+
+    /** @brief Soma as horas obrigatórias dos semestres passados. */
+    int calcularTotalHorasObrigatorias() const;
+
+    /** @brief Soma as horas optativas dos semestres passados. */
+    int calcularTotalHorasOptativas() const;
+
+    /** @brief Soma as horas de formação livre dos semestres passados. */
+    int calcularTotalHorasFormacaoLivre() const;
+
+    /** @brief Soma o total de horas integralizadas dos semestres passados. */
+    int calcularTotalHorasIntegralizadas() const;
+
+    /**
+     * @brief Serializa todo o histórico em texto.
+     * @return Uma linha por semestre consolidado, seguidas do semestre atual.
+     */
+    std::string serializar() const;
+};
 
 #endif
