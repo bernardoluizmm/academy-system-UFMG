@@ -143,3 +143,23 @@ void MenuDetalhamentoDisciplina::exibir()
     std::cout << "0 - Voltar ao Menu Principal\n";
     std::cout << "========================================================================\n";
 }
+Menu* MenuDetalhamentoDisciplina::processarEntrada() 
+{
+    while (true) 
+    {
+        int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
+        if (opcao == 1) 
+        {
+            this->fluxoDetalharDisciplinaEspecifica();
+            return new MenuDetalhamentoDisciplina(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 2) 
+        {
+            this->fluxoDetalharTodasDisciplinas();
+            return new MenuDetalhamentoDisciplina(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 0) 
+        {
+            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+        }
+        std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 2.\n";
+    }
+}
