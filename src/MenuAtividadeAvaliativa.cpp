@@ -73,3 +73,78 @@ Menu* MenuAtividadeAvaliativa::processarEntrada()
         std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 4.\n";
     }
 }
+Disciplina* MenuAtividadeAvaliativa::selecionarDisciplina() 
+{
+    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << "[AVISO] Cadastre pelo menos uma disciplina antes de gerenciar atividades.\n";
+        return nullptr;
+    }
+
+    std::cout << "\nDisciplinas do semestre atual:\n";
+    const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+    for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
+    {
+        std::cout << "  [" << it->getId() << "] " << it->getCodigo() << " - " << it->getNome() << "\n";
+    }
+
+    int idDisc = this->entradaSanitizada<int>("Selecione o ID da disciplina (0 para cancelar): ");
+    if (idDisc == 0) 
+    {
+        return nullptr;
+    }
+
+    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    if (disc == nullptr) 
+    {
+        std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
+    }
+    return disc;
+}
+
+void MenuAtividadeAvaliativa::exibirAtividadesDaDisciplina(const Disciplina& disciplina) const 
+{
+    std::cout << "\nDisciplina [" << disciplina.getId() << "] "
+              << disciplina.getCodigo() << " - " << disciplina.getNome() << "\n";
+    std::cout << "------------------------------------------------------------------------\n";
+
+    const std::vector<AtividadeAvaliativa>& atividades = disciplina.avaliacoes().getAtividades();
+    if (atividades.empty()) 
+    {
+        std::cout << "  (Nenhuma atividade avaliativa cadastrada)\n";
+        return;
+    }
+
+    std::cout << std::left
+              << std::setw(4)  << "ID"
+              << std::setw(26) << "Nome"
+              << std::setw(8)  << "Data"
+              << std::setw(10) << "Valor"
+              << std::setw(14) << "Nota Obtida"
+              << std::setw(10) << "Conceito"
+              << std::setw(8)  << "Media" << "\n";
+
+    std::cout << std::fixed << std::setprecision(2);
+    for (std::vector<AtividadeAvaliativa>::const_iterator it = atividades.begin(); it != atividades.end(); ++it) 
+    {
+        std::ostringstream notaStr;
+        notaStr << std::fixed << std::setprecision(2);
+        if (it->isConcluida()) 
+        {
+            notaStr << it->getNotaObtida();
+        } else 
+        {
+            notaStr << "Pendente";
+        }
+
+        std::cout << std::left
+                  << std::setw(4)  << it->getId()
+                  << std::setw(26) << it->getNome().substr(0, 24)
+                  << std::setw(8)  << it->getData().getDataValidada()
+                  << std::setw(10) << it->getValorMaximo()
+                  << std::setw(14) << notaStr.str()
+                  << std::setw(10) << it->obterConceito()
+                  << std::setw(8)  << it->obterMedia() << "\n";
+    }
+}
