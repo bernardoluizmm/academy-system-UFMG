@@ -23,3 +23,26 @@ SemestreConsolidado::SemestreConsolidado(const std::string& identificador,
 }
 
 SemestreConsolidado::~SemestreConsolidado() {}
+void SemestreConsolidado::setNSGFixo(float nsgFixo) 
+{
+    Semestre::validarNSG(nsgFixo);
+    this->_nsgFixo = nsgFixo;
+}
+
+void SemestreConsolidado::setHorasObrigatorias(int horasObrigatorias) 
+{
+    Semestre::validarHoras(horasObrigatorias);
+    this->_horasObrigatorias = horasObrigatorias;
+}
+
+void SemestreConsolidado::setHorasOptativas(int horasOptativas) 
+{
+    Semestre::validarHoras(horasOptativas);
+    this->_horasOptativas = horasOptativas;
+}
+
+void SemestreConsolidado::setHorasFormacaoLivre(int horasFormacaoLivre) 
+{
+    Semestre::validarHoras(horasFormacaoLivre);
+    this->_horasFormacaoLivre = horasFormacaoLivre;
+}
