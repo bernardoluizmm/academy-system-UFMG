@@ -1,4 +1,5 @@
 #include "Estudante.hpp"
+#include <stdexcept>
 
 Estudante::Estudante() : _nome("Estudante") {}
 
@@ -32,3 +33,18 @@ HistoricoEscolar& Estudante::getHistoricoEditavel()
 {
     return this->_historico;
 }
+
+void Estudante::setNome(const std::string& novoNome) 
+{
+    if (novoNome.empty() || novoNome.length() > 100) 
+    {
+        throw std::invalid_argument("O nome do estudante deve ter entre 1 e 100 caracteres.");
+    }
+    this->_nome = novoNome;
+}
+
+void Estudante::setCurso(const Curso& novoCurso) 
+{
+    this->_curso = novoCurso;
+}
+
