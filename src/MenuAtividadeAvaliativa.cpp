@@ -245,4 +245,87 @@ void MenuAtividadeAvaliativa::fluxoLancarNota()
         }
     }
 }
+void MenuAtividadeAvaliativa::fluxoEditarAtividade() 
+{
+    Disciplina* disc = this->selecionarDisciplina();
+    if (disc == nullptr) 
+    {
+        return;
+    }
+
+    if (disc->avaliacoes().getAtividades().empty()) 
+    {
+        std::cout << "[AVISO] Esta disciplina nao possui atividades cadastradas.\n";
+        return;
+    }
+
+    this->exibirAtividadesDaDisciplina(*disc);
+    int idAtiv = this->entradaSanitizada<int>("Informe o ID da atividade que deseja editar (0 para cancelar): ");
+    if (idAtiv == 0) 
+    {
+        return;
+    }
+
+    AtividadeAvaliativa* ativ = disc->avaliacoes().buscarAtividade(idAtiv);
+    if (ativ == nullptr) 
+    {
+        std::cout << "[ERRO] Atividade com ID " << idAtiv << " nao encontrada.\n";
+        return;
+    }
+
+    while (true) 
+    {
+        std::cout << "\n--- EDITANDO ATIVIDADE [" << ativ->getId() << "] " << ativ->getNome() << " ---\n";
+        std::cout << "1 - Nome (" << ativ->getNome() << ")\n";
+        std::cout << "2 - Data (" << ativ->getData().getDataValidada() << ")\n";
+        std::cout << "3 - Valor (" << std::fixed << std::setprecision(2) << ativ->getValorMaximo() << ")\n";
+        std::cout << "4 - Lancar / Alterar Nota Obtida (";
+        if (ativ->isConcluida()) 
+        {
+            std::cout << ativ->getNotaObtida();
+        } else 
+        {
+            std::cout << "Pendente";
+        }
+        std::cout << ")\n";
+        std::cout << "5 - Remover lancamento de nota (marcar como Pendente)\n";
+        std::cout << "0 - Concluir edicao\n";
+
+        int op = this->entradaSanitizada<int>("Escolha o campo para editar: ");
+        if (op == 0) 
+        {
+            break;
+        }
+
+        try 
+        {
+            if (op == 1) 
+            {
+                ativ->setNome(this->entradaSanitizada<std::string>("Novo nome da atividade: "));
+            } else if (op == 2) 
+            {
+                ativ->setData(this->entradaSanitizada<std::string>("Nova data (DD/MM): "));
+                disc->avaliacoes().ordenarAtividades();
+                ativ = disc->avaliacoes().buscarAtividade(idAtiv);
+            } else if (op == 3) 
+            {
+                ativ->setValorMaximo(this->entradaSanitizada<float>("Novo valor da atividade: "));
+            } else if (op == 4) 
+            {
+                ativ->setNotaObtida(this->entradaSanitizada<float>("Nova nota obtida: "));
+            } else if (op == 5) 
+            {
+                ativ->removerLancamentoNota();
+            } else 
+            {
+                std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 5.\n";
+                continue;
+            }
+            std::cout << "Atividade atualizada com sucesso!\n";
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+}
 
