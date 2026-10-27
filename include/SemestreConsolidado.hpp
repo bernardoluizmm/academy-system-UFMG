@@ -1,65 +1,54 @@
+/**
+ * @file SemestreConsolidado.hpp
+ * @brief Declaração da classe SemestreConsolidado.
+ */
 #ifndef SEMESTRECONSOLIDADO_HPP
 #define SEMESTRECONSOLIDADO_HPP
 
 #include "Semestre.hpp"
+#include <string>
 
 /**
  * @class SemestreConsolidado
- * @brief Representa um semestre já encerrado.
+ * @brief Semestre já encerrado, com NSG e horas fixos.
  *
- * Herda de Semestre. Diferente de SemestreAtual, o NSG (nota semestral
- * global) não é calculado a partir das disciplinas: é um valor fixo,
- * informado na construção e que pode ser alterado com setNSG().
- *
- * @see Semestre
- * @see SemestreAtual
- * @see Disciplina
+ * Se o semestre for trancado, NSG e horas são sempre retornados como zero.
  */
-class SemestreConsolidado : public Semestre {
-    private:
-        /** @brief NSG armazenado do semestre consolidado. */
-        double _nsg;
+class SemestreConsolidado : public Semestre 
+{
+private:
+    float _nsgFixo;           ///< NSG final do semestre.
+    int _horasObrigatorias;   ///< Horas obrigatórias integralizadas.
+    int _horasOptativas;      ///< Horas optativas integralizadas.
+    int _horasFormacaoLivre;  ///< Horas de formação livre integralizadas.
 
-    public:
-        /**
-         * @brief Constrói um semestre consolidado com NSG já definido.
-         *
-         * @param periodo     Identificador do período letivo (ex.: "2025/2").
-         * @param nsg         NSG final do semestre, guardado como está.
-         * @param disciplinas Disciplinas cursadas no período (recebidas por
-         *                    valor e armazenadas na classe base). Pode ser
-         *                    um vetor vazio.
-         */
-        SemestreConsolidado(
-            const std::string& periodo,
-            double nsg,
-            std::vector<Disciplina> disciplinas
-        );
+public:
+    /**
+     * @brief Construtor.
+     * @param identificador Identificador do semestre (AAAA/01 ou AAAA/02).
+     * @param nsgFixo NSG final (0 a 100).
+     * @param horasObrigatorias Horas obrigatórias (múltiplo de 15).
+     * @param horasOptativas Horas optativas (múltiplo de 15).
+     * @param horasFormacaoLivre Horas de formação livre (múltiplo de 15).
+     * @param trancado Se true, os valores numéricos são ignorados.
+     * @throws std::invalid_argument Se algum valor for inválido.
+     */
+    SemestreConsolidado(const std::string& identificador,
+                        float nsgFixo,
+                        int horasObrigatorias,
+                        int horasOptativas,
+                        int horasFormacaoLivre,
+                        bool trancado = false);
 
-        /**
-         * @brief Retorna o NSG armazenado.
-         *
-         * Não recalcula nada: devolve o valor informado no construtor ou o
-         * último valor definido por setNSG().
-         *
-         * @return NSG do semestre.
-         */
-        double getNSG() const override;
+    /** @brief Destrutor. */
+    virtual ~SemestreConsolidado();
 
-        /**
-         * @brief Altera o NSG armazenado.
-         * @param nsg Novo valor do NSG.
-         */
-        void setNSG(double nsg);
+    /**
+     * @brief Define o NSG fixo.
+     * @param nsgFixo Valor entre 0 e 100.
+     * @throws std::invalid_argument Se fora do intervalo.
+     */
 
-        /**
-         * @brief Calcula o total de horas do semestre.
-         *
-         * Soma a carga horária de todas as disciplinas do semestre.
-         *
-         * @return Soma das cargas horárias, ou 0 se não houver disciplinas.
-         */
-        int calcularTotalHoras() const;
 };
 
 #endif
