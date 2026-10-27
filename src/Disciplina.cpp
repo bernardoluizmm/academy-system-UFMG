@@ -85,3 +85,19 @@ std::string Disciplina::getHorarioDias() const
 { 
     return this->_horarioDias; 
 }
+ControleFrequencia& Disciplina::frequencia() 
+{ 
+    return this->_frequencia; 
+}
+const ControleFrequencia& Disciplina::frequencia() const 
+{ 
+    return this->_frequencia; 
+}
+DiarioAtividades& Disciplina::avaliacoes() 
+{ 
+    return this->_avaliacoes; 
+}
+const DiarioAtividades& Disciplina::avaliacoes() const 
+{ 
+    return this->_avaliacoes; 
+}
