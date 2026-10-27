@@ -328,4 +328,48 @@ void MenuAtividadeAvaliativa::fluxoEditarAtividade()
         }
     }
 }
+void MenuAtividadeAvaliativa::fluxoApagarAtividade() 
+{
+    Disciplina* disc = this->selecionarDisciplina();
+    if (disc == nullptr) 
+    {
+        return;
+    }
+
+    if (disc->avaliacoes().getAtividades().empty()) 
+    {
+        std::cout << "[AVISO] Esta disciplina nao possui atividades cadastradas.\n";
+        return;
+    }
+
+    this->exibirAtividadesDaDisciplina(*disc);
+    int idAtiv = this->entradaSanitizada<int>("Informe o ID da atividade que deseja apagar (0 para cancelar): ");
+    if (idAtiv == 0) 
+    {
+        return;
+    }
+
+    AtividadeAvaliativa* ativ = disc->avaliacoes().buscarAtividade(idAtiv);
+    if (ativ == nullptr) 
+    {
+        std::cout << "[ERRO] Atividade com ID " << idAtiv << " nao encontrada.\n";
+        return;
+    }
+
+    int confirmacao = this->entradaSanitizada<int>("Tem certeza que deseja apagar '" + ativ->getNome() + "'? (1 - Sim / 2 - Nao): ");
+    if (confirmacao == 1) 
+    {
+        try 
+        {
+            disc->avaliacoes().removerAtividade(idAtiv);
+            std::cout << "Atividade apagada com sucesso!\n";
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    } else 
+    {
+        std::cout << "Operacao cancelada.\n";
+    }
+}
 
