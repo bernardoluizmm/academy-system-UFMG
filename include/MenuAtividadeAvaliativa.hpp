@@ -1,79 +1,86 @@
-/**
- * @file TelaAtividades.hpp
- * @brief Declaração da tela de gerenciamento de atividades avaliativas.
- * @author SamuelFacco
- */
- 
-#ifndef TELAATIVIDADES_HPP
-#define TELAATIVIDADES_HPP
- 
-#include "Tela.hpp"
+#ifndef MENUATIVIDADEAVALIATIVA_HPP
+#define MENUATIVIDADEAVALIATIVA_HPP
+
+#include "Menu.hpp"
 #include "Disciplina.hpp"
- 
+
 /**
- * @class TelaAtividades
- * @brief Tela para gerenciar as atividades avaliativas de uma disciplina.
- *
- * Primeiro o usuário escolhe uma disciplina do semestre atual; depois opera
- * sobre as atividades dela por meio de um sub-menu (adicionar / editar /
- * registrar nota / remover / voltar).
+ * @file MenuAtividadeAvaliativa.hpp
+ * @brief Declaração do menu de gerenciamento de atividades avaliativas.
  */
-class TelaAtividades : public Tela {
-public:
-    /**
-     * @brief Constrói a tela de atividades.
-     * @param estudante Referência ao estudante manipulado.
-     */
-    explicit TelaAtividades(Estudante& estudante);
- 
-    /**
-     * @brief Executa o fluxo: escolher disciplina e abrir o sub-menu de atividades.
-     * @return @c true quando o usuário escolhe voltar ao menu principal.
-     */
-    bool executar() override;
- 
-    /**
-     * @brief Retorna o nome identificador da tela.
-     * @return A string "Atividades".
-     */
-    std::string getNome() const override;
- 
+
+/**
+ * @class MenuAtividadeAvaliativa
+ * @brief Menu responsável pelo gerenciamento das atividades avaliativas das disciplinas.
+ *
+ * Permite ao estudante selecionar uma disciplina e, a partir dela, criar, editar,
+ * apagar atividades avaliativas e lançar notas.
+ *
+ * @see Menu
+ * @see Disciplina
+ */
+class MenuAtividadeAvaliativa : public Menu 
+{
 private:
     /**
-     * @brief Lista as disciplinas do semestre atual e pede que o usuário escolha uma.
-     * @return Índice (base 0) da disciplina escolhida, ou -1 se cancelar
-     *         ou se não houver disciplinas.
+     * @brief Solicita ao usuário que escolha uma das disciplinas do estudante.
+     * @return Ponteiro para a disciplina selecionada, ou @c nullptr caso nenhuma
+     *         disciplina seja selecionada.
      */
-    int escolherDisciplina();
- 
+    Disciplina* selecionarDisciplina();
+
     /**
-     * @brief Lê os dados de uma nova atividade e a adiciona à disciplina.
-     * @param disc Disciplina que receberá a atividade (modificada).
+     * @brief Exibe na tela as atividades avaliativas de uma disciplina.
+     * @param disciplina Disciplina cujas atividades serão listadas.
      */
-    void adicionar(Disciplina& disc);
- 
+    void exibirAtividadesDaDisciplina(const Disciplina& disciplina) const;
+
     /**
-     * @brief Lista as atividades da disciplina e edita a escolhida.
-     * @param disc Disciplina cuja atividade será editada (modificada).
-     */
-    void editar(Disciplina& disc);
- 
-    /**
-     * @brief Lista as atividades e registra a nota na escolhida.
+     * @brief Conduz o fluxo de criação de uma nova atividade avaliativa.
      *
-     * A nota é rejeitada (AtividadeAvaliativa::registrarNota retorna @c false)
-     * se for negativa ou maior que o valor máximo da atividade.
-     *
-     * @param disc Disciplina cuja atividade receberá a nota (modificada).
+     * Seleciona a disciplina, coleta os dados da atividade e a registra no diário
+     * de atividades da disciplina.
      */
-    void registrarNota(Disciplina& disc);
- 
+    void fluxoCriarAtividade();
+
     /**
-     * @brief Lista as atividades e remove a escolhida.
-     * @param disc Disciplina da qual a atividade será removida (modificada).
+     * @brief Conduz o fluxo de lançamento de nota em uma atividade avaliativa.
      */
-    void remover(Disciplina& disc);
+    void fluxoLancarNota();
+
+    /**
+     * @brief Conduz o fluxo de edição de uma atividade avaliativa existente.
+     */
+    void fluxoEditarAtividade();
+
+    /**
+     * @brief Conduz o fluxo de remoção de uma atividade avaliativa existente.
+     */
+    void fluxoApagarAtividade();
+
+public:
+    /**
+     * @brief Constrói o menu de atividades avaliativas.
+     * @param estudante Estudante cujas disciplinas e atividades serão manipuladas.
+     * @param gerenciadorArquivo Gerenciador usado para persistir as alterações em arquivo.
+     */
+    MenuAtividadeAvaliativa(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo);
+
+    /**
+     * @brief Destrutor virtual.
+     */
+    virtual ~MenuAtividadeAvaliativa() override;
+
+    /**
+     * @brief Exibe as opções do menu de atividades avaliativas.
+     */
+    virtual void exibir() override;
+
+    /**
+     * @brief Lê a opção escolhida pelo usuário e executa o fluxo correspondente.
+     * @return Ponteiro para o próximo menu a ser exibido.
+     */
+    virtual Menu* processarEntrada() override;
 };
- 
+
 #endif
- 
