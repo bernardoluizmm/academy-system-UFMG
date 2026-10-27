@@ -180,3 +180,27 @@ void Disciplina::setTipo(const std::string& novoTipo)
     }
     this->_tipo = novoTipo;
 }
+void Disciplina::setHorarioDias(const std::string& novoHorarioDias) 
+{
+    if (novoHorarioDias.empty() || novoHorarioDias.length() > 100) 
+    {
+        throw std::invalid_argument("O horario e dias de aula devem ter entre 1 e 100 caracteres.");
+    }
+    this->_horarioDias = novoHorarioDias;
+}
+
+std::string Disciplina::serializar() const 
+{
+    std::ostringstream oss;
+    oss << "DISCIPLINA|" << this->_id << "|" << this->_codigo << "|" << this->_codigoTurma << "|"
+        << this->_nome << "|" << this->_professor << "|" << this->_salaBloco << "|"
+        << this->_cargaHoraria << "|" << this->_duracaoAulaMinutos << "|" // Lidos diretamente de Disciplina
+        << this->_tipo << "|" << this->_horarioDias << "|" << this->_frequencia.getFaltasAtuais() << "\n";
+        
+    const std::vector<AtividadeAvaliativa>& atividadesAtual = this->_avaliacoes.getAtividades();
+    for (std::vector<AtividadeAvaliativa>::const_iterator it = atividadesAtual.begin(); it != atividadesAtual.end(); ++it) 
+    {
+        oss << it->serializar() << "\n";
+    }
+    return oss.str();
+}
