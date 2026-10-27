@@ -90,3 +90,31 @@ void MenuDetalhamentoDisciplina::fluxoDetalharTodasDisciplinas() const
         this->exibirDetalhamentoDisciplina(*it);
     }
 }
+
+void MenuDetalhamentoDisciplina::exibir() 
+{
+    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
+
+    std::cout << "\n========================================================================\n";
+    std::cout << "           DETALHAMENTO DE DISCIPLINAS E ATIVIDADES AVALIATIVAS         \n";
+    std::cout << "========================================================================\n";
+
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
+    } else 
+    {
+        std::cout << "Disciplinas disponiveis no semestre atual:\n";
+        const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+        for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
+        {
+            std::cout << "  [" << it->getId() << "] " << it->getCodigo() << " - " << it->getNome() << "\n";
+        }
+    }
+
+    std::cout << "========================================================================\n";
+    std::cout << "1 - Visualizar detalhamento de uma disciplina especifica\n";
+    std::cout << "2 - Visualizar detalhamento de todas as disciplinas\n";
+    std::cout << "0 - Voltar ao Menu Principal\n";
+    std::cout << "========================================================================\n";
+}
