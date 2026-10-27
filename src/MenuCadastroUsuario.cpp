@@ -11,4 +11,10 @@ MenuCadastroUsuario::MenuCadastroUsuario(Estudante& estudante, GerenciadorArquiv
 
 MenuCadastroUsuario::~MenuCadastroUsuario() 
 {}
-
+void MenuCadastroUsuario::exibir() 
+{
+    std::cout << "\n======================================================\n";
+    std::cout << "             CADASTRO DE NOVO PERFIL                  \n";
+    std::cout << "======================================================\n";
+    std::cout << "Atencao: Os dados informados nesta etapa sao definitivos.\n";
+}
