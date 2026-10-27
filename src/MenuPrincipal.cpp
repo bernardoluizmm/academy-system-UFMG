@@ -111,3 +111,50 @@ void MenuPrincipal::exibir()
     std::cout << "0 - Salvar e Sair\n";
     std::cout << "==============================================================================================\n";
 }
+Menu* MenuPrincipal::processarEntrada() 
+{
+    while (true) 
+    {
+        int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
+        if (opcao == 1) 
+        {
+            return new MenuDisciplina(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 2) 
+        {
+            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 3) 
+        {
+            return new MenuFrequencia(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 4) 
+        {
+            return new MenuDetalhamentoDisciplina(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 5) 
+        {
+            std::cout << "\nDeseja consolidar o semestre atual ("
+                      << this->_estudante.getHistorico().getSemestreAtual()->getIdentificador() << ")?\n";
+            std::cout << "1 - Consolidar normalmente\n";
+            std::cout << "2 - Consolidar como semestre TRANCADO (NSG ignorado)\n";
+            std::cout << "0 - Cancelar\n";
+            int subOp = this->entradaSanitizada<int>("Opcao: ");
+            if (subOp == 1 || subOp == 2) 
+            {
+                this->_estudante.getHistoricoEditavel().consolidarSemestreAtual(subOp == 2);
+                std::cout << "Semestre consolidado com sucesso! Novo semestre atual: "
+                          << this->_estudante.getHistorico().getSemestreAtual()->getIdentificador() << "\n";
+            }
+            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 0) 
+        {
+            try 
+            {
+                this->_gerenciadorArquivo.salvar(this->_estudante);
+                std::cout << "Dados salvos com sucesso em '" << this->_gerenciadorArquivo.getNomeArquivo() << "'. Ate logo!\n";
+            } catch (const std::exception& e) 
+            {
+                std::cout << "[ERRO AO SALVAR] " << e.what() << "\n";
+            }
+            return nullptr;
+        }
+        std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 5.\n";
+    }
+}
