@@ -75,6 +75,31 @@ void MenuDetalhamentoDisciplina::exibirDetalhamentoDisciplina(const Disciplina& 
     std::cout << "========================================================================================\n";
 }
 
+void MenuDetalhamentoDisciplina::fluxoDetalharDisciplinaEspecifica() 
+{
+    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << "[AVISO] Nenhuma disciplina cadastrada no semestre atual.\n";
+        return;
+    }
+
+    int idDisc = this->entradaSanitizada<int>("Informe o ID da disciplina que deseja visualizar (0 para cancelar): ");
+    if (idDisc == 0) 
+    {
+        return;
+    }
+
+    const Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    if (disc == nullptr) 
+    {
+        std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
+        return;
+    }
+
+    this->exibirDetalhamentoDisciplina(*disc);
+}
+
 void MenuDetalhamentoDisciplina::fluxoDetalharTodasDisciplinas() const 
 {
     const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
