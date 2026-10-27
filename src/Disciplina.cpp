@@ -127,3 +127,28 @@ void Disciplina::setNome(const std::string& novoNome)
     }
     this->_nome = novoNome;
 }
+void Disciplina::setProfessor(const std::string& novoProfessor) 
+{
+    if (novoProfessor.empty() || novoProfessor.length() > 100) 
+    {
+        throw std::invalid_argument("O nome do professor deve ter entre 1 e 100 caracteres.");
+    }
+    this->_professor = novoProfessor;
+}
+
+void Disciplina::setSalaBloco(const std::string& novaSala) 
+{
+    if (novaSala.empty() || novaSala.length() > 100) 
+    {
+        throw std::invalid_argument("A sala/bloco deve ter entre 1 e 100 caracteres.");
+    }
+    this->_salaBloco = novaSala;
+}
+void Disciplina::setHorarioDias(const std::string& novoHorarioDias) 
+{
+    if (novoHorarioDias.empty() || novoHorarioDias.length() > 100) 
+    {
+        throw std::invalid_argument("O horario e dias de aula devem ter entre 1 e 100 caracteres.");
+    }
+    this->_horarioDias = novoHorarioDias;
+}
