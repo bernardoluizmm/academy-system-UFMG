@@ -74,3 +74,19 @@ void MenuDetalhamentoDisciplina::exibirDetalhamentoDisciplina(const Disciplina& 
               << std::setw(10) << disciplina.avaliacoes().obterMediaParcial() << "\n";
     std::cout << "========================================================================================\n";
 }
+
+void MenuDetalhamentoDisciplina::fluxoDetalharTodasDisciplinas() const 
+{
+    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << "[AVISO] Nenhuma disciplina cadastrada no semestre atual.\n";
+        return;
+    }
+
+    const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+    for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
+    {
+        this->exibirDetalhamentoDisciplina(*it);
+    }
+}
