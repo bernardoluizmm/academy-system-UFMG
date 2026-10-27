@@ -79,3 +79,13 @@ int SemestreConsolidado::getHorasFormacaoLivre() const
 {
     return this->_trancado ? 0 : this->_horasFormacaoLivre;
 }
+
+std::string SemestreConsolidado::serializar() const 
+{
+    std::ostringstream oss;
+    oss << "SEMESTRE_CONSOLIDADO|" << this->_identificador << "|"
+        << this->_nsgFixo << "|" << this->_horasObrigatorias << "|"
+        << this->_horasOptativas << "|" << this->_horasFormacaoLivre << "|"
+        << (this->_trancado ? 1 : 0);
+    return oss.str();
+}
