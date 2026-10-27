@@ -9,3 +9,7 @@ MenuCarregarUsuario::MenuCarregarUsuario(Estudante& estudante, GerenciadorArquiv
 
 MenuCarregarUsuario::~MenuCarregarUsuario() {}
 
+void MenuCarregarUsuario::exibir() 
+{
+    std::cout << "\n--- CARREGAR PERFIL DE USUARIO ---\n";
+}
