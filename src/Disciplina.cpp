@@ -152,3 +152,31 @@ void Disciplina::setHorarioDias(const std::string& novoHorarioDias)
     }
     this->_horarioDias = novoHorarioDias;
 }
+void Disciplina::setCargaHoraria(int novaCargaHoraria) 
+{
+    if (novaCargaHoraria <= 0 || novaCargaHoraria % 15 != 0) 
+    {
+        throw std::invalid_argument("A carga horaria deve ser maior que zero e divisivel por 15.");
+    }
+    this->_cargaHoraria = novaCargaHoraria;
+    this->atualizarLimiteFaltas(); 
+}
+
+void Disciplina::setDuracaoAulaMinutos(int novaDuracaoMinutos) 
+{
+    if (novaDuracaoMinutos < 50) 
+    {
+        throw std::invalid_argument("A duracao da aula deve ser de no minimo 50 minutos.");
+    }
+    this->_duracaoAulaMinutos = novaDuracaoMinutos;
+    this->atualizarLimiteFaltas();
+}
+
+void Disciplina::setTipo(const std::string& novoTipo) 
+{
+    if (novoTipo != "Obrigatoria" && novoTipo != "Optativa" && novoTipo != "Formacao Livre") 
+    {
+        throw std::invalid_argument("Tipo invalido. Use 'Obrigatoria', 'Optativa' ou 'Formacao Livre'.");
+    }
+    this->_tipo = novoTipo;
+}
