@@ -7,3 +7,28 @@ Estudante::Estudante(const std::string& nome, const Curso& curso, const Historic
 {
     this->setNome(nome);
 }
+
+std::string Estudante::getNome() const 
+{
+    return this->_nome;
+}
+
+const Curso& Estudante::getCurso() const 
+{
+    return this->_curso;
+}
+
+Curso& Estudante::getCursoEditavel() 
+{
+    return this->_curso;
+}
+
+const HistoricoEscolar& Estudante::getHistorico() const 
+{
+    return this->_historico;
+}
+
+HistoricoEscolar& Estudante::getHistoricoEditavel() 
+{
+    return this->_historico;
+}
