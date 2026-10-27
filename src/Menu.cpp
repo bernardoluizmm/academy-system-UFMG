@@ -34,3 +34,18 @@ std::string Menu::entradaSanitizada<std::string>(const std::string& mensagem)
         std::cout << "Erro: Tipo de entrada incorreto. Tente novamente.\n";
     }
 }
+bool Menu::confirmarDadoImutavel() 
+{
+    while (true) 
+    {
+        int entrada = this->entradaSanitizada<int>("Voce tem certeza disso? Essa informacao nao podera ser alterada depois (1 - Sim / 2 - Nao): ");
+        if (entrada == 1) 
+        {
+            return true;
+        } else if (entrada == 2) 
+        {
+            return false;
+        }
+        std::cout << "[ERRO] Opcao invalida. Digite 1 para Sim ou 2 para Nao.\n";
+    }
+}
