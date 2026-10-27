@@ -75,3 +75,29 @@ void Curso::inicializarCurso(int opcao, const std::string& semIngresso)
     this->_configurado = true;
 }
 
+void Curso::setOpcaoCurso(int opcao) 
+{
+    if (this->_configurado) 
+    {
+        throw std::invalid_argument("Os dados do curso nao podem ser alterados apos definidos.");
+    }
+    if (opcao != 1 && opcao != 2) 
+    {
+        throw std::invalid_argument("Opcao de curso invalida. Digite 1 para CC ou 2 para SI.");
+    }
+    this->_opcaoCurso = opcao;
+}
+
+void Curso::setSemestreIngresso(const std::string& semIngresso) 
+{
+    if (this->_configurado) 
+    {
+        throw std::invalid_argument("Os dados do curso nao podem ser alterados apos definidos.");
+    }
+    if (!Semestre::validarFormatoIdentificador(semIngresso)) 
+    {
+        throw std::invalid_argument("Semestre de ingresso invalido. Use o formato AAAA/01 ou AAAA/02.");
+    }
+    this->_semestreIngresso = semIngresso;
+}
+
