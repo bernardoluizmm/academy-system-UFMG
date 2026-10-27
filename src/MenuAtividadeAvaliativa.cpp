@@ -45,3 +45,31 @@ void MenuAtividadeAvaliativa::exibir()
     std::cout << "0 - Voltar ao Menu Principal\n";
     std::cout << "========================================================================\n";
 }
+Menu* MenuAtividadeAvaliativa::processarEntrada() 
+{
+    while (true) 
+    {
+        int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
+        if (opcao == 1) 
+        {
+            this->fluxoCriarAtividade();
+            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 2) 
+        {
+            this->fluxoLancarNota();
+            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 3) 
+        {
+            this->fluxoEditarAtividade();
+            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 4) 
+        {
+            this->fluxoApagarAtividade();
+            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+        } else if (opcao == 0) 
+        {
+            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+        }
+        std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 4.\n";
+    }
+}
