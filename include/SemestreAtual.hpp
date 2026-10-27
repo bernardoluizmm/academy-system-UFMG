@@ -1,60 +1,73 @@
+/**
+ * @file SemestreAtual.hpp
+ * @brief Declaração da classe SemestreAtual.
+ */
 #ifndef SEMESTREATUAL_HPP
 #define SEMESTREATUAL_HPP
 
 #include "Semestre.hpp"
+#include "Disciplina.hpp"
+#include <vector>
+#include <string>
 
 /**
  * @class SemestreAtual
- * @brief Representa o semestre em andamento.
+ * @brief Semestre em andamento, que gerencia as disciplinas cursadas.
  *
- * Herda de Semestre. Mantém a lista de disciplinas cursadas no período e
- * calcula o NSG (nota semestral global) a partir das notas lançadas nas
- * atividades avaliativas de cada disciplina.
- *
- * @see Semestre
- * @see Disciplina
+ * O NSG e as horas são calculados dinamicamente a partir das disciplinas.
+ * Só contam como integralizadas as disciplinas com nota parcial >= 60.
  */
-class SemestreAtual : public Semestre {
-    public:
-        /**
-         * @brief Constrói um semestre atual sem disciplinas.
-         * @param periodo Identificador do período letivo (ex.: "2026/1").
-         */
-        SemestreAtual(std::string periodo);
+class SemestreAtual : public Semestre 
+{
+private:
+    std::vector<Disciplina> _disciplinas; ///< Disciplinas do semestre.
+    int _contadorId;                      ///< Próximo ID automático de disciplina.
 
-        /**
-         * @brief Calcula o NSG do semestre.
-         *
-         * O valor é a média das notas das disciplinas ponderada pela carga
-         * horária de cada uma. Se não houver disciplinas, retorna 0.0.
-         *
-         * @return NSG calculado a partir das disciplinas atuais.
-         */
-        double getNSG() const override;
+public:
+    /** @brief Construtor padrão (semestre "2026/01"). */
+    SemestreAtual();
 
-        /**
-         * @brief Adiciona uma disciplina ao semestre.
-         * @param disciplina Disciplina a ser adicionada (armazenada por cópia).
-         */
-        void adicionarDisciplina(const Disciplina& disciplina);
+    /**
+     * @brief Construtor com identificador.
+     * @param identificador Identificador do semestre (AAAA/01 ou AAAA/02).
+     * @throws std::invalid_argument Se o identificador for inválido.
+     */
+    SemestreAtual(const std::string& identificador);
 
-        /**
-         * @brief Remove a disciplina que está na posição indicada.
-         *
-         * As disciplinas seguintes deslocam uma posição para trás.
-         *
-         * @param indice Posição da disciplina na lista, começando em 0.
-         * @return true se a disciplina foi removida; false se o índice for
-         *         inválido (negativo ou maior ou igual ao número de disciplinas).
-         */
-        bool removerDisciplina(int indice);
+    /** @brief Destrutor. */
+    virtual ~SemestreAtual();
 
-        /**
-         * @brief Retorna as disciplinas do semestre.
-         * @return Referência constante para o vetor de disciplinas, na ordem
-         *         em que foram adicionadas.
-         */
-        const std::vector<Disciplina>& getDisciplinas() const;
+    /**
+     * @brief Calcula o NSG ponderado pela carga horária.
+     * @return NSG entre 0 e 100 (0 se não houver disciplinas).
+     */
+    virtual float calcularNSG() const override;
+
+    /** @brief Retorna o total de horas integralizadas no semestre. */
+    virtual int getHorasIntegralizadas() const override;
+
+    /** @brief Retorna as horas de disciplinas obrigatórias aprovadas. */
+    virtual int getHorasObrigatorias() const override;
+
+    /** @brief Retorna as horas de disciplinas optativas aprovadas. */
+    virtual int getHorasOptativas() const override;
+
+    /** @brief Retorna as horas de formação livre aprovadas. */
+    virtual int getHorasFormacaoLivre() const override;
+
+    /**
+     * @brief Cria e adiciona uma disciplina com ID automático.
+     * @param codigo Código da disciplina.
+     * @param codigoTurma Código da turma.
+     * @param nome Nome da disciplina.
+     * @param professor Nome do professor.
+     * @param salaBloco Sala e bloco.
+     * @param cargaHoraria Carga horária total.
+     * @param duracaoAulaMinutos Duração de cada aula, em minutos.
+     * @param tipo Tipo ("Obrigatoria", "Optativa" ou "Formacao Livre").
+     * @param horarioDias Horários e dias das aulas.
+     */
+
 };
 
 #endif
