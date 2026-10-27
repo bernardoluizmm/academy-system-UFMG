@@ -63,20 +63,6 @@ public:
     void inicializarCurso(int opcao, const std::string& semIngresso);
 
     /**
-     * @brief Define a opção de curso antes da consolidação.
-     * @param opcao Código do curso (1 para Ciência da Computação, 2 para Sistemas de Informação).
-     * @throws std::invalid_argument Se o curso já tiver sido configurado ou se a opção for diferente de 1 e 2.
-     */
-    void setOpcaoCurso(int opcao);
-
-    /**
-     * @brief Define o semestre de ingresso antes da consolidação.
-     * @param semIngresso Semestre de ingresso no formato "AAAA/01" ou "AAAA/02".
-     * @throws std::invalid_argument Se o curso já tiver sido configurado ou se o formato do semestre for inválido.
-     */
-    void setSemestreIngresso(const std::string& semIngresso);
-
-    /**
      * @brief Obtém o código numérico da opção de curso.
      * @return Inteiro representando a opção (1 ou 2).
      */
@@ -123,6 +109,20 @@ public:
      * @return Carga horária total do curso em horas.
      */
     int getHorasTotaisCurso() const;
+
+    /**
+     * @brief Define a opção de curso antes da consolidação.
+     * @param opcao Código do curso (1 para Ciência da Computação, 2 para Sistemas de Informação).
+     * @throws std::invalid_argument Se o curso já tiver sido configurado ou se a opção for diferente de 1 e 2.
+     */
+    void setOpcaoCurso(int opcao);
+
+    /**
+     * @brief Define o semestre de ingresso antes da consolidação.
+     * @param semIngresso Semestre de ingresso no formato "AAAA/01" ou "AAAA/02".
+     * @throws std::invalid_argument Se o curso já tiver sido configurado ou se o formato do semestre for inválido.
+     */
+    void setSemestreIngresso(const std::string& semIngresso);
 
     /**
      * @brief Serializa os dados do curso em uma linha de texto delimitada por '|'.
