@@ -201,3 +201,48 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
                                           rascunho.getValorMaximo());
     std::cout << "Atividade '" << rascunho.getNome() << "' adicionada com sucesso!\n";
 }
+void MenuAtividadeAvaliativa::fluxoLancarNota() 
+{
+    Disciplina* disc = this->selecionarDisciplina();
+    if (disc == nullptr) 
+    {
+        return;
+    }
+
+    if (disc->avaliacoes().getAtividades().empty()) 
+    {
+        std::cout << "[AVISO] Esta disciplina nao possui atividades cadastradas.\n";
+        return;
+    }
+
+    this->exibirAtividadesDaDisciplina(*disc);
+    int idAtiv = this->entradaSanitizada<int>("Informe o ID da atividade para lancar a nota (0 para cancelar): ");
+    if (idAtiv == 0) 
+    {
+        return;
+    }
+
+    AtividadeAvaliativa* ativ = disc->avaliacoes().buscarAtividade(idAtiv);
+    if (ativ == nullptr) 
+    {
+        std::cout << "[ERRO] Atividade com ID " << idAtiv << " nao encontrada.\n";
+        return;
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            std::cout << "Atividade: " << ativ->getNome()
+                      << " | Valor Maximo: " << std::fixed << std::setprecision(2) << ativ->getValorMaximo() << "\n";
+            float nota = this->entradaSanitizada<float>("Digite a nota obtida: ");
+            ativ->setNotaObtida(nota);
+            std::cout << "Nota lancada com sucesso! Conceito: " << ativ->obterConceito() << "\n";
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+}
+
