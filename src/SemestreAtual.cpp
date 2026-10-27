@@ -49,3 +49,27 @@ int SemestreAtual::getHorasObrigatorias() const
     }
     return soma;
 }
+void SemestreAtual::adicionarDisciplina(const std::string& codigo,
+                                        const std::string& codigoTurma,
+                                        const std::string& nome,
+                                        const std::string& professor,
+                                        const std::string& salaBloco,
+                                        int cargaHoraria,
+                                        int duracaoAulaMinutos,
+                                        const std::string& tipo,
+                                        const std::string& horarioDias) 
+{
+    Disciplina novaDisciplina(this->_contadorId,
+                              codigo,
+                              codigoTurma,
+                              nome,
+                              professor,
+                              salaBloco,
+                              cargaHoraria,
+                              duracaoAulaMinutos,
+                              tipo,
+                              horarioDias);
+
+    this->_disciplinas.push_back(novaDisciplina);
+    this->_contadorId++;
+}
