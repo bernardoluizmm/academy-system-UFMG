@@ -103,3 +103,137 @@ Menu* MenuDisciplina::processarEntrada()
         std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 3.\n";
     }
 }
+
+void MenuDisciplina::fluxoCriarDisciplina() 
+{
+    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
+    if (semAtual == nullptr) 
+    {
+        std::cout << "[ERRO] Semestre atual nao inicializado.\n";
+        return;
+    }
+
+    std::cout << "\n--- CRIAR NOVA DISCIPLINA ---\n";
+    Disciplina rascunho(0, "COD", "TURMA", "NOME", "PROF", "SALA", 60, 50, "Obrigatoria", "HORARIO");
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setNome(this->entradaSanitizada<std::string>("Nome da disciplina: "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setCodigo(this->entradaSanitizada<std::string>("Codigo da disciplina (ex: DCC204): "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setCodigoTurma(this->entradaSanitizada<std::string>("Codigo da turma (ex: TZ1): "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setProfessor(this->entradaSanitizada<std::string>("Nome do professor: "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setSalaBloco(this->entradaSanitizada<std::string>("Sala/Bloco da aula (ex: ICEx 2010): "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            int ch = this->entradaSanitizada<int>("Carga horaria total em horas (multiplo de 15, ex: 60): ");
+            rascunho.setCargaHoraria(ch);
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setTipo(this->escolherTipoDisciplina());
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            rascunho.setHorarioDias(this->entradaSanitizada<std::string>("Horario e dias da semana (ex: Seg/Qua 19:00-20:40): "));
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            int duracao = this->entradaSanitizada<int>("Duracao de cada aula em minutos (minimo 50, ex: 100): ");
+            rascunho.setDuracaoAulaMinutos(duracao);
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+
+    semAtual->adicionarDisciplina(rascunho.getCodigo(),
+                                  rascunho.getCodigoTurma(),
+                                  rascunho.getNome(),
+                                  rascunho.getProfessor(),
+                                  rascunho.getSalaBloco(),
+                                  rascunho.getCargaHoraria(),
+                                  rascunho.getDuracaoAulaMinutos(),
+                                  rascunho.getTipo(),
+                                  rascunho.getHorarioDias());
+    std::cout << "Disciplina '" << rascunho.getNome() << "' cadastrada com sucesso!\n";
+}
