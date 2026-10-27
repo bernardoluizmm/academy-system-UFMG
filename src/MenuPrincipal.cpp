@@ -57,3 +57,41 @@ void MenuPrincipal::exibirResumoAcademico() const
         std::cout << " - Horas Adicionais Exigidas (Opt/Livre): " << curso.getHorasAdicionais() << "h\n";
     }
 }
+void MenuPrincipal::exibirTabelaGeralDisciplinas() const 
+{
+    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
+    std::cout << "\n----------------------------------------------------------------------------------------------\n";
+    std::cout << "                      TABELA GERAL DAS DISCIPLINAS DO SEMESTRE ATUAL                          \n";
+    std::cout << "----------------------------------------------------------------------------------------------\n";
+
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
+        return;
+    }
+
+    std::cout << std::left
+              << std::setw(4)  << "ID"
+              << std::setw(24) << "Disciplina"
+              << std::setw(12) << "Nota Dist."
+              << std::setw(13) << "Nota Obtida"
+              << std::setw(13) << "Media Parc."
+              << std::setw(10) << "Conceito"
+              << std::setw(8)  << "Faltas"
+              << std::setw(10) << "Max Faltas" << "\n";
+    std::cout << "----------------------------------------------------------------------------------------------\n";
+
+    const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+    for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
+    {
+        std::cout << std::left
+                  << std::setw(4)  << it->getId()
+                  << std::setw(24) << it->getNome().substr(0, 22)
+                  << std::setw(12) << it->avaliacoes().obterValorTotalConcluido()
+                  << std::setw(13) << it->avaliacoes().obterNotaTotalParcial()
+                  << std::setw(13) << it->avaliacoes().obterMediaParcial()
+                  << std::setw(10) << it->avaliacoes().obterConceitoParcial()
+                  << std::setw(8)  << it->frequencia().getFaltasAtuais()
+                  << std::setw(10) << it->frequencia().getMaxFaltas() << "\n";
+    }
+}
