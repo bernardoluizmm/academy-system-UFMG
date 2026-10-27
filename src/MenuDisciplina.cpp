@@ -237,3 +237,87 @@ void MenuDisciplina::fluxoCriarDisciplina()
                                   rascunho.getHorarioDias());
     std::cout << "Disciplina '" << rascunho.getNome() << "' cadastrada com sucesso!\n";
 }
+
+void MenuDisciplina::fluxoEditarDisciplina() 
+{
+    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << "[AVISO] Nao ha disciplinas cadastradas para editar.\n";
+        return;
+    }
+
+    int idDisc = this->entradaSanitizada<int>("Informe o ID da disciplina que deseja editar (0 para cancelar): ");
+    if (idDisc == 0) 
+    {
+        return;
+    }
+
+    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    if (disc == nullptr) 
+    {
+        std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
+        return;
+    }
+
+    while (true) 
+    {
+        std::cout << "\n--- EDITANDO DISCIPLINA [" << disc->getId() << "] " << disc->getNome() << " ---\n";
+        std::cout << "1 - Nome (" << disc->getNome() << ")\n";
+        std::cout << "2 - Codigo (" << disc->getCodigo() << ")\n";
+        std::cout << "3 - Codigo da Turma (" << disc->getCodigoTurma() << ")\n";
+        std::cout << "4 - Professor (" << disc->getProfessor() << ")\n";
+        std::cout << "5 - Sala/Bloco (" << disc->getSalaBloco() << ")\n";
+        std::cout << "6 - Carga Horaria (" << disc->getCargaHoraria() << "h)\n";
+        std::cout << "7 - Tipo (" << disc->getTipo() << ")\n";
+        std::cout << "8 - Horario e Dias (" << disc->getHorarioDias() << ")\n";
+        std::cout << "9 - Duracao da Aula (" << disc->getDuracaoAulaMinutos() << " min)\n";
+        std::cout << "0 - Concluir edicao\n";
+
+        int campo = this->entradaSanitizada<int>("Escolha o campo para editar: ");
+        if (campo == 0) 
+        {
+            break;
+        }
+
+        try 
+        {
+            if (campo == 1) 
+            {
+                disc->setNome(this->entradaSanitizada<std::string>("Novo nome da disciplina: "));
+            } else if (campo == 2) 
+            {
+                disc->setCodigo(this->entradaSanitizada<std::string>("Novo codigo da disciplina: "));
+            } else if (campo == 3) 
+            {
+                disc->setCodigoTurma(this->entradaSanitizada<std::string>("Novo codigo da turma: "));
+            } else if (campo == 4) 
+            {
+                disc->setProfessor(this->entradaSanitizada<std::string>("Novo nome do professor: "));
+            } else if (campo == 5) 
+            {
+                disc->setSalaBloco(this->entradaSanitizada<std::string>("Nova sala/bloco: "));
+            } else if (campo == 6) 
+            {
+                disc->setCargaHoraria(this->entradaSanitizada<int>("Nova carga horaria (multiplo de 15): "));
+            } else if (campo == 7) 
+            {
+                disc->setTipo(this->escolherTipoDisciplina());
+            } else if (campo == 8) 
+            {
+                disc->setHorarioDias(this->entradaSanitizada<std::string>("Novo horario e dias da semana: "));
+            } else if (campo == 9) 
+            {
+                disc->setDuracaoAulaMinutos(this->entradaSanitizada<int>("Nova duracao da aula em minutos (minimo 50): "));
+            } else 
+            {
+                std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 9.\n";
+                continue;
+            }
+            std::cout << "Campo atualizado com sucesso!\n";
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+}
