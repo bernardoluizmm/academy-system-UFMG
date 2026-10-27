@@ -73,3 +73,56 @@ void SemestreAtual::adicionarDisciplina(const std::string& codigo,
     this->_disciplinas.push_back(novaDisciplina);
     this->_contadorId++;
 }
+
+void SemestreAtual::adicionarDisciplina(const Disciplina& disciplina) 
+{
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getId() == disciplina.getId()) 
+        {
+            throw std::invalid_argument("Ja existe uma disciplina com este ID no semestre atual.");
+        }
+    }
+
+    this->_disciplinas.push_back(disciplina);
+
+    if (disciplina.getId() >= this->_contadorId) 
+    {
+        this->_contadorId = disciplina.getId() + 1;
+    }
+}
+
+void SemestreAtual::removerDisciplina(int idDisciplina) 
+{
+    for (std::vector<Disciplina>::iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getId() == idDisciplina) 
+        {
+            this->_disciplinas.erase(it);
+            return;
+        }
+    }
+    throw std::invalid_argument("Disciplina nao encontrada para remocao.");
+}
+
+Disciplina* SemestreAtual::buscarDisciplina(int idDisciplina) 
+{
+    for (std::vector<Disciplina>::iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getId() == idDisciplina) 
+        {
+            return &(*it);
+        }
+    }
+    return nullptr;
+}
+
+const std::vector<Disciplina>& SemestreAtual::getDisciplinas() const 
+{
+    return this->_disciplinas;
+}
+
+std::vector<Disciplina>& SemestreAtual::getDisciplinasEditavel() 
+{
+    return this->_disciplinas;
+}
