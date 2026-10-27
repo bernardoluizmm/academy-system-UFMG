@@ -10,3 +10,23 @@ SemestreAtual::~SemestreAtual()
 {
     this->_disciplinas.clear();
 }
+float SemestreAtual::calcularNSG() const 
+{
+    if (this->_disciplinas.empty()) 
+    {
+        return 0.0f;
+    }
+    float somaPonderada = 0.0f;
+    int somaCargaHoraria = 0;
+
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        somaPonderada += it->avaliacoes().calcularPercentualAproveitamento() * static_cast<float>(it->getCargaHoraria());
+        somaCargaHoraria += it->getCargaHoraria();
+    }
+
+    if (somaCargaHoraria == 0) 
+    {
+        return 0.0f;
+    }
+    return somaPonderada / static_cast<float>(somaCargaHoraria);
