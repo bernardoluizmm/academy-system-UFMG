@@ -109,3 +109,10 @@ char AtividadeAvaliativa::obterConceito() const
     return CalculadorConceito::calcular(percentual);
 }
 
+std::string AtividadeAvaliativa::serializar() const 
+{
+    std::ostringstream fluxo;
+    fluxo << "ATIVIDADE|" << this->_id << "|" << this->_nome << "|" << this->_data << "|"
+        << this->_valor << "|" << this->_notaObtida << "|" << (this->_concluida ? 1 : 0);
+    return fluxo.str();
+}
