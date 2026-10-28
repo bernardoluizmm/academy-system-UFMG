@@ -88,3 +88,24 @@ void AtividadeAvaliativa::setNotaObtida(float novaNota)
     this->_concluida = true;
 }
 
+void AtividadeAvaliativa::removerLancamentoNota() 
+{
+    this->_notaObtida = 0.0f;
+    this->_concluida = false;
+}
+
+float AtividadeAvaliativa::obterMedia() const 
+{
+    return CalculadorMedia::calcular(this->_valor);
+}
+
+char AtividadeAvaliativa::obterConceito() const 
+{
+    if (!this->_concluida || this->_valor <= 0.0f) 
+    {
+        return '-';
+    }
+    float percentual = (this->_notaObtida / this->_valor) * 100.0f;
+    return CalculadorConceito::calcular(percentual);
+}
+
