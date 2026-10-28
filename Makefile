@@ -1,82 +1,88 @@
-CXX ?= g++
-CXXFLAGS = -std=c++14 -Wall -Wextra -Iinclude
-TEST_FLAGS = -Ithird_party -DDOCTEST_CONFIG_NO_MULTITHREADING
+CC=g++
+CFLAGS=-std=c++11 -Wall -Iinclude
 
-SRC_DIR = src
-INC_DIR = include
-BUILD_DIR = build
-OBJ_DIR = $(BUILD_DIR)/obj
-TESTS_DIR = tests
-COVERAGE_DIR = coverage
+all: main
 
-SRCS = $(wildcard $(SRC_DIR)/*.cpp)
-MAIN_SRC = $(SRC_DIR)/main.cpp
-LIB_SRCS = $(filter-out $(MAIN_SRC), $(SRCS))
-OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(LIB_SRCS))
+build/AtividadeAvaliativa.o: include/AtividadeAvaliativa.hpp include/Data.hpp include/CalculadorConceito.hpp include/CalculadorMedia.hpp src/AtividadeAvaliativa.cpp
+	${CC} ${CFLAGS} -c src/AtividadeAvaliativa.cpp -o build/AtividadeAvaliativa.o
 
-TEST_SRCS = $(wildcard $(TESTS_DIR)/*.cpp)
-TEST_OBJS = $(patsubst $(TESTS_DIR)/%.cpp, $(OBJ_DIR)/test_%.o, $(TEST_SRCS))
+build/CalculadorConceito.o: include/CalculadorConceito.hpp src/CalculadorConceito.cpp
+	${CC} ${CFLAGS} -c src/CalculadorConceito.cpp -o build/CalculadorConceito.o
 
-TARGET = $(BUILD_DIR)/sistema_academico
-TEST_TARGET = $(BUILD_DIR)/run_tests
+build/CalculadorMaxFaltas.o: include/CalculadorMaxFaltas.hpp src/CalculadorMaxFaltas.cpp
+	${CC} ${CFLAGS} -c src/CalculadorMaxFaltas.cpp -o build/CalculadorMaxFaltas.o
 
-ifeq ($(OS),Windows_NT)
-    MKDIR = if not exist "$(subst /,\,$(1))" mkdir "$(subst /,\,$(1))"
-    RMDIR = if exist "$(subst /,\,$(1))" rmdir /s /q "$(subst /,\,$(1))"
-    RM = if exist "$(subst /,\,$(1))" del /q /f "$(subst /,\,$(1))"
-    TARGET_EXT = .exe
-else
-    MKDIR = mkdir -p $(1)
-    RMDIR = rm -rf $(1)
-    RM = rm -f $(1)
-    TARGET_EXT =
-endif
+build/CalculadorMedia.o: include/CalculadorMedia.hpp src/CalculadorMedia.cpp
+	${CC} ${CFLAGS} -c src/CalculadorMedia.cpp -o build/CalculadorMedia.o
 
-TARGET := $(TARGET)$(TARGET_EXT)
-TEST_TARGET := $(TEST_TARGET)$(TARGET_EXT)
+build/ControleFrequencia.o: include/ControleFrequencia.hpp src/ControleFrequencia.cpp
+	${CC} ${CFLAGS} -c src/ControleFrequencia.cpp -o build/ControleFrequencia.o
 
-.PHONY: all clean test coverage directories
+build/Curso.o: include/Curso.hpp include/Semestre.hpp src/Curso.cpp
+	${CC} ${CFLAGS} -c src/Curso.cpp -o build/Curso.o
 
-all: directories $(TARGET)
+build/Data.o: include/Data.hpp src/Data.cpp
+	${CC} ${CFLAGS} -c src/Data.cpp -o build/Data.o
 
-directories:
-	@$(call MKDIR,$(BUILD_DIR))
-	@$(call MKDIR,$(OBJ_DIR))
-	@$(call MKDIR,$(COVERAGE_DIR))
+build/DiarioAtividades.o: include/DiarioAtividades.hpp include/AtividadeAvaliativa.hpp include/CalculadorConceito.hpp include/CalculadorMedia.hpp src/DiarioAtividades.cpp
+	${CC} ${CFLAGS} -c src/DiarioAtividades.cpp -o build/DiarioAtividades.o
 
-$(TARGET): directories $(OBJS) $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(wildcard $(MAIN_SRC)))
-	@if [ -f "$(MAIN_SRC)" ] || [ -f "src/main.cpp" ]; then \
-		$(CXX) $(CXXFLAGS) $^ -o $@; \
-	else \
-		echo "Aviso: $(MAIN_SRC) nao encontrado. O binario principal nao foi gerado."; \
-	fi
+build/Disciplina.o: include/Disciplina.hpp include/ControleFrequencia.hpp include/DiarioAtividades.hpp include/CalculadorMaxFaltas.hpp src/Disciplina.cpp
+	${CC} ${CFLAGS} -c src/Disciplina.cpp -o build/Disciplina.o
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+build/Estudante.o: include/Estudante.hpp include/Curso.hpp include/HistoricoEscolar.hpp src/Estudante.cpp
+	${CC} ${CFLAGS} -c src/Estudante.cpp -o build/Estudante.o
 
-$(OBJ_DIR)/test_%.o: $(TESTS_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) $(TEST_FLAGS) -c $< -o $@
+build/GerenciadorArquivo.o: include/GerenciadorArquivo.hpp include/Estudante.hpp src/GerenciadorArquivo.cpp
+	${CC} ${CFLAGS} -c src/GerenciadorArquivo.cpp -o build/GerenciadorArquivo.o
 
-$(TEST_TARGET): directories $(OBJS) $(TEST_OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) $(TEST_OBJS) -o $@
+build/HistoricoEscolar.o: include/HistoricoEscolar.hpp include/SemestreConsolidado.hpp include/SemestreAtual.hpp src/HistoricoEscolar.cpp
+	${CC} ${CFLAGS} -c src/HistoricoEscolar.cpp -o build/HistoricoEscolar.o
 
-test: directories $(TEST_TARGET)
-	@echo "Executando testes unitarios..."
-	./$(TEST_TARGET)
+build/Menu.o: include/Menu.hpp include/Estudante.hpp include/GerenciadorArquivo.hpp src/Menu.cpp
+	${CC} ${CFLAGS} -c src/Menu.cpp -o build/Menu.o
 
-coverage: CXXFLAGS += --coverage -O0
-coverage: clean directories $(TEST_TARGET)
-	@echo "Executando testes para geracao de dados de cobertura (.gcda)..."
-	-./$(TEST_TARGET)
-	@echo "Gerando relatorio de cobertura com gcovr..."
-	gcovr -r . --filter "src/" --exclude "tests/" --exclude "third_party/" --print-summary --fail-under-line 60 --html --html-details -o $(COVERAGE_DIR)/relatorio.html
+build/MenuAtividadeAvaliativa.o: include/MenuAtividadeAvaliativa.hpp include/Menu.hpp include/Disciplina.hpp include/MenuPrincipal.hpp include/SemestreAtual.hpp include/AtividadeAvaliativa.hpp src/MenuAtividadeAvaliativa.cpp
+	${CC} ${CFLAGS} -c src/MenuAtividadeAvaliativa.cpp -o build/MenuAtividadeAvaliativa.o
+
+build/MenuCadastroUsuario.o: include/MenuCadastroUsuario.hpp include/Menu.hpp include/MenuPrincipal.hpp include/Semestre.hpp src/MenuCadastroUsuario.cpp
+	${CC} ${CFLAGS} -c src/MenuCadastroUsuario.cpp -o build/MenuCadastroUsuario.o
+
+build/MenuCarregarUsuario.o: include/MenuCarregarUsuario.hpp include/Menu.hpp include/MenuPrincipal.hpp include/MenuInicial.hpp src/MenuCarregarUsuario.cpp
+	${CC} ${CFLAGS} -c src/MenuCarregarUsuario.cpp -o build/MenuCarregarUsuario.o
+
+build/MenuDetalhamentoDisciplina.o: include/MenuDetalhamentoDisciplina.hpp include/Menu.hpp include/Disciplina.hpp include/MenuPrincipal.hpp include/SemestreAtual.hpp include/AtividadeAvaliativa.hpp src/MenuDetalhamentoDisciplina.cpp
+	${CC} ${CFLAGS} -c src/MenuDetalhamentoDisciplina.cpp -o build/MenuDetalhamentoDisciplina.o
+
+build/MenuDisciplina.o: include/MenuDisciplina.hpp include/Menu.hpp include/MenuPrincipal.hpp include/SemestreAtual.hpp include/Disciplina.hpp src/MenuDisciplina.cpp
+	${CC} ${CFLAGS} -c src/MenuDisciplina.cpp -o build/MenuDisciplina.o
+
+build/MenuFrequencia.o: include/MenuFrequencia.hpp include/Menu.hpp include/Disciplina.hpp include/MenuPrincipal.hpp include/SemestreAtual.hpp src/MenuFrequencia.cpp
+	${CC} ${CFLAGS} -c src/MenuFrequencia.cpp -o build/MenuFrequencia.o
+
+build/MenuInicial.o: include/MenuInicial.hpp include/Menu.hpp include/MenuCadastroUsuario.hpp include/MenuCarregarUsuario.hpp src/MenuInicial.cpp
+	${CC} ${CFLAGS} -c src/MenuInicial.cpp -o build/MenuInicial.o
+
+build/MenuPrincipal.o: include/MenuPrincipal.hpp include/Menu.hpp include/MenuDisciplina.hpp include/MenuAtividadeAvaliativa.hpp include/MenuFrequencia.hpp include/MenuDetalhamentoDisciplina.hpp src/MenuPrincipal.cpp
+	${CC} ${CFLAGS} -c src/MenuPrincipal.cpp -o build/MenuPrincipal.o
+
+build/SeletorMenu.o: include/SeletorMenu.hpp include/Menu.hpp include/Estudante.hpp include/GerenciadorArquivo.hpp include/MenuInicial.hpp src/SeletorMenu.cpp
+	${CC} ${CFLAGS} -c src/SeletorMenu.cpp -o build/SeletorMenu.o
+
+build/Semestre.o: include/Semestre.hpp src/Semestre.cpp
+	${CC} ${CFLAGS} -c src/Semestre.cpp -o build/Semestre.o
+
+build/SemestreAtual.o: include/SemestreAtual.hpp include/Semestre.hpp include/Disciplina.hpp src/SemestreAtual.cpp
+	${CC} ${CFLAGS} -c src/SemestreAtual.cpp -o build/SemestreAtual.o
+
+build/SemestreConsolidado.o: include/SemestreConsolidado.hpp include/Semestre.hpp src/SemestreConsolidado.cpp
+	${CC} ${CFLAGS} -c src/SemestreConsolidado.cpp -o build/SemestreConsolidado.o
+
+build/main.o: include/Estudante.hpp include/GerenciadorArquivo.hpp include/SeletorMenu.hpp src/main.cpp
+	${CC} ${CFLAGS} -c src/main.cpp -o build/main.o
+
+main: build/main.o build/AtividadeAvaliativa.o build/CalculadorConceito.o build/CalculadorMaxFaltas.o build/CalculadorMedia.o build/ControleFrequencia.o build/Curso.o build/Data.o build/DiarioAtividades.o build/Disciplina.o build/Estudante.o build/GerenciadorArquivo.o build/HistoricoEscolar.o build/Menu.o build/MenuAtividadeAvaliativa.o build/MenuCadastroUsuario.o build/MenuCarregarUsuario.o build/MenuDetalhamentoDisciplina.o build/MenuDisciplina.o build/MenuFrequencia.o build/MenuInicial.o build/MenuPrincipal.o build/SeletorMenu.o build/Semestre.o build/SemestreAtual.o build/SemestreConsolidado.o
+	${CC} ${CFLAGS} build/main.o build/AtividadeAvaliativa.o build/CalculadorConceito.o build/CalculadorMaxFaltas.o build/CalculadorMedia.o build/ControleFrequencia.o build/Curso.o build/Data.o build/DiarioAtividades.o build/Disciplina.o build/Estudante.o build/GerenciadorArquivo.o build/HistoricoEscolar.o build/Menu.o build/MenuAtividadeAvaliativa.o build/MenuCadastroUsuario.o build/MenuCarregarUsuario.o build/MenuDetalhamentoDisciplina.o build/MenuDisciplina.o build/MenuFrequencia.o build/MenuInicial.o build/MenuPrincipal.o build/SeletorMenu.o build/Semestre.o build/SemestreAtual.o build/SemestreConsolidado.o -o main
 
 clean:
-	@$(call RMDIR,$(OBJ_DIR))
-	@$(call RMDIR,$(COVERAGE_DIR))
-	@$(call RM,$(TARGET))
-	@$(call RM,$(TEST_TARGET))
-	@$(call RM,$(BUILD_DIR)/*.gcda)
-	@$(call RM,$(BUILD_DIR)/*.gcno)
-	@echo "Limpeza concluida."
-
+	rm -f main build/*.o
