@@ -81,3 +81,88 @@ Menu* MenuFrequencia::processarEntrada()
     }
 }
 
+Disciplina* MenuFrequencia::selecionarDisciplina() 
+{
+    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
+    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    {
+        std::cout << "[AVISO] Nao ha disciplinas cadastradas no semestre atual.\n";
+        return nullptr;
+    }
+
+    int idDisc = this->entradaSanitizada<int>("Informe o ID da disciplina (0 para cancelar): ");
+    if (idDisc == 0) 
+    {
+        return nullptr;
+    }
+
+    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    if (disc == nullptr) 
+    {
+        std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
+    }
+    return disc;
+}
+
+void MenuFrequencia::fluxoAdicionarFalta() 
+{
+    Disciplina* disc = this->selecionarDisciplina();
+    if (disc == nullptr) 
+    {
+        return;
+    }
+
+    try 
+    {
+        disc->frequencia().adicionarFalta();
+        std::cout << "Falta registrada! Faltas em '" << disc->getNome() << "': "
+                  << disc->frequencia().getFaltasAtuais() << "/" << disc->frequencia().getMaxFaltas() << "\n";
+    } catch (const std::invalid_argument& e) 
+    {
+        std::cout << "[ERRO] " << e.what() << "\n";
+    }
+}
+
+void MenuFrequencia::fluxoRemoverFalta() 
+{
+    Disciplina* disc = this->selecionarDisciplina();
+    if (disc == nullptr) 
+    {
+        return;
+    }
+
+    try 
+    {
+        disc->frequencia().removerFalta();
+        std::cout << "Falta removida! Faltas em '" << disc->getNome() << "': "
+                  << disc->frequencia().getFaltasAtuais() << "/" << disc->frequencia().getMaxFaltas() << "\n";
+    } catch (const std::invalid_argument& e) 
+    {
+        std::cout << "[ERRO] " << e.what() << "\n";
+    }
+}
+
+void MenuFrequencia::fluxoDefinirFaltas() 
+{
+    Disciplina* disc = this->selecionarDisciplina();
+    if (disc == nullptr) 
+    {
+        return;
+    }
+
+    while (true) 
+    {
+        try 
+        {
+            int novasFaltas = this->entradaSanitizada<int>("Informe o total de faltas atuais (0 a " +
+                                                           std::to_string(disc->frequencia().getMaxFaltas()) + "): ");
+            disc->frequencia().setFaltasAtuais(novasFaltas);
+            std::cout << "Total de faltas atualizado para " << disc->frequencia().getFaltasAtuais()
+                      << "/" << disc->frequencia().getMaxFaltas() << "!\n";
+            break;
+        } catch (const std::invalid_argument& e) 
+        {
+            std::cout << "[ERRO] " << e.what() << "\n";
+        }
+    }
+}
