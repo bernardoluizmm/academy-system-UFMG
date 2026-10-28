@@ -1,18 +1,35 @@
-/**
- * @file CategoriaDisciplina.hpp
- * @brief Enumeração das categorias curriculares de uma disciplina.
- */
-#ifndef CATEGORIA_DISCIPLINA_HPP
-#define CATEGORIA_DISCIPLINA_HPP
+#ifndef DIARIOATIVIDADES_HPP
+#define DIARIOATIVIDADES_HPP
 
-/**
- * @enum CategoriaDisciplina
- * @brief Define os tipos de classificação de uma disciplina na grade curricular.
- */
-enum class CategoriaDisciplina {
-    OBRIGATORIA,     ///< Disciplina de cumprimento obrigatório pelo curso.
-    OPTATIVA,        ///< Disciplina optativa da grade do curso.
-    FORMACAO_LIVRE   ///< Disciplina de formação livre cursada pelo estudante.
+#include "AtividadeAvaliativa.hpp"
+#include <vector>
+#include <string>
+
+class DiarioAtividades 
+{
+private:
+    std::vector<AtividadeAvaliativa> _atividades;
+    int _contadorId;
+
+    static bool compararDataMaisAntiga(const AtividadeAvaliativa& a, const AtividadeAvaliativa& b);
+public:
+    DiarioAtividades();
+
+    void adicionarAtividade(const std::string& nome, const std::string& dataInput, float valorMaximo);
+    void adicionarAtividade(int id, const std::string& nome, const std::string& dataInput, float valorMaximo, float notaObtida, bool concluida);
+
+    void removerAtividade(int idAtividade);
+    AtividadeAvaliativa* buscarAtividade(int idAtividade);
+    void ordenarAtividades();
+
+    const std::vector<AtividadeAvaliativa>& getAtividades() const;
+
+    float obterValorTotalPlanejado() const;
+    float obterValorTotalConcluido() const;
+    float obterNotaTotalParcial() const;
+    float obterMediaParcial() const;
+    float calcularPercentualAproveitamento() const;
+    char obterConceitoParcial() const;
 };
 
-#endif // CATEGORIA_DISCIPLINA_HPP
+#endif
