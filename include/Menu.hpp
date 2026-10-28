@@ -121,5 +121,3 @@ public:
     std::string Menu::entradaSanitizada<std::string>(const std::string& mensagem);
 
 #endif
-
-#endif
