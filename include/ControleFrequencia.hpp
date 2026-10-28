@@ -1,56 +1,69 @@
 /**
  * @file ControleFrequencia.hpp
- * @brief Declaração da classe ControleFrequencia.
+ * @brief Declaração da classe ControleFrequencia, responsável pelo controle de faltas.
  */
-#ifndef CONTROLE_FREQUENCIA_HPP
-#define CONTROLE_FREQUENCIA_HPP
+#ifndef CONTROLEFREQUENCIA_HPP
+#define CONTROLEFREQUENCIA_HPP
 
 /**
  * @class ControleFrequencia
- * @brief Responsável pelo acompanhamento e registro de faltas de uma disciplina.
+ * @brief Controla as faltas de uma disciplina em relação ao limite máximo permitido.
+ *
+ * Garante que o número de faltas atuais permaneça entre 0 e o máximo permitido.
  */
-class ControleFrequencia {
+class ControleFrequencia 
+{
 private:
-    /** @brief Quantidade máxima de faltas permitidas antes da reprovação por infrequência. */
-    int _faltasPermitidas;
-
-    /** @brief Quantidade de faltas acumuladas no semestre. */
-    int _faltasAtuais;
+    int _maxFaltas;     ///< Número máximo de faltas permitido.
+    int _faltasAtuais;  ///< Número de faltas acumuladas até o momento.
 
 public:
     /**
-     * @brief Construtor da classe ControleFrequencia.
-     * @param faltasPermitidas Número limite de faltas permitidas na disciplina.
+     * @brief Constrói o controle de frequência, iniciando com zero faltas.
+     * @param maxFaltas Número máximo de faltas permitido.
      */
-    ControleFrequencia(int faltasPermitidas);
+    ControleFrequencia(int maxFaltas);
 
     /**
-     * @brief Retorna o limite de faltas permitidas.
-     * @return Número de faltas permitidas.
+     * @brief Obtém o número máximo de faltas permitido.
+     * @return Limite de faltas.
      */
-    int getFaltasPermitidas() const;
+    int getMaxFaltas() const;
 
     /**
-     * @brief Retorna o número atual de faltas registradas.
-     * @return Quantidade de faltas atuais.
+     * @brief Obtém o número de faltas acumuladas.
+     * @return Quantidade atual de faltas.
      */
     int getFaltasAtuais() const;
 
     /**
-     * @brief Incrementa em 1 o número de faltas do estudante.
+     * @brief Define o número máximo de faltas permitido.
+     *
+     * Se as faltas atuais excederem o novo limite, elas são reduzidas
+     * para que fiquem iguais ao novo máximo.
+     *
+     * @param novoMaxFaltas Novo limite de faltas.
      */
-    void incrementarFalta();
+    void setMaxFaltas(int novoMaxFaltas);
 
     /**
-     * @brief Decrementa em 1 o número de faltas do estudante (mínimo 0).
+     * @brief Define diretamente o número de faltas acumuladas.
+     * @param novasFaltas Nova quantidade de faltas (de 0 até o máximo permitido).
+     * @throws std::invalid_argument Se @p novasFaltas for negativo ou maior que o máximo de faltas.
      */
-    void decrementarFalta();
+    void setFaltasAtuais(int novasFaltas);
 
     /**
-     * @brief Calcula a taxa percentual de presença do estudante.
-     * @return Percentual de frequência (0.0 a 100.0).
+     * @brief Registra uma falta (incrementa o contador de faltas atuais).
+     * @throws std::invalid_argument Se o máximo de faltas já tiver sido atingido.
      */
-    double calcularPercentualFrequencia() const;
+    void adicionarFalta();
+
+    /**
+     * @brief Remove uma falta registrada (decrementa o contador de faltas atuais).
+     * @throws std::invalid_argument Se não houver faltas para remover.
+     */
+    void removerFalta();
 };
 
-#endif // CONTROLE_FREQUENCIA_HPP
+#endif
