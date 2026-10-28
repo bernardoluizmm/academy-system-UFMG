@@ -47,8 +47,11 @@ void Disciplina::atualizarLimiteFaltas()
     this->_frequencia.setMaxFaltas(novoMax);
 }
 
-his->_id; 
+int Disciplina::getId() const 
+{ 
+    return this->_id; 
 }
+
 std::string Disciplina::getCodigo() const 
 { 
     return this->_codigo; 
