@@ -147,14 +147,7 @@ void Disciplina::setSalaBloco(const std::string& novaSala)
     }
     this->_salaBloco = novaSala;
 }
-void Disciplina::setHorarioDias(const std::string& novoHorarioDias) 
-{
-    if (novoHorarioDias.empty() || novoHorarioDias.length() > 100) 
-    {
-        throw std::invalid_argument("O horario e dias de aula devem ter entre 1 e 100 caracteres.");
-    }
-    this->_horarioDias = novoHorarioDias;
-}
+
 void Disciplina::setCargaHoraria(int novaCargaHoraria) 
 {
     if (novaCargaHoraria <= 0 || novaCargaHoraria % 15 != 0) 
