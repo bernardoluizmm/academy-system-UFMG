@@ -49,6 +49,33 @@ int SemestreAtual::getHorasObrigatorias() const
     }
     return soma;
 }
+
+int SemestreAtual::getHorasOptativas() const 
+{
+    int soma = 0;
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getTipo() == "Optativa" && it->avaliacoes().obterNotaTotalParcial() >= 60.0f) 
+        {
+            soma += it->getCargaHoraria();
+        }
+    }
+    return soma;
+}
+
+int SemestreAtual::getHorasFormacaoLivre() const 
+{
+    int soma = 0;
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getTipo() == "Formacao Livre" && it->avaliacoes().obterNotaTotalParcial() >= 60.0f) 
+        {
+            soma += it->getCargaHoraria();
+        }
+    }
+    return soma;
+}
+
 void SemestreAtual::adicionarDisciplina(const std::string& codigo,
                                         const std::string& codigoTurma,
                                         const std::string& nome,
