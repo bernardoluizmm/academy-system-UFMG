@@ -37,3 +37,38 @@ void DiarioAtividades::adicionarAtividade(int id, const std::string& nome, const
     this->ordenarAtividades();
 }
 
+void DiarioAtividades::removerAtividade(int idAtividade) 
+{
+    bool encontrada = false;
+    for (std::vector<AtividadeAvaliativa>::iterator it = this->_atividades.begin(); it != this->_atividades.end(); ++it) 
+    {
+        if (it->getId() == idAtividade) 
+        {
+            this->_atividades.erase(it);
+            encontrada = true;
+            break;
+        }
+    }
+    if (!encontrada) 
+    {
+        throw std::invalid_argument("Atividade avaliativa nao encontrada.");
+    }
+}
+
+AtividadeAvaliativa* DiarioAtividades::buscarAtividade(int idAtividade) 
+{
+    for (std::vector<AtividadeAvaliativa>::iterator it = this->_atividades.begin(); it != this->_atividades.end(); ++it) 
+    {
+        if (it->getId() == idAtividade) 
+        {
+            return &(*it);
+        }
+    }
+    return nullptr;
+}
+
+const std::vector<AtividadeAvaliativa>& DiarioAtividades::getAtividades() const 
+{
+    return this->_atividades;
+}
+
