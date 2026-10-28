@@ -72,3 +72,63 @@ const std::vector<AtividadeAvaliativa>& DiarioAtividades::getAtividades() const
     return this->_atividades;
 }
 
+float DiarioAtividades::obterValorTotalPlanejado() const 
+{
+    float soma = 0.0f;
+    for (std::vector<AtividadeAvaliativa>::const_iterator it = this->_atividades.begin(); it != this->_atividades.end(); ++it) 
+    {
+        soma += it->getValorMaximo();
+    }
+    return soma;
+}
+
+float DiarioAtividades::obterValorTotalConcluido() const 
+{
+    float soma = 0.0f;
+    for (std::vector<AtividadeAvaliativa>::const_iterator it = this->_atividades.begin(); it != this->_atividades.end(); ++it) 
+    {
+        if (it->isConcluida()) 
+        {
+            soma += it->getValorMaximo();
+        }
+    }
+    return soma;
+}
+
+float DiarioAtividades::obterNotaTotalParcial() const 
+{
+    float soma = 0.0f;
+    for (std::vector<AtividadeAvaliativa>::const_iterator it = this->_atividades.begin(); it != this->_atividades.end(); ++it) 
+    {
+        if (it->isConcluida()) 
+        {
+            soma += it->getNotaObtida();
+        }
+    }
+    return soma;
+}
+
+float DiarioAtividades::obterMediaParcial() const 
+{
+    return CalculadorMedia::calcular(this->obterValorTotalConcluido());
+}
+
+float DiarioAtividades::calcularPercentualAproveitamento() const 
+{
+    float valorConcluido = this->obterValorTotalConcluido();
+    if (valorConcluido <= 0.0f) 
+    {
+        return 0.0f;
+    }
+    return (this->obterNotaTotalParcial() / valorConcluido) * 100.0f;
+}
+
+char DiarioAtividades::obterConceitoParcial() const 
+{
+    float valorConcluido = this->obterValorTotalConcluido();
+    if (valorConcluido <= 0.0f) 
+    {
+        return '-';
+    }
+    return CalculadorConceito::calcular(this->calcularPercentualAproveitamento());
+}
