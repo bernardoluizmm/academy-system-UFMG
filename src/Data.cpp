@@ -43,3 +43,21 @@ void Data::validarData(int dia, int mes)
     }
 }
 
+std::string Data::getDataValidada() const 
+{
+    return this->_data;
+}
+
+bool Data::operator<(const Data& outraData) const 
+{
+    if (this->_mes != outraData._mes) 
+    {
+        return this->_mes < outraData._mes;
+    }
+    return this->_dia < outraData._dia;
+}
+
+std::ostream& operator<<(std::ostream& os, const Data& d) {
+    os << d._data; 
+    return os;
+}
