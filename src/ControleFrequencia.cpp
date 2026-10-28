@@ -33,3 +33,20 @@ void ControleFrequencia::setFaltasAtuais(int novasFaltas)
     this->_faltasAtuais = novasFaltas;
 }
 
+void ControleFrequencia::adicionarFalta() 
+{
+    if (this->_faltasAtuais >= this->_maxFaltas) 
+    {
+        throw std::invalid_argument("Nao e possivel adicionar mais uma falta. Voce ja atingiu o maximo permitido.");
+    }
+    this->_faltasAtuais++;
+}
+
+void ControleFrequencia::removerFalta() 
+{
+    if (this->_faltasAtuais <= 0) 
+    {
+        throw std::invalid_argument("Nao e possivel remover uma falta.");
+    }
+    this->_faltasAtuais--;
+}
