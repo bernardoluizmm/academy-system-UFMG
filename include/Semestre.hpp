@@ -17,32 +17,11 @@
  */
 class Semestre 
 {
-protected:
-    std::string _identificador; ///< Identificador do semestre (AAAA/01 ou AAAA/02).
-    bool _trancado;             ///< Indica se o semestre foi trancado.
-
-    /**
-     * @brief Extrai o ano de um identificador.
-     * @param idStr Identificador no formato AAAA/PP.
-     * @return Ano como inteiro.
-     */
-    static int extrairAno(const std::string& idStr);
-
-    /**
-     * @brief Extrai o período de um identificador.
-     * @param idStr Identificador no formato AAAA/PP.
-     * @return Período (1 ou 2).
-     */
-    static int extrairPeriodo(const std::string& idStr);
+private:
+    std::string _identificador; 
+    bool _trancado;             
 
 public:
-    /**
-     * @brief Calcula o identificador do semestre seguinte.
-     * @param idAtual Identificador atual (ex.: "2026/02").
-     * @return Identificador seguinte (ex.: "2027/01").
-     */
-    static std::string proximoIdentificadorSemestre(const std::string& idAtual);
-
     /**
      * @brief Construtor.
      * @param identificador Identificador no formato AAAA/01 ou AAAA/02.
@@ -93,6 +72,28 @@ public:
 
     /** @brief Obtém as horas integralizadas em formação livre. */
     virtual int getHorasFormacaoLivre() const = 0;
+
+   /**
+     * @brief Calcula o identificador do semestre seguinte.
+     * @param idAtual Identificador atual (ex.: "2026/02").
+     * @return Identificador seguinte (ex.: "2027/01").
+     */
+    static std::string proximoIdentificadorSemestre(const std::string& idAtual);
+
+    /**
+     * @brief Extrai o ano de um identificador.
+     * @param idStr Identificador no formato AAAA/PP.
+     * @return Ano como inteiro.
+     */
+    static int extrairAno(const std::string& idStr);
+
+    /**
+     * @brief Extrai o período de um identificador.
+     * @param idStr Identificador no formato AAAA/PP.
+     * @return Período (1 ou 2).
+     */
+    static int extrairPeriodo(const std::string& idStr);
+
 
     /**
      * @brief Valida o formato de um identificador de semestre.

@@ -13,7 +13,7 @@ SemestreConsolidado::SemestreConsolidado(const std::string& identificador,
       _horasOptativas(0),
       _horasFormacaoLivre(0) 
 {
-    if (!this->_trancado) 
+    if (!this->isTrancado()) 
     {
         this->setNSGFixo(nsgFixo);
         this->setHorasObrigatorias(horasObrigatorias);
@@ -49,7 +49,7 @@ void SemestreConsolidado::setHorasFormacaoLivre(int horasFormacaoLivre)
 
 float SemestreConsolidado::calcularNSG() const 
 {
-    if (this->_trancado) 
+    if (this->isTrancado()) 
     {
         return 0.0f;
     }
@@ -58,7 +58,7 @@ float SemestreConsolidado::calcularNSG() const
 
 int SemestreConsolidado::getHorasIntegralizadas() const 
 {
-    if (this->_trancado) 
+    if (this->isTrancado()) 
     {
         return 0;
     }
@@ -67,25 +67,25 @@ int SemestreConsolidado::getHorasIntegralizadas() const
 
 int SemestreConsolidado::getHorasObrigatorias() const 
 {
-    return this->_trancado ? 0 : this->_horasObrigatorias;
+    return this->isTrancado() ? 0 : this->_horasObrigatorias;
 }
 
 int SemestreConsolidado::getHorasOptativas() const 
 {
-    return this->_trancado ? 0 : this->_horasOptativas;
+    return this->isTrancado() ? 0 : this->_horasOptativas;
 }
 
 int SemestreConsolidado::getHorasFormacaoLivre() const 
 {
-    return this->_trancado ? 0 : this->_horasFormacaoLivre;
+    return this->isTrancado() ? 0 : this->_horasFormacaoLivre;
 }
 
 std::string SemestreConsolidado::serializar() const 
 {
     std::ostringstream oss;
-    oss << "SEMESTRE_CONSOLIDADO|" << this->_identificador << "|"
+    oss << "SEMESTRE_CONSOLIDADO|" << this->getIdentificador() << "|"
         << this->_nsgFixo << "|" << this->_horasObrigatorias << "|"
         << this->_horasOptativas << "|" << this->_horasFormacaoLivre << "|"
-        << (this->_trancado ? 1 : 0);
+        << (this->isTrancado() ? 1 : 0);
     return oss.str();
 }
