@@ -22,9 +22,9 @@
 class MenuInicial : public Menu 
 {
 private:
-    std::unique_ptr<Estudante>& _estudante;  
-    GerenciadorArquivo& _gerenciadorArquivo;
-    
+    std::unique_ptr<Estudante>& _estudante;  ///< Referencia ao ponteiro inteligente do estudante.
+    GerenciadorArquivo& _gerenciadorArquivo; ///< Referencia ao gerenciador de persistencia em arquivo.
+
 public:
     /**
      * @brief Construtor da classe MenuInicial.
