@@ -7,6 +7,7 @@
 #define MENUDISCIPLINA_HPP
 
 #include "Menu.hpp"
+#include "SemestreAtual.hpp"
 
 /**
  * @class MenuDisciplina
@@ -18,6 +19,9 @@
 class MenuDisciplina : public Menu 
 {
 private:
+
+    SemestreAtual& _semestreAtual;
+
     /**
      * @brief Conduz o fluxo interativo para cadastrar uma nova disciplina no semestre atual.
      * @details Solicita e valida sequencialmente nome, código, turma, professor, sala/bloco,
@@ -46,17 +50,8 @@ private:
     std::string escolherTipoDisciplina();
 
 public:
-    /**
-     * @brief Construtor da classe MenuDisciplina.
-     * @param estudante Referência para o objeto Estudante em memória.
-     * @param gerenciadorArquivo Referência para o gerenciador de persistência em arquivo.
-     */
-    MenuDisciplina(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo);
-
-    /**
-     * @brief Destrutor virtual da classe MenuDisciplina.
-     */
-    virtual ~MenuDisciplina() override;
+    
+    MenuDisciplina(SemestreAtual& semestreAtual);
 
     /**
      * @brief Exibe a tabela resumida das disciplinas do semestre atual e as opções de gerenciamento.
