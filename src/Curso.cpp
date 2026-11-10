@@ -3,30 +3,35 @@
 #include <stdexcept>
 #include <sstream>
 
-Curso::Curso() 
-    : _opcaoCurso(1),
-      _nome("Ciencia da Computacao"),
-      _semestreIngresso("2025/01"),
-      _horasTotaisObrigatorias(1980),
-      _horasTotaisOptativas(1110),
-      _horasTotaisFormacaoLivre(120),
-      _horasAdicionais(0),
-      _horasTotaisCurso(3210),
-      _configurado(false)
-{}
-
 Curso::Curso(int opcaoCurso, const std::string& semestreIngresso) 
-    : _opcaoCurso(1),
-      _nome("Ciencia da Computacao"),
-      _semestreIngresso("2025/01"),
-      _horasTotaisObrigatorias(1980),
-      _horasTotaisOptativas(1110),
-      _horasTotaisFormacaoLivre(120),
+    : _opcaoCurso(opcaoCurso),
+      _nome(""),
+      _semestreIngresso(semestreIngresso),
+      _horasTotaisObrigatorias(0),
+      _horasTotaisOptativas(0),
+      _horasTotaisFormacaoLivre(0),
       _horasAdicionais(0),
-      _horasTotaisCurso(3210),
-      _configurado(false)
+      _horasTotaisCurso(0)
 {
-    this->inicializarCurso(opcaoCurso, semestreIngresso);
+    Curso::validarOpcaoCurso(opcaoCurso);
+    Curso::validarSemestreIngresso(semestreIngresso);
+    this->configurarHorasPorCurriculo();
+}
+
+void Curso::validarOpcaoCurso(int opcao) 
+{
+    if (opcao != Curso::OPCAO_CC && opcao != Curso::OPCAO_SI) 
+    {
+        throw std::invalid_argument("Opcao de curso invalida. Digite 1 para CC ou 2 para SI.");
+    }
+}
+
+void Curso::validarSemestreIngresso(const std::string& semIngresso) 
+{
+    if (!Semestre::validarFormatoIdentificador(semIngresso)) 
+    {
+        throw std::invalid_argument("Semestre de ingresso invalido. Use o formato AAAA/01 ou AAAA/02.");
+    }
 }
 
 int Curso::getOpcaoCurso() const 
@@ -69,69 +74,35 @@ int Curso::getHorasTotaisCurso() const
     return this->_horasTotaisCurso; 
 }
 
-void Curso::inicializarCurso(int opcao, const std::string& semIngresso) 
-{
-    this->setOpcaoCurso(opcao);
-    this->setSemestreIngresso(semIngresso);
-    this->configurarHorasPorCurriculo();
-    this->_configurado = true;
-}
-
-void Curso::setOpcaoCurso(int opcao) 
-{
-    if (this->_configurado) 
-    {
-        throw std::invalid_argument("Os dados do curso nao podem ser alterados apos definidos.");
-    }
-    if (opcao != 1 && opcao != 2) 
-    {
-        throw std::invalid_argument("Opcao de curso invalida. Digite 1 para CC ou 2 para SI.");
-    }
-    this->_opcaoCurso = opcao;
-}
-
-void Curso::setSemestreIngresso(const std::string& semIngresso) 
-{
-    if (this->_configurado) 
-    {
-        throw std::invalid_argument("Os dados do curso nao podem ser alterados apos definidos.");
-    }
-    if (!Semestre::validarFormatoIdentificador(semIngresso)) 
-    {
-        throw std::invalid_argument("Semestre de ingresso invalido. Use o formato AAAA/01 ou AAAA/02.");
-    }
-    this->_semestreIngresso = semIngresso;
-}
-
 void Curso::configurarHorasPorCurriculo() 
 {
     int anoIngresso = Semestre::extrairAno(this->_semestreIngresso);
-    if (this->_opcaoCurso == 1) 
+    if (this->_opcaoCurso == Curso::OPCAO_CC) 
     {
         this->_nome = "Ciencia da Computacao";
-        if (anoIngresso < 2025) 
+        if (anoIngresso < Curso::ANO_REFORMA_CC) 
         {
-            this->_horasTotaisObrigatorias = 2040;
-            this->_horasTotaisOptativas = 1020;
-            this->_horasTotaisFormacaoLivre = 60;
-            this->_horasAdicionais = 120;
-            this->_horasTotaisCurso = 3240;
+            this->_horasTotaisObrigatorias = Curso::HORAS_OBRIG_CC_ANTIGO;
+            this->_horasTotaisOptativas = Curso::HORAS_OPT_CC_ANTIGO;
+            this->_horasTotaisFormacaoLivre = Curso::HORAS_LIVRE_CC_ANTIGO;
+            this->_horasAdicionais = Curso::HORAS_ADIC_CC_ANTIGO;
+            this->_horasTotaisCurso = Curso::HORAS_TOTAIS_CC_ANTIGO;
         } else 
         {
-            this->_horasTotaisObrigatorias = 1980;
-            this->_horasTotaisOptativas = 1110;
-            this->_horasTotaisFormacaoLivre = 120;
-            this->_horasAdicionais = 0;
-            this->_horasTotaisCurso = 3210;
+            this->_horasTotaisObrigatorias = Curso::HORAS_OBRIG_CC_NOVO;
+            this->_horasTotaisOptativas = Curso::HORAS_OPT_CC_NOVO;
+            this->_horasTotaisFormacaoLivre = Curso::HORAS_LIVRE_CC_NOVO;
+            this->_horasAdicionais = Curso::HORAS_ADIC_CC_NOVO;
+            this->_horasTotaisCurso = Curso::HORAS_TOTAIS_CC_NOVO;
         }
     } else 
     {
         this->_nome = "Sistemas de Informacao";
-        this->_horasTotaisObrigatorias = 2100;
-        this->_horasTotaisOptativas = 780;
-        this->_horasTotaisFormacaoLivre = 120;
-        this->_horasAdicionais = 0;
-        this->_horasTotaisCurso = 3000;
+        this->_horasTotaisObrigatorias = Curso::HORAS_OBRIG_SI;
+        this->_horasTotaisOptativas = Curso::HORAS_OPT_SI;
+        this->_horasTotaisFormacaoLivre = Curso::HORAS_LIVRE_SI;
+        this->_horasAdicionais = Curso::HORAS_ADIC_SI;
+        this->_horasTotaisCurso = Curso::HORAS_TOTAIS_SI;
     }
 }
 
