@@ -3,10 +3,8 @@
 #include "MenuCarregarUsuario.hpp"
 #include <iostream>
 
-MenuInicial::MenuInicial(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : Menu(estudante, gerenciadorArquivo) {}
-
-MenuInicial::~MenuInicial() {}
+MenuInicial::MenuInicial(std::unique_ptr<Estudante>& estudante, GerenciadorArquivo& gerenciadorArquivo)
+    : Menu(), _estudante(estudante), _gerenciadorArquivo(gerenciadorArquivo) {}
 
 void MenuInicial::exibir() 
 {
@@ -23,7 +21,7 @@ Menu* MenuInicial::processarEntrada()
 {
     while (true) 
     {
-        int opcao = entradaSanitizada<int>("Escolha uma opcao: ");
+        int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
 
         switch (opcao) 
         {

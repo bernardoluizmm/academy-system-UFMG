@@ -7,6 +7,10 @@
 #define MENUINICIAL_HPP
 
 #include "Menu.hpp"
+#include <memory>
+#include "Menu.hpp"
+#include "Estudante.hpp"
+#include "GerenciadorArquivo.hpp"
 
 /**
  * @class MenuInicial
@@ -17,18 +21,17 @@
  */
 class MenuInicial : public Menu 
 {
+private:
+    std::unique_ptr<Estudante>& _estudante;  
+    GerenciadorArquivo& _gerenciadorArquivo;
+    
 public:
     /**
      * @brief Construtor da classe MenuInicial.
      * @param estudante Referência para o objeto Estudante em memória.
      * @param gerenciadorArquivo Referência para o gerenciador de persistência em arquivo.
      */
-    MenuInicial(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo);
-
-    /**
-     * @brief Destrutor virtual da classe MenuInicial.
-     */
-    ~MenuInicial() override;
+    MenuInicial(std::unique_ptr<Estudante>& estudante, GerenciadorArquivo& gerenciadorArquivo);
 
     /**
      * @brief Exibe no terminal o cabeçalho do sistema e as opções iniciais disponíveis.

@@ -2,13 +2,15 @@
 #include "GerenciadorArquivo.hpp"
 #include "SeletorMenu.hpp"
 
+#include <memory>
+
 int main() 
 {
-        Estudante estudante;
-        GerenciadorArquivo gerenciadorArquivo("savePerfilEstudante.txt");
-        SeletorMenu seletor(estudante, gerenciadorArquivo);
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciadorArquivo("savePerfilEstudante.txt");
+    SeletorMenu seletor(new MenuInicial(estudante, gerenciadorArquivo));
         
-        seletor.executar();
-    
+    seletor.executar();
+
     return 0;
 }
