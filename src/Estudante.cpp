@@ -8,6 +8,14 @@ Estudante::Estudante(const std::string& nome, const Curso& curso, const Historic
     Estudante::validarNome(nome);
 }
 
+void Estudante::validarNome(const std::string& nome) 
+{
+    if (nome.empty() || nome.length() > 100) 
+    {
+        throw std::invalid_argument("O nome do estudante deve ter entre 1 e 100 caracteres.");
+    }
+}
+
 std::string Estudante::getNome() const 
 {
     return this->_nome;
