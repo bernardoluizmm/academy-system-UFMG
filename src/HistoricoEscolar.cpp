@@ -16,15 +16,10 @@ HistoricoEscolar& HistoricoEscolar::operator=(const HistoricoEscolar& outro)
 {
     if (this != &outro) 
     {
-        this->_semestresPassados = outro._semestresPassados;
+        SemestreAtual* novoAtual = new SemestreAtual(*(outro._semestreAtual));
         delete this->_semestreAtual;
-        if (outro._semestreAtual != nullptr) 
-        {
-            this->_semestreAtual = new SemestreAtual(*(outro._semestreAtual));
-        } else 
-        {
-            this->_semestreAtual = new SemestreAtual("2026/01");
-        }
+        this->_semestreAtual = novoAtual;
+        this->_semestresPassados = outro._semestresPassados;
     }
     return *this;
 }
