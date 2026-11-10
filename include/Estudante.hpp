@@ -26,12 +26,6 @@ private:
 
     float calcularPercentual(int horasCumpridas, int horasRequeridas) const;
 public:
-    /**
-     * @brief Construtor padrão da classe Estudante.
-     * @details Inicializa o estudante com o pseudonome padrão "Estudante", além de instâncias
-     *          padrão de Curso e HistoricoEscolar.
-     */
-    Estudante();
 
     /**
      * @brief Construtor parametrizado da classe Estudante.
@@ -42,6 +36,8 @@ public:
      */
     Estudante(const std::string& nome, const Curso& curso, const HistoricoEscolar& historico);
 
+    static void validarNome(const std::string& nome);
+
     /**
      * @brief Obtém o nome do estudante.
      * @return String contendo o nome do estudante.
@@ -49,29 +45,10 @@ public:
     std::string getNome() const;
 
     /**
-     * @brief Define o nome do estudante. Uma vez definido, este nome é inalterável.
-     * @param novoNome Novo nome a ser atribuído (entre 1 e 100 caracteres).
-     * @throws std::invalid_argument Se o nome for vazio ou possuir mais de 100 caracteres.
-     */
-    void setNome(const std::string& novoNome);
-
-    /**
      * @brief Obtém uma referência constante para o curso do estudante.
      * @return Referência constante para o objeto Curso.
      */
     const Curso& getCurso() const;
-
-    /**
-     * @brief Obtém uma referência editável para o curso do estudante.
-     * @return Referência para o objeto Curso permitindo modificações.
-     */
-    Curso& getCursoEditavel();
-
-    /**
-     * @brief Substitui o objeto Curso associado ao estudante.
-     * @param novoCurso Novo objeto Curso a ser atribuído.
-     */
-    void setCurso(const Curso& novoCurso);
 
     /**
      * @brief Obtém uma referência constante para o histórico escolar do estudante.
