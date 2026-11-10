@@ -173,12 +173,10 @@ const DiarioAtividades& Disciplina::avaliacoes() const
 }
 void Disciplina::setCodigo(const std::string& novoCodigo) 
 {
-    if (novoCodigo.empty() || novoCodigo.length() > 8) 
-    {
-        throw std::invalid_argument("O codigo da disciplina deve ter entre 1 e 8 caracteres.");
-    }
+     Disciplina::validarCodigo(novoCodigo);
     this->_codigo = novoCodigo;
 }
+
 
 void Disciplina::setCodigoTurma(const std::string& novaTurma) 
 {
