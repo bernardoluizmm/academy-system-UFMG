@@ -24,6 +24,7 @@ private:
     Curso _curso;                /**< Dados e exigências curriculares do curso vinculado. */
     HistoricoEscolar _historico; /**< Histórico contendo as informações dos semestres consolidados e do semestre atual. */
 
+    float calcularPercentual(int horasCumpridas, int horasRequeridas) const;
 public:
     /**
      * @brief Construtor padrão da classe Estudante.

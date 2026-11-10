@@ -49,52 +49,41 @@ void Estudante::setCurso(const Curso& novoCurso)
     this->_curso = novoCurso;
 }
 
-float Estudante::calcularPercentualCursoCompleto() const 
+float Estudante::calcularPercentual(int horasIntegralizadas, int horasRequeridas) const 
 {
-    int totalRequerido = this->_curso.getHorasTotaisCurso();
-    if (totalRequerido <= 0) 
+    if (horasRequeridas <= 0) 
     {
         return 0.0f;
     }
-    float pct = (static_cast<float>(this->_historico.calcularTotalHorasIntegralizadas()) /
-                 static_cast<float>(totalRequerido)) * 100.0f;
-    return (pct > 100.0f) ? 100.0f : pct;
+    float porcentagem = (static_cast<float>(horasIntegralizadas) / static_cast<float>(horasRequeridas)) * 100.0f;
+    return (porcentagem > 100.0f) ? 100.0f : porcentagem;
+}
+
+float Estudante::calcularPercentualCursoCompleto() const 
+{
+    return calcularPercentual(_historico.calcularTotalHorasIntegralizadas(), 
+        _curso.getHorasTotaisCurso());
 }
 
 float Estudante::calcularPercentualObrigatorias() const 
 {
-    int req = this->_curso.getHorasTotaisObrigatorias();
-    if (req <= 0) 
-    {
-        return 0.0f;
-    }
-    float pct = (static_cast<float>(this->_historico.calcularTotalHorasObrigatorias()) /
-                 static_cast<float>(req)) * 100.0f;
-    return (pct > 100.0f) ? 100.0f : pct;
+    return calcularPercentual(_historico.calcularTotalHorasObrigatorias(),
+        _curso.getHorasTotaisObrigatorias()
+    );
 }
 
 float Estudante::calcularPercentualOptativas() const 
 {
-    int req = this->_curso.getHorasTotaisOptativas();
-    if (req <= 0) 
-    {
-        return 0.0f;
-    }
-    float pct = (static_cast<float>(this->_historico.calcularTotalHorasOptativas()) /
-                 static_cast<float>(req)) * 100.0f;
-    return (pct > 100.0f) ? 100.0f : pct;
+    return calcularPercentual(_historico.calcularTotalHorasOptativas(),
+        _curso.getHorasTotaisOptativas()
+    );
 }
 
 float Estudante::calcularPercentualFormacaoLivre() const 
 {
-    int req = this->_curso.getHorasTotaisFormacaoLivre();
-    if (req <= 0) 
-    {
-        return 0.0f;
-    }
-    float pct = (static_cast<float>(this->_historico.calcularTotalHorasFormacaoLivre()) /
-                 static_cast<float>(req)) * 100.0f;
-    return (pct > 100.0f) ? 100.0f : pct;
+    return calcularPercentual(_historico.calcularTotalHorasFormacaoLivre(),
+        _curso.getHorasTotaisFormacaoLivre()
+    );
 }
 
 std::string Estudante::serializar() const 
