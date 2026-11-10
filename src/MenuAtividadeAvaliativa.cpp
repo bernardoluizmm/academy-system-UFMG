@@ -46,37 +46,37 @@ Menu* MenuAtividadeAvaliativa::processarEntrada()
         if (opcao == 1) 
         {
             this->fluxoCriarAtividade();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 2) 
         {
             this->fluxoLancarNota();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 3) 
         {
             this->fluxoEditarAtividade();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 4) 
         {
             this->fluxoApagarAtividade();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 0) 
         {
-            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+            return nullptr;
         }
         std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 4.\n";
     }
 }
+
 Disciplina* MenuAtividadeAvaliativa::selecionarDisciplina() 
 {
-    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+      if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << "[AVISO] Cadastre pelo menos uma disciplina antes de gerenciar atividades.\n";
         return nullptr;
     }
 
     std::cout << "\nDisciplinas do semestre atual:\n";
-    const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+    const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
     for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
     {
         std::cout << "  [" << it->getId() << "] " << it->getCodigo() << " - " << it->getNome() << "\n";
@@ -88,7 +88,7 @@ Disciplina* MenuAtividadeAvaliativa::selecionarDisciplina()
         return nullptr;
     }
 
-    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    Disciplina* disc = this->_semestreAtual.buscarDisciplina(idDisc);
     if (disc == nullptr) 
     {
         std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
