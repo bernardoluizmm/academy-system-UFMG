@@ -108,7 +108,7 @@ void Disciplina::setCodigo(const std::string& novoCodigo)
 {
     if (novoCodigo.empty() || novoCodigo.length() > 8) 
     {
-        throw std::invalid_argument("O codigo da disciplina deve ter entre 1 e 100 caracteres.");
+        throw std::invalid_argument("O codigo da disciplina deve ter entre 1 e 8 caracteres.");
     }
     this->_codigo = novoCodigo;
 }
@@ -117,7 +117,7 @@ void Disciplina::setCodigoTurma(const std::string& novaTurma)
 {
     if (novaTurma.empty() || novaTurma.length() > 6) 
     {
-        throw std::invalid_argument("O codigo da turma deve ter entre 1 e 100 caracteres.");
+        throw std::invalid_argument("O codigo da turma deve ter entre 1 e 6 caracteres.");
     }
     this->_codigoTurma = novaTurma;
 }
@@ -126,7 +126,7 @@ void Disciplina::setNome(const std::string& novoNome)
 {
     if (novoNome.empty() || novoNome.length() > 22) 
     {
-        throw std::invalid_argument("O nome da disciplina deve ter entre 1 e 100 caracteres.");
+        throw std::invalid_argument("O nome da disciplina deve ter entre 1 e 22 caracteres.");
     }
     this->_nome = novoNome;
 }
