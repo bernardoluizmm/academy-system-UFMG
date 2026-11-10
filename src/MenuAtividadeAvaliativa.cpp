@@ -8,14 +8,9 @@
 #include <vector>
 #include <stdexcept>
 
-MenuAtividadeAvaliativa::MenuAtividadeAvaliativa(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : Menu(estudante, gerenciadorArquivo) 
-{
-}
+MenuAtividadeAvaliativa::MenuAtividadeAvaliativa(SemestreAtual& semestreAtual)
+    : Menu(), _semestreAtual(semestreAtual) {}
 
-MenuAtividadeAvaliativa::~MenuAtividadeAvaliativa() 
-{
-}
 
 void MenuAtividadeAvaliativa::exibir() 
 {
