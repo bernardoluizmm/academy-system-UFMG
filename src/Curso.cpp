@@ -13,7 +13,25 @@ Curso::Curso(int opcaoCurso, const std::string& semestreIngresso)
       _horasAdicionais(0),
       _horasTotaisCurso(0)
 {
+    Curso::validarOpcaoCurso(opcaoCurso);
+    Curso::validarSemestreIngresso(semestreIngresso);
     this->configurarHorasPorCurriculo();
+}
+
+void Curso::validarOpcaoCurso(int opcao) 
+{
+    if (opcao != Curso::OPCAO_CC && opcao != Curso::OPCAO_SI) 
+    {
+        throw std::invalid_argument("Opcao de curso invalida. Digite 1 para CC ou 2 para SI.");
+    }
+}
+
+void Curso::validarSemestreIngresso(const std::string& semIngresso) 
+{
+    if (!Semestre::validarFormatoIdentificador(semIngresso)) 
+    {
+        throw std::invalid_argument("Semestre de ingresso invalido. Use o formato AAAA/01 ou AAAA/02.");
+    }
 }
 
 int Curso::getOpcaoCurso() const 

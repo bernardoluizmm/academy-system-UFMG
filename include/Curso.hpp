@@ -68,6 +68,9 @@ public:
      */
     Curso(int opcaoCurso, const std::string& semestreIngresso);
 
+    static void validarOpcaoCurso(int opcao);
+
+    static void validarSemestreIngresso(const std::string& semIngresso);
     /**
      * @brief Obtém o código numérico da opção de curso.
      * @return Inteiro representando a opção (1 ou 2).
