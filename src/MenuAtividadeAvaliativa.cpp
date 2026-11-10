@@ -11,21 +11,18 @@
 MenuAtividadeAvaliativa::MenuAtividadeAvaliativa(SemestreAtual& semestreAtual)
     : Menu(), _semestreAtual(semestreAtual) {}
 
-
 void MenuAtividadeAvaliativa::exibir() 
 {
-    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
-
     std::cout << "\n========================================================================\n";
     std::cout << "                 GERENCIAMENTO DE ATIVIDADES AVALIATIVAS                \n";
     std::cout << "========================================================================\n";
 
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
     } else 
     {
-        const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+        const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
         for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
         {
             this->exibirAtividadesDaDisciplina(*it);
@@ -40,6 +37,7 @@ void MenuAtividadeAvaliativa::exibir()
     std::cout << "0 - Voltar ao Menu Principal\n";
     std::cout << "========================================================================\n";
 }
+
 Menu* MenuAtividadeAvaliativa::processarEntrada() 
 {
     while (true) 
