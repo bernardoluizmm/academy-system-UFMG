@@ -20,7 +20,10 @@ float SemestreAtual::calcularNSG() const
     int somaCargaHoraria = 0;
 
     for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
-    {
+    {   if (it->avaliacoes().obterValorTotalConcluido() <= 0.0f)
+        {
+             continue;  
+        }   
         somaPonderada += it->avaliacoes().calcularPercentualAproveitamento() * static_cast<float>(it->getCargaHoraria());
         somaCargaHoraria += it->getCargaHoraria();
     }
