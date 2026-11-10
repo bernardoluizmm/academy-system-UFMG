@@ -61,29 +61,12 @@ private:
 
 public:
     /**
-     * @brief Construtor padrão da classe Curso.
-     * @details Inicializa o objeto em estado não configurado (`_configurado = false`) com
-     *          pseudovalores padrão correspondentes a Ciência da Computação (ingresso 2025/01).
-     */
-    Curso();
-
-    /**
      * @brief Construtor parametrizado que inicializa e trava a configuração do curso.
      * @param opcaoCurso Código do curso (1 para Ciência da Computação, 2 para Sistemas de Informação).
      * @param semestreIngresso Identificador do semestre de ingresso (formato "AAAA/01" ou "AAAA/02").
      * @throws std::invalid_argument Se a opção de curso ou o formato do semestre forem inválidos.
      */
     Curso(int opcaoCurso, const std::string& semestreIngresso);
-
-    /**
-     * @brief Configura definitivamente o curso e atribui as cargas horárias do currículo.
-     * @details Após a execução deste método com sucesso, o atributo `_configurado` passa a ser
-     *          verdadeiro, bloqueando futuras chamadas aos métodos setters, já que essas informações são imutáveis.
-     * @param opcao Código do curso (1 para CC, 2 para SI).
-     * @param semIngresso Semestre de ingresso no formato "AAAA/01" ou "AAAA/02".
-     * @throws std::invalid_argument Se o curso já estiver configurado ou se os parâmetros forem inválidos.
-     */
-    void inicializarCurso(int opcao, const std::string& semIngresso);
 
     /**
      * @brief Obtém o código numérico da opção de curso.
@@ -132,20 +115,6 @@ public:
      * @return Carga horária total do curso em horas.
      */
     int getHorasTotaisCurso() const;
-
-    /**
-     * @brief Define a opção de curso antes da consolidação.
-     * @param opcao Código do curso (1 para Ciência da Computação, 2 para Sistemas de Informação).
-     * @throws std::invalid_argument Se o curso já tiver sido configurado ou se a opção for diferente de 1 e 2.
-     */
-    void setOpcaoCurso(int opcao);
-
-    /**
-     * @brief Define o semestre de ingresso antes da consolidação.
-     * @param semIngresso Semestre de ingresso no formato "AAAA/01" ou "AAAA/02".
-     * @throws std::invalid_argument Se o curso já tiver sido configurado ou se o formato do semestre for inválido.
-     */
-    void setSemestreIngresso(const std::string& semIngresso);
 
     /**
      * @brief Serializa os dados do curso em uma linha de texto delimitada por '|'.

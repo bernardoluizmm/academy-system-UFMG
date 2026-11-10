@@ -3,30 +3,17 @@
 #include <stdexcept>
 #include <sstream>
 
-Curso::Curso() 
-    : _opcaoCurso(1),
-      _nome("Ciencia da Computacao"),
-      _semestreIngresso("2025/01"),
-      _horasTotaisObrigatorias(1980),
-      _horasTotaisOptativas(1110),
-      _horasTotaisFormacaoLivre(120),
-      _horasAdicionais(0),
-      _horasTotaisCurso(3210),
-      _configurado(false)
-{}
-
 Curso::Curso(int opcaoCurso, const std::string& semestreIngresso) 
-    : _opcaoCurso(1),
-      _nome("Ciencia da Computacao"),
-      _semestreIngresso("2025/01"),
-      _horasTotaisObrigatorias(1980),
-      _horasTotaisOptativas(1110),
-      _horasTotaisFormacaoLivre(120),
+    : _opcaoCurso(opcaoCurso),
+      _nome(""),
+      _semestreIngresso(semestreIngresso),
+      _horasTotaisObrigatorias(0),
+      _horasTotaisOptativas(0),
+      _horasTotaisFormacaoLivre(0),
       _horasAdicionais(0),
-      _horasTotaisCurso(3210),
-      _configurado(false)
+      _horasTotaisCurso(0)
 {
-    this->inicializarCurso(opcaoCurso, semestreIngresso);
+    this->configurarHorasPorCurriculo();
 }
 
 int Curso::getOpcaoCurso() const 
@@ -67,40 +54,6 @@ int Curso::getHorasAdicionais() const
 int Curso::getHorasTotaisCurso() const 
 { 
     return this->_horasTotaisCurso; 
-}
-
-void Curso::inicializarCurso(int opcao, const std::string& semIngresso) 
-{
-    this->setOpcaoCurso(opcao);
-    this->setSemestreIngresso(semIngresso);
-    this->configurarHorasPorCurriculo();
-    this->_configurado = true;
-}
-
-void Curso::setOpcaoCurso(int opcao) 
-{
-    if (this->_configurado) 
-    {
-        throw std::invalid_argument("Os dados do curso nao podem ser alterados apos definidos.");
-    }
-    if (opcao !=  OPCAO_CC && opcao != OPCAO_SI) 
-    {
-        throw std::invalid_argument("Opcao de curso invalida. Digite 1 para CC ou 2 para SI.");
-    }
-    this->_opcaoCurso = opcao;
-}
-
-void Curso::setSemestreIngresso(const std::string& semIngresso) 
-{
-    if (this->_configurado) 
-    {
-        throw std::invalid_argument("Os dados do curso nao podem ser alterados apos definidos.");
-    }
-    if (!Semestre::validarFormatoIdentificador(semIngresso)) 
-    {
-        throw std::invalid_argument("Semestre de ingresso invalido. Use o formato AAAA/01 ou AAAA/02.");
-    }
-    this->_semestreIngresso = semIngresso;
 }
 
 void Curso::configurarHorasPorCurriculo() 
