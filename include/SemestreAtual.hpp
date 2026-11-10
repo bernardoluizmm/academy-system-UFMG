@@ -38,9 +38,10 @@ public:
     virtual ~SemestreAtual();
 
     /**
-     * @brief Calcula o NSG ponderado pela carga horária.
-     * @return NSG entre 0 e 100 (0 se não houver disciplinas).
-     */
+         * @brief Calcula o NSG ponderado pela carga horária.
++          *
++          * Disciplinas sem atividades concluídas são ignoradas no cálculo.
+         * @return NSG entre 0 e 100 (0 se não houver disciplinas).
     virtual float calcularNSG() const override;
 
     /** @brief Retorna o total de horas integralizadas no semestre. */
