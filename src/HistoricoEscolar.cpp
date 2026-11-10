@@ -75,15 +75,14 @@ void HistoricoEscolar::consolidarSemestreAtual(bool trancado)
     int hLivre = trancado ? 0 : this->_semestreAtual->getHorasFormacaoLivre();
 
      SemestreConsolidado novoConsolidado(idAtual, nsgFinal, hObrig, hOpt, hLivre, trancado);
-    -this->_semestresPassados.push_back(novoConsolidado);
  
     std::string proximoId = Semestre::proximoIdentificadorSemestre(idAtual);
-    +SemestreAtual* novoAtual = new SemestreAtual(proximoId);
-    +
-    +this->_semestresPassados.push_back(novoConsolidado);
+    SemestreAtual* novoAtual = new SemestreAtual(proximoId);
+    
+    this->_semestresPassados.push_back(novoConsolidado);
      delete this->_semestreAtual;
-    -this->_semestreAtual = new SemestreAtual(proximoId);
-    +this->_semestreAtual = novoAtual;
+   
+    this->_semestreAtual = novoAtual;
 }
 
 float HistoricoEscolar::calcularNSGMedio() const 
