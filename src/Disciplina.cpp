@@ -177,13 +177,9 @@ void Disciplina::setCodigo(const std::string& novoCodigo)
     this->_codigo = novoCodigo;
 }
 
-
 void Disciplina::setCodigoTurma(const std::string& novaTurma) 
 {
-    if (novaTurma.empty() || novaTurma.length() > 6) 
-    {
-        throw std::invalid_argument("O codigo da turma deve ter entre 1 e 6 caracteres.");
-    }
+    Disciplina::validarCodigoTurma(novaTurma);
     this->_codigoTurma = novaTurma;
 }
 
