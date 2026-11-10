@@ -19,6 +19,29 @@
 class Curso 
 {
 private:
+
+    static constexpr int OPCAO_CC = 1;        
+    static constexpr int OPCAO_SI = 2;                  
+    static constexpr int ANO_REFORMA_CC = 2025;         
+
+    static constexpr int HORAS_OBRIG_CC_ANTIGO = 2040;  
+    static constexpr int HORAS_OPT_CC_ANTIGO = 1020;    
+    static constexpr int HORAS_LIVRE_CC_ANTIGO = 60;    
+    static constexpr int HORAS_ADIC_CC_ANTIGO = 120;    
+    static constexpr int HORAS_TOTAIS_CC_ANTIGO = 3240; 
+
+    static constexpr int HORAS_OBRIG_CC_NOVO = 1980;    
+    static constexpr int HORAS_OPT_CC_NOVO = 1110;      
+    static constexpr int HORAS_LIVRE_CC_NOVO = 120;     
+    static constexpr int HORAS_ADIC_CC_NOVO = 0;        
+    static constexpr int HORAS_TOTAIS_CC_NOVO = 3210;   
+
+    static constexpr int HORAS_OBRIG_SI = 2100;         
+    static constexpr int HORAS_OPT_SI = 780;            
+    static constexpr int HORAS_LIVRE_SI = 120;          
+    static constexpr int HORAS_ADIC_SI = 0;             
+    static constexpr int HORAS_TOTAIS_SI = 3000; 
+
     int _opcaoCurso;                 /**< Código da opção de curso (1 = Ciência da Computação, 2 = Sistemas de Informação). */
     std::string _nome;               /**< Nome por extenso do curso. */
     std::string _semestreIngresso;   /**< Semestre de ingresso no formato "AAAA/01" ou "AAAA/02". */
