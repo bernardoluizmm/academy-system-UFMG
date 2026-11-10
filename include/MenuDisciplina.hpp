@@ -20,37 +20,46 @@ class MenuDisciplina : public Menu
 {
 private:
 
-    SemestreAtual& _semestreAtual;
+    SemestreAtual& _semestreAtual; ///< Semestre em andamento cujas disciplinas sao gerenciadas.
 
-    /**
-     * @brief Conduz o fluxo interativo para cadastrar uma nova disciplina no semestre atual.
-     * @details Solicita e valida sequencialmente nome, código, turma, professor, sala/bloco,
-     *          carga horária, tipo, dias/horários e duração da aula antes de inserir a disciplina.
+     /**
+     * @brief Fluxo de criacao de disciplina.
+     *
+     * Pede nome, codigo, turma, professor, sala/bloco, carga horaria, tipo, horario/dias e
+     * duracao da aula. Cada dado e lido e validado em um laco de repeticao ate ser aceito;
+     * ao final, a disciplina e adicionada ao semestre atual.
      */
     void fluxoCriarDisciplina();
 
     /**
-     * @brief Conduz o fluxo interativo para edição de uma disciplina já cadastrada.
-     * @details Permite selecionar uma disciplina pelo seu ID e alterar individualmente
-     *          qualquer um de seus campos cadastrais com validação em tempo real.
+     * @brief Fluxo de edicao de disciplina.
+     *
+     * Pede o ID da disciplina (0 cancela) e abre um submenu para alterar qualquer um dos
+     * seus campos. Erros de validacao sao exibidos e o valor anterior e mantido.
      */
     void fluxoEditarDisciplina();
 
     /**
-     * @brief Conduz o fluxo interativo para remoção de uma disciplina do semestre atual.
-     * @details Solicita o ID da disciplina e exige confirmação explícita do usuário antes
-     *          de efetivar a exclusão.
+     * @brief Fluxo de exclusao de disciplina.
+     *
+     * Pede o ID da disciplina (0 cancela) e uma confirmacao (1 - Sim / 2 - Nao) antes de remove-la.
      */
     void fluxoApagarDisciplina();
 
     /**
-     * @brief Exibe um submenu para seleção da natureza curricular da disciplina.
-     * @return String correspondente ao tipo escolhido ("Obrigatoria", "Optativa" ou "Formacao Livre").
+     * @brief Exibe as opcoes de tipo de disciplina e le a escolha do usuario.
+     *
+     * A leitura se repete ate o usuario digitar uma opcao valida (1 a 3).
+     *
+     * @return "Obrigatoria", "Optativa" ou "Formacao Livre".
      */
     std::string escolherTipoDisciplina();
 
 public:
-    
+    /**
+     * @brief Construtor da classe MenuDisciplina.
+     * @param semestreAtual Referencia para o objeto SemestreAtual em memoria.
+     */
     MenuDisciplina(SemestreAtual& semestreAtual);
 
     /**
