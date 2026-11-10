@@ -1,17 +1,13 @@
 #include "MenuDisciplina.hpp"
-#include "MenuPrincipal.hpp"
-#include "SemestreAtual.hpp"
 #include "Disciplina.hpp"
 #include <iostream>
 #include <iomanip>
 #include <vector>
 #include <stdexcept>
 
-MenuDisciplina::MenuDisciplina(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : Menu(estudante, gerenciadorArquivo) 
+MenuDisciplina::MenuDisciplina(SemestreAtual& semestreAtual)
+    : Menu(), _semestreAtual(semestreAtual) 
 {}
-
-MenuDisciplina::~MenuDisciplina() {}
 
 std::string MenuDisciplina::escolherTipoDisciplina() 
 {
@@ -38,13 +34,11 @@ std::string MenuDisciplina::escolherTipoDisciplina()
 
 void MenuDisciplina::exibir() 
 {
-    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
-
     std::cout << "\n========================================================================\n";
     std::cout << "                      GERENCIAMENTO DE DISCIPLINAS                      \n";
     std::cout << "========================================================================\n";
 
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
     } else 
@@ -58,7 +52,7 @@ void MenuDisciplina::exibir()
                   << std::setw(16) << "Tipo" << "\n";
         std::cout << "------------------------------------------------------------------------\n";
 
-        const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+        const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
         for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
         {
             std::cout << std::left
@@ -87,18 +81,18 @@ Menu* MenuDisciplina::processarEntrada()
         if (opcao == 1) 
         {
             this->fluxoCriarDisciplina();
-            return new MenuDisciplina(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 2) 
         {
             this->fluxoEditarDisciplina();
-            return new MenuDisciplina(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 3) 
         {
             this->fluxoApagarDisciplina();
-            return new MenuDisciplina(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 0) 
         {
-            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+            return nullptr;
         }
         std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 3.\n";
     }
@@ -106,21 +100,23 @@ Menu* MenuDisciplina::processarEntrada()
 
 void MenuDisciplina::fluxoCriarDisciplina() 
 {
-    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
-    if (semAtual == nullptr) 
-    {
-        std::cout << "[ERRO] Semestre atual nao inicializado.\n";
-        return;
-    }
-
     std::cout << "\n--- CRIAR NOVA DISCIPLINA ---\n";
-    Disciplina rascunho(0, "COD", "TURMA", "NOME", "PROF", "SALA", 60, 50, "Obrigatoria", "HORARIO");
+    std::string nome;
+    std::string codigo;
+    std::string codigoTurma;
+    std::string professor;
+    std::string salaBloco;
+    int cargaHoraria = 60;
+    std::string tipo;
+    std::string horarioDias;
+    int duracaoAulaMinutos = 50;
 
     while (true) 
     {
         try 
         {
-            rascunho.setNome(this->entradaSanitizada<std::string>("Nome da disciplina: "));
+            nome = this->entradaSanitizada<std::string>("Nome da disciplina: ");
+            Disciplina::validarNome(nome);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -132,7 +128,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            rascunho.setCodigo(this->entradaSanitizada<std::string>("Codigo da disciplina (ex: DCC204): "));
+            codigo = this->entradaSanitizada<std::string>("Codigo da disciplina (ex: DCC204): ");
+            Disciplina::validarCodigo(codigo);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -144,7 +141,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            rascunho.setCodigoTurma(this->entradaSanitizada<std::string>("Codigo da turma (ex: TZ1): "));
+            codigoTurma = this->entradaSanitizada<std::string>("Codigo da turma (ex: TZ1): ");
+            Disciplina::validarCodigoTurma(codigoTurma);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -156,7 +154,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            rascunho.setProfessor(this->entradaSanitizada<std::string>("Nome do professor: "));
+            professor = this->entradaSanitizada<std::string>("Nome do professor: ");
+            Disciplina::validarProfessor(professor);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -168,7 +167,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            rascunho.setSalaBloco(this->entradaSanitizada<std::string>("Sala/Bloco da aula (ex: ICEx 2010): "));
+            salaBloco = this->entradaSanitizada<std::string>("Sala/Bloco da aula (ex: ICEx 2010): ");
+            Disciplina::validarSalaBloco(salaBloco);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -180,8 +180,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            int ch = this->entradaSanitizada<int>("Carga horaria total em horas (multiplo de 15, ex: 60): ");
-            rascunho.setCargaHoraria(ch);
+            cargaHoraria = this->entradaSanitizada<int>("Carga horaria total em horas (multiplo de 15, ex: 60): ");
+            Disciplina::validarCargaHoraria(cargaHoraria);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -193,7 +193,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            rascunho.setTipo(this->escolherTipoDisciplina());
+            tipo = this->escolherTipoDisciplina();
+            Disciplina::validarTipo(tipo);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -205,7 +206,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            rascunho.setHorarioDias(this->entradaSanitizada<std::string>("Horario e dias da semana (ex: Seg/Qua 19:00-20:40): "));
+            horarioDias = this->entradaSanitizada<std::string>("Horario e dias da semana (ex: Seg/Qua 19:00-20:40): ");
+            Disciplina::validarHorarioDias(horarioDias);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -217,8 +219,8 @@ void MenuDisciplina::fluxoCriarDisciplina()
     {
         try 
         {
-            int duracao = this->entradaSanitizada<int>("Duracao de cada aula em minutos (minimo 50, ex: 100): ");
-            rascunho.setDuracaoAulaMinutos(duracao);
+            duracaoAulaMinutos = this->entradaSanitizada<int>("Duracao de cada aula em minutos (minimo 50, ex: 100): ");
+            Disciplina::validarDuracaoAulaMinutos(duracaoAulaMinutos);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -226,22 +228,21 @@ void MenuDisciplina::fluxoCriarDisciplina()
         }
     }
 
-    semAtual->adicionarDisciplina(rascunho.getCodigo(),
-                                  rascunho.getCodigoTurma(),
-                                  rascunho.getNome(),
-                                  rascunho.getProfessor(),
-                                  rascunho.getSalaBloco(),
-                                  rascunho.getCargaHoraria(),
-                                  rascunho.getDuracaoAulaMinutos(),
-                                  rascunho.getTipo(),
-                                  rascunho.getHorarioDias());
-    std::cout << "Disciplina '" << rascunho.getNome() << "' cadastrada com sucesso!\n";
+    this->_semestreAtual.adicionarDisciplina(codigo,
+                                             codigoTurma,
+                                             nome,
+                                             professor,
+                                             salaBloco,
+                                             cargaHoraria,
+                                             duracaoAulaMinutos,
+                                             tipo,
+                                             horarioDias);
+    std::cout << "Disciplina '" << nome << "' cadastrada com sucesso!\n";
 }
 
 void MenuDisciplina::fluxoEditarDisciplina() 
 {
-    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << "[AVISO] Nao ha disciplinas cadastradas para editar.\n";
         return;
@@ -253,7 +254,7 @@ void MenuDisciplina::fluxoEditarDisciplina()
         return;
     }
 
-    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    Disciplina* disc = this->_semestreAtual.buscarDisciplina(idDisc);
     if (disc == nullptr) 
     {
         std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
@@ -324,8 +325,7 @@ void MenuDisciplina::fluxoEditarDisciplina()
 
 void MenuDisciplina::fluxoApagarDisciplina() 
 {
-    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << "[AVISO] Nao ha disciplinas cadastradas para apagar.\n";
         return;
@@ -337,7 +337,7 @@ void MenuDisciplina::fluxoApagarDisciplina()
         return;
     }
 
-    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    Disciplina* disc = this->_semestreAtual.buscarDisciplina(idDisc);
     if (disc == nullptr) 
     {
         std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
@@ -349,7 +349,7 @@ void MenuDisciplina::fluxoApagarDisciplina()
     {
         try 
         {
-            semAtual->removerDisciplina(idDisc);
+            this->_semestreAtual.removerDisciplina(idDisc);
             std::cout << "Disciplina apagada com sucesso!\n";
         } catch (const std::invalid_argument& e) 
         {
