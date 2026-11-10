@@ -150,13 +150,16 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
     }
 
     std::cout << "\n--- NOVA ATIVIDADE EM: " << disc->getNome() << " ---\n";
-    AtividadeAvaliativa rascunho(0, "ATIV", "01/01", 1.0f);
+    std::string nome;
+    std::string dataStr;
+    float valor = 0.0f;
 
     while (true) 
     {
         try 
         {
-            rascunho.setNome(this->entradaSanitizada<std::string>("Nome da atividade avaliativa: "));
+            nome = this->entradaSanitizada<std::string>("Nome da atividade avaliativa: ");
+            AtividadeAvaliativa::validarNome(nome);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -168,7 +171,9 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
     {
         try 
         {
-            rascunho.setData(this->entradaSanitizada<std::string>("Data da atividade (formato DD/MM): "));
+            std::string entradaData = this->entradaSanitizada<std::string>("Data da atividade (formato DD/MM): ");
+            Data dataValidada(entradaData);
+            dataStr = dataValidada.getDataValidada();
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -180,8 +185,8 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
     {
         try 
         {
-            float valor = this->entradaSanitizada<float>("Valor da atividade (pontos): ");
-            rascunho.setValorMaximo(valor);
+            valor = this->entradaSanitizada<float>("Valor da atividade (pontos): ");
+            AtividadeAvaliativa::validarValorMaximo(valor);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -189,10 +194,8 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
         }
     }
 
-    disc->avaliacoes().adicionarAtividade(rascunho.getNome(),
-                                          rascunho.getData().getDataValidada(),
-                                          rascunho.getValorMaximo());
-    std::cout << "Atividade '" << rascunho.getNome() << "' adicionada com sucesso!\n";
+    disc->avaliacoes().adicionarAtividade(nome, dataStr, valor);
+    std::cout << "Atividade '" << nome << "' adicionada com sucesso!\n";
 }
 void MenuAtividadeAvaliativa::fluxoLancarNota() 
 {
@@ -238,6 +241,7 @@ void MenuAtividadeAvaliativa::fluxoLancarNota()
         }
     }
 }
+
 void MenuAtividadeAvaliativa::fluxoEditarAtividade() 
 {
     Disciplina* disc = this->selecionarDisciplina();
