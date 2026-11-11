@@ -282,3 +282,14 @@ TEST_CASE("MenuAtividadeAvaliativa - lancar nota em atividade inexistente mostra
     Resultado r = executar(menu, "2\n1\n999\n");
     CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
 }
+TEST_CASE("MenuAtividadeAvaliativa - lancar nota valida")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n1\n8\n");
+
+    CHECK(contem(r.saida, "Nota lancada com sucesso!"));
+    CHECK(c.atividade()->isConcluida());
+    CHECK(c.atividade()->getNotaObtida() == doctest::Approx(8.0f));
+}
