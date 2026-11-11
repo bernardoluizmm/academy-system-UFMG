@@ -11,4 +11,4 @@ coverage/
 *.gcda
 *.gcno
 *.gcov
-teste_*_temp.txt
+teste_*_temp.txtbuild/
