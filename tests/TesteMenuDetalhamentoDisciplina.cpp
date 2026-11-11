@@ -147,3 +147,15 @@ TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 sem disciplinas mostra aviso")
     Resultado r = executar(menu, "1\n");
     CHECK(contem(r.saida, "[AVISO] Nenhuma disciplina cadastrada no semestre atual."));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 com ID 0 cancela sem exibir nada")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre);
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "1\n0\n");
+
+    CHECK_FALSE(contem(r.saida, "Disciplina [1]"));
+    CHECK_FALSE(contem(r.saida, "[ERRO]"));
+}    
