@@ -43,3 +43,21 @@ TEST_CASE("Disciplina::Disciplina [limite] ID zero e aceito")
 {
     CHECK_NOTHROW(criarDisciplinaValida(0));
 }
+
+
+TEST_CASE("Disciplina::Disciplina [negativo] ID negativo lanca excecao")
+{
+    CHECK_THROWS_AS(criarDisciplinaValida(-1), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::Disciplina [negativo] carga horaria invalida lanca excecao")
+{
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "S", 0, 50, "Optativa", "H"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "S", -15, 50, "Optativa", "H"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "S", 40, 50, "Optativa", "H"), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::Disciplina [limite] carga horaria minima (15h) e aceita")
+{
+    CHECK_NOTHROW(Disciplina(1, "C", "T", "N", "P", "S", 15, 50, "Optativa", "H"));
+}
