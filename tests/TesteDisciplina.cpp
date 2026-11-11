@@ -242,3 +242,24 @@ TEST_CASE("Disciplina::setProfessor [positivo] altera o professor")
     CHECK(d.getProfessor() == "Prof. Bruno");
 }
 
+
+TEST_CASE("Disciplina::setProfessor [negativo] valor invalido lanca excecao e preserva o anterior")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK_THROWS_AS(d.setProfessor(""), std::invalid_argument);
+    CHECK(d.getProfessor() == "Prof. Ana");
+}
+
+TEST_CASE("Disciplina::setSalaBloco [positivo] altera a sala")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setSalaBloco("Bloco B");
+    CHECK(d.getSalaBloco() == "Bloco B");
+}
+
+TEST_CASE("Disciplina::setSalaBloco [negativo] valor invalido lanca excecao e preserva o anterior")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK_THROWS_AS(d.setSalaBloco(""), std::invalid_argument);
+    CHECK(d.getSalaBloco() == "Sala 101");
+}
