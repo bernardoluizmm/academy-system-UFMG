@@ -208,3 +208,80 @@ TEST_CASE("Fluxo Criar Disciplina - Happy Path, Tipos de Disciplina e Validacoes
         CHECK(textoImpresso.find("A duracao da aula deve ser de, no minimo, 50 minutos.") != std::string::npos);
     }
 }
+
+TEST_CASE("Fluxo Editar Disciplina - Casos de Borda, Edicao Completa e Erros") 
+{
+    SemestreAtual semestre("2026/02");
+    MenuDisciplina menu(semestre);
+
+    SUBCASE("Tentar editar quando nao ha disciplinas cadastradas") 
+    {
+        RedirecionadorIO io("2\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(io.saida.str().find("[AVISO] Nao ha disciplinas cadastradas para editar.") != std::string::npos);
+    }
+
+    SUBCASE("Cancelar edicao digitando ID 0") 
+    {
+        semestre.adicionarDisciplina("DCC204", "TZ1", "PDS II", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg/Qua");
+        RedirecionadorIO io("2\n0\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(semestre.buscarDisciplina(1)->getNome() == "PDS II");
+    }
+
+    SUBCASE("Tentar editar informando ID inexistente") 
+    {
+        semestre.adicionarDisciplina("DCC204", "TZ1", "PDS II", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg/Qua");
+        RedirecionadorIO io("2\n99\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(io.saida.str().find("[ERRO] Disciplina com ID 99 nao encontrada.") != std::string::npos);
+    }
+
+    SUBCASE("Editar todos os 9 campos, testar opcao invalida e captura de excecao no submenu") 
+    {
+        semestre.adicionarDisciplina("DCC204", "TZ1", "PDS II", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg/Qua");
+
+        std::string entradas =
+            "2\n"
+            "1\n"
+            "1\nCalculo II\n"
+            "2\nMAT039\n"
+            "3\nTA1\n"
+            "4\nNovo Prof\n"
+            "5\nICEx 3000\n"
+            "6\n90\n"
+            "7\n2\n"
+            "8\nTer/Qui 10:00\n"
+            "9\n50\n"
+            "10\n"
+            "6\n25\n"
+            "0\n";
+
+        RedirecionadorIO io(entradas);
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        const Disciplina* disc = semestre.buscarDisciplina(1);
+        REQUIRE(disc != nullptr);
+        CHECK(disc->getNome() == "Calculo II");
+        CHECK(disc->getCodigo() == "MAT039");
+        CHECK(disc->getCodigoTurma() == "TA1");
+        CHECK(disc->getProfessor() == "Novo Prof");
+        CHECK(disc->getSalaBloco() == "ICEx 3000");
+        CHECK(disc->getCargaHoraria() == 90);
+        CHECK(disc->getTipo() == "Optativa");
+        CHECK(disc->getHorarioDias() == "Ter/Qui 10:00");
+        CHECK(disc->getDuracaoAulaMinutos() == 50);
+
+        std::string textoImpresso = io.saida.str();
+        CHECK(textoImpresso.find("[ERRO] Opcao invalida. Escolha entre 0 e 9.") != std::string::npos);
+        CHECK(textoImpresso.find("A carga horaria deve ser maior que zero e divisivel por 15.") != std::string::npos);
+        CHECK(textoImpresso.find("Campo atualizado com sucesso!") != std::string::npos);
+    }
+}
