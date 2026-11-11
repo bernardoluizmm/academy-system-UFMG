@@ -451,3 +451,13 @@ TEST_CASE("MenuAtividadeAvaliativa - apagar com confirmacao 1 remove a atividade
     CHECK(contem(r.saida, "Atividade apagada com sucesso!"));
     CHECK(c.totalAtividades() == 0);
 }
+TEST_CASE("MenuAtividadeAvaliativa - apagar com confirmacao 2 cancela a operacao")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "4\n1\n1\n2\n");
+
+    CHECK(contem(r.saida, "Operacao cancelada."));
+    CHECK(c.totalAtividades() == 1);
+}
