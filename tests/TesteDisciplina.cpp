@@ -263,3 +263,24 @@ TEST_CASE("Disciplina::setSalaBloco [negativo] valor invalido lanca excecao e pr
     CHECK_THROWS_AS(d.setSalaBloco(""), std::invalid_argument);
     CHECK(d.getSalaBloco() == "Sala 101");
 }
+
+TEST_CASE("Disciplina::setHorarioDias [positivo] altera o horario")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setHorarioDias("Ter 08h");
+    CHECK(d.getHorarioDias() == "Ter 08h");
+}
+
+TEST_CASE("Disciplina::setHorarioDias [negativo] valor invalido lanca excecao e preserva o anterior")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK_THROWS_AS(d.setHorarioDias(""), std::invalid_argument);
+    CHECK(d.getHorarioDias() == "Seg 10h");
+}
+
+TEST_CASE("Disciplina::setTipo [positivo] altera o tipo")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setTipo("Optativa");
+    CHECK(d.getTipo() == "Optativa");
+}
