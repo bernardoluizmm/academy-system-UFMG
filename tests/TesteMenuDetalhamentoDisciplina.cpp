@@ -50,4 +50,15 @@ namespace
         resultado.saida = saidaFalsa.str();
         return resultado;
     }
+
+    std::string exibirMenu(Menu& menu)
+    {
+        std::istringstream entradaFalsa("");
+        std::ostringstream saidaFalsa;
+        {
+            RedirecionadorDeTerminal redirecionador(entradaFalsa, saidaFalsa);
+            menu.exibir();
+        }
+        return saidaFalsa.str();
+    }
 }
