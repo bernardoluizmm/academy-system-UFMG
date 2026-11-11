@@ -163,3 +163,46 @@ TEST_CASE("Disciplina - validadores estaticos")
     }
 }
 
+TEST_CASE("Disciplina - setters validam e atualizam os campos")
+{
+    Disciplina disciplina = criarDisciplina();
+
+    disciplina.setCodigo("MAT001");
+    disciplina.setCodigoTurma("TB");
+    disciplina.setNome("Calculo I");
+    disciplina.setProfessor("Prof. Y");
+    disciplina.setSalaBloco("ICEx 1000");
+    disciplina.setTipo("Optativa");
+    disciplina.setHorarioDias("Ter 8h");
+
+    CHECK(disciplina.getCodigo() == "MAT001");
+    CHECK(disciplina.getCodigoTurma() == "TB");
+    CHECK(disciplina.getNome() == "Calculo I");
+    CHECK(disciplina.getProfessor() == "Prof. Y");
+    CHECK(disciplina.getSalaBloco() == "ICEx 1000");
+    CHECK(disciplina.getTipo() == "Optativa");
+    CHECK(disciplina.getHorarioDias() == "Ter 8h");
+}
+
+TEST_CASE("Disciplina - setter invalido lanca excecao e preserva o valor anterior")
+{
+    Disciplina disciplina = criarDisciplina();
+
+    CHECK_THROWS_AS(disciplina.setCodigo(""), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setCodigoTurma("1234567"), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setNome(""), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setProfessor(""), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setSalaBloco(""), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setTipo("Outro"), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setHorarioDias(""), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setCargaHoraria(100), std::invalid_argument);
+    CHECK_THROWS_AS(disciplina.setDuracaoAulaMinutos(10), std::invalid_argument);
+
+    CHECK(disciplina.getCodigo() == "DCC204");
+    CHECK(disciplina.getCodigoTurma() == "TA");
+    CHECK(disciplina.getNome() == "PDS II");
+    CHECK(disciplina.getTipo() == "Obrigatoria");
+    CHECK(disciplina.getCargaHoraria() == 60);
+    CHECK(disciplina.getDuracaoAulaMinutos() == 50);
+}
+
