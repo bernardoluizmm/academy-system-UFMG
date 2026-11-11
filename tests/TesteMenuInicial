@@ -112,3 +112,13 @@ TEST_CASE("Processar Entrada - Edge Cases: Opcoes fora do intervalo e entradas n
         CHECK(io.saida.str().find("Erro: Tipo de entrada incorreto. Tente novamente.") != std::string::npos);
     }
 }
+
+TEST_CASE("Processar Entrada - Excecao de Fim de Fluxo (EOF)") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    RedirecionadorIO io("");
+    CHECK_THROWS_AS(menu.processarEntrada(), std::runtime_error);
+}
