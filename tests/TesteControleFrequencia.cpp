@@ -35,3 +35,20 @@ TEST_CASE("ControleFrequencia - definir total diretamente") {
     CHECK_THROWS_AS(frequencia.setFaltasAtuais(11), std::invalid_argument);
     CHECK(frequencia.getFaltasAtuais() == 10);
 }
+
+TEST_CASE("ControleFrequencia - novo limite reduz faltas atuais") {
+    ControleFrequencia frequencia(10);
+    frequencia.setFaltasAtuais(8);
+    frequencia.setMaxFaltas(6);
+    CHECK(frequencia.getMaxFaltas() == 6);
+    CHECK(frequencia.getFaltasAtuais() == 6);
+    frequencia.setMaxFaltas(12);
+    CHECK(frequencia.getMaxFaltas() == 12);
+    CHECK(frequencia.getFaltasAtuais() == 6);
+    CHECK_THROWS_AS(frequencia.setMaxFaltas(-2), std::invalid_argument);
+    CHECK(frequencia.getMaxFaltas() == 12);
+    frequencia.setMaxFaltas(0);
+    CHECK(frequencia.getMaxFaltas() == 0);
+    CHECK(frequencia.getFaltasAtuais() == 0);
+    CHECK_THROWS_AS(frequencia.adicionarFalta(), std::invalid_argument);
+}
