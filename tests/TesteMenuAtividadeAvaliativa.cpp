@@ -327,3 +327,24 @@ TEST_CASE("MenuAtividadeAvaliativa - editar atividade inexistente mostra erro")
     Resultado r = executar(menu, "3\n1\n999\n");
     CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
 }
+TEST_CASE("MenuAtividadeAvaliativa - editar exibe o submenu e permanece no menu")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n1\n0\n");
+
+    CHECK(r.proximo == &menu);
+    CHECK(contem(r.saida, "--- EDITANDO ATIVIDADE [1] Prova 1 ---"));
+    CHECK(contem(r.saida, "5 - Remover lancamento de nota (marcar como Pendente)"));
+}
+TEST_CASE("MenuAtividadeAvaliativa - editar o nome")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n1\n1\nProva Final\n0\n");
+
+    CHECK(contem(r.saida, "Atividade atualizada com sucesso!"));
+    CHECK(c.atividade()->getNome() == "Prova Final");
+}
