@@ -26,3 +26,20 @@ TEST_CASE("Disciplina::Disciplina [positivo] calcula o limite de faltas")
     Disciplina d = criarDisciplinaValida();
     CHECK(d.frequencia().getMaxFaltas() == CalculadorMaxFaltas::calcularDiasMaximosFalta(60, 50));
 }
+
+TEST_CASE("Disciplina::Disciplina [positivo] inicia com zero faltas")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK(d.frequencia().getFaltasAtuais() == 0);
+}
+
+TEST_CASE("Disciplina::Disciplina [positivo] inicia sem atividades")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK(d.avaliacoes().getAtividades().empty());
+}
+
+TEST_CASE("Disciplina::Disciplina [limite] ID zero e aceito")
+{
+    CHECK_NOTHROW(criarDisciplinaValida(0));
+}
