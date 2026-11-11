@@ -1,0 +1,33 @@
+#include "doctest.h"
+#include "MenuInicial.hpp"
+#include "MenuCarregarUsuario.hpp"
+#include "MenuCadastroUsuario.hpp"
+#include "Estudante.hpp"
+#include "GerenciadorArquivo.hpp"
+#include <sstream>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+
+namespace 
+{
+    struct RedirecionadorIO 
+    {
+        std::stringstream entrada;
+        std::stringstream saida;
+        std::streambuf* cinOriginal;
+        std::streambuf* coutOriginal;
+
+        RedirecionadorIO(const std::string& textoEntrada = "") 
+            : entrada(textoEntrada),
+              cinOriginal(std::cin.rdbuf(entrada.rdbuf())),
+              coutOriginal(std::cout.rdbuf(saida.rdbuf())) 
+        {}
+
+        ~RedirecionadorIO() 
+        {
+            std::cin.rdbuf(cinOriginal);
+            std::cout.rdbuf(coutOriginal);
+        }
+    };
+}
