@@ -159,3 +159,13 @@ TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 com ID 0 cancela sem exibir nada
     CHECK_FALSE(contem(r.saida, "Disciplina [1]"));
     CHECK_FALSE(contem(r.saida, "[ERRO]"));
 }    
+
+TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 com ID inexistente mostra erro")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre);
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "1\n99\n");
+    CHECK(contem(r.saida, "[ERRO] Disciplina com ID 99 nao encontrada."));
+}
