@@ -84,3 +84,31 @@ TEST_CASE("Processar Entrada - Happy Path (Opcoes 0, 1 e 2)")
         CHECK(proximoMenu->substituirPilhaAoTransicionar() == true);
     }
 }
+
+TEST_CASE("Processar Entrada - Edge Cases: Opcoes fora do intervalo e entradas nao numericas") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    SUBCASE("Opcoes inteiras invalidas (-1 e 3) acionam default e repetem o laco ate ler 0") 
+    {
+        RedirecionadorIO io("-1\n3\n0\n");
+        Menu* proximoMenu = menu.processarEntrada();
+
+        CHECK(proximoMenu == nullptr);
+        std::string textoImpresso = io.saida.str();
+        CHECK(textoImpresso.find("[ERRO] Opcao invalida. Escolha 1, 2 ou 0.") != std::string::npos);
+        CHECK(textoImpresso.find("Encerrando o sistema...") != std::string::npos);
+    }
+
+    SUBCASE("Entradas com texto ou lixo na linha sao rejeitadas antes de aceitar opcao valida") 
+    {
+        RedirecionadorIO io("abc\n1 lixo\n2\n");
+        std::unique_ptr<Menu> proximoMenu(menu.processarEntrada());
+
+        REQUIRE(proximoMenu != nullptr);
+        CHECK(dynamic_cast<MenuCadastroUsuario*>(proximoMenu.get()) != nullptr);
+        CHECK(io.saida.str().find("Erro: Tipo de entrada incorreto. Tente novamente.") != std::string::npos);
+    }
+}
