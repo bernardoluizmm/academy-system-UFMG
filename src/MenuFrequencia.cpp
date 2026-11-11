@@ -1,29 +1,20 @@
 #include "MenuFrequencia.hpp"
-#include "MenuPrincipal.hpp"
-#include "SemestreAtual.hpp"
 #include <iostream>
 #include <iomanip>
 #include <vector>
 #include <stdexcept>
 
-MenuFrequencia::MenuFrequencia(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : Menu(estudante, gerenciadorArquivo) 
-{
-}
+MenuFrequencia::MenuFrequencia(SemestreAtual& semestreAtual)
+    : Menu(), _semestreAtual(semestreAtual) {}
 
-MenuFrequencia::~MenuFrequencia() 
-{
-}
 
 void MenuFrequencia::exibir() 
 {
-    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
-
     std::cout << "\n========================================================================\n";
     std::cout << "                    GERENCIAMENTO DE FREQUENCIA E FALTAS                \n";
     std::cout << "========================================================================\n";
 
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
     } else 
@@ -36,7 +27,7 @@ void MenuFrequencia::exibir()
                   << std::setw(12) << "Max Faltas" << "\n";
         std::cout << "------------------------------------------------------------------------\n";
 
-        const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+        const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
         for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
         {
             std::cout << std::left
@@ -64,18 +55,18 @@ Menu* MenuFrequencia::processarEntrada()
         if (opcao == 1) 
         {
             this->fluxoAdicionarFalta();
-            return new MenuFrequencia(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 2) 
         {
             this->fluxoRemoverFalta();
-            return new MenuFrequencia(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 3) 
         {
             this->fluxoDefinirFaltas();
-            return new MenuFrequencia(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 0) 
         {
-            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+            return nullptr;
         }
         std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 3.\n";
     }
@@ -83,8 +74,7 @@ Menu* MenuFrequencia::processarEntrada()
 
 Disciplina* MenuFrequencia::selecionarDisciplina() 
 {
-    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << "[AVISO] Nao ha disciplinas cadastradas no semestre atual.\n";
         return nullptr;
@@ -96,7 +86,7 @@ Disciplina* MenuFrequencia::selecionarDisciplina()
         return nullptr;
     }
 
-    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    Disciplina* disc = this->_semestreAtual.buscarDisciplina(idDisc);
     if (disc == nullptr) 
     {
         std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";

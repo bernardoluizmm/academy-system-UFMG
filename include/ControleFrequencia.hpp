@@ -21,6 +21,7 @@ public:
     /**
      * @brief Constrói o controle de frequência, iniciando com zero faltas.
      * @param maxFaltas Número máximo de faltas permitido.
+     * @throws std::invalid_argument Se maxFaltas for negativo.
      */
     ControleFrequencia(int maxFaltas);
 
@@ -43,6 +44,7 @@ public:
      * para que fiquem iguais ao novo máximo.
      *
      * @param novoMaxFaltas Novo limite de faltas.
+     * @throws std::invalid_argument Se o novo limite for negativo.
      */
     void setMaxFaltas(int novoMaxFaltas);
 

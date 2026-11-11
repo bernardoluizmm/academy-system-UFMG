@@ -1,83 +1,69 @@
 /**
  * @file MenuFrequencia.hpp
- * @brief Declaração da classe MenuFrequencia, menu de controle de faltas.
+ * @brief Declaracao da classe MenuFrequencia, menu de controle de faltas.
  */
 #ifndef MENUFREQUENCIA_HPP
 #define MENUFREQUENCIA_HPP
 
 #include "Menu.hpp"
+#include "SemestreAtual.hpp"
 #include "Disciplina.hpp"
 
 /**
  * @class MenuFrequencia
- * @brief Menu para gerenciar as faltas das disciplinas do semestre atual do estudante.
- *
- * Exibe, para cada disciplina, as faltas atuais e o máximo permitido, e permite
- * adicionar uma falta, remover uma falta ou definir o total de faltas diretamente.
+ * @brief Menu para gerenciar as faltas das disciplinas do semestre atual.
  */
-class MenuFrequencia : public Menu 
+class MenuFrequencia : public Menu
 {
 private:
+    SemestreAtual& _semestreAtual; ///< Semestre em andamento cujas faltas sao gerenciadas.
+
     /**
-     * @brief Solicita ao usuário o ID de uma disciplina do semestre atual.
-     *
-     * Exibe uma mensagem de aviso ou de erro quando não há disciplinas ou quando
-     * o ID não é encontrado. O usuário pode digitar 0 para cancelar.
-     *
-     * @return Ponteiro para a disciplina selecionada, ou @c nullptr se não houver
-     *         semestre/disciplinas, se o usuário cancelar ou se o ID não existir.
+     * @brief Pede ao usuario o ID de uma disciplina do semestre.
+     * @return Ponteiro para a disciplina escolhida, ou @c nullptr nos casos:
+     *         - nao ha disciplinas no semestre (um aviso e exibido);
+     *         - o usuario cancelou digitando 0 (nenhuma mensagem e exibida);
+     *         - o ID informado nao existe (uma mensagem de erro e exibida).
      */
     Disciplina* selecionarDisciplina();
 
     /**
-     * @brief Fluxo para registrar uma falta em uma disciplina escolhida pelo usuário.
+     * @brief Registra uma falta na disciplina escolhida.
      *
-     * Exibe o novo total de faltas ou, se o limite já tiver sido atingido, a mensagem de erro.
+     * Exibe o total de faltas atualizado ou, se o limite ja tiver sido atingido, a mensagem de erro.
      */
     void fluxoAdicionarFalta();
 
     /**
-     * @brief Fluxo para remover uma falta de uma disciplina escolhida pelo usuário.
+     * @brief Remove uma falta da disciplina escolhida.
      *
-     * Exibe o novo total de faltas ou, se não houver faltas, a mensagem de erro.
+     * Exibe o total de faltas atualizado ou, se nao houver faltas, a mensagem de erro.
      */
     void fluxoRemoverFalta();
 
     /**
-     * @brief Fluxo para definir diretamente o total de faltas de uma disciplina escolhida pelo usuário.
+     * @brief Define diretamente o total de faltas da disciplina escolhida.
      *
-     * Repete a solicitação até que o valor informado esteja entre 0 e o máximo de faltas.
+     * A leitura se repete ate o usuario informar um valor entre 0 e o maximo de faltas permitido.
      */
     void fluxoDefinirFaltas();
 
 public:
     /**
-     * @brief Constrói o menu de frequência.
-     * @param estudante Estudante cujas disciplinas serão gerenciadas.
-     * @param gerenciadorArquivo Gerenciador responsável pela persistência dos dados.
+     * @brief Constroi o menu de frequencia recebendo apenas o SemestreAtual.
+     * @param semestreAtual Semestre cujas disciplinas terao a frequencia gerenciada.
      */
-    MenuFrequencia(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo);
+    explicit MenuFrequencia(SemestreAtual& semestreAtual);
 
     /**
-     * @brief Destrutor.
-     */
-    virtual ~MenuFrequencia() override;
-
-    /**
-     * @brief Exibe o cabeçalho, a tabela de disciplinas (ID, código, nome, faltas atuais e máximo) e as opções do menu.
-     *
-     * Se não houver semestre atual ou disciplinas cadastradas, exibe uma mensagem informativa no lugar da tabela.
+     * @copydoc Menu::exibir
      */
     virtual void exibir() override;
 
     /**
-     * @brief Lê a opção escolhida pelo usuário e executa a ação correspondente.
-     *
-     * Opções: 1 (adicionar falta), 2 (remover falta), 3 (definir faltas) e 0 (voltar).
-     * Opções inválidas são rejeitadas e a leitura é repetida.
-     *
-     * @return Ponteiro para um novo menu alocado dinamicamente (cuja posse é do chamador):
-     *         um novo MenuFrequencia após as opções 1 a 3, ou um MenuPrincipal para a opção 0.
+     * @brief Le a opcao do usuario e executa o fluxo correspondente.
+     * @return @c this apos adicionar, remover ou definir faltas (permanece na tela);
+     *         @c nullptr ao escolher "0 - Voltar" (retorna ao menu anterior).
      */
     virtual Menu* processarEntrada() override;
 };
