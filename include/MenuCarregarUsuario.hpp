@@ -1,54 +1,32 @@
 #ifndef MENUCARREGARUSUARIO_HPP
 #define MENUCARREGARUSUARIO_HPP
 
+#include <memory>
 #include "Menu.hpp"
+#include "Estudante.hpp"
+#include "GerenciadorArquivo.hpp"
 
 /**
  * @file MenuCarregarUsuario.hpp
- * @brief Declaração da tela de carregamento de um perfil de estudante já salvo.
+ * @brief Declaracao da tela de carregamento de um perfil de estudante ja salvo.
  */
 
 /**
  * @class MenuCarregarUsuario
- * @brief Tela que carrega o perfil do estudante a partir do arquivo de perfil.
- *
- * Não pede nenhuma entrada ao usuário: ao processar, lê o arquivo usando o
- * GerenciadorArquivo. Se der certo, segue para o menu principal; se falhar,
- * mostra o erro e volta para o menu inicial.
+ * @brief Tela que carrega o perfil do estudante a partir do arquivo de perfil em um std::unique_ptr.
  */
 class MenuCarregarUsuario : public Menu 
 {
+private:
+    std::unique_ptr<Estudante>& _estudante;  ///< Ponteiro inteligente que recebera o estudante carregado.
+    GerenciadorArquivo& _gerenciadorArquivo; ///< Gerenciador usado para ler o perfil.
+
 public:
-    /**
-     * @brief Constrói a tela de carregamento.
-     * @param estudante          Estudante que receberá os dados carregados (deve viver mais que o Menu).
-     * @param gerenciadorArquivo Gerenciador usado para ler o perfil (deve viver mais que o Menu).
-     */
-    MenuCarregarUsuario(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo);
+    MenuCarregarUsuario(std::unique_ptr<Estudante>& estudante, GerenciadorArquivo& gerenciadorArquivo);
 
-    /**
-     * @brief Destrutor.
-     */
-    virtual ~MenuCarregarUsuario() override;
-
-    /**
-     * @brief Exibe o título da tela de carregamento.
-     */
     virtual void exibir() override;
-
-    /**
-     * @brief Carrega o perfil do arquivo e decide a próxima tela.
-     *
-     * Em caso de sucesso, o estudante do menu é substituído pelo carregado e
-     * é exibida uma mensagem de boas-vindas. Qualquer exceção do carregamento
-     * (por exemplo, arquivo não encontrado) é tratada aqui: a mensagem de erro é
-     * exibida e nenhuma exceção é propagada.
-     *
-     * @return MenuPrincipal se o perfil foi carregado; MenuInicial se houve erro.
-     *         O objeto é alocado com new, e quem recebe o ponteiro passa a ser
-     *         responsável por liberá-lo.
-     */
     virtual Menu* processarEntrada() override;
+    virtual bool substituirPilhaAoTransicionar() const override;
 };
 
 #endif
