@@ -293,3 +293,13 @@ TEST_CASE("MenuAtividadeAvaliativa - lancar nota valida")
     CHECK(c.atividade()->isConcluida());
     CHECK(c.atividade()->getNotaObtida() == doctest::Approx(8.0f));
 }
+TEST_CASE("MenuAtividadeAvaliativa - lancar nota acima do valor maximo pede de novo")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n1\n15\n8\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    CHECK(c.atividade()->getNotaObtida() == doctest::Approx(8.0f));
+}
