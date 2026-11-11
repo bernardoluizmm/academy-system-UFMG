@@ -32,4 +32,15 @@ TEST_CASE("DiarioAtividades - IDs automaticos e ordem cronologica") {
     CHECK(diario.obterValorTotalPlanejado() == doctest::Approx(100.0f));
 }
 
+TEST_CASE("DiarioAtividades - carregar atividades e atualizar contador") {
+    DiarioAtividades diario;
+    diario.adicionarAtividade(12, "Carregada", "10/05", 20.0f, 15.0f, true);
+    CHECK(diario.buscarAtividade(12) != nullptr);
+    CHECK(diario.buscarAtividade(12)->isConcluida() == true);
+    diario.adicionarAtividade("Nova", "12/05", 20.0f);
+    CHECK(diario.buscarAtividade(13) != nullptr);
+    CHECK(diario.buscarAtividade(13)->getNome() == "Nova");
+    CHECK_THROWS_AS(diario.adicionarAtividade("", "10/05", 20.0f), std::invalid_argument);
+    CHECK(diario.getAtividades().size() == 2);
+}
 
