@@ -143,3 +143,46 @@ TEST_CASE("HistoricoEscolar - adicionarSemestreConsolidado e limparSemestresPass
     CHECK(historico.getSemestresPassados().empty());
     CHECK(historico.getSemestreAtual()->getIdentificador() == "2027/01"); 
 }
+
+TEST_CASE("HistoricoEscolar - NSG medio e NSG global")
+{
+    HistoricoEscolar historico("2027/01");
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2026/01", 80.0f, 270, 0, 0));
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2026/02", 60.0f, 90, 0, 0));
+
+    CHECK(historico.calcularNSGMedio() == doctest::Approx(70.0));    
+    CHECK(historico.calcularNSGGlobal() == doctest::Approx(75.0));  
+}
+
+TEST_CASE("HistoricoEscolar - semestre trancado nao entra nos NSGs")
+{
+    HistoricoEscolar historico("2027/01");
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2026/01", 80.0f, 60, 0, 0));
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2026/02", 0.0f, 0, 0, 0, true));
+
+    CHECK(historico.calcularNSGMedio() == doctest::Approx(80.0));
+    CHECK(historico.calcularNSGGlobal() == doctest::Approx(80.0));
+}
+
+TEST_CASE("HistoricoEscolar - NSG global e 0 quando nao ha horas integralizadas")
+{
+    HistoricoEscolar historico("2027/01");
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2026/01", 50.0f, 0, 0, 0));
+
+    CHECK(historico.calcularNSGMedio() == doctest::Approx(50.0));
+    CHECK(historico.calcularNSGGlobal() == doctest::Approx(0.0));  
+}
+
+TEST_CASE("HistoricoEscolar - totais de horas somam todos os semestres passados")
+{
+    HistoricoEscolar historico("2027/02");
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2026/01", 80.0f, 60, 30, 15));
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2026/02", 70.0f, 45, 15, 0));
+    historico.adicionarSemestreConsolidado(SemestreConsolidado("2027/01", 0.0f, 90, 90, 90, true)); 
+
+    CHECK(historico.calcularTotalHorasObrigatorias() == 105);
+    CHECK(historico.calcularTotalHorasOptativas() == 45);
+    CHECK(historico.calcularTotalHorasFormacaoLivre() == 15);
+    CHECK(historico.calcularTotalHorasIntegralizadas() == 165);
+}
+
