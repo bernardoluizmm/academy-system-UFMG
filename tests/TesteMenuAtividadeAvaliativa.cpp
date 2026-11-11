@@ -384,3 +384,24 @@ TEST_CASE("MenuAtividadeAvaliativa - editar com valor invalido mostra erro e man
     CHECK(contem(r.saida, "[ERRO]"));
     CHECK(c.atividade()->getValorMaximo() == doctest::Approx(10.0f));
 }
+TEST_CASE("MenuAtividadeAvaliativa - editar lancando a nota")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n1\n4\n7\n0\n");
+
+    CHECK(c.atividade()->isConcluida());
+    CHECK(c.atividade()->getNotaObtida() == doctest::Approx(7.0f));
+    CHECK(contem(r.saida, "Lancar / Alterar Nota Obtida (Pendente)"));
+    CHECK(contem(r.saida, "Lancar / Alterar Nota Obtida (7"));
+}
+TEST_CASE("MenuAtividadeAvaliativa - editar removendo o lancamento de nota")
+{
+    Cenario c(true);
+    c.atividade()->setNotaObtida(8.0f);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "3\n1\n1\n5\n0\n");
+    CHECK_FALSE(c.atividade()->isConcluida());
+}
