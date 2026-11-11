@@ -197,31 +197,87 @@ public:
      *  Métodos de alteração dos dados da disciplina.
      *  @{ */
 
-    /** @brief Define o código da disciplina. @param novoCodigo Novo código. */
+         /**
+     * @brief Altera o codigo da disciplina.
+     * @param novoCodigo Novo codigo (1 a 8 caracteres).
+     * @throws std::invalid_argument Se o codigo for invalido.
+     */
     void setCodigo(const std::string& novoCodigo);
-    /** @brief Define o código da turma. @param novaTurma Novo código de turma. */
+
+    /**
+     * @brief Altera o codigo da turma.
+     * @param novaTurma Novo codigo da turma (1 a 6 caracteres).
+     * @throws std::invalid_argument Se o codigo for invalido.
+     */
     void setCodigoTurma(const std::string& novaTurma);
-    /** @brief Define o nome da disciplina. @param novoNome Novo nome. */
+
+    /**
+     * @brief Altera o nome da disciplina.
+     * @param novoNome Novo nome (1 a 22 caracteres).
+     * @throws std::invalid_argument Se o nome for invalido.
+     */
     void setNome(const std::string& novoNome);
-    /** @brief Define o professor. @param novoProfessor Nome do novo professor. */
+
+    /**
+     * @brief Altera o nome do professor.
+     * @param novoProfessor Novo nome (1 a 100 caracteres).
+     * @throws std::invalid_argument Se o nome for invalido.
+     */
     void setProfessor(const std::string& novoProfessor);
-    /** @brief Define a sala e o bloco. @param novaSala Nova sala/bloco. */
+
+    /**
+     * @brief Altera a sala e o bloco das aulas.
+     * @param novaSala Nova sala/bloco (1 a 100 caracteres).
+     * @throws std::invalid_argument Se o texto for invalido.
+     */
     void setSalaBloco(const std::string& novaSala);
-    /** @brief Define a carga horária. @param novaCargaHoraria Nova carga horária total. */
+
+    /**
+     * @brief Altera a carga horaria e recalcula o limite de faltas.
+     *
+     * Se as faltas atuais excederem o novo limite, elas sao reduzidas ate ele.
+     *
+     * @param novaCargaHoraria Nova carga horaria (maior que zero e multiplo de 15).
+     * @throws std::invalid_argument Se a carga horaria for invalida.
+     */
     void setCargaHoraria(int novaCargaHoraria);
-    /** @brief Define a duração da aula. @param novaDuracaoMinutos Nova duração, em minutos. */
+
+    /**
+     * @brief Altera a duracao de cada aula e recalcula o limite de faltas.
+     *
+     * Se as faltas atuais excederem o novo limite, elas sao reduzidas ate ele.
+     *
+     * @param novaDuracaoMinutos Nova duracao, em minutos (minimo 50).
+     * @throws std::invalid_argument Se a duracao for invalida.
+     */
     void setDuracaoAulaMinutos(int novaDuracaoMinutos);
-    /** @brief Define o tipo da disciplina. @param novoTipo Novo tipo. */
+
+    /**
+     * @brief Altera o tipo da disciplina.
+     * @param novoTipo Novo tipo ("Obrigatoria", "Optativa" ou "Formacao Livre").
+     * @throws std::invalid_argument Se o tipo for invalido.
+     */
     void setTipo(const std::string& novoTipo);
-    /** @brief Define os dias e horários. @param novoHorarioDias Novos dias e horários das aulas. */
+
+    /**
+     * @brief Altera os dias e horarios das aulas.
+     * @param novoHorarioDias Novo texto de horario e dias (1 a 100 caracteres).
+     * @throws std::invalid_argument Se o texto for invalido.
+     */
     void setHorarioDias(const std::string& novoHorarioDias);
     /** @} */
 
     /**
-     * @brief Converte a disciplina em texto para persistência em arquivo.
-     * @return String com os dados serializados da disciplina.
+     * @brief Converte a disciplina em texto para persistencia em arquivo.
+     *
+     * A primeira linha tem o formato
+     * @c DISCIPLINA|id|codigo|turma|nome|professor|sala|cargaHoraria|duracaoAula|tipo|horarioDias|faltasAtuais.
+     * Em seguida vem uma linha @c ATIVIDADE para cada atividade avaliativa (ver AtividadeAvaliativa::serializar()).
+     *
+     * @return String com os dados serializados da disciplina, uma linha por registro.
      */
     std::string serializar() const;
 };
 
+#endif
 #endif
