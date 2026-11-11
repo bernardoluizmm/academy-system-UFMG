@@ -26,3 +26,16 @@ TEST_CASE("AtividadeAvaliativa - construtor com nota e situacao") {
     CHECK(pendente.getNotaObtida() == doctest::Approx(0.0f));
     CHECK_THROWS_AS(AtividadeAvaliativa(4, "TP", "16/05", 20.0f, 21.0f, true), std::invalid_argument);
 }
+
+TEST_CASE("AtividadeAvaliativa - validadores e construtor invalido") {
+    AtividadeAvaliativa::validarNome("A");
+    AtividadeAvaliativa::validarNome(std::string(24, 'A'));
+    AtividadeAvaliativa::validarValorMaximo(0.01f);
+    CHECK_THROWS_AS(AtividadeAvaliativa::validarNome(""), std::invalid_argument);
+    CHECK_THROWS_AS(AtividadeAvaliativa::validarNome(std::string(25, 'A')), std::invalid_argument);
+    CHECK_THROWS_AS(AtividadeAvaliativa::validarValorMaximo(0.0f), std::invalid_argument);
+    CHECK_THROWS_AS(AtividadeAvaliativa::validarValorMaximo(-1.0f), std::invalid_argument);
+    CHECK_THROWS_AS(AtividadeAvaliativa(1, "", "10/04", 30.0f), std::invalid_argument);
+    CHECK_THROWS_AS(AtividadeAvaliativa(1, "OK", "30/02", 30.0f), std::invalid_argument);
+    CHECK_THROWS_AS(AtividadeAvaliativa(1, "OK", "10/04", -1.0f), std::invalid_argument);
+}
