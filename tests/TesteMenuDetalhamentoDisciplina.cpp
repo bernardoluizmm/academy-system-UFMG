@@ -66,4 +66,10 @@ namespace
     {
         return texto.find(trecho) != std::string::npos;
     }
+
+    void adicionarDisciplina(SemestreAtual& semestre, const std::string& nome = "Programacao")
+    {
+        semestre.adicionarDisciplina("COD001", "T1", nome, "Prof. Ana", "Sala 101",
+                                     60, 50, "Obrigatoria", "Seg 10h");
+    }
 }
