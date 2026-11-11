@@ -1,62 +1,130 @@
 #include "doctest.h"
 #include "SemestreAtual.hpp"
+#include <stdexcept>
+#include <string>
 
-TEST_CASE("SemestreAtual - Construtor e Getters (Casos Base)") 
+namespace
 {
-    SemestreAtual semestre("2026/1");
-
-    CHECK(semestre.getPeriodo() == "2026/1");
-    CHECK(semestre.getDisciplinas().empty());
-    CHECK(semestre.getNSG() == doctest::Approx(0.0));
-}
-
-TEST_CASE("SemestreAtual - Adicionar e Remover Disciplinas") 
-{
-    SemestreAtual semestre("2026/1");
-
-    Disciplina d1("PDS2", "DCC204", "Douglas", "ICEx", CategoriaDisciplina::OBRIGATORIA, 60, 15);
-    Disciplina d2("ED", "DCC205", "Marcus", "ICEx", CategoriaDisciplina::OBRIGATORIA, 60, 15);
-
-    semestre.adicionarDisciplina(d1);
-    CHECK(semestre.getDisciplinas().size() == 1);
-    CHECK(semestre.getDisciplinas()[0].getCodigo() == "DCC204");
-
-    semestre.adicionarDisciplina(d2);
-    CHECK(semestre.getDisciplinas().size() == 2);
-
-    SUBCASE("Remover disciplina valida") 
+   
+    void adicionar(SemestreAtual& semestre, const std::string& nome, int cargaHoraria,
+                   const std::string& tipo = "Obrigatoria")
     {
-        CHECK(semestre.removerDisciplina(0) == true);
-        CHECK(semestre.getDisciplinas().size() == 1);
-        CHECK(semestre.getDisciplinas()[0].getCodigo() == "DCC205");
+        semestre.adicionarDisciplina("COD", "T1", nome, "Professor", "ICEx 101",
+                                     cargaHoraria, 50, tipo, "Seg 10h");
     }
 
-    SUBCASE("Remover disciplina com indice invalido") 
+   
+    void lancarNota(SemestreAtual& semestre, int idDisciplina, float valorMaximo, float nota)
     {
-        CHECK(semestre.removerDisciplina(-1) == false);
-        CHECK(semestre.removerDisciplina(10) == false);
+        Disciplina* disciplina = semestre.buscarDisciplina(idDisciplina);
+        REQUIRE(disciplina != nullptr);
+        int idAtividade = static_cast<int>(disciplina->avaliacoes().getAtividades().size()) + 1;
+        disciplina->avaliacoes().adicionarAtividade(idAtividade, "Prova", "01/05", valorMaximo, nota, true);
+    }
+}
+
+TEST_CASE("SemestreAtual - construtor e estado inicial")
+{
+    SemestreAtual semestre("2026/01");
+
+    CHECK(semestre.getIdentificador() == "2026/01");
+    CHECK(semestre.isTrancado() == false);
+    CHECK(semestre.getDisciplinas().empty());
+    CHECK(semestre.calcularNSG() == doctest::Approx(0.0));
+    CHECK(semestre.getHorasIntegralizadas() == 0);
+}
+
+TEST_CASE("SemestreAtual - construtor rejeita identificador invalido")
+{
+    CHECK_THROWS_AS(SemestreAtual("2026/1"), std::invalid_argument);
+    CHECK_THROWS_AS(SemestreAtual("2026/03"), std::invalid_argument);
+    CHECK_THROWS_AS(SemestreAtual(""), std::invalid_argument);
+}
+
+TEST_CASE("SemestreAtual - adicionarDisciplina gera IDs automaticos")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "PDS2", 60);
+    adicionar(semestre, "ED", 60);
+
+    REQUIRE(semestre.getDisciplinas().size() == 2);
+    CHECK(semestre.getDisciplinas()[0].getId() == 1);
+    CHECK(semestre.getDisciplinas()[1].getId() == 2);
+}
+
+TEST_CASE("SemestreAtual - adicionarDisciplina valida os dados da disciplina")
+{
+    SemestreAtual semestre("2026/01");
+
+    CHECK_THROWS_AS(adicionar(semestre, "Invalida", 50), std::invalid_argument);        
+    CHECK_THROWS_AS(adicionar(semestre, "Invalida", 0), std::invalid_argument);          
+    CHECK_THROWS_AS(adicionar(semestre, "Invalida", 60, "Eletiva"), std::invalid_argument);
+    CHECK(semestre.getDisciplinas().empty());
+}
+
+TEST_CASE("SemestreAtual - adicionarDisciplina pronta rejeita ID repetido")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "PDS2", 60);  
+
+    Disciplina repetida(1, "COD", "T1", "Outra", "Prof", "Sala", 60, 50, "Obrigatoria", "Ter 10h");
+    CHECK_THROWS_AS(semestre.adicionarDisciplina(repetida), std::invalid_argument);
+    CHECK(semestre.getDisciplinas().size() == 1);
+}
+
+TEST_CASE("SemestreAtual - adicionarDisciplina pronta atualiza o contador de IDs")
+{
+    SemestreAtual semestre("2026/01");
+
+    Disciplina carregada(7, "COD", "T1", "Carregada", "Prof", "Sala", 60, 50, "Obrigatoria", "Seg 10h");
+    semestre.adicionarDisciplina(carregada);
+
+    adicionar(semestre, "Nova", 60); 
+
+    REQUIRE(semestre.getDisciplinas().size() == 2);
+    CHECK(semestre.getDisciplinas()[1].getId() == 8);
+}
+
+TEST_CASE("SemestreAtual - removerDisciplina")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "PDS2", 60);  
+    adicionar(semestre, "ED", 60);    
+
+    SUBCASE("remove disciplina existente")
+    {
+        semestre.removerDisciplina(1);
+        REQUIRE(semestre.getDisciplinas().size() == 1);
+        CHECK(semestre.getDisciplinas()[0].getId() == 2);
+    }
+
+    SUBCASE("ID inexistente lanca excecao e nao altera a lista")
+    {
+        CHECK_THROWS_AS(semestre.removerDisciplina(99), std::invalid_argument);
         CHECK(semestre.getDisciplinas().size() == 2);
     }
 }
 
-TEST_CASE("SemestreAtual - Calculo de NSG Polimorfico") 
+TEST_CASE("SemestreAtual - buscarDisciplina")
 {
-    SemestreAtual semestre("2026/1");
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "PDS2", 60);
 
-    Disciplina d1("D1", "C1", "P", "S", CategoriaDisciplina::OBRIGATORIA, 60, 15);
-    AtividadeAvaliativa a1("P1", "2026-05-01", 100.0);
-    a1.registrarNota(80.0); 
-    d1.adicionarAtividade(a1);
+    SUBCASE("versao editavel")
+    {
+        Disciplina* encontrada = semestre.buscarDisciplina(1);
+        REQUIRE(encontrada != nullptr);
+        CHECK(encontrada->getId() == 1);
+        CHECK(semestre.buscarDisciplina(99) == nullptr);
+    }
 
-    Disciplina d2("D2", "C2", "P", "S", CategoriaDisciplina::OBRIGATORIA, 30, 8);
-    AtividadeAvaliativa a2("P2", "2026-05-01", 100.0);
-    a2.registrarNota(50.0); 
-    d2.adicionarAtividade(a2);
-
-    semestre.adicionarDisciplina(d1);
-    semestre.adicionarDisciplina(d2);
-
-    
-    Semestre* semPtr = &semestre;
-    CHECK(semPtr->getNSG() == doctest::Approx(70.0));
+    SUBCASE("versao somente leitura")
+    {
+        const SemestreAtual& constante = semestre;
+        const Disciplina* encontrada = constante.buscarDisciplina(1);
+        REQUIRE(encontrada != nullptr);
+        CHECK(encontrada->getId() == 1);
+        CHECK(constante.buscarDisciplina(99) == nullptr);
+    }
 }
+
