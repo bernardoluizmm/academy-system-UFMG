@@ -284,3 +284,25 @@ TEST_CASE("Disciplina::setTipo [positivo] altera o tipo")
     d.setTipo("Optativa");
     CHECK(d.getTipo() == "Optativa");
 }
+
+TEST_CASE("Disciplina::setTipo [negativo] valor invalido lanca excecao e preserva o anterior")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK_THROWS_AS(d.setTipo("Qualquer"), std::invalid_argument);
+    CHECK(d.getTipo() == "Obrigatoria");
+}
+
+// ================================ Setters numericos (atualizarLimiteFaltas)
+TEST_CASE("Disciplina::setCargaHoraria [positivo] altera a carga horaria")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setCargaHoraria(90);
+    CHECK(d.getCargaHoraria() == 90);
+}
+
+TEST_CASE("Disciplina::setCargaHoraria [positivo] recalcula o limite de faltas")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setCargaHoraria(90);
+    CHECK(d.frequencia().getMaxFaltas() == CalculadorMaxFaltas::calcularDiasMaximosFalta(90, 50));
+}
