@@ -25,13 +25,14 @@ private:
 
 public:
     /** @brief Construtor padrão. Cria o semestre atual "2026/01". */
-    HistoricoEscolar();
+         HistoricoEscolar();
 
     /**
-     * @brief Construtor de cópia (cópia profunda).
-     * @param outro Histórico a copiar.
-     */
-    HistoricoEscolar(const HistoricoEscolar& outro);
+     * @brief Construtor parametrizado (RAII). Cria o histórico já com o identificador real do semestre atual.
+     * @param identificadorSemestreAtual Identificador do semestre em andamento (AAAA/01 ou AAAA/02).
+     * @throws std::invalid_argument Se o identificador for inválido.
+    */
+    explicit HistoricoEscolar(const std::string& identificadorSemestreAtual);
 
     /**
      * @brief Operador de atribuição (cópia profunda).
