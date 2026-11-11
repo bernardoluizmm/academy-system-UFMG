@@ -38,13 +38,29 @@ public:
          * @return NSG entre 0 e 100 (0 se não houver disciplinas).
     virtual float calcularNSG() const override;
 
-    /** @brief Retorna o total de horas integralizadas no semestre. */
+    **
+     * @brief Soma as horas integralizadas do semestre (obrigatorias + optativas + formacao livre).
+     * @return Total de horas integralizadas.
+     * @see getHorasObrigatorias
+     */
     virtual int getHorasIntegralizadas() const override;
 
-    /** @brief Retorna as horas de disciplinas obrigatórias aprovadas. */
+    /**
+     * @brief Soma a carga horaria das disciplinas obrigatorias consideradas aprovadas.
+     *
+     * Uma disciplina e considerada aprovada quando sua nota total parcial e de, no minimo, 60 pontos.
+     *
+     * @return Horas obrigatorias integralizadas.
+     */
     virtual int getHorasObrigatorias() const override;
 
-    /** @brief Retorna as horas de disciplinas optativas aprovadas. */
+     /**
+     * @brief Soma a carga horaria das disciplinas optativas consideradas aprovadas.
+     *
+     * O criterio de aprovacao e o mesmo de getHorasObrigatorias().
+     *
+     * @return Horas optativas integralizadas.
+     */
     virtual int getHorasOptativas() const override;
 
     /** @brief Retorna as horas de formação livre aprovadas. */
