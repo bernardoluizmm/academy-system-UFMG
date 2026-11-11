@@ -36,4 +36,18 @@ namespace
             std::cin.clear();
         }
     };
+
+        Resultado executar(Menu& menu, const std::string& entrada)
+    {
+        std::istringstream entradaFalsa(entrada);
+        std::ostringstream saidaFalsa;
+        Resultado resultado;
+        resultado.proximo = nullptr;
+        {
+            RedirecionadorDeTerminal redirecionador(entradaFalsa, saidaFalsa);
+            resultado.proximo = menu.processarEntrada();
+        }
+        resultado.saida = saidaFalsa.str();
+        return resultado;
+    }
 }
