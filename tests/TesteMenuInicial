@@ -31,3 +31,20 @@ namespace
         }
     };
 }
+
+TEST_CASE("Exibicao do Menu Inicial e comportamento na pilha") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    RedirecionadorIO io;
+    menu.exibir();
+
+    std::string textoImpresso = io.saida.str();
+    CHECK(textoImpresso.find("SISTEMA DE GESTAO ACADEMICA - UFMG (PDS II)") != std::string::npos);
+    CHECK(textoImpresso.find("1 - Carregar perfil salvo") != std::string::npos);
+    CHECK(textoImpresso.find("2 - Criar novo perfil de estudante") != std::string::npos);
+    CHECK(textoImpresso.find("0 - Sair do programa") != std::string::npos);
+    CHECK(menu.substituirPilhaAoTransicionar() == false);
+}
