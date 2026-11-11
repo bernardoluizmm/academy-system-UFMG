@@ -55,8 +55,7 @@ public:
      * @brief Calcula o NSG (Nota do Semestre Global) do semestre.
      * @return NSG entre 0 e 100.
      */
-
-     virtual float calcularNSG() const = 0;
+    virtual float calcularNSG() const = 0;
 
     /**
      * @brief Obtém o total de horas integralizadas.
