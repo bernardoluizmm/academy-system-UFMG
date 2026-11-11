@@ -9,11 +9,8 @@
 #include <vector>
 
 MenuPrincipal::MenuPrincipal(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : Menu(estudante, gerenciadorArquivo) 
-{}
+    : Menu(), _estudante(estudante), _gerenciadorArquivo(gerenciadorArquivo) {}
 
-MenuPrincipal::~MenuPrincipal() 
-{}
 void MenuPrincipal::exibirResumoAcademico() const 
 {
     const Curso& curso = this->_estudante.getCurso();
@@ -57,6 +54,7 @@ void MenuPrincipal::exibirResumoAcademico() const
         std::cout << " - Horas Adicionais Exigidas (Opt/Livre): " << curso.getHorasAdicionais() << "h\n";
     }
 }
+
 void MenuPrincipal::exibirTabelaGeralDisciplinas() const 
 {
     const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
@@ -95,6 +93,7 @@ void MenuPrincipal::exibirTabelaGeralDisciplinas() const
                   << std::setw(10) << it->frequencia().getMaxFaltas() << "\n";
     }
 }
+
 void MenuPrincipal::exibir() 
 {
     this->exibirResumoAcademico();
@@ -111,38 +110,47 @@ void MenuPrincipal::exibir()
     std::cout << "0 - Salvar e Sair\n";
     std::cout << "==============================================================================================\n";
 }
+
 Menu* MenuPrincipal::processarEntrada() 
 {
     while (true) 
     {
         int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
+        SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
+
         if (opcao == 1) 
         {
-            return new MenuDisciplina(this->_estudante, this->_gerenciadorArquivo);
+            return new MenuDisciplina(*semAtual);
         } else if (opcao == 2) 
         {
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return new MenuAtividadeAvaliativa(*semAtual);
         } else if (opcao == 3) 
         {
-            return new MenuFrequencia(this->_estudante, this->_gerenciadorArquivo);
+            return new MenuFrequencia(*semAtual);
         } else if (opcao == 4) 
         {
-            return new MenuDetalhamentoDisciplina(this->_estudante, this->_gerenciadorArquivo);
+            return new MenuDetalhamentoDisciplina(*semAtual);
         } else if (opcao == 5) 
         {
             std::cout << "\nDeseja consolidar o semestre atual ("
-                      << this->_estudante.getHistorico().getSemestreAtual()->getIdentificador() << ")?\n";
+                      << semAtual->getIdentificador() << ")?\n";
             std::cout << "1 - Consolidar normalmente\n";
             std::cout << "2 - Consolidar como semestre TRANCADO (NSG ignorado)\n";
             std::cout << "0 - Cancelar\n";
             int subOp = this->entradaSanitizada<int>("Opcao: ");
             if (subOp == 1 || subOp == 2) 
             {
-                this->_estudante.getHistoricoEditavel().consolidarSemestreAtual(subOp == 2);
-                std::cout << "Semestre consolidado com sucesso! Novo semestre atual: "
-                          << this->_estudante.getHistorico().getSemestreAtual()->getIdentificador() << "\n";
+                try 
+                {
+                    this->_estudante.getHistoricoEditavel().consolidarSemestreAtual(subOp == 2);
+                    std::cout << "Semestre consolidado com sucesso! Novo semestre atual: "
+                            << this->_estudante.getHistorico().getSemestreAtual()->getIdentificador() << "\n";
+                } catch (const std::invalid_argument& e) 
+                {
+                    std::cout << "[ERRO] Nao foi possivel consolidar o semestre: " << e.what() << "\n";
+                }
             }
-            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 0) 
         {
             try 

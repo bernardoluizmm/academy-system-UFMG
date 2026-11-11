@@ -1,27 +1,46 @@
 #include "SeletorMenu.hpp"
-#include "MenuInicial.hpp"
 
-SeletorMenu::SeletorMenu(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : _estudante(estudante),
-      _gerenciadorArquivo(gerenciadorArquivo),
-      _menuAtual(new MenuInicial(estudante, gerenciadorArquivo)) {}
+SeletorMenu::SeletorMenu(Menu* menuInicial)
+{
+    if (menuInicial != nullptr) 
+    {
+        this->_pilhaMenus.push(menuInicial);
+    }
+}
 
 SeletorMenu::~SeletorMenu() 
 {
-    delete this->_menuAtual;
-    this->_menuAtual = nullptr;
+    this->limparPilha();
+}
+
+void SeletorMenu::limparPilha() 
+{
+    while (!this->_pilhaMenus.empty()) 
+    {
+        delete this->_pilhaMenus.top();
+        this->_pilhaMenus.pop();
+    }
 }
 
 void SeletorMenu::executar() 
 {
-    while (this->_menuAtual != nullptr) 
+    while (!this->_pilhaMenus.empty()) 
     {
-        this->_menuAtual->exibir();
-        Menu* proximoMenu = this->_menuAtual->processarEntrada();
-        if (proximoMenu != this->_menuAtual) 
+        Menu* menuAtual = this->_pilhaMenus.top();
+        menuAtual->exibir();
+        Menu* proximoMenu = menuAtual->processarEntrada();
+
+        if (proximoMenu == nullptr) 
         {
-            delete this->_menuAtual;
-            this->_menuAtual = proximoMenu;
+            delete menuAtual;
+            this->_pilhaMenus.pop();
+        } else if (proximoMenu != menuAtual) 
+        {
+            if (menuAtual->substituirPilhaAoTransicionar()) 
+            {
+                this->limparPilha();
+            }
+            this->_pilhaMenus.push(proximoMenu);
         }
     }
 }
