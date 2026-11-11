@@ -274,3 +274,11 @@ TEST_CASE("MenuAtividadeAvaliativa - lancar nota com ID 0 cancela")
     executar(menu, "2\n1\n0\n");
     CHECK_FALSE(c.atividade()->isConcluida());
 }
+TEST_CASE("MenuAtividadeAvaliativa - lancar nota em atividade inexistente mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n999\n");
+    CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
+}
