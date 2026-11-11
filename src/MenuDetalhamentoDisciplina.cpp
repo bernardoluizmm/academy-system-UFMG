@@ -133,17 +133,20 @@ void MenuDetalhamentoDisciplina::exibir()
 }
 Menu* MenuDetalhamentoDisciplina::processarEntrada() 
 {
+     while (true)
     {
         int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
-        if (opcao == 1) 
+        if (opcao == 1)
         {
             this->fluxoDetalharDisciplinaEspecifica();
             return this;
-        } else if (opcao == 2) 
+        }
+        else if (opcao == 2)
         {
             this->fluxoDetalharTodasDisciplinas();
             return this;
-        } else if (opcao == 0) 
+        }
+        else if (opcao == 0)
         {
             return nullptr;
         }
