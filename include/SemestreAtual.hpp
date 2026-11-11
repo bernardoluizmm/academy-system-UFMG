@@ -113,6 +113,12 @@ public:
      */
     Disciplina* buscarDisciplina(int idDisciplina);
     
+    /**
+     * @brief Busca uma disciplina pelo identificador (versao somente leitura).
+     * @param idDisciplina Identificador da disciplina procurada.
+     * @return Ponteiro constante para a disciplina, ou @c nullptr se nao existir.
+     * @warning O ponteiro pode ser invalidado se disciplinas forem adicionadas ou removidas.
+     */
     const Disciplina* buscarDisciplina(int idDisciplina) const;
 
     /** @brief Retorna as disciplinas (somente leitura). */
