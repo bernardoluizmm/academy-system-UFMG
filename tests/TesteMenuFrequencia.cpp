@@ -138,3 +138,32 @@ TEST_CASE("Fluxos de Adicionar, Remover e Definir Faltas - Happy Path e Limites"
         CHECK(io.saida.str().find("Nao e possivel remover uma falta.") != std::string::npos);
     }
 }
+
+TEST_CASE("Selecao de Disciplina - Semestre vazio, ID inexistente e Cancelamento nos 3 fluxos") 
+{
+    SemestreAtual semestre("2026/02");
+    MenuFrequencia menu(semestre);
+
+    SUBCASE("Operacoes quando nao ha disciplinas cadastradas no semestre") 
+    {
+        RedirecionadorIO io("1\n2\n3\n");
+
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(io.saida.str().find("[AVISO] Nao ha disciplinas cadastradas no semestre atual.") != std::string::npos);
+    }
+
+    SUBCASE("ID inexistente e cancelamento (ID 0) ao selecionar disciplina") 
+    {
+        semestre.adicionarDisciplina("MAT001", "T1", "Calculo I", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg");
+        RedirecionadorIO io("1\n99\n1\n0\n2\n0\n3\n0\n");
+
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(semestre.buscarDisciplina(1)->frequencia().getFaltasAtuais() == 0);
+        CHECK(io.saida.str().find("[ERRO] Disciplina com ID 99 nao encontrada.") != std::string::npos);
+    }
+}
