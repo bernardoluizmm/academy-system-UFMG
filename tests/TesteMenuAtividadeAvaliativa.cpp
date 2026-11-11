@@ -250,3 +250,14 @@ TEST_CASE("MenuAtividadeAvaliativa - criar atividade pede de novo uma data inval
     REQUIRE(c.totalAtividades() == 1);
     CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getData().getDataValidada() == "15/03");
 }
+TEST_CASE("MenuAtividadeAvaliativa - criar atividade pede de novo um valor invalido")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n1\nProva 1\n15/03\n-5\n10\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    REQUIRE(c.totalAtividades() == 1);
+    CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getValorMaximo() == doctest::Approx(10.0f));
+}
