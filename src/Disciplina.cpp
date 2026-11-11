@@ -89,7 +89,7 @@ Disciplina::Disciplina(int id,
     : _id(id),
       _cargaHoraria(cargaHoraria),
       _duracaoAulaMinutos(duracaoAulaMinutos),
-      _frequencia(CalcularMaxFaltas::calcularDiasMaximosFalta(cargaHoraria, duracaoAulaMinutos)), 
+      _frequencia(CalculadorMaxFaltas::calcularDiasMaximosFalta(cargaHoraria, duracaoAulaMinutos)), 
       _avaliacoes() 
 {
         if (id < 0) 
@@ -110,7 +110,7 @@ Disciplina::Disciplina(int id,
 
 void Disciplina::atualizarLimiteFaltas() 
 {
-    int novoMax = CalcularMaxFaltas::calcularDiasMaximosFalta(this->_cargaHoraria, this->_duracaoAulaMinutos);
+    int novoMax = CalculadorMaxFaltas::calcularDiasMaximosFalta(this->_cargaHoraria, this->_duracaoAulaMinutos);
     this->_frequencia.setMaxFaltas(novoMax);
 }
 
