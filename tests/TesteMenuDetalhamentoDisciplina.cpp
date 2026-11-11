@@ -227,3 +227,12 @@ TEST_CASE("MenuDetalhamentoDisciplina - atividade concluida mostra a nota obtida
     CHECK(contem(r.saida, "8.00"));
     CHECK_FALSE(contem(r.saida, "Pendente"));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - opcao 2 sem disciplinas mostra aviso")
+{
+    SemestreAtual semestre("2026/01");
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "2\n");
+    CHECK(contem(r.saida, "[AVISO] Nenhuma disciplina cadastrada no semestre atual."));
+}
