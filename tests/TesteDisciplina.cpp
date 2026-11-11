@@ -344,3 +344,36 @@ TEST_CASE("Disciplina - cada disciplina tem seu proprio diario e frequencia")
     CHECK(segunda.frequencia().getFaltasAtuais() == 0);
 }
 
+TEST_CASE("Disciplina - serializar")
+{
+    SUBCASE("sem atividades")
+    {
+        Disciplina disciplina(3, "DCC204", "TA", "PDS II", "Douglas Macharet", "ICEx 2014",
+                              60, 50, "Obrigatoria", "Seg 10h");
+
+        CHECK(disciplina.serializar() ==
+              "DISCIPLINA|3|DCC204|TA|PDS II|Douglas Macharet|ICEx 2014|60|50|Obrigatoria|Seg 10h|0\n");
+    }
+
+    SUBCASE("inclui as faltas atuais")
+    {
+        Disciplina disciplina = criarDisciplina(3);
+        disciplina.frequencia().adicionarFalta();
+        disciplina.frequencia().adicionarFalta();
+
+        CHECK(contem(disciplina.serializar(), "|Seg 10h|2\n"));
+    }
+
+    SUBCASE("inclui uma linha por atividade")
+    {
+        Disciplina disciplina = criarDisciplina(3);
+        disciplina.avaliacoes().adicionarAtividade("TP1", "10/04", 30.0f);
+        disciplina.avaliacoes().adicionarAtividade("TP2", "10/05", 70.0f);
+
+        std::string texto = disciplina.serializar();
+
+        CHECK(texto.substr(0, 11) == "DISCIPLINA|");
+        CHECK(contem(texto, "ATIVIDADE|0|TP1|"));
+        CHECK(contem(texto, "ATIVIDADE|1|TP2|"));
+    }
+}
