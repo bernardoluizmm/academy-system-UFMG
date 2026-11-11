@@ -44,3 +44,35 @@ TEST_CASE("DiarioAtividades - carregar atividades e atualizar contador") {
     CHECK(diario.getAtividades().size() == 2);
 }
 
+TEST_CASE("DiarioAtividades - remover e buscar por ID") {
+    DiarioAtividades diario;
+    diario.adicionarAtividade("Primeira", "10/04", 10.0f);
+    diario.adicionarAtividade("Segunda", "12/04", 20.0f);
+    diario.removerAtividade(1);
+    CHECK(diario.buscarAtividade(1) == nullptr);
+    CHECK(diario.buscarAtividade(2) != nullptr);
+    CHECK(diario.getAtividades().size() == 1);
+    CHECK_THROWS_AS(diario.removerAtividade(1), std::invalid_argument);
+    diario.adicionarAtividade("Terceira", "13/04", 20.0f);
+    CHECK(diario.buscarAtividade(3) != nullptr);
+}
+
+TEST_CASE("DiarioAtividades - totais, media, percentual e conceito parcial") {
+    DiarioAtividades diario;
+    diario.adicionarAtividade("Prova 1", "10/04", 30.0f);
+    diario.adicionarAtividade("Trabalho", "20/04", 20.0f);
+    diario.adicionarAtividade("Prova 2", "30/04", 50.0f);
+    diario.buscarAtividade(1)->setNotaObtida(24.0f);
+    diario.buscarAtividade(2)->setNotaObtida(18.0f);
+    CHECK(diario.obterValorTotalPlanejado() == doctest::Approx(100.0f));
+    CHECK(diario.obterValorTotalConcluido() == doctest::Approx(50.0f));
+    CHECK(diario.obterNotaTotalParcial() == doctest::Approx(42.0f));
+    CHECK(diario.obterMediaParcial() == doctest::Approx(30.0f));
+    CHECK(diario.calcularPercentualAproveitamento() == doctest::Approx(84.0f));
+    CHECK(diario.obterConceitoParcial() == 'B');
+    diario.buscarAtividade(1)->removerLancamentoNota();
+    CHECK(diario.obterValorTotalConcluido() == doctest::Approx(20.0f));
+    CHECK(diario.obterNotaTotalParcial() == doctest::Approx(18.0f));
+    CHECK(diario.calcularPercentualAproveitamento() == doctest::Approx(90.0f));
+    CHECK(diario.obterConceitoParcial() == 'A');
+}
