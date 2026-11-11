@@ -261,3 +261,11 @@ TEST_CASE("MenuAtividadeAvaliativa - criar atividade pede de novo um valor inval
     REQUIRE(c.totalAtividades() == 1);
     CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getValorMaximo() == doctest::Approx(10.0f));
 }
+TEST_CASE("MenuAtividadeAvaliativa - lancar nota em disciplina sem atividades mostra aviso")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n");
+    CHECK(contem(r.saida, "[AVISO] Esta disciplina nao possui atividades cadastradas."));
+}
