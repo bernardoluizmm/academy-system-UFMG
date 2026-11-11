@@ -371,4 +371,29 @@ TEST_CASE("Disciplina::avaliacoes [positivo] versao const permite leitura")
     REQUIRE(cd.avaliacoes().getAtividades().size() == 1);
     CHECK(cd.avaliacoes().getAtividades()[0].getNome() == "Prova 1");
 }
+TEST_CASE("Disciplina::serializar [positivo] sem atividades gera so a linha da disciplina")
+{
+    Disciplina d = criarDisciplinaValida(3);
+    CHECK(d.serializar() ==
+          "DISCIPLINA|3|COD001|T1|Programacao|Prof. Ana|Sala 101|60|50|Obrigatoria|Seg 10h|0\n");
+}
 
+TEST_CASE("Disciplina::serializar [positivo] inclui uma linha para cada atividade")
+{
+    Disciplina d = criarDisciplinaValida(3);
+    d.avaliacoes().adicionarAtividade("Prova 1", "15/03", 10.0f);
+    d.avaliacoes().adicionarAtividade("Prova 2", "20/04", 20.0f);
+
+    const std::vector<AtividadeAvaliativa>& atividades = d.avaliacoes().getAtividades();
+    const std::string texto = d.serializar();
+
+    CHECK(contem(texto, atividades[0].serializar() + "\n"));
+    CHECK(contem(texto, atividades[1].serializar() + "\n"));
+}
+
+TEST_CASE("Disciplina::serializar [positivo] linhas de atividade comecam com ATIVIDADE")
+{
+    Disciplina d = criarDisciplinaValida(3);
+    d.avaliacoes().adicionarAtividade("Prova 1", "15/03", 10.0f);
+    CHECK(contem(d.serializar(), "\nATIVIDADE|"));
+}
