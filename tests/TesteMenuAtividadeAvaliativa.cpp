@@ -301,3 +301,54 @@ TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] opcao 1 alte
     CHECK(contem(r.saida, "Atividade atualizada com sucesso!"));
     CHECK(c.atividade()->getNome() == "Prova Final");
 }
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] opcao 2 altera a data")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "3\n1\n" + c.id() + "\n2\n20/04\n0\n");
+    CHECK(c.atividade()->getData().getDataValidada() == "20/04");
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [negativo] opcao 2 com data invalida mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n" + c.id() + "\n2\n32/13\n0\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    CHECK(c.atividade()->getData().getDataValidada() == "15/03");
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] opcao 3 altera o valor")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "3\n1\n" + c.id() + "\n3\n20\n0\n");
+    CHECK(c.atividade()->getValorMaximo() == doctest::Approx(20.0f));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [negativo] opcao 3 com valor invalido preserva o anterior")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n" + c.id() + "\n3\n-1\n0\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    CHECK(c.atividade()->getValorMaximo() == doctest::Approx(10.0f));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] opcao 4 lanca a nota")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "3\n1\n" + c.id() + "\n4\n7\n0\n");
+
+    CHECK(c.atividade()->isConcluida());
+    CHECK(c.atividade()->getNotaObtida() == doctest::Approx(7.0f));
+}
