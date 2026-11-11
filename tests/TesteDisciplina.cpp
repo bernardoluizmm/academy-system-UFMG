@@ -81,3 +81,27 @@ TEST_CASE("Disciplina::Disciplina [negativo] campos de texto vazios lancam excec
     CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "", 60, 50, "Optativa", "H"), std::invalid_argument);
     CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "S", 60, 50, "Optativa", ""), std::invalid_argument);
 }
+
+TEST_CASE("Disciplina::Disciplina [negativo] tipo invalido lanca excecao")
+{
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "S", 60, 50, "Invalido", "H"), std::invalid_argument);
+}
+
+// ============================================== Validadores estaticos
+TEST_CASE("Disciplina::validarCodigo [limite] aceita de 1 a 8 caracteres")
+{
+    CHECK_NOTHROW(Disciplina::validarCodigo("A"));
+    CHECK_NOTHROW(Disciplina::validarCodigo(std::string(8, 'X')));
+}
+
+TEST_CASE("Disciplina::validarCodigo [negativo] rejeita vazio e mais de 8 caracteres")
+{
+    CHECK_THROWS_AS(Disciplina::validarCodigo(""), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarCodigo(std::string(9, 'X')), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::validarCodigoTurma [limite] aceita de 1 a 6 caracteres")
+{
+    CHECK_NOTHROW(Disciplina::validarCodigoTurma("A"));
+    CHECK_NOTHROW(Disciplina::validarCodigoTurma(std::string(6, 'T')));
+}
