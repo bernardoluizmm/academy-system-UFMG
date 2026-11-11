@@ -147,6 +147,18 @@ Disciplina* SemestreAtual::buscarDisciplina(int idDisciplina)
     return nullptr;
 }
 
+const Disciplina* SemestreAtual::buscarDisciplina(int idDisciplina) const 
+{
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getId() == idDisciplina) 
+        {
+            return &(*it);
+        }
+    }
+   return nullptr;
++}
+
 const std::vector<Disciplina>& SemestreAtual::getDisciplinas() const 
 {
     return this->_disciplinas;
