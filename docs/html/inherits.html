@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Hierarquia de Classes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('hierarchy.html
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -124,29 +117,47 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('hierarchy.html
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#a_atividade_avaliativa" loading="lazy" alt=""/>
 <!-- MAP 0 -->
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" usemap="#a_controle_frequencia" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#a_calculador_conceito" loading="lazy" alt=""/>
 <!-- MAP 1 -->
 </td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" usemap="#a_curso" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#a_calculador_max_faltas" loading="lazy" alt=""/>
 <!-- MAP 2 -->
 </td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" usemap="#a_disciplina" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#a_calculador_media" loading="lazy" alt=""/>
 <!-- MAP 3 -->
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#a_estudante" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#a_controle_frequencia" loading="lazy" alt=""/>
 <!-- MAP 4 -->
 </td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" usemap="#a_gerenciador_perfil" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#a_curso" loading="lazy" alt=""/>
 <!-- MAP 5 -->
 </td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" usemap="#a_ponto_grafico" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#a_data" loading="lazy" alt=""/>
 <!-- MAP 6 -->
 </td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" usemap="#a_semestre" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#a_diario_atividades" loading="lazy" alt=""/>
 <!-- MAP 7 -->
 </td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" usemap="#a_tela" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_8.png" border="0" usemap="#a_disciplina" loading="lazy" alt=""/>
 <!-- MAP 8 -->
+</td></tr>
+<tr><td><img src="inherit_graph_9.png" border="0" usemap="#a_estudante" loading="lazy" alt=""/>
+<!-- MAP 9 -->
+</td></tr>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#a_gerenciador_arquivo" loading="lazy" alt=""/>
+<!-- MAP 10 -->
+</td></tr>
+<tr><td><img src="inherit_graph_11.png" border="0" usemap="#a_historico_escolar" loading="lazy" alt=""/>
+<!-- MAP 11 -->
+</td></tr>
+<tr><td><img src="inherit_graph_12.png" border="0" usemap="#a_menu" loading="lazy" alt=""/>
+<!-- MAP 12 -->
+</td></tr>
+<tr><td><img src="inherit_graph_13.png" border="0" usemap="#a_seletor_menu" loading="lazy" alt=""/>
+<!-- MAP 13 -->
+</td></tr>
+<tr><td><img src="inherit_graph_14.png" border="0" usemap="#a_semestre" loading="lazy" alt=""/>
+<!-- MAP 14 -->
 </td></tr>
 </table>
 </div><!-- contents -->
@@ -155,7 +166,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('hierarchy.html
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

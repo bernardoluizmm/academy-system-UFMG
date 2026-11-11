@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['curso_5f_0',['curso_',['../class_estudante.html#a3e9925d1d2476273bc8f46c5775ab2d5',1,'Estudante']]]
+  ['ano_5freforma_5fcc_0',['ANO_REFORMA_CC',['../class_curso.html#a765473a1109741c2634cfae9d06e5bc3',1,'Curso']]]
 ];

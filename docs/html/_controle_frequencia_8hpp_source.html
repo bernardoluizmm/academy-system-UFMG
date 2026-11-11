@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Código-Fonte de include/ControleFrequencia.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_controle_freq
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,40 +112,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_controle_freq
 </div><!--header-->
 <div class="contents">
 <a href="_controle_frequencia_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef CONTROLE_FREQUENCIA_HPP</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define CONTROLE_FREQUENCIA_HPP</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef CONTROLEFREQUENCIA_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define CONTROLEFREQUENCIA_HPP</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html">   12</a></span><span class="keyword">class </span><a class="code hl_function" href="class_controle_frequencia.html#aef9de3fa13229c5804981eb66d3b1283">ControleFrequencia</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#ac290613b8ba09cb231e0372e4ea5ca38">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_controle_frequencia.html#ac290613b8ba09cb231e0372e4ea5ca38">_faltasPermitidas</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#a06563e1f683ad3f2c0d7b056bbc94d00">   18</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_controle_frequencia.html#a06563e1f683ad3f2c0d7b056bbc94d00">_faltasAtuais</a>;</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_controle_frequencia.html#a3da056d31354dc9b07e858059d9b1dee">ControleFrequencia</a> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#aef95444407df7ed0de0f880631649931">   17</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_controle_frequencia.html#aef95444407df7ed0de0f880631649931">_maxFaltas</a>;     </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#a06563e1f683ad3f2c0d7b056bbc94d00">   18</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_controle_frequencia.html#a06563e1f683ad3f2c0d7b056bbc94d00">_faltasAtuais</a>;  </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#aef9de3fa13229c5804981eb66d3b1283">   25</a></span>    <a class="code hl_function" href="class_controle_frequencia.html#aef9de3fa13229c5804981eb66d3b1283">ControleFrequencia</a>(<span class="keywordtype">int</span> faltasPermitidas);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#aae772e14857b4a42bbf35f0c6208f62e">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_controle_frequencia.html#aae772e14857b4a42bbf35f0c6208f62e">getFaltasPermitidas</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#ab37135dfc02b1ec88b4e4035d77940fc">   37</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_controle_frequencia.html#ab37135dfc02b1ec88b4e4035d77940fc">getFaltasAtuais</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#a4b98bba12edd02a2aee2266373bf27a5">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controle_frequencia.html#a4b98bba12edd02a2aee2266373bf27a5">incrementarFalta</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#ab8757c0944f9e4089607e625de01eef3">   47</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controle_frequencia.html#ab8757c0944f9e4089607e625de01eef3">decrementarFalta</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_controle_frequencia.html#ac348f488fe698a32ef08e140602a87bd">   53</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_controle_frequencia.html#ac348f488fe698a32ef08e140602a87bd">calcularPercentualFrequencia</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_controle_frequencia.html#a3da056d31354dc9b07e858059d9b1dee">ControleFrequencia</a>(<span class="keywordtype">int</span> maxFaltas);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_controle_frequencia.html#a4aa32a45a97b73d66da01b6619fa3950">getMaxFaltas</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_controle_frequencia.html#ab37135dfc02b1ec88b4e4035d77940fc">getFaltasAtuais</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controle_frequencia.html#a2bbea3a652c0beab387a1dcf0f6908d0">setMaxFaltas</a>(<span class="keywordtype">int</span> novoMaxFaltas);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controle_frequencia.html#a23617aa8fc8deaa386930f8085f0a191">setFaltasAtuais</a>(<span class="keywordtype">int</span> novasFaltas);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controle_frequencia.html#a4d37652d4af2bf38735d35071815e396">adicionarFalta</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controle_frequencia.html#a88037da1a7c32a1dbef2d037b3aa39f4">removerFalta</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// CONTROLE_FREQUENCIA_HPP</span></div>
-<div class="ttc" id="aclass_controle_frequencia_html_a06563e1f683ad3f2c0d7b056bbc94d00"><div class="ttname"><a href="class_controle_frequencia.html#a06563e1f683ad3f2c0d7b056bbc94d00">ControleFrequencia::_faltasAtuais</a></div><div class="ttdeci">int _faltasAtuais</div><div class="ttdoc">Quantidade de faltas acumuladas no semestre.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.hpp:18</div></div>
-<div class="ttc" id="aclass_controle_frequencia_html_a4b98bba12edd02a2aee2266373bf27a5"><div class="ttname"><a href="class_controle_frequencia.html#a4b98bba12edd02a2aee2266373bf27a5">ControleFrequencia::incrementarFalta</a></div><div class="ttdeci">void incrementarFalta()</div><div class="ttdoc">Incrementa em 1 o número de faltas do estudante.</div></div>
-<div class="ttc" id="aclass_controle_frequencia_html_aae772e14857b4a42bbf35f0c6208f62e"><div class="ttname"><a href="class_controle_frequencia.html#aae772e14857b4a42bbf35f0c6208f62e">ControleFrequencia::getFaltasPermitidas</a></div><div class="ttdeci">int getFaltasPermitidas() const</div><div class="ttdoc">Retorna o limite de faltas permitidas.</div></div>
-<div class="ttc" id="aclass_controle_frequencia_html_ab37135dfc02b1ec88b4e4035d77940fc"><div class="ttname"><a href="class_controle_frequencia.html#ab37135dfc02b1ec88b4e4035d77940fc">ControleFrequencia::getFaltasAtuais</a></div><div class="ttdeci">int getFaltasAtuais() const</div><div class="ttdoc">Retorna o número atual de faltas registradas.</div></div>
-<div class="ttc" id="aclass_controle_frequencia_html_ab8757c0944f9e4089607e625de01eef3"><div class="ttname"><a href="class_controle_frequencia.html#ab8757c0944f9e4089607e625de01eef3">ControleFrequencia::decrementarFalta</a></div><div class="ttdeci">void decrementarFalta()</div><div class="ttdoc">Decrementa em 1 o número de faltas do estudante (mínimo 0).</div></div>
-<div class="ttc" id="aclass_controle_frequencia_html_ac290613b8ba09cb231e0372e4ea5ca38"><div class="ttname"><a href="class_controle_frequencia.html#ac290613b8ba09cb231e0372e4ea5ca38">ControleFrequencia::_faltasPermitidas</a></div><div class="ttdeci">int _faltasPermitidas</div><div class="ttdoc">Quantidade máxima de faltas permitidas antes da reprovação por infrequência.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.hpp:15</div></div>
-<div class="ttc" id="aclass_controle_frequencia_html_ac348f488fe698a32ef08e140602a87bd"><div class="ttname"><a href="class_controle_frequencia.html#ac348f488fe698a32ef08e140602a87bd">ControleFrequencia::calcularPercentualFrequencia</a></div><div class="ttdeci">double calcularPercentualFrequencia() const</div><div class="ttdoc">Calcula a taxa percentual de presença do estudante.</div></div>
-<div class="ttc" id="aclass_controle_frequencia_html_aef9de3fa13229c5804981eb66d3b1283"><div class="ttname"><a href="class_controle_frequencia.html#aef9de3fa13229c5804981eb66d3b1283">ControleFrequencia::ControleFrequencia</a></div><div class="ttdeci">ControleFrequencia(int faltasPermitidas)</div><div class="ttdoc">Construtor da classe ControleFrequencia.</div></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_controle_frequencia_html_a06563e1f683ad3f2c0d7b056bbc94d00"><div class="ttname"><a href="class_controle_frequencia.html#a06563e1f683ad3f2c0d7b056bbc94d00">ControleFrequencia::_faltasAtuais</a></div><div class="ttdeci">int _faltasAtuais</div><div class="ttdoc">Número de faltas acumuladas até o momento.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.hpp:18</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_a23617aa8fc8deaa386930f8085f0a191"><div class="ttname"><a href="class_controle_frequencia.html#a23617aa8fc8deaa386930f8085f0a191">ControleFrequencia::setFaltasAtuais</a></div><div class="ttdeci">void setFaltasAtuais(int novasFaltas)</div><div class="ttdoc">Define diretamente o número de faltas acumuladas.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.cpp:38</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_a2bbea3a652c0beab387a1dcf0f6908d0"><div class="ttname"><a href="class_controle_frequencia.html#a2bbea3a652c0beab387a1dcf0f6908d0">ControleFrequencia::setMaxFaltas</a></div><div class="ttdeci">void setMaxFaltas(int novoMaxFaltas)</div><div class="ttdoc">Define o número máximo de faltas permitido.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.cpp:24</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_a3da056d31354dc9b07e858059d9b1dee"><div class="ttname"><a href="class_controle_frequencia.html#a3da056d31354dc9b07e858059d9b1dee">ControleFrequencia::ControleFrequencia</a></div><div class="ttdeci">ControleFrequencia(int maxFaltas)</div><div class="ttdoc">Constrói o controle de frequência, iniciando com zero faltas.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.cpp:4</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_a4aa32a45a97b73d66da01b6619fa3950"><div class="ttname"><a href="class_controle_frequencia.html#a4aa32a45a97b73d66da01b6619fa3950">ControleFrequencia::getMaxFaltas</a></div><div class="ttdeci">int getMaxFaltas() const</div><div class="ttdoc">Obtém o número máximo de faltas permitido.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.cpp:14</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_a4d37652d4af2bf38735d35071815e396"><div class="ttname"><a href="class_controle_frequencia.html#a4d37652d4af2bf38735d35071815e396">ControleFrequencia::adicionarFalta</a></div><div class="ttdeci">void adicionarFalta()</div><div class="ttdoc">Registra uma falta (incrementa o contador de faltas atuais).</div><div class="ttdef"><b>Definição</b> ControleFrequencia.cpp:47</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_a88037da1a7c32a1dbef2d037b3aa39f4"><div class="ttname"><a href="class_controle_frequencia.html#a88037da1a7c32a1dbef2d037b3aa39f4">ControleFrequencia::removerFalta</a></div><div class="ttdeci">void removerFalta()</div><div class="ttdoc">Remove uma falta registrada (decrementa o contador de faltas atuais).</div><div class="ttdef"><b>Definição</b> ControleFrequencia.cpp:56</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_ab37135dfc02b1ec88b4e4035d77940fc"><div class="ttname"><a href="class_controle_frequencia.html#ab37135dfc02b1ec88b4e4035d77940fc">ControleFrequencia::getFaltasAtuais</a></div><div class="ttdeci">int getFaltasAtuais() const</div><div class="ttdoc">Obtém o número de faltas acumuladas.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.cpp:19</div></div>
+<div class="ttc" id="aclass_controle_frequencia_html_aef95444407df7ed0de0f880631649931"><div class="ttname"><a href="class_controle_frequencia.html#aef95444407df7ed0de0f880631649931">ControleFrequencia::_maxFaltas</a></div><div class="ttdeci">int _maxFaltas</div><div class="ttdoc">Número máximo de faltas permitido.</div><div class="ttdef"><b>Definição</b> ControleFrequencia.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
@@ -160,7 +156,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_controle_freq
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_controle_frequencia_8hpp.html">ControleFrequencia.hpp</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

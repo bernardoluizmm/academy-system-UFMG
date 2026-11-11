@@ -1,11 +1,12 @@
 var class_controle_frequencia =
 [
-    [ "ControleFrequencia", "class_controle_frequencia.html#aef9de3fa13229c5804981eb66d3b1283", null ],
-    [ "calcularPercentualFrequencia", "class_controle_frequencia.html#ac348f488fe698a32ef08e140602a87bd", null ],
-    [ "decrementarFalta", "class_controle_frequencia.html#ab8757c0944f9e4089607e625de01eef3", null ],
+    [ "ControleFrequencia", "class_controle_frequencia.html#a3da056d31354dc9b07e858059d9b1dee", null ],
+    [ "adicionarFalta", "class_controle_frequencia.html#a4d37652d4af2bf38735d35071815e396", null ],
     [ "getFaltasAtuais", "class_controle_frequencia.html#ab37135dfc02b1ec88b4e4035d77940fc", null ],
-    [ "getFaltasPermitidas", "class_controle_frequencia.html#aae772e14857b4a42bbf35f0c6208f62e", null ],
-    [ "incrementarFalta", "class_controle_frequencia.html#a4b98bba12edd02a2aee2266373bf27a5", null ],
+    [ "getMaxFaltas", "class_controle_frequencia.html#a4aa32a45a97b73d66da01b6619fa3950", null ],
+    [ "removerFalta", "class_controle_frequencia.html#a88037da1a7c32a1dbef2d037b3aa39f4", null ],
+    [ "setFaltasAtuais", "class_controle_frequencia.html#a23617aa8fc8deaa386930f8085f0a191", null ],
+    [ "setMaxFaltas", "class_controle_frequencia.html#a2bbea3a652c0beab387a1dcf0f6908d0", null ],
     [ "_faltasAtuais", "class_controle_frequencia.html#a06563e1f683ad3f2c0d7b056bbc94d00", null ],
-    [ "_faltasPermitidas", "class_controle_frequencia.html#ac290613b8ba09cb231e0372e4ea5ca38", null ]
+    [ "_maxFaltas", "class_controle_frequencia.html#aef95444407df7ed0de0f880631649931", null ]
 ];

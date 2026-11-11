@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Código-Fonte de include/SemestreAtual.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_semestre_atua
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -118,7 +111,78 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_semestre_atua
   <div class="headertitle"><div class="title">SemestreAtual.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_semestre_atual_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="_semestre_atual_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef SEMESTREATUAL_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define SEMESTREATUAL_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_semestre_8hpp.html">Semestre.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_disciplina_8hpp.html">Disciplina.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_semestre_atual.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="class_semestre_atual.html#aff7edc81549ddf2f58bb9e331b97e032">SemestreAtual</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_semestre.html#af74574cd3f6e7456e15c3295c93dc8d3">Semestre</a> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_semestre_atual.html#a5e821ea25d4f3243860b40b7a5e45594">   23</a></span>    std::vector&lt;Disciplina&gt; <a class="code hl_variable" href="class_semestre_atual.html#a5e821ea25d4f3243860b40b7a5e45594">_disciplinas</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_semestre_atual.html#aacac10d08877dcf5ef01aca48e69cd3b">   24</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_semestre_atual.html#aacac10d08877dcf5ef01aca48e69cd3b">_contadorId</a>;                      </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_semestre_atual.html#aff7edc81549ddf2f58bb9e331b97e032">SemestreAtual</a>(<span class="keyword">const</span> std::string&amp; identificador);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_semestre_atual.html#a9279600c24c2b255fad857f2ca73feb4">calcularNSG</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_semestre_atual.html#a6512e91872b015e4226ad6189563a2e3">getHorasIntegralizadas</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_semestre_atual.html#af5121b68033abc409689c1dd1dd2930b">getHorasObrigatorias</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_semestre_atual.html#a7f40abb8c3177e63a2681932a3e5e7b7">getHorasOptativas</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_semestre_atual.html#a71bc0299aae86427ce34b9e1c1016bba">getHorasFormacaoLivre</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_semestre_atual.html#a4c334cf7e44bd039622b41394e070062">adicionarDisciplina</a>(<span class="keyword">const</span> std::string&amp; codigo,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                             <span class="keyword">const</span> std::string&amp; codigoTurma,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                             <span class="keyword">const</span> std::string&amp; nome,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                             <span class="keyword">const</span> std::string&amp; professor,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                             <span class="keyword">const</span> std::string&amp; salaBloco,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                             <span class="keywordtype">int</span> cargaHoraria,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                             <span class="keywordtype">int</span> duracaoAulaMinutos,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                             <span class="keyword">const</span> std::string&amp; tipo,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                             <span class="keyword">const</span> std::string&amp; horarioDias);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_semestre_atual.html#a4c334cf7e44bd039622b41394e070062">adicionarDisciplina</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_disciplina.html">Disciplina</a>&amp; disciplina);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_semestre_atual.html#aa448b7baa1a1a2b2f586307d8699d8d4">removerDisciplina</a>(<span class="keywordtype">int</span> idDisciplina);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_class" href="class_disciplina.html">Disciplina</a>* <a class="code hl_function" href="class_semestre_atual.html#ae3361a703f0621b6a32d90e4c138d47d">buscarDisciplina</a>(<span class="keywordtype">int</span> idDisciplina);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_disciplina.html">Disciplina</a>* <a class="code hl_function" href="class_semestre_atual.html#ae3361a703f0621b6a32d90e4c138d47d">buscarDisciplina</a>(<span class="keywordtype">int</span> idDisciplina) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">const</span> std::vector&lt;Disciplina&gt;&amp; <a class="code hl_function" href="class_semestre_atual.html#a8b1957e8bc5aa1e107344570fc6c6467">getDisciplinas</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    std::string <a class="code hl_function" href="class_semestre_atual.html#adceddea1a5c3b81cacd37b89c1f494b3">serializar</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>};</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_disciplina_8hpp_html"><div class="ttname"><a href="_disciplina_8hpp.html">Disciplina.hpp</a></div><div class="ttdoc">Declaração da classe que representa uma disciplina cursada pelo estudante.</div></div>
+<div class="ttc" id="a_semestre_8hpp_html"><div class="ttname"><a href="_semestre_8hpp.html">Semestre.hpp</a></div><div class="ttdoc">Declaração da classe base abstrata Semestre.</div></div>
+<div class="ttc" id="aclass_disciplina_html"><div class="ttname"><a href="class_disciplina.html">Disciplina</a></div><div class="ttdoc">Representa uma disciplina, com seus dados cadastrais, controle de frequência e diário de atividades a...</div><div class="ttdef"><b>Definição</b> Disciplina.hpp:22</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_a4c334cf7e44bd039622b41394e070062"><div class="ttname"><a href="class_semestre_atual.html#a4c334cf7e44bd039622b41394e070062">SemestreAtual::adicionarDisciplina</a></div><div class="ttdeci">void adicionarDisciplina(const std::string &amp;codigo, const std::string &amp;codigoTurma, const std::string &amp;nome, const std::string &amp;professor, const std::string &amp;salaBloco, int cargaHoraria, int duracaoAulaMinutos, const std::string &amp;tipo, const std::string &amp;horarioDias)</div><div class="ttdoc">Cria e adiciona uma disciplina com ID automático.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:76</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_a5e821ea25d4f3243860b40b7a5e45594"><div class="ttname"><a href="class_semestre_atual.html#a5e821ea25d4f3243860b40b7a5e45594">SemestreAtual::_disciplinas</a></div><div class="ttdeci">std::vector&lt; Disciplina &gt; _disciplinas</div><div class="ttdoc">Disciplinas do semestre.</div><div class="ttdef"><b>Definição</b> SemestreAtual.hpp:23</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_a6512e91872b015e4226ad6189563a2e3"><div class="ttname"><a href="class_semestre_atual.html#a6512e91872b015e4226ad6189563a2e3">SemestreAtual::getHorasIntegralizadas</a></div><div class="ttdeci">virtual int getHorasIntegralizadas() const override</div><div class="ttdoc">Soma as horas integralizadas do semestre (obrigatorias + optativas + formacao livre).</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:32</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_a71bc0299aae86427ce34b9e1c1016bba"><div class="ttname"><a href="class_semestre_atual.html#a71bc0299aae86427ce34b9e1c1016bba">SemestreAtual::getHorasFormacaoLivre</a></div><div class="ttdeci">virtual int getHorasFormacaoLivre() const override</div><div class="ttdoc">Retorna as horas de formação livre aprovadas.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:63</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_a7f40abb8c3177e63a2681932a3e5e7b7"><div class="ttname"><a href="class_semestre_atual.html#a7f40abb8c3177e63a2681932a3e5e7b7">SemestreAtual::getHorasOptativas</a></div><div class="ttdeci">virtual int getHorasOptativas() const override</div><div class="ttdoc">Soma a carga horaria das disciplinas optativas consideradas aprovadas.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:50</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_a8b1957e8bc5aa1e107344570fc6c6467"><div class="ttname"><a href="class_semestre_atual.html#a8b1957e8bc5aa1e107344570fc6c6467">SemestreAtual::getDisciplinas</a></div><div class="ttdeci">const std::vector&lt; Disciplina &gt; &amp; getDisciplinas() const</div><div class="ttdoc">Retorna as disciplinas (somente leitura).</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:156</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_a9279600c24c2b255fad857f2ca73feb4"><div class="ttname"><a href="class_semestre_atual.html#a9279600c24c2b255fad857f2ca73feb4">SemestreAtual::calcularNSG</a></div><div class="ttdeci">virtual float calcularNSG() const override</div><div class="ttdoc">Calcula o NSG ponderado pela carga horária.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:7</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_aa448b7baa1a1a2b2f586307d8699d8d4"><div class="ttname"><a href="class_semestre_atual.html#aa448b7baa1a1a2b2f586307d8699d8d4">SemestreAtual::removerDisciplina</a></div><div class="ttdeci">void removerDisciplina(int idDisciplina)</div><div class="ttdoc">Remove uma disciplina pelo ID.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:119</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_aacac10d08877dcf5ef01aca48e69cd3b"><div class="ttname"><a href="class_semestre_atual.html#aacac10d08877dcf5ef01aca48e69cd3b">SemestreAtual::_contadorId</a></div><div class="ttdeci">int _contadorId</div><div class="ttdoc">Próximo ID automático de disciplina.</div><div class="ttdef"><b>Definição</b> SemestreAtual.hpp:24</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_adceddea1a5c3b81cacd37b89c1f494b3"><div class="ttname"><a href="class_semestre_atual.html#adceddea1a5c3b81cacd37b89c1f494b3">SemestreAtual::serializar</a></div><div class="ttdeci">std::string serializar() const</div><div class="ttdoc">Serializa o semestre e suas disciplinas em texto.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:161</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_ae3361a703f0621b6a32d90e4c138d47d"><div class="ttname"><a href="class_semestre_atual.html#ae3361a703f0621b6a32d90e4c138d47d">SemestreAtual::buscarDisciplina</a></div><div class="ttdeci">Disciplina * buscarDisciplina(int idDisciplina)</div><div class="ttdoc">Busca uma disciplina pelo ID.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:132</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_af5121b68033abc409689c1dd1dd2930b"><div class="ttname"><a href="class_semestre_atual.html#af5121b68033abc409689c1dd1dd2930b">SemestreAtual::getHorasObrigatorias</a></div><div class="ttdeci">virtual int getHorasObrigatorias() const override</div><div class="ttdoc">Soma a carga horaria das disciplinas obrigatorias consideradas aprovadas.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:37</div></div>
+<div class="ttc" id="aclass_semestre_atual_html_aff7edc81549ddf2f58bb9e331b97e032"><div class="ttname"><a href="class_semestre_atual.html#aff7edc81549ddf2f58bb9e331b97e032">SemestreAtual::SemestreAtual</a></div><div class="ttdeci">SemestreAtual(const std::string &amp;identificador)</div><div class="ttdoc">Construtor com identificador.</div><div class="ttdef"><b>Definição</b> SemestreAtual.cpp:5</div></div>
+<div class="ttc" id="aclass_semestre_html_af74574cd3f6e7456e15c3295c93dc8d3"><div class="ttname"><a href="class_semestre.html#af74574cd3f6e7456e15c3295c93dc8d3">Semestre::Semestre</a></div><div class="ttdeci">Semestre(const std::string &amp;identificador, bool trancado=false)</div><div class="ttdoc">Constroi um semestre validando o identificador.</div><div class="ttdef"><b>Definição</b> Semestre.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
@@ -126,7 +190,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_semestre_atua
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_semestre_atual_8hpp.html">SemestreAtual.hpp</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

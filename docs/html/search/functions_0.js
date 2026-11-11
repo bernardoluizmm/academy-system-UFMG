@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['adicionaratividade_0',['adicionarAtividade',['../class_disciplina.html#a5d9909f23a2b3f583d2720cc750b7cd7',1,'Disciplina']]],
-  ['adicionarsemestreconsolidado_1',['adicionarSemestreConsolidado',['../class_curso.html#ac46f70496845f302d2d21a0ea051b630',1,'Curso']]],
-  ['atividadeavaliativa_2',['AtividadeAvaliativa',['../class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27',1,'AtividadeAvaliativa']]]
+  ['adicionaratividade_0',['adicionarAtividade',['../class_diario_atividades.html#aeb39063df0584f2fbad5b563f04338d2',1,'DiarioAtividades::adicionarAtividade(const std::string &amp;nome, const std::string &amp;dataInput, float valorMaximo)'],['../class_diario_atividades.html#a394e797d790ae3a26bedfe6346141e8e',1,'DiarioAtividades::adicionarAtividade(int id, const std::string &amp;nome, const std::string &amp;dataInput, float valorMaximo, float notaObtida, bool concluida)']]],
+  ['adicionardisciplina_1',['adicionarDisciplina',['../class_semestre_atual.html#a4c334cf7e44bd039622b41394e070062',1,'SemestreAtual::adicionarDisciplina(const std::string &amp;codigo, const std::string &amp;codigoTurma, const std::string &amp;nome, const std::string &amp;professor, const std::string &amp;salaBloco, int cargaHoraria, int duracaoAulaMinutos, const std::string &amp;tipo, const std::string &amp;horarioDias)'],['../class_semestre_atual.html#a79f9717771c591a5f20a9978685ebc1d',1,'SemestreAtual::adicionarDisciplina(const Disciplina &amp;disciplina)']]],
+  ['adicionarfalta_2',['adicionarFalta',['../class_controle_frequencia.html#a4d37652d4af2bf38735d35071815e396',1,'ControleFrequencia']]],
+  ['adicionarsemestreconsolidado_3',['adicionarSemestreConsolidado',['../class_historico_escolar.html#ab48e8462b89de7dcd9bd37c2b1b36a78',1,'HistoricoEscolar']]],
+  ['arquivoexiste_4',['arquivoExiste',['../class_gerenciador_arquivo.html#a0ef1ccadc52054af19e9aada6d6ce0d8',1,'GerenciadorArquivo']]],
+  ['atividadeavaliativa_5',['AtividadeAvaliativa',['../class_atividade_avaliativa.html#a6f7b640e61ac8fac40106e8cf83a3f11',1,'AtividadeAvaliativa::AtividadeAvaliativa(int id, const std::string &amp;nome, const std::string &amp;data, float valorMaximo)'],['../class_atividade_avaliativa.html#a39780eb665fde5d2a30b409529040219',1,'AtividadeAvaliativa::AtividadeAvaliativa(int id, const std::string &amp;nome, const std::string &amp;data, float valorMaximo, float notaObtida, bool concluida)']]],
+  ['atualizarlimitefaltas_6',['atualizarLimiteFaltas',['../class_disciplina.html#afa25d9035e8c2b484e6dc8da8a92e015',1,'Disciplina']]],
+  ['avaliacoes_7',['avaliacoes',['../class_disciplina.html#a4f8d21b418ec5c84ab64b21417bc4abd',1,'Disciplina::avaliacoes()'],['../class_disciplina.html#a4ebaf1c51312a827c7f5bb8360311952',1,'Disciplina::avaliacoes() const']]]
 ];

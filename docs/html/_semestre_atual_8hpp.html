@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência do Arquivo include/SemestreAtual.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_semestre_atua
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -118,15 +111,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_semestre_atua
   <div class="headertitle"><div class="title">Referência do Arquivo SemestreAtual.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+
+<p>Declaração da classe <a class="el" href="class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas.">SemestreAtual</a>.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_semestre_8hpp_source.html">Semestre.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_disciplina_8hpp_source.html">Disciplina.hpp</a>&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para SemestreAtual.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="_semestre_atual_8hpp__incl.png" border="0" usemap="#ainclude_2_semestre_atual_8hpp" loading="lazy" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
 Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo:</div>
 <div class="dyncontent">
 <div class="center"><img src="_semestre_atual_8hpp__dep__incl.png" border="0" usemap="#ainclude_2_semestre_atual_8hppdep" loading="lazy" alt=""/></div>
-<!-- MAP 0 -->
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="_semestre_atual_8hpp_source.html">Ir para o código-fonte desse arquivo.</a></p>
-</div><!-- contents -->
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:SemestreAtual" id="r_SemestreAtual"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_semestre_atual.html">SemestreAtual</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo.">Semestre</a> em andamento, que gerencia as disciplinas cursadas.  <a href="class_semestre_atual.html#details">Mais...</a><br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Declaração da classe <a class="el" href="class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas.">SemestreAtual</a>. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -140,7 +154,7 @@ Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_semestre_atual_8hpp.html">SemestreAtual.hpp</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

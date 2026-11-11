@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência da Classe AtividadeAvaliativa</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_atividad
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,7 +112,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_atividad
 </div><!--header-->
 <div class="contents">
 
-<p>Representa uma avaliação individual de uma disciplina (ex: prova, trabalho).  
+<p>Representa uma atividade avaliativa (prova, trabalho etc.) com data, valor e nota obtida.  
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_atividade_avaliativa_8hpp_source.html">AtividadeAvaliativa.hpp</a>&gt;</code></p>
@@ -132,37 +125,67 @@ Diagrama de colaboração para AtividadeAvaliativa:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:a4e60e4143a728ca1ac93cb26973a8f27" id="r_a4e60e4143a728ca1ac93cb26973a8f27"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4e60e4143a728ca1ac93cb26973a8f27">AtividadeAvaliativa</a> (const std::string &amp;nome, const std::string &amp;dataEntrega, double valorMaximo)</td></tr>
-<tr class="memdesc:a4e60e4143a728ca1ac93cb26973a8f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor de <a class="el" href="class_atividade_avaliativa.html" title="Representa uma avaliação individual de uma disciplina (ex: prova, trabalho).">AtividadeAvaliativa</a>.  <br /></td></tr>
+<tr class="memitem:a6f7b640e61ac8fac40106e8cf83a3f11" id="r_a6f7b640e61ac8fac40106e8cf83a3f11"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6f7b640e61ac8fac40106e8cf83a3f11">AtividadeAvaliativa</a> (int id, const std::string &amp;nome, const std::string &amp;data, float valorMaximo)</td></tr>
+<tr class="memdesc:a6f7b640e61ac8fac40106e8cf83a3f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constroi uma atividade ainda nao concluida (sem nota lancada).  <br /></td></tr>
+<tr class="memitem:a39780eb665fde5d2a30b409529040219" id="r_a39780eb665fde5d2a30b409529040219"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a39780eb665fde5d2a30b409529040219">AtividadeAvaliativa</a> (int id, const std::string &amp;nome, const std::string &amp;data, float valorMaximo, float notaObtida, bool concluida)</td></tr>
+<tr class="memdesc:a39780eb665fde5d2a30b409529040219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constroi uma atividade com todos os dados, incluindo nota e estado de conclusao.  <br /></td></tr>
+<tr class="memitem:a64b49d6c67d6727c804dc6c0b029a332" id="r_a64b49d6c67d6727c804dc6c0b029a332"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a64b49d6c67d6727c804dc6c0b029a332">getId</a> () const</td></tr>
+<tr class="memdesc:a64b49d6c67d6727c804dc6c0b029a332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o identificador da atividade.  <br /></td></tr>
 <tr class="memitem:a6857f1b75dc0c601bb3cfa8593fc47a3" id="r_a6857f1b75dc0c601bb3cfa8593fc47a3"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a6857f1b75dc0c601bb3cfa8593fc47a3">getNome</a> () const</td></tr>
-<tr class="memdesc:a6857f1b75dc0c601bb3cfa8593fc47a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome da atividade avaliativa.  <br /></td></tr>
-<tr class="memitem:ad85c38fc343fc051ca2ab2b8a6a17f6e" id="r_ad85c38fc343fc051ca2ab2b8a6a17f6e"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ad85c38fc343fc051ca2ab2b8a6a17f6e">getDataEntrega</a> () const</td></tr>
-<tr class="memdesc:ad85c38fc343fc051ca2ab2b8a6a17f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a data de realização ou entrega da atividade.  <br /></td></tr>
-<tr class="memitem:a6cee3491503410611833d03ceb4f6eb5" id="r_a6cee3491503410611833d03ceb4f6eb5"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a6cee3491503410611833d03ceb4f6eb5">getValorMaximo</a> () const</td></tr>
-<tr class="memdesc:a6cee3491503410611833d03ceb4f6eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a pontuação máxima possível da atividade.  <br /></td></tr>
-<tr class="memitem:a14a75da4161c078f06093a24e919994b" id="r_a14a75da4161c078f06093a24e919994b"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a14a75da4161c078f06093a24e919994b">getNotaObtida</a> () const</td></tr>
-<tr class="memdesc:a14a75da4161c078f06093a24e919994b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a pontuação obtida pelo estudante.  <br /></td></tr>
-<tr class="memitem:a6196d7258c1d4301f7b88a18f7e3fda3" id="r_a6196d7258c1d4301f7b88a18f7e3fda3"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a6196d7258c1d4301f7b88a18f7e3fda3">calcularAproveitamento</a> () const</td></tr>
-<tr class="memdesc:a6196d7258c1d4301f7b88a18f7e3fda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o aproveitamento percentual obtido na atividade.  <br /></td></tr>
-<tr class="memitem:a2ac096701a6e5cf3d75d594b4b16ef81" id="r_a2ac096701a6e5cf3d75d594b4b16ef81"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2ac096701a6e5cf3d75d594b4b16ef81">registrarNota</a> (double nota)</td></tr>
-<tr class="memdesc:a2ac096701a6e5cf3d75d594b4b16ef81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra ou atualiza a nota obtida na atividade.  <br /></td></tr>
+<tr class="memdesc:a6857f1b75dc0c601bb3cfa8593fc47a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o nome da atividade.  <br /></td></tr>
+<tr class="memitem:a3ad82a79373767c8835a3f0e78a8b499" id="r_a3ad82a79373767c8835a3f0e78a8b499"><td class="memItemLeft">const <a class="el" href="class_data.html">Data</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3ad82a79373767c8835a3f0e78a8b499">getData</a> () const</td></tr>
+<tr class="memdesc:a3ad82a79373767c8835a3f0e78a8b499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem a data da atividade.  <br /></td></tr>
+<tr class="memitem:a4fdef85202cb9fde8bfb63c2dd9af12a" id="r_a4fdef85202cb9fde8bfb63c2dd9af12a"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a4fdef85202cb9fde8bfb63c2dd9af12a">getValorMaximo</a> () const</td></tr>
+<tr class="memdesc:a4fdef85202cb9fde8bfb63c2dd9af12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o valor maximo da atividade.  <br /></td></tr>
+<tr class="memitem:a467f7fba4dc10d0ea14b4f4cc625b4a1" id="r_a467f7fba4dc10d0ea14b4f4cc625b4a1"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a467f7fba4dc10d0ea14b4f4cc625b4a1">getNotaObtida</a> () const</td></tr>
+<tr class="memdesc:a467f7fba4dc10d0ea14b4f4cc625b4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem a nota obtida na atividade.  <br /></td></tr>
+<tr class="memitem:aad3d4d7df59bb639ea9a473a2bc887c6" id="r_aad3d4d7df59bb639ea9a473a2bc887c6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aad3d4d7df59bb639ea9a473a2bc887c6">isConcluida</a> () const</td></tr>
+<tr class="memdesc:aad3d4d7df59bb639ea9a473a2bc887c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informa se a atividade ja foi concluida.  <br /></td></tr>
+<tr class="memitem:a7dccd2f8cb7bb81e7b9ec68c92b56720" id="r_a7dccd2f8cb7bb81e7b9ec68c92b56720"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7dccd2f8cb7bb81e7b9ec68c92b56720">setNome</a> (const std::string &amp;novoNome)</td></tr>
+<tr class="memdesc:a7dccd2f8cb7bb81e7b9ec68c92b56720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o nome da atividade.  <br /></td></tr>
+<tr class="memitem:a61ca8fe75f831327ed05051ce5539fd3" id="r_a61ca8fe75f831327ed05051ce5539fd3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a61ca8fe75f831327ed05051ce5539fd3">setData</a> (const std::string &amp;novaData)</td></tr>
+<tr class="memdesc:a61ca8fe75f831327ed05051ce5539fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera a data da atividade.  <br /></td></tr>
+<tr class="memitem:a26cdf03ace20b97a689dc9c54aaabfe7" id="r_a26cdf03ace20b97a689dc9c54aaabfe7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a26cdf03ace20b97a689dc9c54aaabfe7">setValorMaximo</a> (float novoValor)</td></tr>
+<tr class="memdesc:a26cdf03ace20b97a689dc9c54aaabfe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o valor maximo da atividade.  <br /></td></tr>
+<tr class="memitem:adb297ab8b25daa61e5f8d69b26c3b5a4" id="r_adb297ab8b25daa61e5f8d69b26c3b5a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adb297ab8b25daa61e5f8d69b26c3b5a4">setNotaObtida</a> (float novaNota)</td></tr>
+<tr class="memdesc:adb297ab8b25daa61e5f8d69b26c3b5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lanca a nota obtida e marca a atividade como concluida.  <br /></td></tr>
+<tr class="memitem:a6832661bd4f972463e3a748f242cef50" id="r_a6832661bd4f972463e3a748f242cef50"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6832661bd4f972463e3a748f242cef50">removerLancamentoNota</a> ()</td></tr>
+<tr class="memdesc:a6832661bd4f972463e3a748f242cef50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a nota lancada: zera a nota e marca a atividade como nao concluida.  <br /></td></tr>
+<tr class="memitem:a817ceb50c3e34dffbb8ad9c56fc4d11a" id="r_a817ceb50c3e34dffbb8ad9c56fc4d11a"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a817ceb50c3e34dffbb8ad9c56fc4d11a">obterMedia</a> () const</td></tr>
+<tr class="memdesc:a817ceb50c3e34dffbb8ad9c56fc4d11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a media da atividade (60% do valor maximo).  <br /></td></tr>
+<tr class="memitem:afd110071aa80c525603449f39beb798e" id="r_afd110071aa80c525603449f39beb798e"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#afd110071aa80c525603449f39beb798e">obterConceito</a> () const</td></tr>
+<tr class="memdesc:afd110071aa80c525603449f39beb798e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o conceito da atividade, a partir do percentual da nota em relacao ao valor maximo.  <br /></td></tr>
+<tr class="memitem:ae1f97af1842d693acefaae75d729f908" id="r_ae1f97af1842d693acefaae75d729f908"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ae1f97af1842d693acefaae75d729f908">serializar</a> () const</td></tr>
+<tr class="memdesc:ae1f97af1842d693acefaae75d729f908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializa a atividade em uma linha de texto, para persistencia em arquivo.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Membros públicos estáticos</h2></td></tr>
+<tr class="memitem:a1e99c4c7578a4329b7b4c9ea1f8dcb1a" id="r_a1e99c4c7578a4329b7b4c9ea1f8dcb1a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1e99c4c7578a4329b7b4c9ea1f8dcb1a">validarNome</a> (const std::string &amp;nome)</td></tr>
+<tr class="memdesc:a1e99c4c7578a4329b7b4c9ea1f8dcb1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida se o nome da atividade respeita os limites de tamanho (1 a 24 caracteres).  <br /></td></tr>
+<tr class="memitem:a00a2b031f96c88e09565acca8a0f2292" id="r_a00a2b031f96c88e09565acca8a0f2292"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a00a2b031f96c88e09565acca8a0f2292">validarValorMaximo</a> (float valor)</td></tr>
+<tr class="memdesc:a00a2b031f96c88e09565acca8a0f2292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida se o valor maximo da atividade e estritamente positivo.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
+<tr class="memitem:a8de70ece5aa8132494e12056377c275f" id="r_a8de70ece5aa8132494e12056377c275f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a8de70ece5aa8132494e12056377c275f">_id</a></td></tr>
+<tr class="memdesc:a8de70ece5aa8132494e12056377c275f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador da atividade.  <br /></td></tr>
 <tr class="memitem:a460ef977b4697f86ec4350e723eaf5d2" id="r_a460ef977b4697f86ec4350e723eaf5d2"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a460ef977b4697f86ec4350e723eaf5d2">_nome</a></td></tr>
-<tr class="memdesc:a460ef977b4697f86ec4350e723eaf5d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descrição ou título da atividade.  <br /></td></tr>
-<tr class="memitem:a05636ebfe30a2f8ef235deb6cef6e8cf" id="r_a05636ebfe30a2f8ef235deb6cef6e8cf"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a05636ebfe30a2f8ef235deb6cef6e8cf">_dataEntrega</a></td></tr>
-<tr class="memdesc:a05636ebfe30a2f8ef235deb6cef6e8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data prevista de entrega ou aplicação (formato DD/MM/AAAA).  <br /></td></tr>
-<tr class="memitem:a7848660771f422112dbe6104d6ba886b" id="r_a7848660771f422112dbe6104d6ba886b"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a7848660771f422112dbe6104d6ba886b">_valorMaximo</a></td></tr>
-<tr class="memdesc:a7848660771f422112dbe6104d6ba886b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pontuação máxima que a atividade distribui.  <br /></td></tr>
-<tr class="memitem:aae65bc898449e97a1591b6d879102082" id="r_aae65bc898449e97a1591b6d879102082"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aae65bc898449e97a1591b6d879102082">_notaObtida</a></td></tr>
-<tr class="memdesc:aae65bc898449e97a1591b6d879102082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nota obtida pelo estudante (inicialmente 0.0).  <br /></td></tr>
+<tr class="memdesc:a460ef977b4697f86ec4350e723eaf5d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nome da atividade (1 a 24 caracteres).  <br /></td></tr>
+<tr class="memitem:a68cab80ebfc0a5ff76fa7e0b103c76c2" id="r_a68cab80ebfc0a5ff76fa7e0b103c76c2"><td class="memItemLeft"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight"><a class="el" href="#a68cab80ebfc0a5ff76fa7e0b103c76c2">_data</a></td></tr>
+<tr class="memdesc:a68cab80ebfc0a5ff76fa7e0b103c76c2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_data.html" title="Representa uma data composta apenas por dia e mes (sem ano), validada na construcao.">Data</a> da atividade (DD/MM).  <br /></td></tr>
+<tr class="memitem:a090af2df6ec942bc2cde79a0dcc276c6" id="r_a090af2df6ec942bc2cde79a0dcc276c6"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a090af2df6ec942bc2cde79a0dcc276c6">_valor</a></td></tr>
+<tr class="memdesc:a090af2df6ec942bc2cde79a0dcc276c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor maximo (pontuacao total) da atividade; sempre maior que zero.  <br /></td></tr>
+<tr class="memitem:a5481611ecd8d674b6da6425514464212" id="r_a5481611ecd8d674b6da6425514464212"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a5481611ecd8d674b6da6425514464212">_notaObtida</a></td></tr>
+<tr class="memdesc:a5481611ecd8d674b6da6425514464212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nota obtida; 0 enquanto a atividade nao estiver concluida.  <br /></td></tr>
+<tr class="memitem:a59553bf4c98d529e819aa930e473a385" id="r_a59553bf4c98d529e819aa930e473a385"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a59553bf4c98d529e819aa930e473a385">_concluida</a></td></tr>
+<tr class="memdesc:a59553bf4c98d529e819aa930e473a385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica se a nota ja foi lancada.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Representa uma avaliação individual de uma disciplina (ex: prova, trabalho). </p>
+<div class="textblock"><p>Representa uma atividade avaliativa (prova, trabalho etc.) com data, valor e nota obtida. </p>
+<p>Uma atividade e considerada concluida quando uma nota e lancada nela. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
-<a id="a4e60e4143a728ca1ac93cb26973a8f27" name="a4e60e4143a728ca1ac93cb26973a8f27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e60e4143a728ca1ac93cb26973a8f27">&#9670;&#160;</a></span>AtividadeAvaliativa()</h2>
+<a id="a6f7b640e61ac8fac40106e8cf83a3f11" name="a6f7b640e61ac8fac40106e8cf83a3f11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f7b640e61ac8fac40106e8cf83a3f11">&#9670;&#160;</a></span>AtividadeAvaliativa() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,27 +193,100 @@ Atributos Privados</h2></td></tr>
         <tr>
           <td class="memname">AtividadeAvaliativa::AtividadeAvaliativa </td>
           <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dataEntrega</em></span>, </td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>valorMaximo</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>valorMaximo</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construtor de <a class="el" href="class_atividade_avaliativa.html" title="Representa uma avaliação individual de uma disciplina (ex: prova, trabalho).">AtividadeAvaliativa</a>. </p>
+<p>Constroi uma atividade ainda nao concluida (sem nota lancada). </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome ou descrição da atividade. </td></tr>
-    <tr><td class="paramname">dataEntrega</td><td>Data limite para entrega/realização. </td></tr>
-    <tr><td class="paramname">valorMaximo</td><td>Pontuação total distribuída pela avaliação. </td></tr>
+    <tr><td class="paramname">id</td><td>Identificador da atividade. </td></tr>
+    <tr><td class="paramname">nome</td><td>Nome da atividade (1 a 24 caracteres). </td></tr>
+    <tr><td class="paramname">data</td><td><a class="el" href="class_data.html" title="Representa uma data composta apenas por dia e mes (sem ano), validada na construcao.">Data</a> da atividade no formato DD/MM. </td></tr>
+    <tr><td class="paramname">valorMaximo</td><td>Valor maximo da atividade (maior que zero). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a data, o nome ou o valor maximo forem invalidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a39780eb665fde5d2a30b409529040219" name="a39780eb665fde5d2a30b409529040219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39780eb665fde5d2a30b409529040219">&#9670;&#160;</a></span>AtividadeAvaliativa() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AtividadeAvaliativa::AtividadeAvaliativa </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>valorMaximo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>notaObtida</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>concluida</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constroi uma atividade com todos os dados, incluindo nota e estado de conclusao. </p>
+<p>Util ao carregar atividades salvas. A nota so e aplicada se <code class="param">concluida</code> for <code>true</code>; caso contrario, a atividade comeca sem nota.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador da atividade. </td></tr>
+    <tr><td class="paramname">nome</td><td>Nome da atividade (1 a 24 caracteres). </td></tr>
+    <tr><td class="paramname">data</td><td><a class="el" href="class_data.html" title="Representa uma data composta apenas por dia e mes (sem ano), validada na construcao.">Data</a> da atividade no formato DD/MM. </td></tr>
+    <tr><td class="paramname">valorMaximo</td><td>Valor maximo da atividade (maior que zero). </td></tr>
+    <tr><td class="paramname">notaObtida</td><td>Nota obtida (usada apenas se <code class="param">concluida</code> for <code>true</code>). </td></tr>
+    <tr><td class="paramname">concluida</td><td>Indica se a atividade ja foi concluida. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a data, o nome, o valor maximo ou a nota forem invalidos. </td></tr>
   </table>
   </dd>
 </dl>
@@ -198,14 +294,14 @@ Atributos Privados</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
-<a id="a6196d7258c1d4301f7b88a18f7e3fda3" name="a6196d7258c1d4301f7b88a18f7e3fda3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6196d7258c1d4301f7b88a18f7e3fda3">&#9670;&#160;</a></span>calcularAproveitamento()</h2>
+<a id="a3ad82a79373767c8835a3f0e78a8b499" name="a3ad82a79373767c8835a3f0e78a8b499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad82a79373767c8835a3f0e78a8b499">&#9670;&#160;</a></span>getData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double AtividadeAvaliativa::calcularAproveitamento </td>
+          <td class="memname">const <a class="el" href="class_data.html">Data</a> &amp; AtividadeAvaliativa::getData </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -213,19 +309,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calcula o aproveitamento percentual obtido na atividade. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Aproveitamento em porcentagem (ex: 85.0 para 85%). </dd></dl>
+<p>Obtem a data da atividade. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referencia constante para a <a class="el" href="class_data.html" title="Representa uma data composta apenas por dia e mes (sem ano), validada na construcao.">Data</a> da atividade. </dd></dl>
 
 </div>
 </div>
-<a id="ad85c38fc343fc051ca2ab2b8a6a17f6e" name="ad85c38fc343fc051ca2ab2b8a6a17f6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad85c38fc343fc051ca2ab2b8a6a17f6e">&#9670;&#160;</a></span>getDataEntrega()</h2>
+<a id="a64b49d6c67d6727c804dc6c0b029a332" name="a64b49d6c67d6727c804dc6c0b029a332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b49d6c67d6727c804dc6c0b029a332">&#9670;&#160;</a></span>getId()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string AtividadeAvaliativa::getDataEntrega </td>
+          <td class="memname">int AtividadeAvaliativa::getId </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -233,8 +329,8 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna a data de realização ou entrega da atividade. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Data no formato texto. </dd></dl>
+<p>Obtem o identificador da atividade. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Identificador da atividade. </dd></dl>
 
 </div>
 </div>
@@ -253,19 +349,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna o nome da atividade avaliativa. </p>
+<p>Obtem o nome da atividade. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Nome da atividade. </dd></dl>
 
 </div>
 </div>
-<a id="a14a75da4161c078f06093a24e919994b" name="a14a75da4161c078f06093a24e919994b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14a75da4161c078f06093a24e919994b">&#9670;&#160;</a></span>getNotaObtida()</h2>
+<a id="a467f7fba4dc10d0ea14b4f4cc625b4a1" name="a467f7fba4dc10d0ea14b4f4cc625b4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467f7fba4dc10d0ea14b4f4cc625b4a1">&#9670;&#160;</a></span>getNotaObtida()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double AtividadeAvaliativa::getNotaObtida </td>
+          <td class="memname">float AtividadeAvaliativa::getNotaObtida </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -273,19 +369,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna a pontuação obtida pelo estudante. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Nota obtida. </dd></dl>
+<p>Obtem a nota obtida na atividade. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Nota obtida (0 se a atividade nao estiver concluida). </dd></dl>
 
 </div>
 </div>
-<a id="a6cee3491503410611833d03ceb4f6eb5" name="a6cee3491503410611833d03ceb4f6eb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cee3491503410611833d03ceb4f6eb5">&#9670;&#160;</a></span>getValorMaximo()</h2>
+<a id="a4fdef85202cb9fde8bfb63c2dd9af12a" name="a4fdef85202cb9fde8bfb63c2dd9af12a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fdef85202cb9fde8bfb63c2dd9af12a">&#9670;&#160;</a></span>getValorMaximo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double AtividadeAvaliativa::getValorMaximo </td>
+          <td class="memname">float AtividadeAvaliativa::getValorMaximo </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -293,40 +389,239 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna a pontuação máxima possível da atividade. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Valor máximo da atividade. </dd></dl>
+<p>Obtem o valor maximo da atividade. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Valor maximo. </dd></dl>
 
 </div>
 </div>
-<a id="a2ac096701a6e5cf3d75d594b4b16ef81" name="a2ac096701a6e5cf3d75d594b4b16ef81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ac096701a6e5cf3d75d594b4b16ef81">&#9670;&#160;</a></span>registrarNota()</h2>
+<a id="aad3d4d7df59bb639ea9a473a2bc887c6" name="aad3d4d7df59bb639ea9a473a2bc887c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3d4d7df59bb639ea9a473a2bc887c6">&#9670;&#160;</a></span>isConcluida()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool AtividadeAvaliativa::registrarNota </td>
+          <td class="memname">bool AtividadeAvaliativa::isConcluida </td>
           <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>nota</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Informa se a atividade ja foi concluida. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se a nota ja foi lancada; <code>false</code> caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="afd110071aa80c525603449f39beb798e" name="afd110071aa80c525603449f39beb798e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd110071aa80c525603449f39beb798e">&#9670;&#160;</a></span>obterConceito()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char AtividadeAvaliativa::obterConceito </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtem o conceito da atividade, a partir do percentual da nota em relacao ao valor maximo. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Conceito ('A' a 'F'), ou '-' se a atividade ainda nao estiver concluida. </dd></dl>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_calculador_conceito.html#a662f87f4f9af016059fcd66e6e7668f1" title="Determina o conceito correspondente a um percentual de aproveitamento.">CalculadorConceito::calcular</a> </dd></dl>
+
+</div>
+</div>
+<a id="a817ceb50c3e34dffbb8ad9c56fc4d11a" name="a817ceb50c3e34dffbb8ad9c56fc4d11a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817ceb50c3e34dffbb8ad9c56fc4d11a">&#9670;&#160;</a></span>obterMedia()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AtividadeAvaliativa::obterMedia </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula a media da atividade (60% do valor maximo). </p>
+<dl class="section return"><dt>Retorna</dt><dd>Media da atividade, independentemente de ela estar concluida. </dd></dl>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_calculador_media.html#a7a3074d5fcafe370694b56fa483c0672" title="Calcula a média, equivalente a 60% do valor informado.">CalculadorMedia::calcular</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6832661bd4f972463e3a748f242cef50" name="a6832661bd4f972463e3a748f242cef50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6832661bd4f972463e3a748f242cef50">&#9670;&#160;</a></span>removerLancamentoNota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AtividadeAvaliativa::removerLancamentoNota </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registra ou atualiza a nota obtida na atividade. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nota</td><td>Nota tirada pelo aluno (deve ser entre 0 e valorMaximo). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>true se a nota for válida e registrada; false caso contrário. </dd></dl>
+<p>Remove a nota lancada: zera a nota e marca a atividade como nao concluida. </p>
 
 </div>
 </div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
-<a id="a05636ebfe30a2f8ef235deb6cef6e8cf" name="a05636ebfe30a2f8ef235deb6cef6e8cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05636ebfe30a2f8ef235deb6cef6e8cf">&#9670;&#160;</a></span>_dataEntrega</h2>
+<a id="ae1f97af1842d693acefaae75d729f908" name="ae1f97af1842d693acefaae75d729f908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f97af1842d693acefaae75d729f908">&#9670;&#160;</a></span>serializar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string AtividadeAvaliativa::serializar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serializa a atividade em uma linha de texto, para persistencia em arquivo. </p>
+<p>Formato: <code>ATIVIDADE|id|nome|data|valor|notaObtida|concluida</code>, onde <code>concluida</code> e 1 ou 0.</p>
+<dl class="section return"><dt>Retorna</dt><dd>String com os dados da atividade. </dd></dl>
+
+</div>
+</div>
+<a id="a61ca8fe75f831327ed05051ce5539fd3" name="a61ca8fe75f831327ed05051ce5539fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ca8fe75f831327ed05051ce5539fd3">&#9670;&#160;</a></span>setData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AtividadeAvaliativa::setData </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novaData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera a data da atividade. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novaData</td><td>Nova data no formato DD/MM. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a data for invalida. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7dccd2f8cb7bb81e7b9ec68c92b56720" name="a7dccd2f8cb7bb81e7b9ec68c92b56720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dccd2f8cb7bb81e7b9ec68c92b56720">&#9670;&#160;</a></span>setNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AtividadeAvaliativa::setNome </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novoNome</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera o nome da atividade. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoNome</td><td>Novo nome (1 a 24 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome estiver vazio ou tiver mais de 24 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb297ab8b25daa61e5f8d69b26c3b5a4" name="adb297ab8b25daa61e5f8d69b26c3b5a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb297ab8b25daa61e5f8d69b26c3b5a4">&#9670;&#160;</a></span>setNotaObtida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AtividadeAvaliativa::setNotaObtida </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>novaNota</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lanca a nota obtida e marca a atividade como concluida. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novaNota</td><td>Nota obtida (de 0 ate o valor maximo da atividade). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a nota for negativa ou maior que o valor maximo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a26cdf03ace20b97a689dc9c54aaabfe7" name="a26cdf03ace20b97a689dc9c54aaabfe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26cdf03ace20b97a689dc9c54aaabfe7">&#9670;&#160;</a></span>setValorMaximo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AtividadeAvaliativa::setValorMaximo </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>novoValor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera o valor maximo da atividade. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoValor</td><td>Novo valor maximo (maior que zero). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se <code class="param">novoValor</code> nao for maior que zero ou se a atividade estiver concluida e a nota obtida for maior que <code class="param">novoValor</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1e99c4c7578a4329b7b4c9ea1f8dcb1a" name="a1e99c4c7578a4329b7b4c9ea1f8dcb1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e99c4c7578a4329b7b4c9ea1f8dcb1a">&#9670;&#160;</a></span>validarNome()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +630,86 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string AtividadeAvaliativa::_dataEntrega</td>
+          <td class="memname">void AtividadeAvaliativa::validarNome </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida se o nome da atividade respeita os limites de tamanho (1 a 24 caracteres). </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Nome a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome for vazio ou tiver mais de 24 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a00a2b031f96c88e09565acca8a0f2292" name="a00a2b031f96c88e09565acca8a0f2292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a2b031f96c88e09565acca8a0f2292">&#9670;&#160;</a></span>validarValorMaximo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AtividadeAvaliativa::validarValorMaximo </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>valor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida se o valor maximo da atividade e estritamente positivo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Valor maximo a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o valor for menor ou igual a zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
+<a id="a59553bf4c98d529e819aa930e473a385" name="a59553bf4c98d529e819aa930e473a385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59553bf4c98d529e819aa930e473a385">&#9670;&#160;</a></span>_concluida</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AtividadeAvaliativa::_concluida</td>
         </tr>
       </table>
   </td>
@@ -345,7 +719,55 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Data prevista de entrega ou aplicação (formato DD/MM/AAAA). </p>
+<p>Indica se a nota ja foi lancada. </p>
+
+</div>
+</div>
+<a id="a68cab80ebfc0a5ff76fa7e0b103c76c2" name="a68cab80ebfc0a5ff76fa7e0b103c76c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68cab80ebfc0a5ff76fa7e0b103c76c2">&#9670;&#160;</a></span>_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data.html">Data</a> AtividadeAvaliativa::_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_data.html" title="Representa uma data composta apenas por dia e mes (sem ano), validada na construcao.">Data</a> da atividade (DD/MM). </p>
+
+</div>
+</div>
+<a id="a8de70ece5aa8132494e12056377c275f" name="a8de70ece5aa8132494e12056377c275f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de70ece5aa8132494e12056377c275f">&#9670;&#160;</a></span>_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AtividadeAvaliativa::_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Identificador da atividade. </p>
 
 </div>
 </div>
@@ -369,12 +791,12 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Descrição ou título da atividade. </p>
+<p>Nome da atividade (1 a 24 caracteres). </p>
 
 </div>
 </div>
-<a id="aae65bc898449e97a1591b6d879102082" name="aae65bc898449e97a1591b6d879102082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae65bc898449e97a1591b6d879102082">&#9670;&#160;</a></span>_notaObtida</h2>
+<a id="a5481611ecd8d674b6da6425514464212" name="a5481611ecd8d674b6da6425514464212"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5481611ecd8d674b6da6425514464212">&#9670;&#160;</a></span>_notaObtida</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,7 +805,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double AtividadeAvaliativa::_notaObtida</td>
+          <td class="memname">float AtividadeAvaliativa::_notaObtida</td>
         </tr>
       </table>
   </td>
@@ -393,12 +815,12 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Nota obtida pelo estudante (inicialmente 0.0). </p>
+<p>Nota obtida; 0 enquanto a atividade nao estiver concluida. </p>
 
 </div>
 </div>
-<a id="a7848660771f422112dbe6104d6ba886b" name="a7848660771f422112dbe6104d6ba886b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7848660771f422112dbe6104d6ba886b">&#9670;&#160;</a></span>_valorMaximo</h2>
+<a id="a090af2df6ec942bc2cde79a0dcc276c6" name="a090af2df6ec942bc2cde79a0dcc276c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a090af2df6ec942bc2cde79a0dcc276c6">&#9670;&#160;</a></span>_valor</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -407,7 +829,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double AtividadeAvaliativa::_valorMaximo</td>
+          <td class="memname">float AtividadeAvaliativa::_valor</td>
         </tr>
       </table>
   </td>
@@ -417,12 +839,13 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pontuação máxima que a atividade distribui. </p>
+<p>Valor maximo (pontuacao total) da atividade; sempre maior que zero. </p>
 
 </div>
 </div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>include/<a class="el" href="_atividade_avaliativa_8hpp_source.html">AtividadeAvaliativa.hpp</a></li>
+<li>src/<a class="el" href="_atividade_avaliativa_8cpp.html">AtividadeAvaliativa.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -438,7 +861,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="class_atividade_avaliativa.html">AtividadeAvaliativa</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

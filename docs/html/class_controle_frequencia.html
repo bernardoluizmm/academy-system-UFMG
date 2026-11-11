@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência da Classe ControleFrequencia</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_controle
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,7 +112,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_controle
 </div><!--header-->
 <div class="contents">
 
-<p>Responsável pelo acompanhamento e registro de faltas de uma disciplina.  
+<p>Controla as faltas de uma disciplina em relação ao limite máximo permitido.  
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_controle_frequencia_8hpp_source.html">ControleFrequencia.hpp</a>&gt;</code></p>
@@ -132,31 +125,34 @@ Diagrama de colaboração para ControleFrequencia:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:aef9de3fa13229c5804981eb66d3b1283" id="r_aef9de3fa13229c5804981eb66d3b1283"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aef9de3fa13229c5804981eb66d3b1283">ControleFrequencia</a> (int faltasPermitidas)</td></tr>
-<tr class="memdesc:aef9de3fa13229c5804981eb66d3b1283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe <a class="el" href="class_controle_frequencia.html" title="Responsável pelo acompanhamento e registro de faltas de uma disciplina.">ControleFrequencia</a>.  <br /></td></tr>
-<tr class="memitem:aae772e14857b4a42bbf35f0c6208f62e" id="r_aae772e14857b4a42bbf35f0c6208f62e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aae772e14857b4a42bbf35f0c6208f62e">getFaltasPermitidas</a> () const</td></tr>
-<tr class="memdesc:aae772e14857b4a42bbf35f0c6208f62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o limite de faltas permitidas.  <br /></td></tr>
+<tr class="memitem:a3da056d31354dc9b07e858059d9b1dee" id="r_a3da056d31354dc9b07e858059d9b1dee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3da056d31354dc9b07e858059d9b1dee">ControleFrequencia</a> (int maxFaltas)</td></tr>
+<tr class="memdesc:a3da056d31354dc9b07e858059d9b1dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói o controle de frequência, iniciando com zero faltas.  <br /></td></tr>
+<tr class="memitem:a4aa32a45a97b73d66da01b6619fa3950" id="r_a4aa32a45a97b73d66da01b6619fa3950"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a4aa32a45a97b73d66da01b6619fa3950">getMaxFaltas</a> () const</td></tr>
+<tr class="memdesc:a4aa32a45a97b73d66da01b6619fa3950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o número máximo de faltas permitido.  <br /></td></tr>
 <tr class="memitem:ab37135dfc02b1ec88b4e4035d77940fc" id="r_ab37135dfc02b1ec88b4e4035d77940fc"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab37135dfc02b1ec88b4e4035d77940fc">getFaltasAtuais</a> () const</td></tr>
-<tr class="memdesc:ab37135dfc02b1ec88b4e4035d77940fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o número atual de faltas registradas.  <br /></td></tr>
-<tr class="memitem:a4b98bba12edd02a2aee2266373bf27a5" id="r_a4b98bba12edd02a2aee2266373bf27a5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4b98bba12edd02a2aee2266373bf27a5">incrementarFalta</a> ()</td></tr>
-<tr class="memdesc:a4b98bba12edd02a2aee2266373bf27a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incrementa em 1 o número de faltas do estudante.  <br /></td></tr>
-<tr class="memitem:ab8757c0944f9e4089607e625de01eef3" id="r_ab8757c0944f9e4089607e625de01eef3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab8757c0944f9e4089607e625de01eef3">decrementarFalta</a> ()</td></tr>
-<tr class="memdesc:ab8757c0944f9e4089607e625de01eef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrementa em 1 o número de faltas do estudante (mínimo 0).  <br /></td></tr>
-<tr class="memitem:ac348f488fe698a32ef08e140602a87bd" id="r_ac348f488fe698a32ef08e140602a87bd"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ac348f488fe698a32ef08e140602a87bd">calcularPercentualFrequencia</a> () const</td></tr>
-<tr class="memdesc:ac348f488fe698a32ef08e140602a87bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a taxa percentual de presença do estudante.  <br /></td></tr>
+<tr class="memdesc:ab37135dfc02b1ec88b4e4035d77940fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o número de faltas acumuladas.  <br /></td></tr>
+<tr class="memitem:a2bbea3a652c0beab387a1dcf0f6908d0" id="r_a2bbea3a652c0beab387a1dcf0f6908d0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2bbea3a652c0beab387a1dcf0f6908d0">setMaxFaltas</a> (int novoMaxFaltas)</td></tr>
+<tr class="memdesc:a2bbea3a652c0beab387a1dcf0f6908d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o número máximo de faltas permitido.  <br /></td></tr>
+<tr class="memitem:a23617aa8fc8deaa386930f8085f0a191" id="r_a23617aa8fc8deaa386930f8085f0a191"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a23617aa8fc8deaa386930f8085f0a191">setFaltasAtuais</a> (int novasFaltas)</td></tr>
+<tr class="memdesc:a23617aa8fc8deaa386930f8085f0a191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define diretamente o número de faltas acumuladas.  <br /></td></tr>
+<tr class="memitem:a4d37652d4af2bf38735d35071815e396" id="r_a4d37652d4af2bf38735d35071815e396"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4d37652d4af2bf38735d35071815e396">adicionarFalta</a> ()</td></tr>
+<tr class="memdesc:a4d37652d4af2bf38735d35071815e396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra uma falta (incrementa o contador de faltas atuais).  <br /></td></tr>
+<tr class="memitem:a88037da1a7c32a1dbef2d037b3aa39f4" id="r_a88037da1a7c32a1dbef2d037b3aa39f4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88037da1a7c32a1dbef2d037b3aa39f4">removerFalta</a> ()</td></tr>
+<tr class="memdesc:a88037da1a7c32a1dbef2d037b3aa39f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove uma falta registrada (decrementa o contador de faltas atuais).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
-<tr class="memitem:ac290613b8ba09cb231e0372e4ea5ca38" id="r_ac290613b8ba09cb231e0372e4ea5ca38"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac290613b8ba09cb231e0372e4ea5ca38">_faltasPermitidas</a></td></tr>
-<tr class="memdesc:ac290613b8ba09cb231e0372e4ea5ca38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantidade máxima de faltas permitidas antes da reprovação por infrequência.  <br /></td></tr>
+<tr class="memitem:aef95444407df7ed0de0f880631649931" id="r_aef95444407df7ed0de0f880631649931"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aef95444407df7ed0de0f880631649931">_maxFaltas</a></td></tr>
+<tr class="memdesc:aef95444407df7ed0de0f880631649931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número máximo de faltas permitido.  <br /></td></tr>
 <tr class="memitem:a06563e1f683ad3f2c0d7b056bbc94d00" id="r_a06563e1f683ad3f2c0d7b056bbc94d00"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a06563e1f683ad3f2c0d7b056bbc94d00">_faltasAtuais</a></td></tr>
-<tr class="memdesc:a06563e1f683ad3f2c0d7b056bbc94d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantidade de faltas acumuladas no semestre.  <br /></td></tr>
+<tr class="memdesc:a06563e1f683ad3f2c0d7b056bbc94d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de faltas acumuladas até o momento.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Responsável pelo acompanhamento e registro de faltas de uma disciplina. </p>
+<div class="textblock"><p>Controla as faltas de uma disciplina em relação ao limite máximo permitido. </p>
+<p>Garante que o número de faltas atuais permaneça entre 0 e o máximo permitido. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
-<a id="aef9de3fa13229c5804981eb66d3b1283" name="aef9de3fa13229c5804981eb66d3b1283"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef9de3fa13229c5804981eb66d3b1283">&#9670;&#160;</a></span>ControleFrequencia()</h2>
+<a id="a3da056d31354dc9b07e858059d9b1dee" name="a3da056d31354dc9b07e858059d9b1dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da056d31354dc9b07e858059d9b1dee">&#9670;&#160;</a></span>ControleFrequencia()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,16 +160,22 @@ Atributos Privados</h2></td></tr>
         <tr>
           <td class="memname">ControleFrequencia::ControleFrequencia </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>faltasPermitidas</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>maxFaltas</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construtor da classe <a class="el" href="class_controle_frequencia.html" title="Responsável pelo acompanhamento e registro de faltas de uma disciplina.">ControleFrequencia</a>. </p>
+<p>Constrói o controle de frequência, iniciando com zero faltas. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">faltasPermitidas</td><td>Número limite de faltas permitidas na disciplina. </td></tr>
+    <tr><td class="paramname">maxFaltas</td><td>Número máximo de faltas permitido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se maxFaltas for negativo. </td></tr>
   </table>
   </dd>
 </dl>
@@ -181,34 +183,14 @@ Atributos Privados</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
-<a id="ac348f488fe698a32ef08e140602a87bd" name="ac348f488fe698a32ef08e140602a87bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac348f488fe698a32ef08e140602a87bd">&#9670;&#160;</a></span>calcularPercentualFrequencia()</h2>
+<a id="a4d37652d4af2bf38735d35071815e396" name="a4d37652d4af2bf38735d35071815e396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d37652d4af2bf38735d35071815e396">&#9670;&#160;</a></span>adicionarFalta()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double ControleFrequencia::calcularPercentualFrequencia </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calcula a taxa percentual de presença do estudante. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Percentual de frequência (0.0 a 100.0). </dd></dl>
-
-</div>
-</div>
-<a id="ab8757c0944f9e4089607e625de01eef3" name="ab8757c0944f9e4089607e625de01eef3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8757c0944f9e4089607e625de01eef3">&#9670;&#160;</a></span>decrementarFalta()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ControleFrequencia::decrementarFalta </td>
+          <td class="memname">void ControleFrequencia::adicionarFalta </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -216,7 +198,13 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Decrementa em 1 o número de faltas do estudante (mínimo 0). </p>
+<p>Registra uma falta (incrementa o contador de faltas atuais). </p>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o máximo de faltas já tiver sido atingido. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -235,19 +223,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna o número atual de faltas registradas. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Quantidade de faltas atuais. </dd></dl>
+<p>Obtém o número de faltas acumuladas. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Quantidade atual de faltas. </dd></dl>
 
 </div>
 </div>
-<a id="aae772e14857b4a42bbf35f0c6208f62e" name="aae772e14857b4a42bbf35f0c6208f62e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae772e14857b4a42bbf35f0c6208f62e">&#9670;&#160;</a></span>getFaltasPermitidas()</h2>
+<a id="a4aa32a45a97b73d66da01b6619fa3950" name="a4aa32a45a97b73d66da01b6619fa3950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa32a45a97b73d66da01b6619fa3950">&#9670;&#160;</a></span>getMaxFaltas()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ControleFrequencia::getFaltasPermitidas </td>
+          <td class="memname">int ControleFrequencia::getMaxFaltas </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -255,19 +243,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna o limite de faltas permitidas. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Número de faltas permitidas. </dd></dl>
+<p>Obtém o número máximo de faltas permitido. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Limite de faltas. </dd></dl>
 
 </div>
 </div>
-<a id="a4b98bba12edd02a2aee2266373bf27a5" name="a4b98bba12edd02a2aee2266373bf27a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b98bba12edd02a2aee2266373bf27a5">&#9670;&#160;</a></span>incrementarFalta()</h2>
+<a id="a88037da1a7c32a1dbef2d037b3aa39f4" name="a88037da1a7c32a1dbef2d037b3aa39f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88037da1a7c32a1dbef2d037b3aa39f4">&#9670;&#160;</a></span>removerFalta()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ControleFrequencia::incrementarFalta </td>
+          <td class="memname">void ControleFrequencia::removerFalta </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -275,7 +263,76 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Incrementa em 1 o número de faltas do estudante. </p>
+<p>Remove uma falta registrada (decrementa o contador de faltas atuais). </p>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se não houver faltas para remover. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a23617aa8fc8deaa386930f8085f0a191" name="a23617aa8fc8deaa386930f8085f0a191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23617aa8fc8deaa386930f8085f0a191">&#9670;&#160;</a></span>setFaltasAtuais()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControleFrequencia::setFaltasAtuais </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>novasFaltas</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define diretamente o número de faltas acumuladas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novasFaltas</td><td>Nova quantidade de faltas (de 0 até o máximo permitido). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se <code class="param">novasFaltas</code> for negativo ou maior que o máximo de faltas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2bbea3a652c0beab387a1dcf0f6908d0" name="a2bbea3a652c0beab387a1dcf0f6908d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bbea3a652c0beab387a1dcf0f6908d0">&#9670;&#160;</a></span>setMaxFaltas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControleFrequencia::setMaxFaltas </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>novoMaxFaltas</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define o número máximo de faltas permitido. </p>
+<p>Se as faltas atuais excederem o novo limite, elas são reduzidas para que fiquem iguais ao novo máximo.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoMaxFaltas</td><td>Novo limite de faltas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o novo limite for negativo. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -300,12 +357,12 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Quantidade de faltas acumuladas no semestre. </p>
+<p>Número de faltas acumuladas até o momento. </p>
 
 </div>
 </div>
-<a id="ac290613b8ba09cb231e0372e4ea5ca38" name="ac290613b8ba09cb231e0372e4ea5ca38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac290613b8ba09cb231e0372e4ea5ca38">&#9670;&#160;</a></span>_faltasPermitidas</h2>
+<a id="aef95444407df7ed0de0f880631649931" name="aef95444407df7ed0de0f880631649931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef95444407df7ed0de0f880631649931">&#9670;&#160;</a></span>_maxFaltas</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +371,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ControleFrequencia::_faltasPermitidas</td>
+          <td class="memname">int ControleFrequencia::_maxFaltas</td>
         </tr>
       </table>
   </td>
@@ -324,12 +381,13 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Quantidade máxima de faltas permitidas antes da reprovação por infrequência. </p>
+<p>Número máximo de faltas permitido. </p>
 
 </div>
 </div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>include/<a class="el" href="_controle_frequencia_8hpp_source.html">ControleFrequencia.hpp</a></li>
+<li>src/<a class="el" href="_controle_frequencia_8cpp.html">ControleFrequencia.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -345,7 +403,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="class_controle_frequencia.html">ControleFrequencia</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Lista dos Membros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_semestre
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -121,18 +114,40 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_semestre
 
 <p>Esta é a lista de todos os membros de <a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a>, incluindo os membros herdados.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#ab218d1180a4e13989d9587f2f40693d3">_nsg</a></td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_semestre_consolidado.html#adf743a02699143d1bbd02519e6159c66">calcularTotalHoras</a>() const</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a04dab06b2d6b2fd281406c908e73c030">getNSG</a>() const override</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a04702f0c049836f485b62e0c3a2dc7aa">SemestreConsolidado</a>(const std::string &amp;periodo, double nsg, std::vector&lt; Disciplina &gt; disciplinas)</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a88eb40382905edb731365f156ef47b9d">setNSG</a>(double nsg)</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a616c92363e2f985d055a9e4b3862a553">_horasFormacaoLivre</a></td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a47b93fe322281309200c7b165e05ab26">_horasObrigatorias</a></td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a2f17945724707fcb43f636bd10708f13">_horasOptativas</a></td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#ad696311a7f5ac4519a2113b297a1a0aa">_identificador</a></td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#ac562cbae6131a576ea5614cde429d816">_nsgFixo</a></td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#a2e616dd5d7d9570114b8afcffd55e176">_trancado</a></td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#ae52987b97ac0e35083048b0873aaaf5d">calcularNSG</a>() const override</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#a9f4f80070be0811db5a9e896b0704257">extrairAno</a>(const std::string &amp;idStr)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre.html#a383f696844611f11601821c00282d764">extrairPeriodo</a>(const std::string &amp;idStr)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#a8a3d69fbcf8b827478c2726c67c2386e">gerarSemestresAnteriores</a>(const std::string &amp;semIngresso, const std::string &amp;semAtual)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#aa09b600f8b81fe3392a7fa4d563d96b5">getHorasFormacaoLivre</a>() const override</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a429aab58a22d8a0414c4c6b8414298d1">getHorasIntegralizadas</a>() const override</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#ab49b51af4bec8c3886dead73e4e6c6dc">getHorasObrigatorias</a>() const override</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a8d8eb28d341a22ee3f382d2559959ad0">getHorasOptativas</a>() const override</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre.html#adb1d3b76a76a7636d3682708fe97b8cd">getIdentificador</a>() const</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#ac49fbb4bd6fa987627fff6d85ecd9484">isTrancado</a>() const</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre.html#af3ab284e9b7a6a90abe0d4f949b59de0">proximoIdentificadorSemestre</a>(const std::string &amp;idAtual)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#af74574cd3f6e7456e15c3295c93dc8d3">Semestre</a>(const std::string &amp;identificador, bool trancado=false)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a63f12bf62405318f21e34a15089c6119">SemestreConsolidado</a>(const std::string &amp;identificador, float nsgFixo, int horasObrigatorias, int horasOptativas, int horasFormacaoLivre, bool trancado=false)</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a97b6f75b2c74ae3570920937acd1e11c">serializar</a>() const</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre.html#ac1949f11b7b53376ccb3f61061e5df06">setTrancado</a>(bool estado)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#af6bae207b3b658f16807ec417cce4309">validarFormatoIdentificador</a>(const std::string &amp;idStr)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre.html#a7299dd303af2bc813bbd67db8a5b8de4">validarHoras</a>(int horas)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#ad3a70c22a11865b1873f1222d81180ca">validarIntervaloSemestres</a>(const std::string &amp;semIngresso, const std::string &amp;semAtual)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre.html#a298ff9e5d46311e3891612ec03491d29">validarNSG</a>(float nsg)</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_semestre.html#ad21d2637b446c0a673148c3d37ffe55c">~Semestre</a>()=default</td><td class="entry"><a class="el" href="class_semestre.html">Semestre</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_semestre_consolidado.html#a9675bf0c53abf547e08b50d4e8fb9bb0">~SemestreConsolidado</a>()</td><td class="entry"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nome_5f_0',['nome_',['../class_estudante.html#a3fd97bb77a73589022054684d4c91f73',1,'Estudante']]],
-  ['nsg_1',['nsg',['../struct_ponto_grafico.html#af9310e235d4805ab39b67f58e24ae05c',1,'PontoGrafico']]]
+  ['isconcluida_0',['isConcluida',['../class_atividade_avaliativa.html#aad3d4d7df59bb639ea9a473a2bc887c6',1,'AtividadeAvaliativa']]],
+  ['istrancado_1',['isTrancado',['../class_semestre.html#ac49fbb4bd6fa987627fff6d85ecd9484',1,'Semestre']]]
 ];
