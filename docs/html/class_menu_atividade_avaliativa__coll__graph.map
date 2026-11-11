@@ -1,0 +1,9 @@
+<map id="MenuAtividadeAvaliativa" name="MenuAtividadeAvaliativa">
+<area shape="rect" id="Node000001" title="Menu responsavel pelo gerenciamento das atividades avaliativas das disciplinas do semestre atual." alt="" coords="28,927,226,1167"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,583,206,780"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,793,123,927,118,927,111,797"/>
+<area shape="rect" id="Node000003" href="$class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas." alt="" coords="231,508,402,855"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,844,199,913,195,910,230,848"/>
+<area shape="rect" id="Node000004" href="$class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="214,5,419,459"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="317,471,319,509,314,508,316,476"/>
+</map>

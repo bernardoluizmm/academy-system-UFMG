@@ -114,12 +114,88 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('main_8cpp.html
 <div class="textblock"><code>#include &quot;<a class="el" href="_estudante_8hpp_source.html">Estudante.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_gerenciador_arquivo_8hpp_source.html">GerenciadorArquivo.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_seletor_menu_8hpp_source.html">SeletorMenu.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_menu_inicial_8hpp_source.html">MenuInicial.hpp</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;exception&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2main_8cpp" loading="lazy" alt=""/></div>
-<!-- MAP 0 -->
+<map name="asrc_2main_8cpp" id="asrc_2main_8cpp">
+<area shape="rect" title=" " alt="" coords="1051,5,1147,32"/>
+<area shape="rect" href="_estudante_8hpp.html" title="Declaracao da classe Estudante para representacao do perfil academico do usuario." alt="" coords="721,229,826,256"/>
+<area shape="poly" title=" " alt="" coords="1048,29,992,44,924,68,890,85,857,105,828,129,802,156,787,185,779,215,774,213,782,183,798,153,824,125,854,101,887,80,922,63,991,39,1053,26"/>
+<area shape="rect" href="_gerenciador_arquivo_8hpp.html" title="Declaracao da classe GerenciadorArquivo, responsavel pela persistencia do perfil." alt="" coords="843,155,1003,181"/>
+<area shape="poly" title=" " alt="" coords="1048,26,1022,34,991,45,963,60,939,82,931,95,927,109,923,141,918,138,921,108,927,92,935,78,960,56,989,40,1020,29,1052,24"/>
+<area shape="rect" title=" " alt="" coords="997,229,1065,256"/>
+<area shape="poly" title=" " alt="" coords="1097,30,1076,107,1042,216,1037,213,1071,106,1093,34"/>
+<area shape="rect" href="_seletor_menu_8hpp.html" title="Declaracao da classe SeletorMenu, que controla a navegacao entre as telas via pilha (std::stack)." alt="" coords="1136,80,1256,107"/>
+<area shape="poly" title=" " alt="" coords="1116,30,1170,71,1165,71,1115,35"/>
+<area shape="rect" title=" " alt="" coords="1335,229,1406,256"/>
+<area shape="poly" title=" " alt="" coords="1147,26,1209,44,1241,59,1270,78,1302,110,1328,147,1363,216,1358,214,1324,149,1298,113,1266,82,1238,64,1207,49,1148,31"/>
+<area shape="rect" href="_menu_inicial_8hpp.html" title="Declaração da classe MenuInicial para a tela de abertura do sistema." alt="" coords="949,80,1062,107"/>
+<area shape="poly" title=" " alt="" coords="1085,31,1035,73,1032,68,1080,34"/>
+<area shape="rect" title=" " alt="" coords="1365,80,1443,107"/>
+<area shape="poly" title=" " alt="" coords="1147,29,1352,79,1347,80,1148,34"/>
+<area shape="rect" title=" " alt="" coords="532,752,585,779"/>
+<area shape="poly" title=" " alt="" coords="788,254,823,287,863,337,881,366,897,397,907,431,911,465,911,617,908,641,901,663,890,682,875,698,836,724,790,743,739,756,688,763,600,768,600,762,687,758,738,750,788,738,834,720,871,694,885,678,896,660,903,640,905,617,905,465,902,432,892,399,877,368,859,340,819,291,787,259"/>
+<area shape="rect" href="_curso_8hpp.html" title="Declaracao da classe Curso para gerenciamento das exigencias curriculares." alt="" coords="125,379,206,405"/>
+<area shape="poly" title=" " alt="" coords="720,259,222,380,220,375,722,254"/>
+<area shape="rect" href="_historico_escolar_8hpp.html" title="Declaração da classe HistoricoEscolar." alt="" coords="662,304,805,331"/>
+<area shape="poly" title=" " alt="" coords="768,255,750,292,746,289,765,258"/>
+<area shape="poly" title=" " alt="" coords="132,408,95,428,54,457,37,475,22,494,13,516,9,540,9,617,10,666,17,684,34,702,59,713,107,723,244,740,518,760,515,764,243,745,106,728,58,718,30,706,13,687,5,667,4,617,4,540,8,515,18,492,32,471,51,453,93,424,135,404"/>
+<area shape="poly" title=" " alt="" coords="747,329,779,363,816,412,847,473,857,506,860,540,860,617,858,638,852,657,831,689,799,713,761,732,719,746,676,756,601,765,601,760,675,750,718,741,759,727,796,709,827,685,847,655,853,637,855,617,855,540,851,507,842,475,812,415,775,366,746,334"/>
+<area shape="rect" title=" " alt="" coords="530,603,587,629"/>
+<area shape="poly" title=" " alt="" coords="716,330,654,382,620,416,593,455,579,488,569,524,561,588,557,585,564,523,574,487,588,452,616,412,650,378,711,333"/>
+<area shape="rect" href="_semestre_consolidado_8hpp.html" title="Declaração da classe SemestreConsolidado." alt="" coords="646,453,821,480"/>
+<area shape="poly" title=" " alt="" coords="735,329,736,439,731,437,732,333"/>
+<area shape="rect" href="_semestre_atual_8hpp.html" title="Declaração da classe SemestreAtual." alt="" coords="389,379,521,405"/>
+<area shape="poly" title=" " alt="" coords="682,333,519,377,517,372,687,330"/>
+<area shape="poly" title=" " alt="" coords="744,478,762,513,766,535,763,555,747,587,728,617,683,670,635,714,592,745,590,741,631,710,679,667,724,614,743,585,757,554,760,535,757,515,741,483"/>
+<area shape="rect" href="_semestre_8hpp.html" title="Declaração da classe base abstrata Semestre." alt="" coords="646,528,749,555"/>
+<area shape="poly" title=" " alt="" coords="729,479,712,516,709,512,725,482"/>
+<area shape="poly" title=" " alt="" coords="692,554,576,741,573,737,687,556"/>
+<area shape="poly" title=" " alt="" coords="676,554,598,597,595,593,671,556"/>
+<area shape="poly" title=" " alt="" coords="459,403,480,479,520,629,553,738,548,736,515,630,475,481,457,408"/>
+<area shape="poly" title=" " alt="" coords="462,404,549,589,544,589,459,408"/>
+<area shape="poly" title=" " alt="" coords="476,403,667,519,662,521,475,408"/>
+<area shape="rect" href="_disciplina_8hpp.html" title="Declaração da classe que representa uma disciplina cursada pelo estudante." alt="" coords="190,453,293,480"/>
+<area shape="poly" title=" " alt="" coords="415,408,294,450,292,446,420,404"/>
+<area shape="poly" title=" " alt="" coords="187,474,161,482,132,492,106,508,85,530,71,555,66,579,71,602,85,628,113,653,158,676,215,696,279,714,411,741,520,759,514,759,411,746,278,719,213,701,155,681,110,658,81,631,66,604,61,579,66,553,81,526,103,504,130,487,160,477,191,471"/>
+<area shape="rect" href="_controle_frequencia_8hpp.html" title="Declaração da classe ControleFrequencia, responsável pelo controle de faltas." alt="" coords="260,528,420,555"/>
+<area shape="poly" title=" " alt="" coords="259,478,314,518,308,519,258,483"/>
+<area shape="rect" href="_diario_atividades_8hpp.html" title="Declaração da classe DiarioAtividades, que gerencia as atividades avaliativas de uma disciplina." alt="" coords="95,528,236,555"/>
+<area shape="poly" title=" " alt="" coords="226,483,191,519,187,516,230,478"/>
+<area shape="poly" title=" " alt="" coords="187,553,440,702,521,745,516,745,437,706,185,558"/>
+<area shape="poly" title=" " alt="" coords="234,553,517,605,513,609,234,558"/>
+<area shape="rect" href="_atividade_avaliativa_8hpp.html" title="Declaracao da classe AtividadeAvaliativa, que representa uma atividade com nota." alt="" coords="95,603,252,629"/>
+<area shape="poly" title=" " alt="" coords="168,553,173,588,168,586,166,558"/>
+<area shape="poly" title=" " alt="" coords="193,627,253,664,330,702,430,734,520,756,514,756,429,739,328,706,251,668,192,633"/>
+<area shape="rect" href="_data_8hpp.html" title="Declaracao da classe Data, que representa e valida uma data no formato DD/MM." alt="" coords="44,677,119,704"/>
+<area shape="poly" title=" " alt="" coords="155,632,111,670,107,666,159,628"/>
+<area shape="poly" title=" " alt="" coords="118,698,138,701,351,735,519,759,514,759,350,740,137,707,119,703"/>
+<area shape="rect" title=" " alt="" coords="47,752,116,779"/>
+<area shape="poly" title=" " alt="" coords="83,703,84,737,79,736,80,707"/>
+<area shape="poly" title=" " alt="" coords="894,183,815,224,812,220,899,181"/>
+<area shape="poly" title=" " alt="" coords="929,179,950,238,958,277,961,316,961,618,957,648,945,671,924,689,897,706,874,717,841,727,760,744,601,763,601,758,759,738,840,722,872,712,895,702,921,684,940,667,952,647,956,617,956,316,953,277,944,240,927,184"/>
+<area shape="poly" title=" " alt="" coords="918,180,881,250,852,293,818,333,793,355,769,371,725,393,682,415,660,432,637,455,621,479,603,515,571,590,567,587,599,513,617,477,633,452,656,428,679,410,722,388,766,366,790,351,814,329,848,290,876,248,915,184"/>
+<area shape="poly" title=" " alt="" coords="942,179,1002,220,996,220,941,185"/>
+<area shape="rect" title=" " alt="" coords="1237,155,1291,181"/>
+<area shape="poly" title=" " alt="" coords="1208,105,1245,144,1239,143,1207,110"/>
+<area shape="rect" href="_menu_8hpp.html" title="Declaracao da classe abstrata Menu, base desacoplada de todas as telas do sistema." alt="" coords="1136,155,1214,181"/>
+<area shape="poly" title=" " alt="" coords="1194,105,1185,141,1181,138,1191,109"/>
+<area shape="poly" title=" " alt="" coords="1165,180,1147,205,1130,231,1111,272,1105,316,1105,618,1101,637,1088,655,1069,671,1043,685,978,709,900,728,816,743,733,753,601,764,600,759,733,748,815,737,899,723,977,704,1041,680,1066,666,1084,651,1096,635,1100,617,1100,316,1106,270,1126,228,1143,201,1161,183"/>
+<area shape="poly" title=" " alt="" coords="1209,179,1325,223,1319,224,1209,185"/>
+<area shape="rect" title=" " alt="" coords="1141,229,1209,256"/>
+<area shape="poly" title=" " alt="" coords="1176,180,1177,215,1172,212,1173,184"/>
+<area shape="rect" title=" " alt="" coords="1233,229,1311,256"/>
+<area shape="poly" title=" " alt="" coords="1192,179,1246,220,1241,220,1191,185"/>
+<area shape="poly" title=" " alt="" coords="946,106,890,125,860,139,832,157,806,185,787,217,783,213,802,182,829,153,857,134,888,120,951,103"/>
+<area shape="poly" title=" " alt="" coords="993,106,950,146,947,142,989,109"/>
+<area shape="poly" title=" " alt="" coords="1009,105,1028,215,1023,213,1006,110"/>
+<area shape="poly" title=" " alt="" coords="1035,105,1134,148,1128,148,1035,110"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>

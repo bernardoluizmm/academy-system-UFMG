@@ -1,0 +1,5 @@
+<map id="MenuDetalhamentoDisciplina" name="MenuDetalhamentoDisciplina">
+<area shape="rect" id="Node000001" title="Menu somente&#45;leitura responsavel por exibir informacoes detalhadas das disciplinas do semestre atual." alt="" coords="5,251,232,427"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="18,5,219,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,215,121,252,116,250,118,220"/>
+</map>

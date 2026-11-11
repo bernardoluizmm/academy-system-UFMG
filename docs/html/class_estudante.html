@@ -120,7 +120,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_estudant
 Diagrama de colaboração para Estudante:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_estudante__coll__graph.png" border="0" usemap="#a_estudante_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="a_estudante_coll__map" id="a_estudante_coll__map">
+<area shape="rect" title="Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar." alt="" coords="36,1708,266,2028"/>
+<area shape="rect" href="class_curso.html" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria." alt="" coords="5,927,216,1636"/>
+<area shape="poly" title=" " alt="" coords="136,1633,141,1692,136,1691,135,1638"/>
+<area shape="rect" href="class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno." alt="" coords="241,1140,453,1423"/>
+<area shape="poly" title=" " alt="" coords="302,1420,212,1693,207,1691,298,1425"/>
+<area shape="rect" href="class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas." alt="" coords="261,508,432,855"/>
+<area shape="poly" title=" " alt="" coords="347,852,349,1123,344,1123,346,857"/>
+<area shape="rect" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="244,5,449,459"/>
+<area shape="poly" title=" " alt="" coords="347,471,349,509,344,508,347,477"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>

@@ -1,0 +1,7 @@
+<map id="MenuCarregarUsuario" name="MenuCarregarUsuario">
+<area shape="rect" id="Node000001" title="Tela que carrega o perfil do estudante a partir do arquivo de perfil em um std::unique_ptr." alt="" coords="104,275,305,408"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,5,206,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,214,180,275,174,275,151,219"/>
+<area shape="rect" id="Node000003" href="$class_gerenciador_arquivo.html" title="Salva e carrega o perfil do Estudante em um arquivo de texto." alt="" coords="230,16,376,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,190,241,261,236,258,265,193"/>
+</map>

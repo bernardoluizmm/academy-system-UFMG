@@ -1,0 +1,7 @@
+<map id="Disciplina" name="Disciplina">
+<area shape="rect" id="Node000001" title="Representa uma disciplina, com seus dados cadastrais, controle de frequência e diário de atividades a..." alt="" coords="88,445,279,2029"/>
+<area shape="rect" id="Node000002" href="$class_controle_frequencia.html" title="Controla as faltas de uma disciplina em relação ao limite máximo permitido." alt="" coords="5,80,150,299"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,296,104,429,99,429,89,301"/>
+<area shape="rect" id="Node000003" href="$class_diario_atividades.html" title="Gerencia as atividades avaliativas de uma disciplina e calcula totais, média e conceito parciais." alt="" coords="175,5,405,373"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="272,370,268,429,263,428,271,375"/>
+</map>

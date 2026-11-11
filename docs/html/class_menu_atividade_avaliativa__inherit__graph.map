@@ -1,0 +1,5 @@
+<map id="MenuAtividadeAvaliativa" name="MenuAtividadeAvaliativa">
+<area shape="rect" id="Node000001" title="Menu responsavel pelo gerenciamento das atividades avaliativas das disciplinas do semestre atual." alt="" coords="7,251,205,491"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,5,206,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,215,108,251,103,250,105,220"/>
+</map>

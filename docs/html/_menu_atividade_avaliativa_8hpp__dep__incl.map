@@ -1,0 +1,7 @@
+<map id="include/MenuAtividadeAvaliativa.hpp" name="include/MenuAtividadeAvaliativa.hpp">
+<area shape="rect" id="Node000001" title="Declaracao do menu de gerenciamento de atividades avaliativas." alt="" coords="96,5,331,32"/>
+<area shape="rect" id="Node000002" href="$_menu_atividade_avaliativa_8cpp.html" title=" " alt="" coords="5,80,217,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,41,130,82,128,77,181,42"/>
+<area shape="rect" id="Node000003" href="$_menu_principal_8cpp.html" title=" " alt="" coords="241,80,392,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="245,39,301,79,296,79,243,44"/>
+</map>

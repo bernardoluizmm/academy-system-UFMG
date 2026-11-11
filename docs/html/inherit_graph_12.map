@@ -1,0 +1,19 @@
+<map id="Gráfico de Hierarquia de Classes" name="Gráfico de Hierarquia de Classes">
+<area shape="rect" id="Node000000" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,183,59,209"/>
+<area shape="rect" id="Node000001" href="$class_menu_atividade_avaliativa.html" title="Menu responsavel pelo gerenciamento das atividades avaliativas das disciplinas do semestre atual." alt="" coords="120,5,284,32"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="37,167,59,104,79,70,105,42,127,30,123,35,108,46,83,74,64,106,42,168"/>
+<area shape="rect" id="Node000002" href="$class_menu_cadastro_usuario.html" title="Tela que coleta e valida todos os dados cadastrais e instancia o Estudante via RAII." alt="" coords="127,56,278,83"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="44,167,69,128,86,109,105,92,130,81,127,85,108,97,89,113,73,132,49,170"/>
+<area shape="rect" id="Node000003" href="$class_menu_carregar_usuario.html" title="Tela que carrega o perfil do estudante a partir do arquivo de perfil em um std::unique_ptr." alt="" coords="128,107,276,133"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="60,171,105,143,139,132,135,136,108,148,64,175"/>
+<area shape="rect" id="Node000004" href="$class_menu_detalhamento_disciplina.html" title="Menu somente&#45;leitura responsavel por exibir informacoes detalhadas das disciplinas do semestre atual." alt="" coords="107,157,298,184"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="73,188,110,183,107,187,76,192"/>
+<area shape="rect" id="Node000005" href="$class_menu_disciplina.html" title="Menu responsável pelas operações de criação, edição, listagem e exclusão de disciplinas." alt="" coords="147,208,258,235"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="73,200,149,211,145,215,75,205"/>
+<area shape="rect" id="Node000006" href="$class_menu_frequencia.html" title="Menu para gerenciar as faltas das disciplinas do semestre atual." alt="" coords="144,259,261,285"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="62,216,108,244,145,259,141,261,106,249,62,222"/>
+<area shape="rect" id="Node000007" href="$class_menu_inicial.html" title="Representa o menu de entrada exibido ao iniciar a aplicação." alt="" coords="159,309,246,336"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="47,221,73,260,89,279,108,295,133,308,161,317,156,318,131,313,105,300,86,283,69,264,46,226"/>
+<area shape="rect" id="Node000008" href="$class_menu_principal.html" title="Tela principal: mostra o resumo academico e empilha as telas de gerenciamento especificas." alt="" coords="151,360,254,387"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="40,222,64,286,83,318,108,346,128,358,153,368,148,368,126,363,105,350,79,322,59,288,38,227"/>
+</map>
