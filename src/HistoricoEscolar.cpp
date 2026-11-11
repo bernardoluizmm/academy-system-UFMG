@@ -1,6 +1,9 @@
 #include "HistoricoEscolar.hpp"
 #include <sstream>
 
+HistoricoEscolar::HistoricoEscolar(const std::string& identificadorSemestreAtual)
+    : _semestreAtual(new SemestreAtual(identificadorSemestreAtual)) {}
+
 HistoricoEscolar::HistoricoEscolar(const HistoricoEscolar& outro)
     : _semestresPassados(outro._semestresPassados),
       _semestreAtual(new SemestreAtual(*(outro._semestreAtual))) 
