@@ -22,3 +22,16 @@ TEST_CASE("ControleFrequencia - adicionar e remover") {
     CHECK(frequencia.getFaltasAtuais() == 0);
     CHECK_THROWS_AS(frequencia.removerFalta(), std::invalid_argument);
 }
+
+TEST_CASE("ControleFrequencia - definir total diretamente") {
+    ControleFrequencia frequencia(10);
+    frequencia.setFaltasAtuais(8);
+    CHECK(frequencia.getFaltasAtuais() == 8);
+    frequencia.setFaltasAtuais(0);
+    CHECK(frequencia.getFaltasAtuais() == 0);
+    frequencia.setFaltasAtuais(10);
+    CHECK(frequencia.getFaltasAtuais() == 10);
+    CHECK_THROWS_AS(frequencia.setFaltasAtuais(-1), std::invalid_argument);
+    CHECK_THROWS_AS(frequencia.setFaltasAtuais(11), std::invalid_argument);
+    CHECK(frequencia.getFaltasAtuais() == 10);
+}
