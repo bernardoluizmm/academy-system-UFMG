@@ -66,13 +66,19 @@ public:
      */
     virtual int getHorasIntegralizadas() const = 0;
 
-    /** @brief Obtém as horas integralizadas em disciplinas obrigatórias. */
+    /** @brief Obtém as horas integralizadas em disciplinas obrigatórias.
+     * @return Horas obrigatorias integralizadas.
+     */
     virtual int getHorasObrigatorias() const = 0;
 
-    /** @brief Obtém as horas integralizadas em disciplinas optativas. */
+    /** @brief Obtém as horas integralizadas em disciplinas optativas.
+     * @return Horas optativas integralizadas.
+     */
     virtual int getHorasOptativas() const = 0;
 
-    /** @brief Obtém as horas integralizadas em formação livre. */
+    /** @brief Obtém as horas integralizadas em formação livre.
+     * @return Horas de formacao livre integralizadas.
+     */
     virtual int getHorasFormacaoLivre() const = 0;
 
    /**
