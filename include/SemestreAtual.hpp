@@ -34,9 +34,6 @@ public:
      */
     SemestreAtual(const std::string& identificador);
 
-    /** @brief Destrutor. */
-    virtual ~SemestreAtual();
-
     /**
          * @brief Calcula o NSG ponderado pela carga horária.
          *
