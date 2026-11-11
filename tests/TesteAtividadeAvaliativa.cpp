@@ -14,3 +14,15 @@ TEST_CASE("AtividadeAvaliativa - construtor simples e getters") {
     CHECK(prova.obterConceito() == '-');
     CHECK(prova.serializar() == "ATIVIDADE|1|Prova 1|10/04|30|0|0");
 }
+
+TEST_CASE("AtividadeAvaliativa - construtor com nota e situacao") {
+    AtividadeAvaliativa concluida(2, "Trabalho", "15/05", 20.0f, 16.0f, true);
+    CHECK(concluida.getNotaObtida() == doctest::Approx(16.0f));
+    CHECK(concluida.isConcluida() == true);
+    CHECK(concluida.obterConceito() == 'B');
+    CHECK(concluida.serializar() == "ATIVIDADE|2|Trabalho|15/05|20|16|1");
+    AtividadeAvaliativa pendente(3, "TP", "16/05", 20.0f, 12.0f, false);
+    CHECK(pendente.isConcluida() == false);
+    CHECK(pendente.getNotaObtida() == doctest::Approx(0.0f));
+    CHECK_THROWS_AS(AtividadeAvaliativa(4, "TP", "16/05", 20.0f, 21.0f, true), std::invalid_argument);
+}
