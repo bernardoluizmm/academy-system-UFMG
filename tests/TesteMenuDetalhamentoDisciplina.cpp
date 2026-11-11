@@ -236,3 +236,17 @@ TEST_CASE("MenuDetalhamentoDisciplina - opcao 2 sem disciplinas mostra aviso")
     Resultado r = executar(menu, "2\n");
     CHECK(contem(r.saida, "[AVISO] Nenhuma disciplina cadastrada no semestre atual."));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - opcao 2 detalha todas as disciplinas e permanece no menu")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre, "Programacao");
+    adicionarDisciplina(semestre, "Algoritmos");
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "2\n");
+
+    CHECK(r.proximo == &menu);
+    CHECK(contem(r.saida, "Disciplina [1]: Programacao"));
+    CHECK(contem(r.saida, "Disciplina [2]: Algoritmos"));
+}
