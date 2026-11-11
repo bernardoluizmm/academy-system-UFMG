@@ -303,3 +303,19 @@ TEST_CASE("MenuAtividadeAvaliativa - lancar nota acima do valor maximo pede de n
     CHECK(contem(r.saida, "[ERRO]"));
     CHECK(c.atividade()->getNotaObtida() == doctest::Approx(8.0f));
 }
+TEST_CASE("MenuAtividadeAvaliativa - editar em disciplina sem atividades mostra aviso")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n");
+    CHECK(contem(r.saida, "[AVISO] Esta disciplina nao possui atividades cadastradas."));
+}
+TEST_CASE("MenuAtividadeAvaliativa - editar com ID 0 cancela a edicao")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n0\n");
+    CHECK_FALSE(contem(r.saida, "EDITANDO ATIVIDADE"));
+}
