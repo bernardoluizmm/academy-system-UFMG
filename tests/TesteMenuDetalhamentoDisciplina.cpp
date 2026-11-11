@@ -86,3 +86,11 @@ TEST_CASE("MenuDetalhamentoDisciplina - constroi com um semestre")
     SemestreAtual semestre("2026/01");
     CHECK_NOTHROW(MenuDetalhamentoDisciplina menu(semestre));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - exibir com semestre vazio mostra aviso")
+{
+    SemestreAtual semestre("2026/01");
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    CHECK(contem(exibirMenu(menu), "Nenhuma disciplina cadastrada no semestre atual."));
+}
