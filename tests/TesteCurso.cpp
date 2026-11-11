@@ -91,3 +91,18 @@ TEST_CASE("Construtor e Configuracao de Horas por Curriculo")
         CHECK(cursoSI.getHorasTotaisCurso() == 3000);
     }
 }
+
+TEST_CASE("Serializacao da Classe Curso") 
+{
+    SUBCASE("Serializacao de Ciencia da Computacao") 
+    {
+        Curso cursoCC(Curso::OPCAO_CC, "2026/01");
+        CHECK(cursoCC.serializar() == "CURSO|1|2026/01");
+    }
+
+    SUBCASE("Serializacao de Sistemas de Informacao") 
+    {
+        Curso cursoSI(Curso::OPCAO_SI, "2023/02");
+        CHECK(cursoSI.serializar() == "CURSO|2|2023/02");
+    }
+}
