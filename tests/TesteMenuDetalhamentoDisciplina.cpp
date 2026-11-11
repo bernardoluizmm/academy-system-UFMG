@@ -169,3 +169,22 @@ TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 com ID inexistente mostra erro")
     Resultado r = executar(menu, "1\n99\n");
     CHECK(contem(r.saida, "[ERRO] Disciplina com ID 99 nao encontrada."));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 mostra os dados cadastrais")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre);
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "1\n1\n");
+
+    CHECK(r.proximo == &menu);
+    CHECK(contem(r.saida, "Disciplina [1]: Programacao"));
+    CHECK(contem(r.saida, "Codigo: COD001"));
+    CHECK(contem(r.saida, "Turma: T1"));
+    CHECK(contem(r.saida, "Prof.: Prof. Ana"));
+    CHECK(contem(r.saida, "Sala/Bloco: Sala 101"));
+    CHECK(contem(r.saida, "CH: 60h"));
+    CHECK(contem(r.saida, "Tipo: Obrigatoria"));
+    CHECK(contem(r.saida, "Horario/Dias: Seg 10h"));
+}
