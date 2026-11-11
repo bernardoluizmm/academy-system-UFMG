@@ -373,7 +373,7 @@ TEST_CASE("Disciplina - serializar")
         std::string texto = disciplina.serializar();
 
         CHECK(texto.substr(0, 11) == "DISCIPLINA|");
-        CHECK(contem(texto, "ATIVIDADE|0|TP1|"));
-        CHECK(contem(texto, "ATIVIDADE|1|TP2|"));
+        CHECK(contem(texto, "ATIVIDADE|1|TP1|"));
+        CHECK(contem(texto, "ATIVIDADE|2|TP2|"));
     }
 }
