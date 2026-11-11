@@ -43,14 +43,14 @@ public:
     const std::string& getIdentificador() const;
 
     /**
-     * @brief Informa se o semestre está trancado.
-     * @return true se trancado, false caso contrário.
+     * @brief Informa se o semestre foi trancado.
+     * @return @c true se o semestre esta trancado; @c false caso contrario.
      */
     bool isTrancado() const;
 
     /**
      * @brief Define o estado de trancamento.
-     * @param estado Novo estado.
+     * @param estado Novo estado (@c true para trancado).
      */
     void setTrancado(bool estado);
 
