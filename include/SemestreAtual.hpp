@@ -32,8 +32,7 @@ public:
      * @param identificador Identificador do semestre (AAAA/01 ou AAAA/02).
      * @throws std::invalid_argument Se o identificador for inválido.
      */
-    SemestreAtual(const std::string& identificador);
-
+    explicit SemestreAtual(const std::string& identificador);
     /**
          * @brief Calcula o NSG ponderado pela carga horária.
          *
