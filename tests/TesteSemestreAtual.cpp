@@ -128,3 +128,88 @@ TEST_CASE("SemestreAtual - buscarDisciplina")
     }
 }
 
+TEST_CASE("SemestreAtual - NSG de uma disciplina e o seu percentual de aproveitamento")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "PDS2", 60);
+    lancarNota(semestre, 1, 100.0f, 80.0f);
+
+    CHECK(semestre.calcularNSG() == doctest::Approx(80.0));
+}
+
+TEST_CASE("SemestreAtual - NSG e ponderado pela carga horaria")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "Disciplina 1", 60);
+    adicionar(semestre, "Disciplina 2", 30);
+    lancarNota(semestre, 1, 100.0f, 80.0f);
+    lancarNota(semestre, 2, 100.0f, 50.0f);
+
+
+    CHECK(semestre.calcularNSG() == doctest::Approx(70.0));
+
+ 
+    Semestre* base = &semestre;
+    CHECK(base->calcularNSG() == doctest::Approx(70.0));
+}
+
+TEST_CASE("SemestreAtual - NSG ignora disciplina sem atividade concluida")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "Com nota", 60);
+    adicionar(semestre, "Sem nota", 60);
+    lancarNota(semestre, 1, 100.0f, 90.0f); 
+
+   
+    CHECK(semestre.calcularNSG() == doctest::Approx(90.0));
+}
+
+TEST_CASE("SemestreAtual - NSG e 0 quando nenhuma disciplina tem atividade concluida")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "Sem nota", 60);
+
+    CHECK(semestre.calcularNSG() == doctest::Approx(0.0));
+}
+
+TEST_CASE("SemestreAtual - horas so contam disciplina com nota total parcial de pelo menos 60")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "Aprovada", 60);
+    adicionar(semestre, "No limite", 30);
+    adicionar(semestre, "Reprovada", 45);
+    lancarNota(semestre, 1, 100.0f, 70.0f);
+    lancarNota(semestre, 2, 100.0f, 60.0f); 
+    lancarNota(semestre, 3, 100.0f, 59.0f);
+
+    CHECK(semestre.getHorasObrigatorias() == 90); 
+    CHECK(semestre.getHorasIntegralizadas() == 90);
+}
+
+TEST_CASE("SemestreAtual - horas separadas por tipo de disciplina")
+{
+    SemestreAtual semestre("2026/01");
+    adicionar(semestre, "Obrigatoria", 60, "Obrigatoria");
+    adicionar(semestre, "Optativa", 30, "Optativa");
+    adicionar(semestre, "Livre", 45, "Formacao Livre");
+    lancarNota(semestre, 1, 100.0f, 80.0f);
+    lancarNota(semestre, 2, 100.0f, 80.0f);
+    lancarNota(semestre, 3, 100.0f, 80.0f);
+
+    CHECK(semestre.getHorasObrigatorias() == 60);
+    CHECK(semestre.getHorasOptativas() == 30);
+    CHECK(semestre.getHorasFormacaoLivre() == 45);
+    CHECK(semestre.getHorasIntegralizadas() == 135);
+}
+
+TEST_CASE("SemestreAtual - serializar")
+{
+    SemestreAtual vazio("2026/01");
+    CHECK(vazio.serializar() == "SEMESTRE_ATUAL|2026/01\n");
+
+    SemestreAtual comDisciplina("2026/02");
+    adicionar(comDisciplina, "PDS2", 60);
+    std::string texto = comDisciplina.serializar();
+    CHECK(texto.find("SEMESTRE_ATUAL|2026/02\n") == 0);  
+    CHECK(texto.find("DISCIPLINA|") != std::string::npos);
+}
