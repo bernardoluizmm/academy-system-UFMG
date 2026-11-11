@@ -41,3 +41,27 @@ TEST_CASE("Disciplina - construtor e getters")
     CHECK(disciplina.getHorarioDias() == "Seg 10h");
 }
 
+TEST_CASE("Disciplina - estado inicial de frequencia e avaliacoes")
+{
+    Disciplina disciplina = criarDisciplina();
+
+    CHECK(disciplina.frequencia().getFaltasAtuais() == 0);
+    CHECK(disciplina.avaliacoes().getAtividades().empty());
+    CHECK(disciplina.avaliacoes().obterValorTotalPlanejado() == doctest::Approx(0.0));
+}
+
+TEST_CASE("Disciplina - limite de faltas calculado na construcao")
+{
+    CHECK(criarDisciplina(1, 60, 50).frequencia().getMaxFaltas() == 15);
+    CHECK(criarDisciplina(1, 60, 100).frequencia().getMaxFaltas() == 7);
+    CHECK(criarDisciplina(1, 90, 50).frequencia().getMaxFaltas() == 22);
+    CHECK(criarDisciplina(1, 15, 50).frequencia().getMaxFaltas() == 3);
+}
+
+TEST_CASE("Disciplina - aceita os tres tipos validos")
+{
+    CHECK_NOTHROW(criarDisciplina(1, 60, 50, "Obrigatoria"));
+    CHECK_NOTHROW(criarDisciplina(1, 60, 50, "Optativa"));
+    CHECK_NOTHROW(criarDisciplina(1, 60, 50, "Formacao Livre"));
+}
+
