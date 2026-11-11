@@ -40,6 +40,8 @@ public:
                         int horasFormacaoLivre,
                         bool trancado = false);
 
+    /** @brief Destrutor. */
+    virtual ~SemestreConsolidado();
   /**
      * @brief Obtem o NSG fixo do semestre.
      * @return NSG final, ou 0 se o semestre foi trancado.
