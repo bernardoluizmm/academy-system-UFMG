@@ -210,3 +210,20 @@ TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina inexistente mostra er
     Resultado r = executar(menu, "1\n99\n");
     CHECK(contem(r.saida, "[ERRO] Disciplina com ID 99 nao encontrada."));
 }
+TEST_CASE("MenuAtividadeAvaliativa - criar atividade com dados validos")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n1\nProva 1\n15/03\n10\n");
+
+    REQUIRE(c.totalAtividades() == 1);
+    CHECK(r.proximo == &menu);
+    CHECK(contem(r.saida, "Atividade 'Prova 1' adicionada com sucesso!"));
+
+    const AtividadeAvaliativa& a = c.disciplina()->avaliacoes().getAtividades()[0];
+    CHECK(a.getNome() == "Prova 1");
+    CHECK(a.getData().getDataValidada() == "15/03");
+    CHECK(a.getValorMaximo() == doctest::Approx(10.0f));
+    CHECK_FALSE(a.isConcluida());
+}
