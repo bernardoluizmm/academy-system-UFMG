@@ -156,3 +156,11 @@ TEST_CASE("MenuAtividadeAvaliativa - exibir atividade concluida mostra a nota")
     CHECK(contem(saida, "7.50"));
     CHECK_FALSE(contem(saida, "Pendente"));
 }
+TEST_CASE("MenuAtividadeAvaliativa - opcao 0 encerra o menu")
+{
+    SemestreAtual semestre("2026/01");
+    MenuAtividadeAvaliativa menu(semestre);
+
+    Resultado r = executar(menu, "0\n");
+    CHECK(r.proximo == nullptr);
+}
