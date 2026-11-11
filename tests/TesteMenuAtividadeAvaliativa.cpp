@@ -192,3 +192,13 @@ TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina lista as disciplinas"
     CHECK(contem(r.saida, "Disciplinas do semestre atual:"));
     CHECK(contem(r.saida, "[1] COD001 - Programacao"));
 }
+TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina com ID 0 cancela sem erro")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n0\n");
+
+    CHECK_FALSE(contem(r.saida, "[ERRO]"));
+    CHECK(c.totalAtividades() == 0);
+}
