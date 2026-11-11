@@ -257,3 +257,78 @@ TEST_CASE("Disciplina - acesso const a frequencia e avaliacoes")
     CHECK(disciplina.avaliacoes().getAtividades().empty());
 }
 
+TEST_CASE("Disciplina - atividades avaliativas e conceito parcial")
+{
+    Disciplina disciplina = criarDisciplina();
+
+    SUBCASE("atividades pendentes nao entram na nota")
+    {
+        disciplina.avaliacoes().adicionarAtividade("TP1", "10/04", 30.0f);
+        disciplina.avaliacoes().adicionarAtividade("TP2", "10/05", 70.0f);
+
+        CHECK(disciplina.avaliacoes().getAtividades().size() == 2);
+        CHECK(disciplina.avaliacoes().obterValorTotalPlanejado() == doctest::Approx(100.0));
+        CHECK(disciplina.avaliacoes().obterValorTotalConcluido() == doctest::Approx(0.0));
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == '-');
+    }
+
+    SUBCASE("conceito A com 95 de 100")
+    {
+        lancarNota(disciplina, 100.0f, 95.0f);
+        CHECK(disciplina.avaliacoes().obterNotaTotalParcial() == doctest::Approx(95.0));
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == 'A');
+    }
+
+    SUBCASE("conceito B com 85 de 100")
+    {
+        lancarNota(disciplina, 100.0f, 85.0f);
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == 'B');
+    }
+
+    SUBCASE("conceito C com 72 de 100")
+    {
+        lancarNota(disciplina, 100.0f, 72.0f);
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == 'C');
+    }
+
+    SUBCASE("conceito D com 60 de 100")
+    {
+        lancarNota(disciplina, 100.0f, 60.0f);
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == 'D');
+    }
+
+    SUBCASE("conceito E com 50 de 100")
+    {
+        lancarNota(disciplina, 100.0f, 50.0f);
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == 'E');
+    }
+
+    SUBCASE("conceito F com 35 de 100")
+    {
+        lancarNota(disciplina, 100.0f, 35.0f);
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == 'F');
+    }
+
+    SUBCASE("percentual de aproveitamento usa so o valor concluido")
+    {
+        lancarNota(disciplina, 40.0f, 30.0f);
+        disciplina.avaliacoes().adicionarAtividade("Futura", "30/06", 60.0f);
+
+        CHECK(disciplina.avaliacoes().calcularPercentualAproveitamento() == doctest::Approx(75.0));
+        CHECK(disciplina.avaliacoes().obterConceitoParcial() == 'C');
+    }
+}
+
+TEST_CASE("Disciplina - remover atividade por id")
+{
+    Disciplina disciplina = criarDisciplina();
+    disciplina.avaliacoes().adicionarAtividade("TP1", "10/04", 30.0f);
+    disciplina.avaliacoes().adicionarAtividade("TP2", "10/05", 70.0f);
+
+    disciplina.avaliacoes().removerAtividade(0);
+
+    REQUIRE(disciplina.avaliacoes().getAtividades().size() == 1);
+    CHECK(disciplina.avaliacoes().getAtividades()[0].getNome() == "TP2");
+    CHECK_THROWS_AS(disciplina.avaliacoes().removerAtividade(99), std::invalid_argument);
+}
+
