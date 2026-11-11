@@ -4,6 +4,22 @@
 #include <stdexcept>
 #include <sstream>
 
+void AtividadeAvaliativa::validarNome(const std::string& nome) 
+{
+    if (nome.empty() || nome.length() > 24) 
+    {
+        throw std::invalid_argument("O nome da atividade deve ter entre 1 e 24 caracteres.");
+    }
+}
+
+void AtividadeAvaliativa::validarValorMaximo(float valor) 
+{
+    if (valor <= 0.0f) 
+    {
+        throw std::invalid_argument("O valor da atividade deve ser maior que zero.");
+    }
+}
+
 AtividadeAvaliativa::AtividadeAvaliativa(int id, const std::string& nome, const std::string& dataInput, float valorMaximo) 
     : _id(id), _data(Data(dataInput)), _notaObtida(0.0f), _concluida(false) 
 {
@@ -54,9 +70,7 @@ bool AtividadeAvaliativa::isConcluida() const
 
 void AtividadeAvaliativa::setNome(const std::string& novoNome) 
 {
-    if (novoNome.empty() || novoNome.length() > 24) {
-        throw std::invalid_argument("O nome da atividade deve ter entre 1 e 24 caracteres.");
-    }
+    AtividadeAvaliativa::validarNome(novoNome);
     this->_nome = novoNome;
 }
 
@@ -67,13 +81,10 @@ void AtividadeAvaliativa::setData(const std::string& novaData)
 
 void AtividadeAvaliativa::setValorMaximo(float novoValor) 
 {
-    if (novoValor <= 0.0f) 
-    {
-        throw std::invalid_argument("O valor da atividade deve ser maior que zero.");
-    }
+    AtividadeAvaliativa::validarValorMaximo(novoValor);
     if (this->_concluida && this->_notaObtida > novoValor) 
     {
-        throw std::invalid_argument("A nota obtida nao pode maior menor que o valor da atividade.");
+        throw std::invalid_argument("A nota obtida nao pode ser maior que o valor da atividade.");
     }
     this->_valor = novoValor;
 }
@@ -113,6 +124,6 @@ std::string AtividadeAvaliativa::serializar() const
 {
     std::ostringstream fluxo;
     fluxo << "ATIVIDADE|" << this->_id << "|" << this->_nome << "|" << this->_data << "|"
-        << this->_valor << "|" << this->_notaObtida << "|" << (this->_concluida ? 1 : 0);
+          << this->_valor << "|" << this->_notaObtida << "|" << (this->_concluida ? 1 : 0);
     return fluxo.str();
 }
