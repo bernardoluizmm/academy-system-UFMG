@@ -15,3 +15,21 @@ TEST_CASE("DiarioAtividades - estado inicial e calculos vazios") {
     CHECK_THROWS_AS(diario.removerAtividade(1), std::invalid_argument);
 }
 
+TEST_CASE("DiarioAtividades - IDs automaticos e ordem cronologica") {
+    DiarioAtividades diario;
+    diario.adicionarAtividade("Prova", "20/11", 30.0f);
+    diario.adicionarAtividade("Trabalho", "10/11", 20.0f);
+    diario.adicionarAtividade("Final", "05/12", 50.0f);
+    CHECK(diario.getAtividades().size() == 3);
+    CHECK(diario.getAtividades()[0].getNome() == "Trabalho");
+    CHECK(diario.getAtividades()[1].getNome() == "Prova");
+    CHECK(diario.getAtividades()[2].getNome() == "Final");
+    CHECK(diario.buscarAtividade(1)->getNome() == "Prova");
+    CHECK(diario.buscarAtividade(2)->getNome() == "Trabalho");
+    CHECK(diario.buscarAtividade(3)->getNome() == "Final");
+    diario.ordenarAtividades();
+    CHECK(diario.getAtividades()[0].getNome() == "Trabalho");
+    CHECK(diario.obterValorTotalPlanejado() == doctest::Approx(100.0f));
+}
+
+
