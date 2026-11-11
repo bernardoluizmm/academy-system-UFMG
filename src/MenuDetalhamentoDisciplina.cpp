@@ -8,10 +8,6 @@
 MenuDetalhamentoDisciplina::MenuDetalhamentoDisciplina(const SemestreAtual& semestreAtual)
     : Menu(), _semestreAtual(semestreAtual) {}
 
-MenuDetalhamentoDisciplina::~MenuDetalhamentoDisciplina() 
-{
-}
-
 void MenuDetalhamentoDisciplina::exibirDetalhamentoDisciplina(const Disciplina& disciplina) const 
 {
     std::cout << std::fixed << std::setprecision(2);
@@ -98,14 +94,13 @@ void MenuDetalhamentoDisciplina::fluxoDetalharDisciplinaEspecifica()
 
 void MenuDetalhamentoDisciplina::fluxoDetalharTodasDisciplinas() const 
 {
-    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << "[AVISO] Nenhuma disciplina cadastrada no semestre atual.\n";
         return;
     }
 
-    const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+    const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
     for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
     {
         this->exibirDetalhamentoDisciplina(*it);
