@@ -24,8 +24,6 @@ private:
     int _contadorId;                      ///< Próximo ID automático de disciplina.
 
 public:
-    /** @brief Construtor padrão (semestre "2026/01"). */
-    SemestreAtual();
 
     /**
      * @brief Construtor com identificador.

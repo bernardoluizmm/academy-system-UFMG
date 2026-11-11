@@ -2,8 +2,6 @@
 #include <stdexcept>
 #include <sstream>
 
-SemestreAtual::SemestreAtual() : Semestre("2026/01", false), _contadorId(1) {}
-
 SemestreAtual::SemestreAtual(const std::string& identificador) : Semestre(identificador, false), _contadorId(1) {}
 
 float SemestreAtual::calcularNSG() const 
