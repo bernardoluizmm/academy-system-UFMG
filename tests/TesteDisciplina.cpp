@@ -65,3 +65,41 @@ TEST_CASE("Disciplina - aceita os tres tipos validos")
     CHECK_NOTHROW(criarDisciplina(1, 60, 50, "Formacao Livre"));
 }
 
+TEST_CASE("Disciplina - construtor rejeita dados invalidos")
+{
+    SUBCASE("id negativo")
+    {
+        CHECK_THROWS_AS(criarDisciplina(-1), std::invalid_argument);
+    }
+
+    SUBCASE("carga horaria")
+    {
+        CHECK_THROWS_AS(criarDisciplina(1, 0), std::invalid_argument);
+        CHECK_THROWS_AS(criarDisciplina(1, -60), std::invalid_argument);
+        CHECK_THROWS_AS(criarDisciplina(1, 100), std::invalid_argument);
+    }
+
+    SUBCASE("duracao da aula")
+    {
+        CHECK_THROWS_AS(criarDisciplina(1, 60, 49), std::invalid_argument);
+        CHECK_THROWS_AS(criarDisciplina(1, 60, 0), std::invalid_argument);
+    }
+
+    SUBCASE("tipo")
+    {
+        CHECK_THROWS_AS(criarDisciplina(1, 60, 50, "Extensao"), std::invalid_argument);
+        CHECK_THROWS_AS(criarDisciplina(1, 60, 50, ""), std::invalid_argument);
+        CHECK_THROWS_AS(criarDisciplina(1, 60, 50, "obrigatoria"), std::invalid_argument);
+    }
+
+    SUBCASE("textos vazios")
+    {
+        CHECK_THROWS_AS(Disciplina(1, "", "TA", "PDS II", "Prof", "Sala", 60, 50, "Optativa", "Seg"), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina(1, "DCC204", "", "PDS II", "Prof", "Sala", 60, 50, "Optativa", "Seg"), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina(1, "DCC204", "TA", "", "Prof", "Sala", 60, 50, "Optativa", "Seg"), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina(1, "DCC204", "TA", "PDS II", "", "Sala", 60, 50, "Optativa", "Seg"), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina(1, "DCC204", "TA", "PDS II", "Prof", "", 60, 50, "Optativa", "Seg"), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina(1, "DCC204", "TA", "PDS II", "Prof", "Sala", 60, 50, "Optativa", ""), std::invalid_argument);
+    }
+}
+
