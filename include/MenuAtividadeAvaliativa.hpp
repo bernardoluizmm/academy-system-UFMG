@@ -1,86 +1,86 @@
+/**
+ * @file MenuAtividadeAvaliativa.hpp
+ * @brief Declaracao do menu de gerenciamento de atividades avaliativas.
+ */
 #ifndef MENUATIVIDADEAVALIATIVA_HPP
 #define MENUATIVIDADEAVALIATIVA_HPP
 
 #include "Menu.hpp"
+#include "SemestreAtual.hpp"
 #include "Disciplina.hpp"
 
 /**
- * @file MenuAtividadeAvaliativa.hpp
- * @brief Declaração do menu de gerenciamento de atividades avaliativas.
- */
-
-/**
  * @class MenuAtividadeAvaliativa
- * @brief Menu responsável pelo gerenciamento das atividades avaliativas das disciplinas.
+ * @brief Menu responsavel pelo gerenciamento das atividades avaliativas das disciplinas do semestre atual.
  *
- * Permite ao estudante selecionar uma disciplina e, a partir dela, criar, editar,
- * apagar atividades avaliativas e lançar notas.
- *
- * @see Menu
- * @see Disciplina
+ * Recebe por injecao de dependencia apenas a referencia ao SemestreAtual,
+ * mantendo baixo acoplamento em relacao ao restante do perfil do estudante.
  */
-class MenuAtividadeAvaliativa : public Menu 
+class MenuAtividadeAvaliativa : public Menu
 {
 private:
+    SemestreAtual& _semestreAtual; ///< Referencia ao semestre em andamento.
+
     /**
-     * @brief Solicita ao usuário que escolha uma das disciplinas do estudante.
-     * @return Ponteiro para a disciplina selecionada, ou @c nullptr caso nenhuma
-     *         disciplina seja selecionada.
+     * @brief Lista as disciplinas do semestre e pede ao usuario que escolha uma pelo ID.
+     * @return Ponteiro para a disciplina escolhida, ou @c nullptr nos casos:
+     *         - nao ha disciplinas no semestre (um aviso e exibido);
+     *         - o usuario cancelou digitando 0 (nenhuma mensagem e exibida);
+     *         - o ID informado nao existe (uma mensagem de erro e exibida).
      */
     Disciplina* selecionarDisciplina();
 
     /**
-     * @brief Exibe na tela as atividades avaliativas de uma disciplina.
-     * @param disciplina Disciplina cujas atividades serão listadas.
+     * @brief Exibe a tabela de atividades de uma disciplina.
+     *
+     * Para cada atividade mostra ID, nome, data, valor, nota obtida (ou "Pendente"),
+     * conceito e media. Se nao houver atividades, exibe um aviso.
+     *
+     * @param disciplina Disciplina cujas atividades serao exibidas.
      */
     void exibirAtividadesDaDisciplina(const Disciplina& disciplina) const;
 
     /**
-     * @brief Conduz o fluxo de criação de uma nova atividade avaliativa.
+     * @brief Fluxo de criacao de atividade: escolhe a disciplina e pede nome, data e valor.
      *
-     * Seleciona a disciplina, coleta os dados da atividade e a registra no diário
-     * de atividades da disciplina.
+     * Cada dado e lido e validado em lacos de repeticao ate ser aceito.
      */
     void fluxoCriarAtividade();
 
     /**
-     * @brief Conduz o fluxo de lançamento de nota em uma atividade avaliativa.
+     * @brief Fluxo de lancamento de nota: escolhe a disciplina e a atividade e pede a nota obtida.
+     *
+     * A leitura se repete ate que a nota seja valida (entre 0 e o valor maximo da atividade).
      */
     void fluxoLancarNota();
 
     /**
-     * @brief Conduz o fluxo de edição de uma atividade avaliativa existente.
+     * @brief Fluxo de edicao de atividade: escolhe a disciplina e a atividade e abre um submenu.
+     *
+     * O submenu permite alterar nome, data, valor e nota, ou remover o lancamento da nota.
+     * Apos alterar a data, as atividades sao reordenadas.
      */
     void fluxoEditarAtividade();
 
     /**
-     * @brief Conduz o fluxo de remoção de uma atividade avaliativa existente.
+     * @brief Fluxo de exclusao de atividade: escolhe a disciplina e a atividade e pede confirmacao.
      */
     void fluxoApagarAtividade();
 
 public:
     /**
-     * @brief Constrói o menu de atividades avaliativas.
-     * @param estudante Estudante cujas disciplinas e atividades serão manipuladas.
-     * @param gerenciadorArquivo Gerenciador usado para persistir as alterações em arquivo.
+     * @brief Constroi o menu de atividades avaliativas recebendo apenas o semestre atual.
+     * @param semestreAtual Semestre cujas disciplinas e atividades serao manipuladas.
      */
-    MenuAtividadeAvaliativa(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo);
+    explicit MenuAtividadeAvaliativa(SemestreAtual& semestreAtual);
 
     /**
-     * @brief Destrutor virtual.
-     */
-    virtual ~MenuAtividadeAvaliativa() override;
-
-    /**
-     * @brief Exibe as opções do menu de atividades avaliativas.
-     */
-    virtual void exibir() override;
-
-    /**
-     * @brief Lê a opção escolhida pelo usuário e executa o fluxo correspondente.
-     * @return Ponteiro para o próximo menu a ser exibido.
+     * @brief Le a opcao do usuario e executa o fluxo correspondente.
+     * @return @c this apos criar, lancar nota, editar ou apagar atividade (permanece na tela);
+     *         @c nullptr ao escolher "0 - Voltar" (retorna ao menu anterior).
      */
     virtual Menu* processarEntrada() override;
+    virtual void exibir() override;
 };
 
 #endif
