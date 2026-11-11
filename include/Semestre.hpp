@@ -12,8 +12,10 @@
  * @class Semestre
  * @brief Classe base abstrata que representa um semestre letivo.
  *
- * Armazena o identificador (formato AAAA/01 ou AAAA/02) e o estado de
- * trancamento. As classes derivadas definem como NSG e horas são obtidos.
+ * Guarda o identificador (formato AAAA/01 ou AAAA/02) e o estado de trancamento,
+ * e define o contrato de calculo de NSG e de horas integralizadas que as classes
+ * derivadas (SemestreAtual e SemestreConsolidado) devem implementar.
+ * Tambem reune utilitarios estaticos de validacao e manipulacao de identificadores.
  */
 class Semestre 
 {
