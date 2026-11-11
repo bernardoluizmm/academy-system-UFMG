@@ -319,3 +319,11 @@ TEST_CASE("MenuAtividadeAvaliativa - editar com ID 0 cancela a edicao")
     Resultado r = executar(menu, "3\n1\n0\n");
     CHECK_FALSE(contem(r.saida, "EDITANDO ATIVIDADE"));
 }
+TEST_CASE("MenuAtividadeAvaliativa - editar atividade inexistente mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n999\n");
+    CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
+}
