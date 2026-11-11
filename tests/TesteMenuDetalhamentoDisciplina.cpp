@@ -118,3 +118,12 @@ TEST_CASE("MenuDetalhamentoDisciplina - exibir lista ID, codigo e nome das disci
     CHECK(contem(saida, "[1] COD001 - Programacao"));
     CHECK_FALSE(contem(saida, "Nenhuma disciplina cadastrada"));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - opcao 0 encerra o menu")
+{
+    SemestreAtual semestre("2026/01");
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "0\n");
+    CHECK(r.proximo == nullptr);
+}    
