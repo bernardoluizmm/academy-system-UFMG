@@ -61,4 +61,9 @@ namespace
         }
         return saidaFalsa.str();
     }
+
+    bool contem(const std::string& texto, const std::string& trecho)
+    {
+        return texto.find(trecho) != std::string::npos;
+    }
 }
