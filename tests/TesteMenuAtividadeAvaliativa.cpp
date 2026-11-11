@@ -440,3 +440,14 @@ TEST_CASE("MenuAtividadeAvaliativa - apagar atividade inexistente mostra erro")
     CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
     CHECK(c.totalAtividades() == 1);
 }
+TEST_CASE("MenuAtividadeAvaliativa - apagar com confirmacao 1 remove a atividade")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "4\n1\n1\n1\n");
+
+    CHECK(contem(r.saida, "Tem certeza que deseja apagar 'Prova 1'?"));
+    CHECK(contem(r.saida, "Atividade apagada com sucesso!"));
+    CHECK(c.totalAtividades() == 0);
+}
