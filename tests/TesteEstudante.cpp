@@ -124,5 +124,33 @@ TEST_CASE("Calculo de Percentuais de Integralizacao")
         CHECK(estudante.calcularPercentualOptativas() == doctest::Approx(0.0f));
         CHECK(estudante.calcularPercentualFormacaoLivre() == doctest::Approx(0.0f));
         CHECK(estudante.calcularPercentualCursoCompleto() == doctest::Approx(0.0f));
-        }
+    }
+
+}
+
+TEST_CASE("Serializacao do Perfil Completo") 
+{
+    Curso curso(Curso::OPCAO_CC, "2026/01");
+    HistoricoEscolar historico("2026/02");
+    Estudante estudante("Bernardo", curso, historico);
+
+    SUBCASE("Serializacao basica - sem semestres consolidados ou disciplinas") 
+    {
+        std::string esperado = "ESTUDANTE|Bernardo\nCURSO|1|2026/01\nSEMESTRE_ATUAL|2026/02\n";
+
+        CHECK(estudante.serializar() == esperado);
+    }
+
+    SUBCASE("Serializacao com semestre consolidado e com disciplina no semestre atual") 
+    {
+        SemestreConsolidado semPassado("2026/01", 93.0f, 300, 0, 0, false);
+        estudante.getHistoricoEditavel().adicionarSemestreConsolidado(semPassado);
+        estudante.getHistoricoEditavel().getSemestreAtual()->adicionarDisciplina(
+            "DCC204", "TZ1", "PDS II", "Prof", "ICEx 2010", 60, 100, "Obrigatoria", "Seg/Qua"
+        );
+
+        std::string esperado = "ESTUDANTE|Bernardo\nCURSO|1|2026/01\nSEMESTRE_CONSOLIDADO|2026/01|93|300|0|0|0\nSEMESTRE_ATUAL|2026/02\nDISCIPLINA|1|DCC204|TZ1|PDS II|Prof|ICEx 2010|60|100|Obrigatoria|Seg/Qua|0\n";
+
+        CHECK(estudante.serializar() == esperado);
+    }
 }
