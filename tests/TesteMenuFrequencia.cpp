@@ -89,3 +89,52 @@ TEST_CASE("Processar Entrada - Navegacao basica, opcoes invalidas e EOF")
         CHECK_THROWS_AS(menu.processarEntrada(), std::runtime_error);
     }
 }
+
+TEST_CASE("Fluxos de Adicionar, Remover e Definir Faltas - Happy Path e Limites") 
+{
+    SemestreAtual semestre("2026/02");
+    semestre.adicionarDisciplina("MAT001", "T1", "Calculo I", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg");
+    MenuFrequencia menu(semestre);
+
+    SUBCASE("Adicionar e remover 1 falta com sucesso") 
+    {
+        RedirecionadorIO io("1\n1\n2\n1\n");
+
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(semestre.buscarDisciplina(1)->frequencia().getFaltasAtuais() == 1);
+
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(semestre.buscarDisciplina(1)->frequencia().getFaltasAtuais() == 0);
+
+        std::string textoImpresso = io.saida.str();
+        CHECK(textoImpresso.find("Falta registrada!") != std::string::npos);
+        CHECK(textoImpresso.find("Falta removida!") != std::string::npos);
+    }
+
+    SUBCASE("Definir faltas diretamente corrigindo entradas invalidas") 
+    {
+        RedirecionadorIO io("3\n1\n-1\n99\n4\n");
+
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(semestre.buscarDisciplina(1)->frequencia().getFaltasAtuais() == 4);
+
+        std::string textoImpresso = io.saida.str();
+        CHECK(textoImpresso.find("[ERRO]") != std::string::npos);
+        CHECK(textoImpresso.find("Total de faltas atualizado para 4/7!") != std::string::npos);
+    }
+
+    SUBCASE("Erro ao adicionar falta acima do limite maximo e ao remover de zero") 
+    {
+        semestre.buscarDisciplina(1)->frequencia().setFaltasAtuais(7);
+        RedirecionadorIO io("1\n1\n2\n1\n");
+
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(semestre.buscarDisciplina(1)->frequencia().getFaltasAtuais() == 7);
+        CHECK(io.saida.str().find("Nao e possivel adicionar mais uma falta.") != std::string::npos);
+
+        semestre.buscarDisciplina(1)->frequencia().setFaltasAtuais(0);
+        CHECK(menu.processarEntrada() == &menu);
+        CHECK(semestre.buscarDisciplina(1)->frequencia().getFaltasAtuais() == 0);
+        CHECK(io.saida.str().find("Nao e possivel remover uma falta.") != std::string::npos);
+    }
+}
