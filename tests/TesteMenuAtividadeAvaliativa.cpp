@@ -352,3 +352,94 @@ TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] opcao 4 lanc
     CHECK(c.atividade()->isConcluida());
     CHECK(c.atividade()->getNotaObtida() == doctest::Approx(7.0f));
 }
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] submenu mostra Pendente e depois a nota")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n" + c.id() + "\n4\n7\n0\n");
+
+    CHECK(contem(r.saida, "Lancar / Alterar Nota Obtida (Pendente)"));
+    CHECK(contem(r.saida, "Lancar / Alterar Nota Obtida (7"));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] opcao 5 remove o lancamento de nota")
+{
+    Cenario c(true);
+    c.atividade()->setNotaObtida(8.0f);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "3\n1\n" + c.id() + "\n5\n0\n");
+    CHECK_FALSE(c.atividade()->isConcluida());
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [negativo] opcao invalida mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n" + c.id() + "\n9\n0\n");
+    CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 5."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] permanece no menu")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n" + c.id() + "\n0\n");
+    CHECK(r.proximo == &menu);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoApagarAtividade [limite] disciplina sem atividades mostra aviso")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "4\n1\n");
+    CHECK(contem(r.saida, "[AVISO] Esta disciplina nao possui atividades cadastradas."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoApagarAtividade [limite] ID 0 cancela sem apagar")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "4\n1\n0\n");
+    CHECK(c.totalAtividades() == 1);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoApagarAtividade [negativo] atividade inexistente mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "4\n1\n999\n");
+
+    CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
+    CHECK(c.totalAtividades() == 1);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoApagarAtividade [positivo] confirmacao 1 apaga a atividade")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "4\n1\n" + c.id() + "\n1\n");
+
+    CHECK(contem(r.saida, "Tem certeza que deseja apagar 'Prova 1'?"));
+    CHECK(contem(r.saida, "Atividade apagada com sucesso!"));
+    CHECK(c.totalAtividades() == 0);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoApagarAtividade [positivo] confirmacao 2 cancela a operacao")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "4\n1\n" + c.id() + "\n2\n");
+
+    CHECK(contem(r.saida, "Operacao cancelada."));
+    CHECK(c.totalAtividades() == 1);
+}
