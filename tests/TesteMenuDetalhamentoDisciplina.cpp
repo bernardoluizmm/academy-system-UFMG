@@ -214,3 +214,16 @@ TEST_CASE("MenuDetalhamentoDisciplina - atividade pendente aparece como Pendente
     CHECK(contem(r.saida, "15/03"));
     CHECK(contem(r.saida, "Pendente"));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - atividade concluida mostra a nota obtida")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre);
+    adicionarAtividade(semestre, 1, 1, 10.0f, 8.0f, true);
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "1\n1\n");
+
+    CHECK(contem(r.saida, "8.00"));
+    CHECK_FALSE(contem(r.saida, "Pendente"));
+}
