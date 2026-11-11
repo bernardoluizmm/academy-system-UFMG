@@ -105,3 +105,15 @@ TEST_CASE("Disciplina::validarCodigoTurma [limite] aceita de 1 a 6 caracteres")
     CHECK_NOTHROW(Disciplina::validarCodigoTurma("A"));
     CHECK_NOTHROW(Disciplina::validarCodigoTurma(std::string(6, 'T')));
 }
+
+TEST_CASE("Disciplina::validarCodigoTurma [negativo] rejeita vazio e mais de 6 caracteres")
+{
+    CHECK_THROWS_AS(Disciplina::validarCodigoTurma(""), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarCodigoTurma(std::string(7, 'T')), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::validarNome [limite] aceita de 1 a 26 caracteres")
+{
+    CHECK_NOTHROW(Disciplina::validarNome("A"));
+    CHECK_NOTHROW(Disciplina::validarNome(std::string(26, 'N')));
+}
