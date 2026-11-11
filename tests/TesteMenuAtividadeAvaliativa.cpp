@@ -124,3 +124,12 @@ TEST_CASE("MenuAtividadeAvaliativa - exibir com semestre vazio mostra aviso")
 
     CHECK(contem(exibirMenu(menu), "Nenhuma disciplina cadastrada no semestre atual."));
 }
+TEST_CASE("MenuAtividadeAvaliativa - exibir disciplina sem atividades mostra aviso")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+    std::string saida = exibirMenu(menu);
+
+    CHECK(contem(saida, "Disciplina [1] COD001 - Programacao"));
+    CHECK(contem(saida, "(Nenhuma atividade avaliativa cadastrada)"));
+}
