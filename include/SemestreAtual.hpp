@@ -90,6 +90,9 @@ public:
 
     /**
      * @brief Adiciona uma disciplina já construída.
+     * 
+     *  * O contador interno de IDs e atualizado para ficar acima do ID da disciplina, quando necessario.
+     *
      * @param disciplina Disciplina a adicionar.
      * @throws std::invalid_argument Se já existir disciplina com o mesmo ID.
      */
@@ -106,8 +109,10 @@ public:
      * @brief Busca uma disciplina pelo ID.
      * @param idDisciplina ID da disciplina.
      * @return Ponteiro para a disciplina, ou nullptr se não existir.
+     * @warning O ponteiro pode ser invalidado se disciplinas forem adicionadas ou removidas.
      */
     Disciplina* buscarDisciplina(int idDisciplina);
+    
     const Disciplina* buscarDisciplina(int idDisciplina) const;
 
     /** @brief Retorna as disciplinas (somente leitura). */
