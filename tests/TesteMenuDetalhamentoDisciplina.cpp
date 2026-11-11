@@ -106,3 +106,15 @@ TEST_CASE("MenuDetalhamentoDisciplina - exibir mostra titulo e opcoes")
     CHECK(contem(saida, "2 - Visualizar detalhamento de todas as disciplinas"));
     CHECK(contem(saida, "0 - Voltar ao Menu Principal"));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - exibir lista ID, codigo e nome das disciplinas")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre);
+    MenuDetalhamentoDisciplina menu(semestre);
+    std::string saida = exibirMenu(menu);
+
+    CHECK(contem(saida, "Disciplinas disponiveis no semestre atual:"));
+    CHECK(contem(saida, "[1] COD001 - Programacao"));
+    CHECK_FALSE(contem(saida, "Nenhuma disciplina cadastrada"));
+}
