@@ -164,3 +164,13 @@ TEST_CASE("MenuAtividadeAvaliativa - opcao 0 encerra o menu")
     Resultado r = executar(menu, "0\n");
     CHECK(r.proximo == nullptr);
 }
+TEST_CASE("MenuAtividadeAvaliativa - opcao invalida mostra erro e pede nova entrada")
+{
+    SemestreAtual semestre("2026/01");
+    MenuAtividadeAvaliativa menu(semestre);
+
+    Resultado r = executar(menu, "9\n0\n");
+
+    CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 4."));
+    CHECK(r.proximo == nullptr);
+}
