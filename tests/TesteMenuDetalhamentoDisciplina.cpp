@@ -94,3 +94,15 @@ TEST_CASE("MenuDetalhamentoDisciplina - exibir com semestre vazio mostra aviso")
 
     CHECK(contem(exibirMenu(menu), "Nenhuma disciplina cadastrada no semestre atual."));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - exibir mostra titulo e opcoes")
+{
+    SemestreAtual semestre("2026/01");
+    MenuDetalhamentoDisciplina menu(semestre);
+    std::string saida = exibirMenu(menu);
+
+    CHECK(contem(saida, "DETALHAMENTO DE DISCIPLINAS E ATIVIDADES AVALIATIVAS"));
+    CHECK(contem(saida, "1 - Visualizar detalhamento de uma disciplina especifica"));
+    CHECK(contem(saida, "2 - Visualizar detalhamento de todas as disciplinas"));
+    CHECK(contem(saida, "0 - Voltar ao Menu Principal"));
+}
