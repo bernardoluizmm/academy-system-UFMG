@@ -29,7 +29,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 test: $(BIN_TEST)
-	./$(BIN_TEST).exe
+	./$(BIN_TEST)
 
 $(BIN_TEST): $(OBJS_SEM_MAIN) $(TEST_OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
