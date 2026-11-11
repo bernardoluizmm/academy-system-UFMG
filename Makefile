@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++11 -Wall -Iinclude -Ithird_party -MMD -MP
 
 SRC_DIR = src
 BUILD_DIR = build
-TEST_DIR = test
+TEST_DIR = tests
 BIN_MAIN = main
 BIN_TEST = run_tests
 
