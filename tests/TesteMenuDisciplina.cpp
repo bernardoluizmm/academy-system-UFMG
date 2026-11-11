@@ -285,3 +285,61 @@ TEST_CASE("Fluxo Editar Disciplina - Casos de Borda, Edicao Completa e Erros")
         CHECK(textoImpresso.find("Campo atualizado com sucesso!") != std::string::npos);
     }
 }
+
+TEST_CASE("Fluxo Apagar Disciplina - Casos de Borda, Cancelamento e Exclusao") 
+{
+    SemestreAtual semestre("2026/02");
+    MenuDisciplina menu(semestre);
+
+    SUBCASE("Tentar apagar quando nao ha disciplinas cadastradas") 
+    {
+        RedirecionadorIO io("3\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(io.saida.str().find("[AVISO] Nao ha disciplinas cadastradas para apagar.") != std::string::npos);
+    }
+
+    SUBCASE("Cancelar exclusao digitando ID 0") 
+    {
+        semestre.adicionarDisciplina("DCC204", "TZ1", "PDS II", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg/Qua");
+        RedirecionadorIO io("3\n0\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(semestre.getDisciplinas().size() == 1);
+    }
+
+    SUBCASE("Tentar apagar informando ID inexistente") 
+    {
+        semestre.adicionarDisciplina("DCC204", "TZ1", "PDS II", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg/Qua");
+        RedirecionadorIO io("3\n99\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(semestre.getDisciplinas().size() == 1);
+        CHECK(io.saida.str().find("[ERRO] Disciplina com ID 99 nao encontrada.") != std::string::npos);
+    }
+
+    SUBCASE("Desistir na confirmacao (Opcao 2 - Nao)") 
+    {
+        semestre.adicionarDisciplina("DCC204", "TZ1", "PDS II", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg/Qua");
+        RedirecionadorIO io("3\n1\n2\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(semestre.getDisciplinas().size() == 1);
+        CHECK(io.saida.str().find("Operacao cancelada.") != std::string::npos);
+    }
+
+    SUBCASE("Confirmar exclusao (Opcao 1 - Sim) remove a disciplina") 
+    {
+        semestre.adicionarDisciplina("DCC204", "TZ1", "PDS II", "Prof", "Sala", 60, 100, "Obrigatoria", "Seg/Qua");
+        RedirecionadorIO io("3\n1\n1\n");
+        Menu* retorno = menu.processarEntrada();
+
+        CHECK(retorno == &menu);
+        CHECK(semestre.getDisciplinas().empty());
+        CHECK(io.saida.str().find("Disciplina apagada com sucesso!") != std::string::npos);
+    }
+}
