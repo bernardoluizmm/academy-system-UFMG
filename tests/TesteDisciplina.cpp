@@ -153,3 +153,22 @@ TEST_CASE("Disciplina::validarHorarioDias [limite] aceita de 1 a 100 caracteres"
     CHECK_NOTHROW(Disciplina::validarHorarioDias("A"));
     CHECK_NOTHROW(Disciplina::validarHorarioDias(std::string(100, 'H')));
 }
+
+TEST_CASE("Disciplina::validarHorarioDias [negativo] rejeita vazio e mais de 100 caracteres")
+{
+    CHECK_THROWS_AS(Disciplina::validarHorarioDias(""), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarHorarioDias(std::string(101, 'H')), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::validarCargaHoraria [positivo] aceita multiplos positivos de 15")
+{
+    CHECK_NOTHROW(Disciplina::validarCargaHoraria(15));
+    CHECK_NOTHROW(Disciplina::validarCargaHoraria(60));
+}
+
+TEST_CASE("Disciplina::validarCargaHoraria [negativo] rejeita zero, negativo e nao multiplo de 15")
+{
+    CHECK_THROWS_AS(Disciplina::validarCargaHoraria(0), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarCargaHoraria(-15), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarCargaHoraria(16), std::invalid_argument);
+}
