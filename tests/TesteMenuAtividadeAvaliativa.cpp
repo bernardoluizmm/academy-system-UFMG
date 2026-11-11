@@ -202,3 +202,11 @@ TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina com ID 0 cancela sem 
     CHECK_FALSE(contem(r.saida, "[ERRO]"));
     CHECK(c.totalAtividades() == 0);
 }
+TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina inexistente mostra erro")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n99\n");
+    CHECK(contem(r.saida, "[ERRO] Disciplina com ID 99 nao encontrada."));
+}
