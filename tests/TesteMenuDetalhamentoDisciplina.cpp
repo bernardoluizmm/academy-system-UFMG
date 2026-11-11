@@ -188,3 +188,15 @@ TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 mostra os dados cadastrais")
     CHECK(contem(r.saida, "Tipo: Obrigatoria"));
     CHECK(contem(r.saida, "Horario/Dias: Seg 10h"));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - disciplina sem atividades mostra cabecalho e TOTAL")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre);
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "1\n1\n");
+
+    CHECK(contem(r.saida, "Atividade Avaliativa"));
+    CHECK(contem(r.saida, "TOTAL"));
+}
