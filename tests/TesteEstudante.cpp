@@ -2,6 +2,7 @@
 #include "Estudante.hpp"
 #include "Curso.hpp"
 #include "HistoricoEscolar.hpp"
+#include <string>
 
 TEST_CASE("Inicialização do Construtor Parametrizado")
 {
