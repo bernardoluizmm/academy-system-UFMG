@@ -39,7 +39,6 @@ TEST_CASE("MenuDetalhamentoDisciplina::exibir [positivo] lista ID, codigo e nome
     CHECK_FALSE(contem(saida, "Nenhuma disciplina cadastrada"));
 }
 
-// ====================================================== processarEntrada()
 TEST_CASE("MenuDetalhamentoDisciplina::processarEntrada [positivo] opcao 0 retorna nullptr")
 {
     SemestreAtual semestre;
@@ -67,7 +66,6 @@ TEST_CASE("MenuDetalhamentoDisciplina::processarEntrada [negativo] opcao invalid
     CHECK(r.proximo == nullptr);
 }
 
-// ================================================ opcao 1 (uma disciplina)
 TEST_CASE("MenuDetalhamentoDisciplina opcao 1 [limite] sem disciplinas mostra aviso")
 {
     SemestreAtual semestre;
@@ -153,7 +151,6 @@ TEST_CASE("MenuDetalhamentoDisciplina opcao 1 [positivo] atividade concluida mos
     CHECK_FALSE(contem(r.saida, "Pendente"));
 }
 
-// =============================================== opcao 2 (todas)
 TEST_CASE("MenuDetalhamentoDisciplina opcao 2 [limite] sem disciplinas mostra aviso")
 {
     SemestreAtual semestre;
