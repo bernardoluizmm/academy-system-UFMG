@@ -332,3 +332,15 @@ TEST_CASE("Disciplina - remover atividade por id")
     CHECK_THROWS_AS(disciplina.avaliacoes().removerAtividade(99), std::invalid_argument);
 }
 
+TEST_CASE("Disciplina - cada disciplina tem seu proprio diario e frequencia")
+{
+    Disciplina primeira = criarDisciplina(1);
+    Disciplina segunda = criarDisciplina(2);
+
+    primeira.avaliacoes().adicionarAtividade("TP1", "10/04", 30.0f);
+    primeira.frequencia().adicionarFalta();
+
+    CHECK(segunda.avaliacoes().getAtividades().empty());
+    CHECK(segunda.frequencia().getFaltasAtuais() == 0);
+}
+
