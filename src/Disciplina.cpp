@@ -3,6 +3,79 @@
 #include <stdexcept>
 #include <sstream>
 
+void Disciplina::validarCodigo(const std::string& codigo) 
+{
+    if (codigo.empty() || codigo.length() > 8) 
+    {
+        throw std::invalid_argument("O codigo da disciplina deve ter entre 1 e 8 caracteres.");
+    }
+}
+
+void Disciplina::validarCodigoTurma(const std::string& turma) 
+{
+    if (turma.empty() || turma.length() > 6) 
+    {
+        throw std::invalid_argument("O codigo da turma deve ter entre 1 e 6 caracteres.");
+    }
+}
+
+void Disciplina::validarNome(const std::string& nome) 
+{
+    if (nome.empty() || nome.length() > 26) 
+    {
+        throw std::invalid_argument("O nome da disciplina deve ter entre 1 e 26 caracteres.");
+    }
+}
+
+void Disciplina::validarProfessor(const std::string& professor) 
+{
+    if (professor.empty() || professor.length() > 100) 
+    {
+        throw std::invalid_argument("O nome do professor deve ter entre 1 e 100 caracteres.");
+    }
+}
+
+void Disciplina::validarSalaBloco(const std::string& sala) 
+{
+    if (sala.empty() || sala.length() > 100) 
+    {
+        throw std::invalid_argument("A sala/bloco deve ter entre 1 e 100 caracteres.");
+    }
+}
+
+void Disciplina::validarCargaHoraria(int cargaHoraria) 
+{
+    if (cargaHoraria <= 0 || cargaHoraria % 15 != 0) 
+    {
+        throw std::invalid_argument("A carga horaria deve ser maior que zero e divisivel por 15.");
+    }
+}
+
+void Disciplina::validarDuracaoAulaMinutos(int duracaoMinutos) 
+{
+    if (duracaoMinutos < 50) 
+    {
+        throw std::invalid_argument("A duracao da aula deve ser de, no minimo, 50 minutos.");
+    }
+}
+
+void Disciplina::validarTipo(const std::string& tipo) 
+{
+    if (tipo != "Obrigatoria" && tipo != "Optativa" && tipo != "Formacao Livre") 
+    {
+        throw std::invalid_argument("Tipo invalido. Use 'Obrigatoria', 'Optativa' ou 'Formacao Livre'.");
+    }
+}
+
+void Disciplina::validarHorarioDias(const std::string& horarioDias) 
+{
+    if (horarioDias.empty() || horarioDias.length() > 100) 
+    {
+        throw std::invalid_argument("O horario e dias de aula devem ter entre 1 e 100 caracteres.");
+    }
+}
+
+
 Disciplina::Disciplina(int id,
                        const std::string& codigo,
                        const std::string& codigoTurma,
@@ -19,18 +92,12 @@ Disciplina::Disciplina(int id,
       _frequencia(CalcularMaxFaltas::calcularDiasMaximosFalta(cargaHoraria, duracaoAulaMinutos)), 
       _avaliacoes() 
 {
-    if (id < 0) 
+        if (id < 0) 
     {
         throw std::invalid_argument("ID da disciplina invalido.");
     }
-    if (cargaHoraria <= 0 || cargaHoraria % 15 != 0) 
-    {
-        throw std::invalid_argument("A carga horaria deve ser maior que zero e divisivel por 15.");
-    }
-    if (duracaoAulaMinutos < 50) 
-    {
-        throw std::invalid_argument("A duracao da aula deve ser de, no minimo, 50 minutos.");
-    }
+    Disciplina::validarCargaHoraria(cargaHoraria);
+    Disciplina::validarDuracaoAulaMinutos(duracaoAulaMinutos);
 
     this->setCodigo(codigo);
     this->setCodigoTurma(codigoTurma);
@@ -104,84 +171,58 @@ const DiarioAtividades& Disciplina::avaliacoes() const
 { 
     return this->_avaliacoes; 
 }
+
 void Disciplina::setCodigo(const std::string& novoCodigo) 
 {
-    if (novoCodigo.empty() || novoCodigo.length() > 8) 
-    {
-        throw std::invalid_argument("O codigo da disciplina deve ter entre 1 e 8 caracteres.");
-    }
+     Disciplina::validarCodigo(novoCodigo);
     this->_codigo = novoCodigo;
 }
 
 void Disciplina::setCodigoTurma(const std::string& novaTurma) 
 {
-    if (novaTurma.empty() || novaTurma.length() > 6) 
-    {
-        throw std::invalid_argument("O codigo da turma deve ter entre 1 e 6 caracteres.");
-    }
+    Disciplina::validarCodigoTurma(novaTurma);
     this->_codigoTurma = novaTurma;
 }
 
 void Disciplina::setNome(const std::string& novoNome) 
 {
-    if (novoNome.empty() || novoNome.length() > 22) 
-    {
-        throw std::invalid_argument("O nome da disciplina deve ter entre 1 e 22 caracteres.");
-    }
+    Disciplina::validarNome(novoNome);
     this->_nome = novoNome;
 }
 void Disciplina::setProfessor(const std::string& novoProfessor) 
 {
-    if (novoProfessor.empty() || novoProfessor.length() > 100) 
-    {
-        throw std::invalid_argument("O nome do professor deve ter entre 1 e 100 caracteres.");
-    }
+    Disciplina::validarProfessor(novoProfessor);
     this->_professor = novoProfessor;
 }
 
 void Disciplina::setSalaBloco(const std::string& novaSala) 
 {
-    if (novaSala.empty() || novaSala.length() > 100) 
-    {
-        throw std::invalid_argument("A sala/bloco deve ter entre 1 e 100 caracteres.");
-    }
+    Disciplina::validarSalaBloco(novaSala);
     this->_salaBloco = novaSala;
 }
 
 void Disciplina::setCargaHoraria(int novaCargaHoraria) 
 {
-    if (novaCargaHoraria <= 0 || novaCargaHoraria % 15 != 0) 
-    {
-        throw std::invalid_argument("A carga horaria deve ser maior que zero e divisivel por 15.");
-    }
+    Disciplina::validarCargaHoraria(novaCargaHoraria);
     this->_cargaHoraria = novaCargaHoraria;
-    this->atualizarLimiteFaltas(); 
+    this->atualizarLimiteFaltas();
 }
 
 void Disciplina::setDuracaoAulaMinutos(int novaDuracaoMinutos) 
 {
-    if (novaDuracaoMinutos < 50) 
-    {
-        throw std::invalid_argument("A duracao da aula deve ser de no minimo 50 minutos.");
-    }
+    Disciplina::validarDuracaoAulaMinutos(novaDuracaoMinutos);
     this->_duracaoAulaMinutos = novaDuracaoMinutos;
     this->atualizarLimiteFaltas();
 }
 
 void Disciplina::setTipo(const std::string& novoTipo) 
 {
-    if (novoTipo != "Obrigatoria" && novoTipo != "Optativa" && novoTipo != "Formacao Livre") 
-    {
-        throw std::invalid_argument("Tipo invalido. Use 'Obrigatoria', 'Optativa' ou 'Formacao Livre'.");
-    }
+    Disciplina::validarTipo(novoTipo);
     this->_tipo = novoTipo;
 }
 void Disciplina::setHorarioDias(const std::string& novoHorarioDias) 
 {
-    if (novoHorarioDias.empty() || novoHorarioDias.length() > 100) 
-    {
-        throw std::invalid_argument("O horario e dias de aula devem ter entre 1 e 100 caracteres.");
-    }
+    Disciplina::validarHorarioDias(novoHorarioDias);
     this->_horarioDias = novoHorarioDias;
 }
 
@@ -190,7 +231,7 @@ std::string Disciplina::serializar() const
     std::ostringstream oss;
     oss << "DISCIPLINA|" << this->_id << "|" << this->_codigo << "|" << this->_codigoTurma << "|"
         << this->_nome << "|" << this->_professor << "|" << this->_salaBloco << "|"
-        << this->_cargaHoraria << "|" << this->_duracaoAulaMinutos << "|" // Lidos diretamente de Disciplina
+        << this->_cargaHoraria << "|" << this->_duracaoAulaMinutos << "|"
         << this->_tipo << "|" << this->_horarioDias << "|" << this->_frequencia.getFaltasAtuais() << "\n";
         
     const std::vector<AtividadeAvaliativa>& atividadesAtual = this->_avaliacoes.getAtividades();

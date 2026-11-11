@@ -8,29 +8,21 @@
 #include <vector>
 #include <stdexcept>
 
-MenuAtividadeAvaliativa::MenuAtividadeAvaliativa(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : Menu(estudante, gerenciadorArquivo) 
-{
-}
-
-MenuAtividadeAvaliativa::~MenuAtividadeAvaliativa() 
-{
-}
+MenuAtividadeAvaliativa::MenuAtividadeAvaliativa(SemestreAtual& semestreAtual)
+    : Menu(), _semestreAtual(semestreAtual) {}
 
 void MenuAtividadeAvaliativa::exibir() 
 {
-    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
-
     std::cout << "\n========================================================================\n";
     std::cout << "                 GERENCIAMENTO DE ATIVIDADES AVALIATIVAS                \n";
     std::cout << "========================================================================\n";
 
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
     } else 
     {
-        const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+        const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
         for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
         {
             this->exibirAtividadesDaDisciplina(*it);
@@ -45,6 +37,7 @@ void MenuAtividadeAvaliativa::exibir()
     std::cout << "0 - Voltar ao Menu Principal\n";
     std::cout << "========================================================================\n";
 }
+
 Menu* MenuAtividadeAvaliativa::processarEntrada() 
 {
     while (true) 
@@ -53,37 +46,37 @@ Menu* MenuAtividadeAvaliativa::processarEntrada()
         if (opcao == 1) 
         {
             this->fluxoCriarAtividade();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 2) 
         {
             this->fluxoLancarNota();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 3) 
         {
             this->fluxoEditarAtividade();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 4) 
         {
             this->fluxoApagarAtividade();
-            return new MenuAtividadeAvaliativa(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 0) 
         {
-            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+            return nullptr;
         }
         std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 4.\n";
     }
 }
+
 Disciplina* MenuAtividadeAvaliativa::selecionarDisciplina() 
 {
-    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+      if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << "[AVISO] Cadastre pelo menos uma disciplina antes de gerenciar atividades.\n";
         return nullptr;
     }
 
     std::cout << "\nDisciplinas do semestre atual:\n";
-    const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+    const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
     for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
     {
         std::cout << "  [" << it->getId() << "] " << it->getCodigo() << " - " << it->getNome() << "\n";
@@ -95,7 +88,7 @@ Disciplina* MenuAtividadeAvaliativa::selecionarDisciplina()
         return nullptr;
     }
 
-    Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    Disciplina* disc = this->_semestreAtual.buscarDisciplina(idDisc);
     if (disc == nullptr) 
     {
         std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
@@ -157,13 +150,16 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
     }
 
     std::cout << "\n--- NOVA ATIVIDADE EM: " << disc->getNome() << " ---\n";
-    AtividadeAvaliativa rascunho(0, "ATIV", "01/01", 1.0f);
+    std::string nome;
+    std::string dataStr;
+    float valor = 0.0f;
 
     while (true) 
     {
         try 
         {
-            rascunho.setNome(this->entradaSanitizada<std::string>("Nome da atividade avaliativa: "));
+            nome = this->entradaSanitizada<std::string>("Nome da atividade avaliativa: ");
+            AtividadeAvaliativa::validarNome(nome);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -175,7 +171,9 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
     {
         try 
         {
-            rascunho.setData(this->entradaSanitizada<std::string>("Data da atividade (formato DD/MM): "));
+            std::string entradaData = this->entradaSanitizada<std::string>("Data da atividade (formato DD/MM): ");
+            Data dataValidada(entradaData);
+            dataStr = dataValidada.getDataValidada();
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -187,8 +185,8 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
     {
         try 
         {
-            float valor = this->entradaSanitizada<float>("Valor da atividade (pontos): ");
-            rascunho.setValorMaximo(valor);
+            valor = this->entradaSanitizada<float>("Valor da atividade (pontos): ");
+            AtividadeAvaliativa::validarValorMaximo(valor);
             break;
         } catch (const std::invalid_argument& e) 
         {
@@ -196,10 +194,8 @@ void MenuAtividadeAvaliativa::fluxoCriarAtividade()
         }
     }
 
-    disc->avaliacoes().adicionarAtividade(rascunho.getNome(),
-                                          rascunho.getData().getDataValidada(),
-                                          rascunho.getValorMaximo());
-    std::cout << "Atividade '" << rascunho.getNome() << "' adicionada com sucesso!\n";
+    disc->avaliacoes().adicionarAtividade(nome, dataStr, valor);
+    std::cout << "Atividade '" << nome << "' adicionada com sucesso!\n";
 }
 void MenuAtividadeAvaliativa::fluxoLancarNota() 
 {
@@ -245,6 +241,7 @@ void MenuAtividadeAvaliativa::fluxoLancarNota()
         }
     }
 }
+
 void MenuAtividadeAvaliativa::fluxoEditarAtividade() 
 {
     Disciplina* disc = this->selecionarDisciplina();
