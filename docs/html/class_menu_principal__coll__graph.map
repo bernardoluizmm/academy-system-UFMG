@@ -1,0 +1,17 @@
+<map id="MenuPrincipal" name="MenuPrincipal">
+<area shape="rect" id="Node000001" title="Tela principal: mostra o resumo academico e empilha as telas de gerenciamento especificas." alt="" coords="248,2100,444,2255"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,1769,206,1967"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,1976,221,2026,281,2100,276,2101,217,2030,182,1981"/>
+<area shape="rect" id="Node000003" href="$class_estudante.html" title="Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar." alt="" coords="231,1708,461,2028"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="347,2025,348,2084,343,2082,344,2030"/>
+<area shape="rect" id="Node000004" href="$class_curso.html" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria." alt="" coords="160,927,371,1636"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="315,1633,324,1692,319,1691,314,1638"/>
+<area shape="rect" id="Node000005" href="$class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno." alt="" coords="396,1140,608,1423"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="466,1420,395,1693,390,1691,463,1425"/>
+<area shape="rect" id="Node000006" href="$class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas." alt="" coords="416,508,587,855"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="503,852,504,1123,499,1123,501,857"/>
+<area shape="rect" id="Node000007" href="$class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="399,5,604,459"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="502,471,504,509,499,508,501,477"/>
+<area shape="rect" id="Node000008" href="$class_gerenciador_arquivo.html" title="Salva e carrega o perfil do Estudante em um arquivo de texto." alt="" coords="485,1780,631,1956"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="518,1954,475,2029,429,2089,425,2085,470,2027,514,1957"/>
+</map>

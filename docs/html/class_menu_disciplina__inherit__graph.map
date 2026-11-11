@@ -1,0 +1,5 @@
+<map id="MenuDisciplina" name="MenuDisciplina">
+<area shape="rect" id="Node000001" title="Menu responsável pelas operações de criação, edição, listagem e exclusão de disciplinas." alt="" coords="24,251,187,448"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,5,206,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,215,108,251,103,250,105,221"/>
+</map>

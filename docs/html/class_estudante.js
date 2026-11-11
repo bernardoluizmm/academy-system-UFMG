@@ -1,16 +1,17 @@
 var class_estudante =
 [
-    [ "Estudante", "class_estudante.html#a8e79d64a78306f61317c21a0a22b07d8", null ],
-    [ "getCurso", "class_estudante.html#a650e1bfa170347a0980f34017ffa006e", null ],
+    [ "Estudante", "class_estudante.html#a20dc5edc66c7c4abc0a2441c20b23538", null ],
+    [ "calcularPercentual", "class_estudante.html#a4282c405d844d74ac01ce35878be1439", null ],
+    [ "calcularPercentualCursoCompleto", "class_estudante.html#a59dc1679278841b6978888504a2572b7", null ],
+    [ "calcularPercentualFormacaoLivre", "class_estudante.html#a67d4b238735fe8c7671f0d0c7408044e", null ],
+    [ "calcularPercentualObrigatorias", "class_estudante.html#a05f1fce09c145692e51bcaea6c577db2", null ],
+    [ "calcularPercentualOptativas", "class_estudante.html#a588b6eac3999eed00ba8d2db2574afb9", null ],
     [ "getCurso", "class_estudante.html#a20de5c82ec73dac00821cc6a696bb773", null ],
+    [ "getHistorico", "class_estudante.html#a053e5f712b093edeff752aafd3f922a0", null ],
+    [ "getHistoricoEditavel", "class_estudante.html#a81eebb67156f95a3fa2ffe0a9bdbc956", null ],
     [ "getNome", "class_estudante.html#ae3b9a6b8be82f04b781a0d416457bcad", null ],
-    [ "getSemestreAtual", "class_estudante.html#aea9065bfcd227cb71d32ed43def08721", null ],
-    [ "getSemestreAtual", "class_estudante.html#aabbaf1ad2f6cb145229d4b533438743b", null ],
-    [ "getSemestreIngresso", "class_estudante.html#a798b9538b500ff2e1f38d16e71a5cec4", null ],
-    [ "setNome", "class_estudante.html#afc7b89dcf158b7e597548b5960187a15", null ],
-    [ "setSemestreIngresso", "class_estudante.html#a3490a41c92d1b661d3a37a8aa9a7bff0", null ],
-    [ "curso_", "class_estudante.html#a3e9925d1d2476273bc8f46c5775ab2d5", null ],
-    [ "nome_", "class_estudante.html#a3fd97bb77a73589022054684d4c91f73", null ],
-    [ "semestreAtual_", "class_estudante.html#a88278743716f93dff1253d62bf1e3113", null ],
-    [ "semestreIngresso_", "class_estudante.html#ad7e4423ca7f0eb8b5752879f0837e6ce", null ]
+    [ "serializar", "class_estudante.html#a94010437b6b19d70f1acdb119b816fc1", null ],
+    [ "_curso", "class_estudante.html#ad5ff6f2cdf88deab606103165df6838a", null ],
+    [ "_historico", "class_estudante.html#a95d729b13091624c33158646861d1523", null ],
+    [ "_nome", "class_estudante.html#aa4f04a4eadb3774daacc6c98d917f232", null ]
 ];

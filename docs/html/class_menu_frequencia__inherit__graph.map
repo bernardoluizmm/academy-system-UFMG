@@ -1,0 +1,5 @@
+<map id="MenuFrequencia" name="MenuFrequencia">
+<area shape="rect" id="Node000001" title="Menu para gerenciar as faltas das disciplinas do semestre atual." alt="" coords="32,251,180,448"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,5,206,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,215,108,251,103,250,105,221"/>
+</map>

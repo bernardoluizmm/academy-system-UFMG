@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência da Classe Disciplina</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_discipli
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,50 +112,146 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_discipli
 </div><!--header-->
 <div class="contents">
 
+<p>Representa uma disciplina, com seus dados cadastrais, controle de frequência e diário de atividades avaliativas.  
+ <a href="#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_disciplina_8hpp_source.html">Disciplina.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de colaboração para Disciplina:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_disciplina__coll__graph.png" border="0" usemap="#a_disciplina_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="a_disciplina_coll__map" id="a_disciplina_coll__map">
+<area shape="rect" title="Representa uma disciplina, com seus dados cadastrais, controle de frequência e diário de atividades a..." alt="" coords="88,445,279,2029"/>
+<area shape="rect" href="class_controle_frequencia.html" title="Controla as faltas de uma disciplina em relação ao limite máximo permitido." alt="" coords="5,80,150,299"/>
+<area shape="poly" title=" " alt="" coords="89,296,104,429,99,429,89,301"/>
+<area shape="rect" href="class_diario_atividades.html" title="Gerencia as atividades avaliativas de uma disciplina e calcula totais, média e conceito parciais." alt="" coords="175,5,405,373"/>
+<area shape="poly" title=" " alt="" coords="272,370,268,429,263,428,271,375"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:a0f8fe7df216cc3baadb6ea8eee49ff5f" id="r_a0f8fe7df216cc3baadb6ea8eee49ff5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0f8fe7df216cc3baadb6ea8eee49ff5f">Disciplina</a> (const std::string &amp;nome, const std::string &amp;codigo, const std::string &amp;professor, const std::string &amp;salaBloco, <a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a> categoria, int cargaHoraria, int faltasPermitidas)</td></tr>
-<tr class="memitem:a019bb1a89a4a71730890a6b1b0895391" id="r_a019bb1a89a4a71730890a6b1b0895391"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a019bb1a89a4a71730890a6b1b0895391">getNome</a> () const</td></tr>
+<tr class="memitem:abc7f0e29f2407f5469647710e3e1773e" id="r_abc7f0e29f2407f5469647710e3e1773e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abc7f0e29f2407f5469647710e3e1773e">Disciplina</a> (int id, const std::string &amp;codigo, const std::string &amp;codigoTurma, const std::string &amp;nome, const std::string &amp;professor, const std::string &amp;salaBloco, int cargaHoraria, int duracaoAulaMinutos, const std::string &amp;tipo, const std::string &amp;horarioDias)</td></tr>
+<tr class="memdesc:abc7f0e29f2407f5469647710e3e1773e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constroi uma disciplina com todos os seus dados cadastrais.  <br /></td></tr>
+<tr class="memitem:ac47404bebc4798550807ecc4f33c1d04" id="r_ac47404bebc4798550807ecc4f33c1d04"><td class="memItemLeft"><a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac47404bebc4798550807ecc4f33c1d04">frequencia</a> ()</td></tr>
+<tr class="memdesc:ac47404bebc4798550807ecc4f33c1d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acessa o controle de frequência da disciplina (leitura e escrita).  <br /></td></tr>
+<tr class="memitem:ac0c31b802bb890981cb9da1722537c40" id="r_ac0c31b802bb890981cb9da1722537c40"><td class="memItemLeft">const <a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac0c31b802bb890981cb9da1722537c40">frequencia</a> () const</td></tr>
+<tr class="memdesc:ac0c31b802bb890981cb9da1722537c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acessa o controle de frequência da disciplina (somente leitura).  <br /></td></tr>
+<tr class="memitem:a4f8d21b418ec5c84ab64b21417bc4abd" id="r_a4f8d21b418ec5c84ab64b21417bc4abd"><td class="memItemLeft"><a class="el" href="class_diario_atividades.html">DiarioAtividades</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4f8d21b418ec5c84ab64b21417bc4abd">avaliacoes</a> ()</td></tr>
+<tr class="memdesc:a4f8d21b418ec5c84ab64b21417bc4abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acessa o diário de atividades avaliativas (leitura e escrita).  <br /></td></tr>
+<tr class="memitem:a4ebaf1c51312a827c7f5bb8360311952" id="r_a4ebaf1c51312a827c7f5bb8360311952"><td class="memItemLeft">const <a class="el" href="class_diario_atividades.html">DiarioAtividades</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4ebaf1c51312a827c7f5bb8360311952">avaliacoes</a> () const</td></tr>
+<tr class="memdesc:a4ebaf1c51312a827c7f5bb8360311952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acessa o diário de atividades avaliativas (somente leitura).  <br /></td></tr>
+<tr class="memitem:a1a9344e59cc7eeecbb7c22dc06b14140" id="r_a1a9344e59cc7eeecbb7c22dc06b14140"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a1a9344e59cc7eeecbb7c22dc06b14140">serializar</a> () const</td></tr>
+<tr class="memdesc:a1a9344e59cc7eeecbb7c22dc06b14140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converte a disciplina em texto para persistencia em arquivo.  <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Métodos de acesso aos dados da disciplina. </p>
+</div></td></tr>
+<tr class="memitem:a55c0781c91f2d11d6af06771c00da82b" id="r_a55c0781c91f2d11d6af06771c00da82b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a55c0781c91f2d11d6af06771c00da82b">getId</a> () const</td></tr>
+<tr class="memdesc:a55c0781c91f2d11d6af06771c00da82b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o identificador único da disciplina.  <br /></td></tr>
 <tr class="memitem:a7bbca63b3ca0e7d8f06423627d195c0a" id="r_a7bbca63b3ca0e7d8f06423627d195c0a"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a7bbca63b3ca0e7d8f06423627d195c0a">getCodigo</a> () const</td></tr>
+<tr class="memdesc:a7bbca63b3ca0e7d8f06423627d195c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o código da disciplina.  <br /></td></tr>
+<tr class="memitem:ac94980e2740c6f8767622b7f5b4eabab" id="r_ac94980e2740c6f8767622b7f5b4eabab"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ac94980e2740c6f8767622b7f5b4eabab">getCodigoTurma</a> () const</td></tr>
+<tr class="memdesc:ac94980e2740c6f8767622b7f5b4eabab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o código da turma.  <br /></td></tr>
+<tr class="memitem:a019bb1a89a4a71730890a6b1b0895391" id="r_a019bb1a89a4a71730890a6b1b0895391"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a019bb1a89a4a71730890a6b1b0895391">getNome</a> () const</td></tr>
+<tr class="memdesc:a019bb1a89a4a71730890a6b1b0895391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome da disciplina.  <br /></td></tr>
 <tr class="memitem:a57ffa3709392df861b837cddcd66381b" id="r_a57ffa3709392df861b837cddcd66381b"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a57ffa3709392df861b837cddcd66381b">getProfessor</a> () const</td></tr>
+<tr class="memdesc:a57ffa3709392df861b837cddcd66381b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do professor.  <br /></td></tr>
 <tr class="memitem:a34671d2cd2c0bcc0b016d0b774009354" id="r_a34671d2cd2c0bcc0b016d0b774009354"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a34671d2cd2c0bcc0b016d0b774009354">getSalaBloco</a> () const</td></tr>
+<tr class="memdesc:a34671d2cd2c0bcc0b016d0b774009354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a sala e o bloco das aulas.  <br /></td></tr>
 <tr class="memitem:a0a41c084d314b07b0904643aea7cfc02" id="r_a0a41c084d314b07b0904643aea7cfc02"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0a41c084d314b07b0904643aea7cfc02">getCargaHoraria</a> () const</td></tr>
-<tr class="memitem:ae8a641b0176db678a4cdb2474835184a" id="r_ae8a641b0176db678a4cdb2474835184a"><td class="memItemLeft"><a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae8a641b0176db678a4cdb2474835184a">getCategoria</a> () const</td></tr>
-<tr class="memitem:a5d9909f23a2b3f583d2720cc750b7cd7" id="r_a5d9909f23a2b3f583d2720cc750b7cd7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5d9909f23a2b3f583d2720cc750b7cd7">adicionarAtividade</a> (const <a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a> &amp;atividade)</td></tr>
-<tr class="memitem:a3e26454f17081c983bb4b1bcf65c2d20" id="r_a3e26454f17081c983bb4b1bcf65c2d20"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3e26454f17081c983bb4b1bcf65c2d20">editarAtividade</a> (int indice, const <a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a> &amp;nova)</td></tr>
-<tr class="memitem:a4952a1294008f7fe7b292779ae1c2918" id="r_a4952a1294008f7fe7b292779ae1c2918"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a4952a1294008f7fe7b292779ae1c2918">calcularMediaFinal</a> () const</td></tr>
-<tr class="memitem:a3f979dfb8fe801f9bfef1db03e757239" id="r_a3f979dfb8fe801f9bfef1db03e757239"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3f979dfb8fe801f9bfef1db03e757239">estaAprovado</a> () const</td></tr>
-<tr class="memitem:ac475ebcac6e99801beb528ac5deeee45" id="r_ac475ebcac6e99801beb528ac5deeee45"><td class="memItemLeft">const <a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac475ebcac6e99801beb528ac5deeee45">getFrequencia</a> () const</td></tr>
-<tr class="memitem:a16d17cae5dbf40d83720c62f4adb8359" id="r_a16d17cae5dbf40d83720c62f4adb8359"><td class="memItemLeft"><a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a16d17cae5dbf40d83720c62f4adb8359">getFrequencia</a> ()</td></tr>
-<tr class="memitem:a3506ec82b5aea1a8bdc6aabd895718a2" id="r_a3506ec82b5aea1a8bdc6aabd895718a2"><td class="memItemLeft">const std::vector&lt; <a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3506ec82b5aea1a8bdc6aabd895718a2">getAtividades</a> () const</td></tr>
-<tr class="memitem:ae7b8b17f9fd776bc0cef4e9676f92154" id="r_ae7b8b17f9fd776bc0cef4e9676f92154"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae7b8b17f9fd776bc0cef4e9676f92154">removerAtividade</a> (int indice)</td></tr>
-<tr class="memitem:ac2d5babc4b62c033373856ac20909116" id="r_ac2d5babc4b62c033373856ac20909116"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac2d5babc4b62c033373856ac20909116">validarCamposObrigatorios</a> () const</td></tr>
-<tr class="memitem:a0bdb9074916ae791e3f4e7d40f3c8fa5" id="r_a0bdb9074916ae791e3f4e7d40f3c8fa5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0bdb9074916ae791e3f4e7d40f3c8fa5">verificarSomaPontos</a> () const</td></tr>
-<tr class="memitem:a267f2dc4a0d161234f5b3e828b5caf68" id="r_a267f2dc4a0d161234f5b3e828b5caf68"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a267f2dc4a0d161234f5b3e828b5caf68">calcularNotaTotal</a> () const</td></tr>
-<tr class="memitem:a1614734b89e62c392440049ee66813d6" id="r_a1614734b89e62c392440049ee66813d6"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a1614734b89e62c392440049ee66813d6">determinarConceitoParcial</a> () const</td></tr>
+<tr class="memdesc:a0a41c084d314b07b0904643aea7cfc02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a carga horária total.  <br /></td></tr>
+<tr class="memitem:a39b657fb9b0c7eb270aee50aa5578685" id="r_a39b657fb9b0c7eb270aee50aa5578685"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a39b657fb9b0c7eb270aee50aa5578685">getDuracaoAulaMinutos</a> () const</td></tr>
+<tr class="memdesc:a39b657fb9b0c7eb270aee50aa5578685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a duração de cada aula, em minutos.  <br /></td></tr>
+<tr class="memitem:aafb08fb512f9569c70fa692847b2788b" id="r_aafb08fb512f9569c70fa692847b2788b"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aafb08fb512f9569c70fa692847b2788b">getTipo</a> () const</td></tr>
+<tr class="memdesc:aafb08fb512f9569c70fa692847b2788b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o tipo da disciplina.  <br /></td></tr>
+<tr class="memitem:a3f5e953736d63f11f948825bee55fd0d" id="r_a3f5e953736d63f11f948825bee55fd0d"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a3f5e953736d63f11f948825bee55fd0d">getHorarioDias</a> () const</td></tr>
+<tr class="memdesc:a3f5e953736d63f11f948825bee55fd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna os dias e horários das aulas.  <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Setters</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Métodos de alteração dos dados da disciplina. </p>
+</div></td></tr>
+<tr class="memitem:a09be9ff3d8580acf82cada4cd5376187" id="r_a09be9ff3d8580acf82cada4cd5376187"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a09be9ff3d8580acf82cada4cd5376187">setCodigo</a> (const std::string &amp;novoCodigo)</td></tr>
+<tr class="memdesc:a09be9ff3d8580acf82cada4cd5376187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o codigo da disciplina.  <br /></td></tr>
+<tr class="memitem:a6693a9e2e0bd99a4a9a9139f7b9800c5" id="r_a6693a9e2e0bd99a4a9a9139f7b9800c5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6693a9e2e0bd99a4a9a9139f7b9800c5">setCodigoTurma</a> (const std::string &amp;novaTurma)</td></tr>
+<tr class="memdesc:a6693a9e2e0bd99a4a9a9139f7b9800c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o codigo da turma.  <br /></td></tr>
+<tr class="memitem:aa4889eaad0e3a83cf7c92b53ee90b0e6" id="r_aa4889eaad0e3a83cf7c92b53ee90b0e6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa4889eaad0e3a83cf7c92b53ee90b0e6">setNome</a> (const std::string &amp;novoNome)</td></tr>
+<tr class="memdesc:aa4889eaad0e3a83cf7c92b53ee90b0e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o nome da disciplina.  <br /></td></tr>
+<tr class="memitem:a5d3a8940eacc1ea7327dba7ac2dc3f14" id="r_a5d3a8940eacc1ea7327dba7ac2dc3f14"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5d3a8940eacc1ea7327dba7ac2dc3f14">setProfessor</a> (const std::string &amp;novoProfessor)</td></tr>
+<tr class="memdesc:a5d3a8940eacc1ea7327dba7ac2dc3f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o nome do professor.  <br /></td></tr>
+<tr class="memitem:a740633eb9b92733d82ff03af9c8b8f66" id="r_a740633eb9b92733d82ff03af9c8b8f66"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a740633eb9b92733d82ff03af9c8b8f66">setSalaBloco</a> (const std::string &amp;novaSala)</td></tr>
+<tr class="memdesc:a740633eb9b92733d82ff03af9c8b8f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera a sala e o bloco das aulas.  <br /></td></tr>
+<tr class="memitem:a1866055afb5e41327e071dc1f215190c" id="r_a1866055afb5e41327e071dc1f215190c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1866055afb5e41327e071dc1f215190c">setCargaHoraria</a> (int novaCargaHoraria)</td></tr>
+<tr class="memdesc:a1866055afb5e41327e071dc1f215190c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera a carga horaria e recalcula o limite de faltas.  <br /></td></tr>
+<tr class="memitem:a0db509f0b15ee65a07c54f5b326bb327" id="r_a0db509f0b15ee65a07c54f5b326bb327"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0db509f0b15ee65a07c54f5b326bb327">setDuracaoAulaMinutos</a> (int novaDuracaoMinutos)</td></tr>
+<tr class="memdesc:a0db509f0b15ee65a07c54f5b326bb327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera a duracao de cada aula e recalcula o limite de faltas.  <br /></td></tr>
+<tr class="memitem:a8b28a752759329e45296c095bf57c0f1" id="r_a8b28a752759329e45296c095bf57c0f1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8b28a752759329e45296c095bf57c0f1">setTipo</a> (const std::string &amp;novoTipo)</td></tr>
+<tr class="memdesc:a8b28a752759329e45296c095bf57c0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o tipo da disciplina.  <br /></td></tr>
+<tr class="memitem:aaf3812668d952ce687aaa914285f6aa4" id="r_aaf3812668d952ce687aaa914285f6aa4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaf3812668d952ce687aaa914285f6aa4">setHorarioDias</a> (const std::string &amp;novoHorarioDias)</td></tr>
+<tr class="memdesc:aaf3812668d952ce687aaa914285f6aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera os dias e horarios das aulas.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Membros públicos estáticos</h2></td></tr>
+<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Validadores Estaticos</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Metodos estaticos para validacao previa de entradas antes da construcao. </p>
+</div></td></tr>
+<tr class="memitem:ad84da1fd5d1787e027c39c8b425af768" id="r_ad84da1fd5d1787e027c39c8b425af768"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad84da1fd5d1787e027c39c8b425af768">validarCodigo</a> (const std::string &amp;codigo)</td></tr>
+<tr class="memdesc:ad84da1fd5d1787e027c39c8b425af768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o codigo da disciplina.  <br /></td></tr>
+<tr class="memitem:a49bbc9105c28e985878a44b0ce90166d" id="r_a49bbc9105c28e985878a44b0ce90166d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a49bbc9105c28e985878a44b0ce90166d">validarCodigoTurma</a> (const std::string &amp;turma)</td></tr>
+<tr class="memdesc:a49bbc9105c28e985878a44b0ce90166d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o codigo da turma.  <br /></td></tr>
+<tr class="memitem:af10584f8e272dc74946a073ecc959d14" id="r_af10584f8e272dc74946a073ecc959d14"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af10584f8e272dc74946a073ecc959d14">validarNome</a> (const std::string &amp;nome)</td></tr>
+<tr class="memdesc:af10584f8e272dc74946a073ecc959d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o nome da disciplina.  <br /></td></tr>
+<tr class="memitem:a418fea0c8392bee6dd37563692ad8502" id="r_a418fea0c8392bee6dd37563692ad8502"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a418fea0c8392bee6dd37563692ad8502">validarProfessor</a> (const std::string &amp;professor)</td></tr>
+<tr class="memdesc:a418fea0c8392bee6dd37563692ad8502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o nome do professor.  <br /></td></tr>
+<tr class="memitem:a06cdef7b7f9998f9453fad9460a36c03" id="r_a06cdef7b7f9998f9453fad9460a36c03"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a06cdef7b7f9998f9453fad9460a36c03">validarSalaBloco</a> (const std::string &amp;sala)</td></tr>
+<tr class="memdesc:a06cdef7b7f9998f9453fad9460a36c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida a sala e o bloco das aulas.  <br /></td></tr>
+<tr class="memitem:a395f03c1e339924c8c14e4334a32cc9f" id="r_a395f03c1e339924c8c14e4334a32cc9f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a395f03c1e339924c8c14e4334a32cc9f">validarCargaHoraria</a> (int cargaHoraria)</td></tr>
+<tr class="memdesc:a395f03c1e339924c8c14e4334a32cc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida a carga horaria total.  <br /></td></tr>
+<tr class="memitem:a586fb9a0ec339fb7681aa2eb52193c14" id="r_a586fb9a0ec339fb7681aa2eb52193c14"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a586fb9a0ec339fb7681aa2eb52193c14">validarDuracaoAulaMinutos</a> (int duracaoMinutos)</td></tr>
+<tr class="memdesc:a586fb9a0ec339fb7681aa2eb52193c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida a duracao de cada aula.  <br /></td></tr>
+<tr class="memitem:a6399f6a8b7e326b032789eedd522a44a" id="r_a6399f6a8b7e326b032789eedd522a44a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6399f6a8b7e326b032789eedd522a44a">validarTipo</a> (const std::string &amp;tipo)</td></tr>
+<tr class="memdesc:a6399f6a8b7e326b032789eedd522a44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o tipo da disciplina.  <br /></td></tr>
+<tr class="memitem:a5a75167f85dcf4b1ef8f14132f5008a6" id="r_a5a75167f85dcf4b1ef8f14132f5008a6"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5a75167f85dcf4b1ef8f14132f5008a6">validarHorarioDias</a> (const std::string &amp;horarioDias)</td></tr>
+<tr class="memdesc:a5a75167f85dcf4b1ef8f14132f5008a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o texto de horario e dias das aulas.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Membros privados</h2></td></tr>
+<tr class="memitem:afa25d9035e8c2b484e6dc8da8a92e015" id="r_afa25d9035e8c2b484e6dc8da8a92e015"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afa25d9035e8c2b484e6dc8da8a92e015">atualizarLimiteFaltas</a> ()</td></tr>
+<tr class="memdesc:afa25d9035e8c2b484e6dc8da8a92e015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recalcula o limite de faltas a partir da carga horaria e da duracao da aula.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
-<tr class="memitem:a8318464dffef3136c0f1652ee8948a8b" id="r_a8318464dffef3136c0f1652ee8948a8b"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a8318464dffef3136c0f1652ee8948a8b">_nome</a></td></tr>
+<tr class="memitem:a135daa9c46e6d792d790f3f2b0c8a729" id="r_a135daa9c46e6d792d790f3f2b0c8a729"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a135daa9c46e6d792d790f3f2b0c8a729">_id</a></td></tr>
+<tr class="memdesc:a135daa9c46e6d792d790f3f2b0c8a729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador único da disciplina.  <br /></td></tr>
 <tr class="memitem:a8869114fb3d77251c665b56195bab415" id="r_a8869114fb3d77251c665b56195bab415"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a8869114fb3d77251c665b56195bab415">_codigo</a></td></tr>
+<tr class="memdesc:a8869114fb3d77251c665b56195bab415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Código da disciplina.  <br /></td></tr>
+<tr class="memitem:a184da57f15b2c4052dbdc8d38a819c96" id="r_a184da57f15b2c4052dbdc8d38a819c96"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a184da57f15b2c4052dbdc8d38a819c96">_codigoTurma</a></td></tr>
+<tr class="memdesc:a184da57f15b2c4052dbdc8d38a819c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Código da turma.  <br /></td></tr>
+<tr class="memitem:a8318464dffef3136c0f1652ee8948a8b" id="r_a8318464dffef3136c0f1652ee8948a8b"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a8318464dffef3136c0f1652ee8948a8b">_nome</a></td></tr>
+<tr class="memdesc:a8318464dffef3136c0f1652ee8948a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nome da disciplina.  <br /></td></tr>
 <tr class="memitem:a68c7c727315386dfe54f9d181b0a2049" id="r_a68c7c727315386dfe54f9d181b0a2049"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a68c7c727315386dfe54f9d181b0a2049">_professor</a></td></tr>
+<tr class="memdesc:a68c7c727315386dfe54f9d181b0a2049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nome do professor responsável.  <br /></td></tr>
 <tr class="memitem:af04cd681568f9eddfb42f25e4c036c58" id="r_af04cd681568f9eddfb42f25e4c036c58"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#af04cd681568f9eddfb42f25e4c036c58">_salaBloco</a></td></tr>
-<tr class="memitem:a0478051b2341a6994a5319056bdde58a" id="r_a0478051b2341a6994a5319056bdde58a"><td class="memItemLeft">std::vector&lt; <a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0478051b2341a6994a5319056bdde58a">_atividades</a></td></tr>
-<tr class="memitem:ac2f279545476638fd2cb0a1d60e0dd6b" id="r_ac2f279545476638fd2cb0a1d60e0dd6b"><td class="memItemLeft"><a class="el" href="class_controle_frequencia.html">ControleFrequencia</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac2f279545476638fd2cb0a1d60e0dd6b">_frequencia</a></td></tr>
-<tr class="memitem:a6590440284d48ebee857323b71efb35c" id="r_a6590440284d48ebee857323b71efb35c"><td class="memItemLeft"><a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6590440284d48ebee857323b71efb35c">_categoria</a></td></tr>
+<tr class="memdesc:af04cd681568f9eddfb42f25e4c036c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sala e bloco onde ocorrem as aulas.  <br /></td></tr>
 <tr class="memitem:aa6fcaad0574158c9c6034ca162efea16" id="r_aa6fcaad0574158c9c6034ca162efea16"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa6fcaad0574158c9c6034ca162efea16">_cargaHoraria</a></td></tr>
+<tr class="memdesc:aa6fcaad0574158c9c6034ca162efea16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga horária total da disciplina.  <br /></td></tr>
+<tr class="memitem:aeeb9f9c0f06af3ef825c415822073f24" id="r_aeeb9f9c0f06af3ef825c415822073f24"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aeeb9f9c0f06af3ef825c415822073f24">_duracaoAulaMinutos</a></td></tr>
+<tr class="memdesc:aeeb9f9c0f06af3ef825c415822073f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duração de cada aula, em minutos.  <br /></td></tr>
+<tr class="memitem:a0e43fb57f5564bedebd5ed850733f810" id="r_a0e43fb57f5564bedebd5ed850733f810"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a0e43fb57f5564bedebd5ed850733f810">_tipo</a></td></tr>
+<tr class="memdesc:a0e43fb57f5564bedebd5ed850733f810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo da disciplina.  <br /></td></tr>
+<tr class="memitem:aa2db53cd230a5fec0aeddd1ec62164cd" id="r_aa2db53cd230a5fec0aeddd1ec62164cd"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aa2db53cd230a5fec0aeddd1ec62164cd">_horarioDias</a></td></tr>
+<tr class="memdesc:aa2db53cd230a5fec0aeddd1ec62164cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dias e horários das aulas.  <br /></td></tr>
+<tr class="memitem:ac2f279545476638fd2cb0a1d60e0dd6b" id="r_ac2f279545476638fd2cb0a1d60e0dd6b"><td class="memItemLeft"><a class="el" href="class_controle_frequencia.html">ControleFrequencia</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac2f279545476638fd2cb0a1d60e0dd6b">_frequencia</a></td></tr>
+<tr class="memdesc:ac2f279545476638fd2cb0a1d60e0dd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controle de frequência (faltas) da disciplina.  <br /></td></tr>
+<tr class="memitem:aefcdfec708a41876c508a812377b8ecf" id="r_aefcdfec708a41876c508a812377b8ecf"><td class="memItemLeft"><a class="el" href="class_diario_atividades.html">DiarioAtividades</a>&#160;</td><td class="memItemRight"><a class="el" href="#aefcdfec708a41876c508a812377b8ecf">_avaliacoes</a></td></tr>
+<tr class="memdesc:aefcdfec708a41876c508a812377b8ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diário com as atividades avaliativas da disciplina.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
-<a id="a0f8fe7df216cc3baadb6ea8eee49ff5f" name="a0f8fe7df216cc3baadb6ea8eee49ff5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f8fe7df216cc3baadb6ea8eee49ff5f">&#9670;&#160;</a></span>Disciplina()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Representa uma disciplina, com seus dados cadastrais, controle de frequência e diário de atividades avaliativas. </p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_controle_frequencia.html" title="Controla as faltas de uma disciplina em relação ao limite máximo permitido.">ControleFrequencia</a> </dd>
+<dd>
+<a class="el" href="class_diario_atividades.html" title="Gerencia as atividades avaliativas de uma disciplina e calcula totais, média e conceito parciais.">DiarioAtividades</a> </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
+<a id="abc7f0e29f2407f5469647710e3e1773e" name="abc7f0e29f2407f5469647710e3e1773e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc7f0e29f2407f5469647710e3e1773e">&#9670;&#160;</a></span>Disciplina()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,12 +259,22 @@ Atributos Privados</h2></td></tr>
         <tr>
           <td class="memname">Disciplina::Disciplina </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>codigo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>codigoTurma</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -190,121 +289,110 @@ Atributos Privados</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a></td>          <td class="paramname"><span class="paramname"><em>categoria</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cargaHoraria</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>faltasPermitidas</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
-<a id="a5d9909f23a2b3f583d2720cc750b7cd7" name="a5d9909f23a2b3f583d2720cc750b7cd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d9909f23a2b3f583d2720cc750b7cd7">&#9670;&#160;</a></span>adicionarAtividade()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Disciplina::adicionarAtividade </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>atividade</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4952a1294008f7fe7b292779ae1c2918" name="a4952a1294008f7fe7b292779ae1c2918"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4952a1294008f7fe7b292779ae1c2918">&#9670;&#160;</a></span>calcularMediaFinal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Disciplina::calcularMediaFinal </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a267f2dc4a0d161234f5b3e828b5caf68" name="a267f2dc4a0d161234f5b3e828b5caf68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a267f2dc4a0d161234f5b3e828b5caf68">&#9670;&#160;</a></span>calcularNotaTotal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Disciplina::calcularNotaTotal </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1614734b89e62c392440049ee66813d6" name="a1614734b89e62c392440049ee66813d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1614734b89e62c392440049ee66813d6">&#9670;&#160;</a></span>determinarConceitoParcial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char Disciplina::determinarConceitoParcial </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3e26454f17081c983bb4b1bcf65c2d20" name="a3e26454f17081c983bb4b1bcf65c2d20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e26454f17081c983bb4b1bcf65c2d20">&#9670;&#160;</a></span>editarAtividade()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Disciplina::editarAtividade </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>indice</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duracaoAulaMinutos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>nova</em></span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>tipo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>horarioDias</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constroi uma disciplina com todos os seus dados cadastrais. </p>
+<p>O limite de faltas e calculado automaticamente a partir da carga horaria e da duracao da aula.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador unico da disciplina (nao negativo). </td></tr>
+    <tr><td class="paramname">codigo</td><td>Codigo da disciplina (1 a 8 caracteres). </td></tr>
+    <tr><td class="paramname">codigoTurma</td><td>Codigo da turma (1 a 6 caracteres). </td></tr>
+    <tr><td class="paramname">nome</td><td>Nome da disciplina (1 a 22 caracteres). </td></tr>
+    <tr><td class="paramname">professor</td><td>Nome do professor (1 a 100 caracteres). </td></tr>
+    <tr><td class="paramname">salaBloco</td><td>Sala e bloco das aulas (1 a 100 caracteres). </td></tr>
+    <tr><td class="paramname">cargaHoraria</td><td>Carga horaria total (maior que zero e multiplo de 15). </td></tr>
+    <tr><td class="paramname">duracaoAulaMinutos</td><td>Duracao de cada aula, em minutos (minimo 50). </td></tr>
+    <tr><td class="paramname">tipo</td><td>Tipo da disciplina ("Obrigatoria", "Optativa" ou "Formacao Livre"). </td></tr>
+    <tr><td class="paramname">horarioDias</td><td>Dias e horarios das aulas (1 a 100 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o id for negativo ou se qualquer dado for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a3f979dfb8fe801f9bfef1db03e757239" name="a3f979dfb8fe801f9bfef1db03e757239"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f979dfb8fe801f9bfef1db03e757239">&#9670;&#160;</a></span>estaAprovado()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
+<a id="afa25d9035e8c2b484e6dc8da8a92e015" name="afa25d9035e8c2b484e6dc8da8a92e015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa25d9035e8c2b484e6dc8da8a92e015">&#9670;&#160;</a></span>atualizarLimiteFaltas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::atualizarLimiteFaltas </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recalcula o limite de faltas a partir da carga horaria e da duracao da aula. </p>
+<p>Aplica o novo limite ao controle de frequencia. Se as faltas atuais excederem o novo limite, elas sao reduzidas ate ele (ver <a class="el" href="class_controle_frequencia.html#a2bbea3a652c0beab387a1dcf0f6908d0" title="Define o número máximo de faltas permitido.">ControleFrequencia::setMaxFaltas</a>).</p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="class_calculador_max_faltas.html#a87a966558c6fe3cc05ba55c1987a585b" title="Calcula o número máximo de encontros (dias) em que o estudante pode faltar.">CalculadorMaxFaltas::calcularDiasMaximosFalta</a> </dd></dl>
+
+</div>
+</div>
+<a id="a4f8d21b418ec5c84ab64b21417bc4abd" name="a4f8d21b418ec5c84ab64b21417bc4abd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8d21b418ec5c84ab64b21417bc4abd">&#9670;&#160;</a></span>avaliacoes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Disciplina::estaAprovado </td>
+          <td class="memname"><a class="el" href="class_diario_atividades.html">DiarioAtividades</a> &amp; Disciplina::avaliacoes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acessa o diário de atividades avaliativas (leitura e escrita). </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência ao <a class="el" href="class_diario_atividades.html" title="Gerencia as atividades avaliativas de uma disciplina e calcula totais, média e conceito parciais.">DiarioAtividades</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a4ebaf1c51312a827c7f5bb8360311952" name="a4ebaf1c51312a827c7f5bb8360311952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ebaf1c51312a827c7f5bb8360311952">&#9670;&#160;</a></span>avaliacoes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_diario_atividades.html">DiarioAtividades</a> &amp; Disciplina::avaliacoes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -312,22 +400,48 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Acessa o diário de atividades avaliativas (somente leitura). </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência constante ao <a class="el" href="class_diario_atividades.html" title="Gerencia as atividades avaliativas de uma disciplina e calcula totais, média e conceito parciais.">DiarioAtividades</a>. </dd></dl>
+
 </div>
 </div>
-<a id="a3506ec82b5aea1a8bdc6aabd895718a2" name="a3506ec82b5aea1a8bdc6aabd895718a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3506ec82b5aea1a8bdc6aabd895718a2">&#9670;&#160;</a></span>getAtividades()</h2>
+<a id="ac47404bebc4798550807ecc4f33c1d04" name="ac47404bebc4798550807ecc4f33c1d04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47404bebc4798550807ecc4f33c1d04">&#9670;&#160;</a></span>frequencia() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a> &gt; &amp; Disciplina::getAtividades </td>
+          <td class="memname"><a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp; Disciplina::frequencia </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acessa o controle de frequência da disciplina (leitura e escrita). </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência ao <a class="el" href="class_controle_frequencia.html" title="Controla as faltas de uma disciplina em relação ao limite máximo permitido.">ControleFrequencia</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac0c31b802bb890981cb9da1722537c40" name="ac0c31b802bb890981cb9da1722537c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c31b802bb890981cb9da1722537c40">&#9670;&#160;</a></span>frequencia() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp; Disciplina::frequencia </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Acessa o controle de frequência da disciplina (somente leitura). </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referência constante ao <a class="el" href="class_controle_frequencia.html" title="Controla as faltas de uma disciplina em relação ao limite máximo permitido.">ControleFrequencia</a>. </dd></dl>
 
 </div>
 </div>
@@ -346,22 +460,7 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ae8a641b0176db678a4cdb2474835184a" name="ae8a641b0176db678a4cdb2474835184a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8a641b0176db678a4cdb2474835184a">&#9670;&#160;</a></span>getCategoria()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a> Disciplina::getCategoria </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Retorna a carga horária total. </p>
 
 </div>
 </div>
@@ -380,39 +479,83 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retorna o código da disciplina. </p>
+
 </div>
 </div>
-<a id="a16d17cae5dbf40d83720c62f4adb8359" name="a16d17cae5dbf40d83720c62f4adb8359"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16d17cae5dbf40d83720c62f4adb8359">&#9670;&#160;</a></span>getFrequencia() <span class="overload">[1/2]</span></h2>
+<a id="ac94980e2740c6f8767622b7f5b4eabab" name="ac94980e2740c6f8767622b7f5b4eabab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94980e2740c6f8767622b7f5b4eabab">&#9670;&#160;</a></span>getCodigoTurma()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp; Disciplina::getFrequencia </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac475ebcac6e99801beb528ac5deeee45" name="ac475ebcac6e99801beb528ac5deeee45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac475ebcac6e99801beb528ac5deeee45">&#9670;&#160;</a></span>getFrequencia() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="class_controle_frequencia.html">ControleFrequencia</a> &amp; Disciplina::getFrequencia </td>
+          <td class="memname">std::string Disciplina::getCodigoTurma </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Retorna o código da turma. </p>
+
+</div>
+</div>
+<a id="a39b657fb9b0c7eb270aee50aa5578685" name="a39b657fb9b0c7eb270aee50aa5578685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b657fb9b0c7eb270aee50aa5578685">&#9670;&#160;</a></span>getDuracaoAulaMinutos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Disciplina::getDuracaoAulaMinutos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna a duração de cada aula, em minutos. </p>
+
+</div>
+</div>
+<a id="a3f5e953736d63f11f948825bee55fd0d" name="a3f5e953736d63f11f948825bee55fd0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5e953736d63f11f948825bee55fd0d">&#9670;&#160;</a></span>getHorarioDias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Disciplina::getHorarioDias </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna os dias e horários das aulas. </p>
+
+</div>
+</div>
+<a id="a55c0781c91f2d11d6af06771c00da82b" name="a55c0781c91f2d11d6af06771c00da82b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55c0781c91f2d11d6af06771c00da82b">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Disciplina::getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o identificador único da disciplina. </p>
 
 </div>
 </div>
@@ -431,6 +574,8 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retorna o nome da disciplina. </p>
+
 </div>
 </div>
 <a id="a57ffa3709392df861b837cddcd66381b" name="a57ffa3709392df861b837cddcd66381b"></a>
@@ -447,6 +592,8 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Retorna o nome do professor. </p>
 
 </div>
 </div>
@@ -465,62 +612,333 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retorna a sala e o bloco das aulas. </p>
+
 </div>
 </div>
-<a id="ae7b8b17f9fd776bc0cef4e9676f92154" name="ae7b8b17f9fd776bc0cef4e9676f92154"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7b8b17f9fd776bc0cef4e9676f92154">&#9670;&#160;</a></span>removerAtividade()</h2>
+<a id="aafb08fb512f9569c70fa692847b2788b" name="aafb08fb512f9569c70fa692847b2788b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb08fb512f9569c70fa692847b2788b">&#9670;&#160;</a></span>getTipo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Disciplina::removerAtividade </td>
+          <td class="memname">std::string Disciplina::getTipo </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>indice</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o tipo da disciplina. </p>
+
+</div>
+</div>
+<a id="a1a9344e59cc7eeecbb7c22dc06b14140" name="a1a9344e59cc7eeecbb7c22dc06b14140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a9344e59cc7eeecbb7c22dc06b14140">&#9670;&#160;</a></span>serializar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Disciplina::serializar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converte a disciplina em texto para persistencia em arquivo. </p>
+<p>A primeira linha tem o formato <code>DISCIPLINA|id|codigo|turma|nome|professor|sala|cargaHoraria|duracaoAula|tipo|horarioDias|faltasAtuais</code>. Em seguida vem uma linha <code>ATIVIDADE</code> para cada atividade avaliativa (ver <a class="el" href="class_atividade_avaliativa.html#ae1f97af1842d693acefaae75d729f908" title="Serializa a atividade em uma linha de texto, para persistencia em arquivo.">AtividadeAvaliativa::serializar()</a>).</p>
+<dl class="section return"><dt>Retorna</dt><dd>String com os dados serializados da disciplina, uma linha por registro. </dd></dl>
+
+</div>
+</div>
+<a id="a1866055afb5e41327e071dc1f215190c" name="a1866055afb5e41327e071dc1f215190c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1866055afb5e41327e071dc1f215190c">&#9670;&#160;</a></span>setCargaHoraria()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::setCargaHoraria </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>novaCargaHoraria</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Altera a carga horaria e recalcula o limite de faltas. </p>
+<p>Se as faltas atuais excederem o novo limite, elas sao reduzidas ate ele.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novaCargaHoraria</td><td>Nova carga horaria (maior que zero e multiplo de 15). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a carga horaria for invalida. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ac2d5babc4b62c033373856ac20909116" name="ac2d5babc4b62c033373856ac20909116"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2d5babc4b62c033373856ac20909116">&#9670;&#160;</a></span>validarCamposObrigatorios()</h2>
+<a id="a09be9ff3d8580acf82cada4cd5376187" name="a09be9ff3d8580acf82cada4cd5376187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09be9ff3d8580acf82cada4cd5376187">&#9670;&#160;</a></span>setCodigo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Disciplina::validarCamposObrigatorios </td>
+          <td class="memname">void Disciplina::setCodigo </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novoCodigo</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Altera o codigo da disciplina. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoCodigo</td><td>Novo codigo (1 a 8 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o codigo for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a0bdb9074916ae791e3f4e7d40f3c8fa5" name="a0bdb9074916ae791e3f4e7d40f3c8fa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bdb9074916ae791e3f4e7d40f3c8fa5">&#9670;&#160;</a></span>verificarSomaPontos()</h2>
+<a id="a6693a9e2e0bd99a4a9a9139f7b9800c5" name="a6693a9e2e0bd99a4a9a9139f7b9800c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6693a9e2e0bd99a4a9a9139f7b9800c5">&#9670;&#160;</a></span>setCodigoTurma()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Disciplina::verificarSomaPontos </td>
+          <td class="memname">void Disciplina::setCodigoTurma </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novaTurma</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Altera o codigo da turma. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novaTurma</td><td>Novo codigo da turma (1 a 6 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o codigo for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
-<a id="a0478051b2341a6994a5319056bdde58a" name="a0478051b2341a6994a5319056bdde58a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0478051b2341a6994a5319056bdde58a">&#9670;&#160;</a></span>_atividades</h2>
+<a id="a0db509f0b15ee65a07c54f5b326bb327" name="a0db509f0b15ee65a07c54f5b326bb327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db509f0b15ee65a07c54f5b326bb327">&#9670;&#160;</a></span>setDuracaoAulaMinutos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::setDuracaoAulaMinutos </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>novaDuracaoMinutos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera a duracao de cada aula e recalcula o limite de faltas. </p>
+<p>Se as faltas atuais excederem o novo limite, elas sao reduzidas ate ele.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novaDuracaoMinutos</td><td>Nova duracao, em minutos (minimo 50). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a duracao for invalida. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf3812668d952ce687aaa914285f6aa4" name="aaf3812668d952ce687aaa914285f6aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf3812668d952ce687aaa914285f6aa4">&#9670;&#160;</a></span>setHorarioDias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::setHorarioDias </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novoHorarioDias</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera os dias e horarios das aulas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoHorarioDias</td><td>Novo texto de horario e dias (1 a 100 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o texto for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa4889eaad0e3a83cf7c92b53ee90b0e6" name="aa4889eaad0e3a83cf7c92b53ee90b0e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4889eaad0e3a83cf7c92b53ee90b0e6">&#9670;&#160;</a></span>setNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::setNome </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novoNome</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera o nome da disciplina. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoNome</td><td>Novo nome (1 a 22 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5d3a8940eacc1ea7327dba7ac2dc3f14" name="a5d3a8940eacc1ea7327dba7ac2dc3f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d3a8940eacc1ea7327dba7ac2dc3f14">&#9670;&#160;</a></span>setProfessor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::setProfessor </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novoProfessor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera o nome do professor. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoProfessor</td><td>Novo nome (1 a 100 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a740633eb9b92733d82ff03af9c8b8f66" name="a740633eb9b92733d82ff03af9c8b8f66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740633eb9b92733d82ff03af9c8b8f66">&#9670;&#160;</a></span>setSalaBloco()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::setSalaBloco </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novaSala</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera a sala e o bloco das aulas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novaSala</td><td>Nova sala/bloco (1 a 100 caracteres). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o texto for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8b28a752759329e45296c095bf57c0f1" name="a8b28a752759329e45296c095bf57c0f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b28a752759329e45296c095bf57c0f1">&#9670;&#160;</a></span>setTipo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::setTipo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>novoTipo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Altera o tipo da disciplina. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novoTipo</td><td>Novo tipo ("Obrigatoria", "Optativa" ou "Formacao Livre"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o tipo for invalido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a395f03c1e339924c8c14e4334a32cc9f" name="a395f03c1e339924c8c14e4334a32cc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395f03c1e339924c8c14e4334a32cc9f">&#9670;&#160;</a></span>validarCargaHoraria()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -529,7 +947,359 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a>&gt; Disciplina::_atividades</td>
+          <td class="memname">void Disciplina::validarCargaHoraria </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cargaHoraria</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida a carga horaria total. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cargaHoraria</td><td>Carga horaria, em horas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se for menor ou igual a zero ou nao for multiplo de 15. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad84da1fd5d1787e027c39c8b425af768" name="ad84da1fd5d1787e027c39c8b425af768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84da1fd5d1787e027c39c8b425af768">&#9670;&#160;</a></span>validarCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarCodigo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>codigo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida o codigo da disciplina. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Codigo a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o codigo for vazio ou tiver mais de 8 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a49bbc9105c28e985878a44b0ce90166d" name="a49bbc9105c28e985878a44b0ce90166d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49bbc9105c28e985878a44b0ce90166d">&#9670;&#160;</a></span>validarCodigoTurma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarCodigoTurma </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>turma</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida o codigo da turma. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">turma</td><td>Codigo da turma a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o codigo for vazio ou tiver mais de 6 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a586fb9a0ec339fb7681aa2eb52193c14" name="a586fb9a0ec339fb7681aa2eb52193c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586fb9a0ec339fb7681aa2eb52193c14">&#9670;&#160;</a></span>validarDuracaoAulaMinutos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarDuracaoAulaMinutos </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duracaoMinutos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida a duracao de cada aula. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duracaoMinutos</td><td>Duracao da aula, em minutos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se for menor que 50 minutos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5a75167f85dcf4b1ef8f14132f5008a6" name="a5a75167f85dcf4b1ef8f14132f5008a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a75167f85dcf4b1ef8f14132f5008a6">&#9670;&#160;</a></span>validarHorarioDias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarHorarioDias </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>horarioDias</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida o texto de horario e dias das aulas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">horarioDias</td><td>Texto a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o texto for vazio ou tiver mais de 100 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af10584f8e272dc74946a073ecc959d14" name="af10584f8e272dc74946a073ecc959d14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10584f8e272dc74946a073ecc959d14">&#9670;&#160;</a></span>validarNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarNome </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida o nome da disciplina. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Nome a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome for vazio ou tiver mais de 22 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a418fea0c8392bee6dd37563692ad8502" name="a418fea0c8392bee6dd37563692ad8502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418fea0c8392bee6dd37563692ad8502">&#9670;&#160;</a></span>validarProfessor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarProfessor </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>professor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida o nome do professor. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">professor</td><td>Nome a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome for vazio ou tiver mais de 100 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a06cdef7b7f9998f9453fad9460a36c03" name="a06cdef7b7f9998f9453fad9460a36c03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06cdef7b7f9998f9453fad9460a36c03">&#9670;&#160;</a></span>validarSalaBloco()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarSalaBloco </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>sala</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida a sala e o bloco das aulas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sala</td><td>Texto a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o texto for vazio ou tiver mais de 100 caracteres. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6399f6a8b7e326b032789eedd522a44a" name="a6399f6a8b7e326b032789eedd522a44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6399f6a8b7e326b032789eedd522a44a">&#9670;&#160;</a></span>validarTipo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Disciplina::validarTipo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>tipo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida o tipo da disciplina. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tipo</td><td>Tipo a ser validado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se nao for "Obrigatoria", "Optativa" ou "Formacao Livre". </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
+<a id="aefcdfec708a41876c508a812377b8ecf" name="aefcdfec708a41876c508a812377b8ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefcdfec708a41876c508a812377b8ecf">&#9670;&#160;</a></span>_avaliacoes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diario_atividades.html">DiarioAtividades</a> Disciplina::_avaliacoes</td>
         </tr>
       </table>
   </td>
@@ -538,6 +1308,8 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Diário com as atividades avaliativas da disciplina. </p>
 
 </div>
 </div>
@@ -561,27 +1333,7 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a6590440284d48ebee857323b71efb35c" name="a6590440284d48ebee857323b71efb35c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6590440284d48ebee857323b71efb35c">&#9670;&#160;</a></span>_categoria</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a> Disciplina::_categoria</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Carga horária total da disciplina. </p>
 
 </div>
 </div>
@@ -605,6 +1357,56 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Código da disciplina. </p>
+
+</div>
+</div>
+<a id="a184da57f15b2c4052dbdc8d38a819c96" name="a184da57f15b2c4052dbdc8d38a819c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184da57f15b2c4052dbdc8d38a819c96">&#9670;&#160;</a></span>_codigoTurma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Disciplina::_codigoTurma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Código da turma. </p>
+
+</div>
+</div>
+<a id="aeeb9f9c0f06af3ef825c415822073f24" name="aeeb9f9c0f06af3ef825c415822073f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb9f9c0f06af3ef825c415822073f24">&#9670;&#160;</a></span>_duracaoAulaMinutos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Disciplina::_duracaoAulaMinutos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Duração de cada aula, em minutos. </p>
+
 </div>
 </div>
 <a id="ac2f279545476638fd2cb0a1d60e0dd6b" name="ac2f279545476638fd2cb0a1d60e0dd6b"></a>
@@ -626,6 +1428,56 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Controle de frequência (faltas) da disciplina. </p>
+
+</div>
+</div>
+<a id="aa2db53cd230a5fec0aeddd1ec62164cd" name="aa2db53cd230a5fec0aeddd1ec62164cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2db53cd230a5fec0aeddd1ec62164cd">&#9670;&#160;</a></span>_horarioDias</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Disciplina::_horarioDias</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dias e horários das aulas. </p>
+
+</div>
+</div>
+<a id="a135daa9c46e6d792d790f3f2b0c8a729" name="a135daa9c46e6d792d790f3f2b0c8a729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135daa9c46e6d792d790f3f2b0c8a729">&#9670;&#160;</a></span>_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Disciplina::_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Identificador único da disciplina. </p>
 
 </div>
 </div>
@@ -649,6 +1501,8 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Nome da disciplina. </p>
+
 </div>
 </div>
 <a id="a68c7c727315386dfe54f9d181b0a2049" name="a68c7c727315386dfe54f9d181b0a2049"></a>
@@ -670,6 +1524,8 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Nome do professor responsável. </p>
 
 </div>
 </div>
@@ -693,10 +1549,37 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sala e bloco onde ocorrem as aulas. </p>
+
 </div>
 </div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<a id="a0e43fb57f5564bedebd5ed850733f810" name="a0e43fb57f5564bedebd5ed850733f810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e43fb57f5564bedebd5ed850733f810">&#9670;&#160;</a></span>_tipo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Disciplina::_tipo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo da disciplina. </p>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>include/<a class="el" href="_disciplina_8hpp_source.html">Disciplina.hpp</a></li>
+<li>src/<a class="el" href="_disciplina_8cpp.html">Disciplina.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -712,7 +1595,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="class_disciplina.html">Disciplina</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

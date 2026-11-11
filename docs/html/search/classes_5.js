@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pontografico_0',['PontoGrafico',['../struct_ponto_grafico.html',1,'']]]
+  ['historicoescolar_0',['HistoricoEscolar',['../class_historico_escolar.html',1,'']]]
 ];

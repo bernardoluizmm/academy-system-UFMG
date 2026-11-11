@@ -1,12 +1,28 @@
 var annotated_dup =
 [
     [ "AtividadeAvaliativa", "class_atividade_avaliativa.html", "class_atividade_avaliativa" ],
+    [ "CalculadorConceito", "class_calculador_conceito.html", null ],
+    [ "CalculadorMaxFaltas", "class_calculador_max_faltas.html", null ],
+    [ "CalculadorMedia", "class_calculador_media.html", null ],
     [ "ControleFrequencia", "class_controle_frequencia.html", "class_controle_frequencia" ],
     [ "Curso", "class_curso.html", "class_curso" ],
+    [ "Data", "class_data.html", "class_data" ],
+    [ "DiarioAtividades", "class_diario_atividades.html", "class_diario_atividades" ],
     [ "Disciplina", "class_disciplina.html", "class_disciplina" ],
     [ "Estudante", "class_estudante.html", "class_estudante" ],
-    [ "GerenciadorPerfil", "class_gerenciador_perfil.html", null ],
-    [ "PontoGrafico", "struct_ponto_grafico.html", "struct_ponto_grafico" ],
-    [ "SemestreConsolidado", "class_semestre_consolidado.html", "class_semestre_consolidado" ],
-    [ "Tela", "class_tela.html", "class_tela" ]
+    [ "GerenciadorArquivo", "class_gerenciador_arquivo.html", "class_gerenciador_arquivo" ],
+    [ "HistoricoEscolar", "class_historico_escolar.html", "class_historico_escolar" ],
+    [ "Menu", "class_menu.html", "class_menu" ],
+    [ "MenuAtividadeAvaliativa", "class_menu_atividade_avaliativa.html", "class_menu_atividade_avaliativa" ],
+    [ "MenuCadastroUsuario", "class_menu_cadastro_usuario.html", "class_menu_cadastro_usuario" ],
+    [ "MenuCarregarUsuario", "class_menu_carregar_usuario.html", "class_menu_carregar_usuario" ],
+    [ "MenuDetalhamentoDisciplina", "class_menu_detalhamento_disciplina.html", "class_menu_detalhamento_disciplina" ],
+    [ "MenuDisciplina", "class_menu_disciplina.html", "class_menu_disciplina" ],
+    [ "MenuFrequencia", "class_menu_frequencia.html", "class_menu_frequencia" ],
+    [ "MenuInicial", "class_menu_inicial.html", "class_menu_inicial" ],
+    [ "MenuPrincipal", "class_menu_principal.html", "class_menu_principal" ],
+    [ "SeletorMenu", "class_seletor_menu.html", "class_seletor_menu" ],
+    [ "Semestre", "class_semestre.html", "class_semestre" ],
+    [ "SemestreAtual", "class_semestre_atual.html", "class_semestre_atual" ],
+    [ "SemestreConsolidado", "class_semestre_consolidado.html", "class_semestre_consolidado" ]
 ];

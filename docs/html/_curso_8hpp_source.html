@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Código-Fonte de include/Curso.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_curso_8hpp_so
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,89 +112,117 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_curso_8hpp_so
 </div><!--header-->
 <div class="contents">
 <a href="_curso_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef CURSO_HPP</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define CURSO_HPP</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_semestre_consolidado_8hpp.html">SemestreConsolidado.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_categoria_disciplina_8hpp.html">CategoriaDisciplina.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_ponto_grafico_8hpp.html">PontoGrafico.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_curso.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="class_curso.html#a92d0bb778c24a6cf7f41cc7a6998ad5f">Curso</a> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_curso.html#a677a7f53414b654f3111e8ad4b0f6c48">   28</a></span>   std::string <a class="code hl_variable" href="class_curso.html#a677a7f53414b654f3111e8ad4b0f6c48">_nome</a>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_curso.html#a26c1008274b11e2d4e018e8a296c72c8">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a26c1008274b11e2d4e018e8a296c72c8">_horasObrigatorias</a>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_curso.html#a462df0679cd4c3211d40996267abb12a">   34</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a462df0679cd4c3211d40996267abb12a">_horasOptativas</a>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_curso.html#a6ce6b591154426a5428fd154e8c9a2e8">   37</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a6ce6b591154426a5428fd154e8c9a2e8">_horasFormacaoLivre</a>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_curso.html#ad2377d986bbdddfb5ea062ad7246263b">   40</a></span>    std::vector&lt;SemestreConsolidado&gt; <a class="code hl_variable" href="class_curso.html#ad2377d986bbdddfb5ea062ad7246263b">_semestresConsolidados</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_curso.html#a92d0bb778c24a6cf7f41cc7a6998ad5f">   53</a></span>    <a class="code hl_function" href="class_curso.html#a92d0bb778c24a6cf7f41cc7a6998ad5f">Curso</a>(std::string nome, <span class="keywordtype">int</span> horasObrigatorias, <span class="keywordtype">int</span> horasOptativas, <span class="keywordtype">int</span> horasFormacaoLivre);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_curso.html#a2066ca332151f5b22959c2f4912ad0af">   58</a></span>    std::string <a class="code hl_function" href="class_curso.html#a2066ca332151f5b22959c2f4912ad0af">getNome</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_curso.html#afe036248775d8e99dbafcd19f6bf18d4">   64</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_curso.html#afe036248775d8e99dbafcd19f6bf18d4">setNome</a>(<span class="keyword">const</span> std::string&amp; nome);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_curso.html#a9219003312df727c98c1f16d4fe0a8fe">   70</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#a9219003312df727c98c1f16d4fe0a8fe">getHorasObrigatorias</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_curso.html#a362f36c836e6ece34e5747311490a406">   76</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#a362f36c836e6ece34e5747311490a406">getHorasOptativas</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_curso.html#a09fc26afad2da50ab2edbb6562999343">   82</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#a09fc26afad2da50ab2edbb6562999343">getHorasFormacaoLivre</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_curso.html#a14fe3a455727a18d351a8b01c07dc246">   88</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_curso.html#a14fe3a455727a18d351a8b01c07dc246">setHorasFormacaoLivre</a>(<span class="keywordtype">int</span> horas);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_curso.html#aeeb23e54d54bc4149f0d72a5d5cc7ffa">   94</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#aeeb23e54d54bc4149f0d72a5d5cc7ffa">getTotalHorasExigidas</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_curso.html#ac46f70496845f302d2d21a0ea051b630">  100</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_curso.html#ac46f70496845f302d2d21a0ea051b630">adicionarSemestreConsolidado</a>(<a class="code hl_class" href="class_semestre_consolidado.html">SemestreConsolidado</a> sem);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_curso.html#a811d0b5cd4fcb49b061e478320a466ed">  107</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_curso.html#a811d0b5cd4fcb49b061e478320a466ed">removerSemestreConsolidado</a>(<span class="keywordtype">int</span> indice);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_curso.html#a77f1abd6ba92d7aca5a38a8d458592ce">  113</a></span>    <span class="keyword">const</span> std::vector&lt;SemestreConsolidado&gt;&amp; <a class="code hl_function" href="class_curso.html#a77f1abd6ba92d7aca5a38a8d458592ce">getSemestresConsolidados</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_curso.html#aad17d9d1c858b7c8aff15ad51dbb48aa">  122</a></span>    std::vector&lt;SemestreConsolidado&gt; &amp;<a class="code hl_function" href="class_curso.html#aad17d9d1c858b7c8aff15ad51dbb48aa">getSemestresConsolidados</a>();</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_curso.html#aabed7a9fe6fc913af1ed3764b00f03a7">  128</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_curso.html#aabed7a9fe6fc913af1ed3764b00f03a7">calcularPercentualIntegralizacao</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_curso.html#a51640d91a33702bbd29dea20cc47b941">  136</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_curso.html#a51640d91a33702bbd29dea20cc47b941">calcularPercentualCategoria</a>(<a class="code hl_enumeration" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a> categoria) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_curso.html#a3ad353980a1995382cd530e5403fc268">  146</a></span>    std::vector&lt;PontoGrafico&gt; <a class="code hl_function" href="class_curso.html#a3ad353980a1995382cd530e5403fc268">gerarDadosGrafico</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef CURSO_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define CURSO_HPP</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_curso.html">   19</a></span><span class="keyword">class </span><a class="code hl_function" href="class_curso.html#af9a3dfab024ccf2f92c1b4475046c640">Curso</a> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_curso.html#a6d57c5bcf9e3e2c21d71cfb0213790e5">   22</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a6d57c5bcf9e3e2c21d71cfb0213790e5">OPCAO_CC</a> = 1;                  </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_curso.html#aae14a954b40039b740dda5565665589f">   23</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#aae14a954b40039b740dda5565665589f">OPCAO_SI</a> = 2;                  </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_curso.html#a765473a1109741c2634cfae9d06e5bc3">   24</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a765473a1109741c2634cfae9d06e5bc3">ANO_REFORMA_CC</a> = 2025;         </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_curso.html#af3c4334f1762b08717d6608557137538">   26</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#af3c4334f1762b08717d6608557137538">HORAS_OBRIG_CC_ANTIGO</a> = 2040;  </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_curso.html#a7904e239bad3a279dc0a44bdeb51a42a">   27</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a7904e239bad3a279dc0a44bdeb51a42a">HORAS_OPT_CC_ANTIGO</a> = 1020;    </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_curso.html#a0b4a0d24e1325ddf6ce237bfc6bc7de4">   28</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a0b4a0d24e1325ddf6ce237bfc6bc7de4">HORAS_LIVRE_CC_ANTIGO</a> = 60;    </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_curso.html#ae243413b9f635cfcf47250c28a2dc119">   29</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#ae243413b9f635cfcf47250c28a2dc119">HORAS_ADIC_CC_ANTIGO</a> = 120;    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_curso.html#a89fae1b9bac54a57897fa106a40e9a17">   30</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a89fae1b9bac54a57897fa106a40e9a17">HORAS_TOTAIS_CC_ANTIGO</a> = 3240; </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_curso.html#a7108e6320bbc5f8a7934d140cf43ba81">   32</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a7108e6320bbc5f8a7934d140cf43ba81">HORAS_OBRIG_CC_NOVO</a> = 1980;    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_curso.html#a17a31f57d7fa95361c80c1b356109edd">   33</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a17a31f57d7fa95361c80c1b356109edd">HORAS_OPT_CC_NOVO</a> = 1110;      </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_curso.html#aa426caa533903f979f41d496d80793a1">   34</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#aa426caa533903f979f41d496d80793a1">HORAS_LIVRE_CC_NOVO</a> = 120;     </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_curso.html#a8f605e7abe592ed6655b49cca9610650">   35</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a8f605e7abe592ed6655b49cca9610650">HORAS_ADIC_CC_NOVO</a> = 0;        </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_curso.html#aa8bb88ca44677819bc6c463d6551709d">   36</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#aa8bb88ca44677819bc6c463d6551709d">HORAS_TOTAIS_CC_NOVO</a> = 3210;   </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_curso.html#ac1e2dcc01bd2908ec954596813fd7e47">   38</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#ac1e2dcc01bd2908ec954596813fd7e47">HORAS_OBRIG_SI</a> = 2100;         </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_curso.html#aa52ad44ca35219bfbf15657088e0b3ef">   39</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#aa52ad44ca35219bfbf15657088e0b3ef">HORAS_OPT_SI</a> = 780;            </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_curso.html#ae139ebeadd9c44bb0125bbdd8a8d6e99">   40</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#ae139ebeadd9c44bb0125bbdd8a8d6e99">HORAS_LIVRE_SI</a> = 120;          </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_curso.html#a2c1d5e8aede50cb210111f549dfd8394">   41</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a2c1d5e8aede50cb210111f549dfd8394">HORAS_ADIC_SI</a> = 0;             </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_curso.html#a011ab4e7253fe114e9f0c1a6359c9ef9">   42</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a011ab4e7253fe114e9f0c1a6359c9ef9">HORAS_TOTAIS_SI</a> = 3000;        </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_curso.html#ac6334fc85cb597ff9b4d4376ee247315">   45</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#ac6334fc85cb597ff9b4d4376ee247315">_opcaoCurso</a>;                 </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_curso.html#a677a7f53414b654f3111e8ad4b0f6c48">   46</a></span>    std::string <a class="code hl_variable" href="class_curso.html#a677a7f53414b654f3111e8ad4b0f6c48">_nome</a>;               </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_curso.html#a48408832a3e0545367a19e98182b969c">   47</a></span>    std::string <a class="code hl_variable" href="class_curso.html#a48408832a3e0545367a19e98182b969c">_semestreIngresso</a>;   </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_curso.html#a2566ff4421c70a8531322fe0b88559ee">   48</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a2566ff4421c70a8531322fe0b88559ee">_horasTotaisObrigatorias</a>;    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_curso.html#a7bc639ffb42d9ca46cec1d76021bda4d">   49</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a7bc639ffb42d9ca46cec1d76021bda4d">_horasTotaisOptativas</a>;       </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_curso.html#a25be99bd668324d42925dc75da084d97">   50</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a25be99bd668324d42925dc75da084d97">_horasTotaisFormacaoLivre</a>;   </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_curso.html#a27f82eca5cfd8b51b70ff861f8a1d62b">   51</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#a27f82eca5cfd8b51b70ff861f8a1d62b">_horasAdicionais</a>;            </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_curso.html#ac1be7579915c99dfed9d6df695133f8c">   52</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_curso.html#ac1be7579915c99dfed9d6df695133f8c">_horasTotaisCurso</a>;           </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_curso.html#afeab478167b790acfb25c08796161f9a">configurarHorasPorCurriculo</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="class_curso.html#af9a3dfab024ccf2f92c1b4475046c640">Curso</a>(<span class="keywordtype">int</span> opcaoCurso, <span class="keyword">const</span> std::string&amp; semestreIngresso);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_curso.html#a996cf27f1a81e933190d7ee2f075e9d3">validarOpcaoCurso</a>(<span class="keywordtype">int</span> opcao);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_curso.html#a8fabb897f24bef45817c0e533fde0bf9">validarSemestreIngresso</a>(<span class="keyword">const</span> std::string&amp; semIngresso);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#aae204a908881245dc6ecfbd8385b312c">getOpcaoCurso</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    std::string <a class="code hl_function" href="class_curso.html#a2066ca332151f5b22959c2f4912ad0af">getNome</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    std::string <a class="code hl_function" href="class_curso.html#abe6a9c6dc7b0251a1d6e23fa6f27aec8">getSemestreIngresso</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#a42033a2d6e86049d71da612fa85d3d4c">getHorasTotaisObrigatorias</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#a505095b6901e91f7976f0c13e1df3314">getHorasTotaisOptativas</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#a4f587d337741aa0b397d8c8667a347c3">getHorasTotaisFormacaoLivre</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#a699a2544ad8d093430ec927fc200153e">getHorasAdicionais</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_curso.html#ae42f37688730fe89e06cfeac4e8a38a5">getHorasTotaisCurso</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    std::string <a class="code hl_function" href="class_curso.html#af314db1fa2cfba91a1d8f6f7de4a57c0">serializar</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>};</div>
 </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">#endif </span><span class="comment">// CURSO_HPP</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    </div>
-<div class="ttc" id="a_categoria_disciplina_8hpp_html"><div class="ttname"><a href="_categoria_disciplina_8hpp.html">CategoriaDisciplina.hpp</a></div><div class="ttdoc">Enumeração das categorias curriculares de uma disciplina.</div></div>
-<div class="ttc" id="a_categoria_disciplina_8hpp_html_a2ff0d7140937a4b0be3fce0a8df55f9d"><div class="ttname"><a href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a></div><div class="ttdeci">CategoriaDisciplina</div><div class="ttdoc">Define os tipos de classificação de uma disciplina na grade curricular.</div><div class="ttdef"><b>Definição</b> CategoriaDisciplina.hpp:12</div></div>
-<div class="ttc" id="a_ponto_grafico_8hpp_html"><div class="ttname"><a href="_ponto_grafico_8hpp.html">PontoGrafico.hpp</a></div><div class="ttdoc">Estrutura que representa um par de dados (período, NSG) para gráficos.</div></div>
-<div class="ttc" id="a_semestre_consolidado_8hpp_html"><div class="ttname"><a href="_semestre_consolidado_8hpp.html">SemestreConsolidado.hpp</a></div></div>
-<div class="ttc" id="aclass_curso_html_a09fc26afad2da50ab2edbb6562999343"><div class="ttname"><a href="class_curso.html#a09fc26afad2da50ab2edbb6562999343">Curso::getHorasFormacaoLivre</a></div><div class="ttdeci">int getHorasFormacaoLivre() const</div><div class="ttdoc">Retorna as horas exigidas em formação livre.</div></div>
-<div class="ttc" id="aclass_curso_html_a14fe3a455727a18d351a8b01c07dc246"><div class="ttname"><a href="class_curso.html#a14fe3a455727a18d351a8b01c07dc246">Curso::setHorasFormacaoLivre</a></div><div class="ttdeci">void setHorasFormacaoLivre(int horas)</div><div class="ttdoc">Altera as horas exigidas em formação livre.</div></div>
-<div class="ttc" id="aclass_curso_html_a2066ca332151f5b22959c2f4912ad0af"><div class="ttname"><a href="class_curso.html#a2066ca332151f5b22959c2f4912ad0af">Curso::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdoc">Retorna o nome do curso.</div></div>
-<div class="ttc" id="aclass_curso_html_a26c1008274b11e2d4e018e8a296c72c8"><div class="ttname"><a href="class_curso.html#a26c1008274b11e2d4e018e8a296c72c8">Curso::_horasObrigatorias</a></div><div class="ttdeci">int _horasObrigatorias</div><div class="ttdoc">Horas exigidas em disciplinas obrigatórias.</div><div class="ttdef"><b>Definição</b> Curso.hpp:31</div></div>
-<div class="ttc" id="aclass_curso_html_a362f36c836e6ece34e5747311490a406"><div class="ttname"><a href="class_curso.html#a362f36c836e6ece34e5747311490a406">Curso::getHorasOptativas</a></div><div class="ttdeci">int getHorasOptativas() const</div><div class="ttdoc">Retorna as horas exigidas em disciplinas optativas.</div></div>
-<div class="ttc" id="aclass_curso_html_a3ad353980a1995382cd530e5403fc268"><div class="ttname"><a href="class_curso.html#a3ad353980a1995382cd530e5403fc268">Curso::gerarDadosGrafico</a></div><div class="ttdeci">std::vector&lt; PontoGrafico &gt; gerarDadosGrafico() const</div><div class="ttdoc">Gera os dados para o gráfico de evolução do NSG.</div></div>
-<div class="ttc" id="aclass_curso_html_a462df0679cd4c3211d40996267abb12a"><div class="ttname"><a href="class_curso.html#a462df0679cd4c3211d40996267abb12a">Curso::_horasOptativas</a></div><div class="ttdeci">int _horasOptativas</div><div class="ttdoc">Horas exigidas em disciplinas optativas.</div><div class="ttdef"><b>Definição</b> Curso.hpp:34</div></div>
-<div class="ttc" id="aclass_curso_html_a51640d91a33702bbd29dea20cc47b941"><div class="ttname"><a href="class_curso.html#a51640d91a33702bbd29dea20cc47b941">Curso::calcularPercentualCategoria</a></div><div class="ttdeci">double calcularPercentualCategoria(CategoriaDisciplina categoria) const</div><div class="ttdoc">Calcula o percentual de integralização de uma categoria.</div></div>
-<div class="ttc" id="aclass_curso_html_a677a7f53414b654f3111e8ad4b0f6c48"><div class="ttname"><a href="class_curso.html#a677a7f53414b654f3111e8ad4b0f6c48">Curso::_nome</a></div><div class="ttdeci">std::string _nome</div><div class="ttdoc">Nome do curso (ex: &quot;Ciência da Computação&quot;).</div><div class="ttdef"><b>Definição</b> Curso.hpp:28</div></div>
-<div class="ttc" id="aclass_curso_html_a6ce6b591154426a5428fd154e8c9a2e8"><div class="ttname"><a href="class_curso.html#a6ce6b591154426a5428fd154e8c9a2e8">Curso::_horasFormacaoLivre</a></div><div class="ttdeci">int _horasFormacaoLivre</div><div class="ttdoc">Horas exigidas em formação livre.</div><div class="ttdef"><b>Definição</b> Curso.hpp:37</div></div>
-<div class="ttc" id="aclass_curso_html_a77f1abd6ba92d7aca5a38a8d458592ce"><div class="ttname"><a href="class_curso.html#a77f1abd6ba92d7aca5a38a8d458592ce">Curso::getSemestresConsolidados</a></div><div class="ttdeci">const std::vector&lt; SemestreConsolidado &gt; &amp; getSemestresConsolidados() const</div><div class="ttdoc">Acesso somente leitura à lista de semestres consolidados.</div></div>
-<div class="ttc" id="aclass_curso_html_a811d0b5cd4fcb49b061e478320a466ed"><div class="ttname"><a href="class_curso.html#a811d0b5cd4fcb49b061e478320a466ed">Curso::removerSemestreConsolidado</a></div><div class="ttdeci">bool removerSemestreConsolidado(int indice)</div><div class="ttdoc">Remove o semestre consolidado no índice informado.</div></div>
-<div class="ttc" id="aclass_curso_html_a9219003312df727c98c1f16d4fe0a8fe"><div class="ttname"><a href="class_curso.html#a9219003312df727c98c1f16d4fe0a8fe">Curso::getHorasObrigatorias</a></div><div class="ttdeci">int getHorasObrigatorias() const</div><div class="ttdoc">Retorna as horas exigidas em disciplinas obrigatórias.</div></div>
-<div class="ttc" id="aclass_curso_html_a92d0bb778c24a6cf7f41cc7a6998ad5f"><div class="ttname"><a href="class_curso.html#a92d0bb778c24a6cf7f41cc7a6998ad5f">Curso::Curso</a></div><div class="ttdeci">Curso(std::string nome, int horasObrigatorias, int horasOptativas, int horasFormacaoLivre)</div><div class="ttdoc">Construtor do curso.</div></div>
-<div class="ttc" id="aclass_curso_html_aabed7a9fe6fc913af1ed3764b00f03a7"><div class="ttname"><a href="class_curso.html#aabed7a9fe6fc913af1ed3764b00f03a7">Curso::calcularPercentualIntegralizacao</a></div><div class="ttdeci">double calcularPercentualIntegralizacao() const</div><div class="ttdoc">Calcula o percentual de integralização do curso.</div></div>
-<div class="ttc" id="aclass_curso_html_aad17d9d1c858b7c8aff15ad51dbb48aa"><div class="ttname"><a href="class_curso.html#aad17d9d1c858b7c8aff15ad51dbb48aa">Curso::getSemestresConsolidados</a></div><div class="ttdeci">std::vector&lt; SemestreConsolidado &gt; &amp; getSemestresConsolidados()</div><div class="ttdoc">Acesso mutável à lista de semestres consolidados.</div></div>
-<div class="ttc" id="aclass_curso_html_ac46f70496845f302d2d21a0ea051b630"><div class="ttname"><a href="class_curso.html#ac46f70496845f302d2d21a0ea051b630">Curso::adicionarSemestreConsolidado</a></div><div class="ttdeci">void adicionarSemestreConsolidado(SemestreConsolidado sem)</div><div class="ttdoc">Adiciona um semestre consolidado à lista.</div></div>
-<div class="ttc" id="aclass_curso_html_ad2377d986bbdddfb5ea062ad7246263b"><div class="ttname"><a href="class_curso.html#ad2377d986bbdddfb5ea062ad7246263b">Curso::_semestresConsolidados</a></div><div class="ttdeci">std::vector&lt; SemestreConsolidado &gt; _semestresConsolidados</div><div class="ttdoc">Lista ordenada de semestres consolidados.</div><div class="ttdef"><b>Definição</b> Curso.hpp:40</div></div>
-<div class="ttc" id="aclass_curso_html_aeeb23e54d54bc4149f0d72a5d5cc7ffa"><div class="ttname"><a href="class_curso.html#aeeb23e54d54bc4149f0d72a5d5cc7ffa">Curso::getTotalHorasExigidas</a></div><div class="ttdeci">int getTotalHorasExigidas() const</div><div class="ttdoc">Retorna o total de horas exigidas pelo curso.</div></div>
-<div class="ttc" id="aclass_curso_html_afe036248775d8e99dbafcd19f6bf18d4"><div class="ttname"><a href="class_curso.html#afe036248775d8e99dbafcd19f6bf18d4">Curso::setNome</a></div><div class="ttdeci">void setNome(const std::string &amp;nome)</div><div class="ttdoc">Altera o nome do curso.</div></div>
-<div class="ttc" id="aclass_semestre_consolidado_html"><div class="ttname"><a href="class_semestre_consolidado.html">SemestreConsolidado</a></div><div class="ttdef"><b>Definição</b> SemestreConsolidado.hpp:5</div></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_curso_html_a011ab4e7253fe114e9f0c1a6359c9ef9"><div class="ttname"><a href="class_curso.html#a011ab4e7253fe114e9f0c1a6359c9ef9">Curso::HORAS_TOTAIS_SI</a></div><div class="ttdeci">static constexpr int HORAS_TOTAIS_SI</div><div class="ttdef"><b>Definição</b> Curso.hpp:42</div></div>
+<div class="ttc" id="aclass_curso_html_a0b4a0d24e1325ddf6ce237bfc6bc7de4"><div class="ttname"><a href="class_curso.html#a0b4a0d24e1325ddf6ce237bfc6bc7de4">Curso::HORAS_LIVRE_CC_ANTIGO</a></div><div class="ttdeci">static constexpr int HORAS_LIVRE_CC_ANTIGO</div><div class="ttdef"><b>Definição</b> Curso.hpp:28</div></div>
+<div class="ttc" id="aclass_curso_html_a17a31f57d7fa95361c80c1b356109edd"><div class="ttname"><a href="class_curso.html#a17a31f57d7fa95361c80c1b356109edd">Curso::HORAS_OPT_CC_NOVO</a></div><div class="ttdeci">static constexpr int HORAS_OPT_CC_NOVO</div><div class="ttdef"><b>Definição</b> Curso.hpp:33</div></div>
+<div class="ttc" id="aclass_curso_html_a2066ca332151f5b22959c2f4912ad0af"><div class="ttname"><a href="class_curso.html#a2066ca332151f5b22959c2f4912ad0af">Curso::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdoc">Obtem o nome do curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:42</div></div>
+<div class="ttc" id="aclass_curso_html_a2566ff4421c70a8531322fe0b88559ee"><div class="ttname"><a href="class_curso.html#a2566ff4421c70a8531322fe0b88559ee">Curso::_horasTotaisObrigatorias</a></div><div class="ttdeci">int _horasTotaisObrigatorias</div><div class="ttdef"><b>Definição</b> Curso.hpp:48</div></div>
+<div class="ttc" id="aclass_curso_html_a25be99bd668324d42925dc75da084d97"><div class="ttname"><a href="class_curso.html#a25be99bd668324d42925dc75da084d97">Curso::_horasTotaisFormacaoLivre</a></div><div class="ttdeci">int _horasTotaisFormacaoLivre</div><div class="ttdef"><b>Definição</b> Curso.hpp:50</div></div>
+<div class="ttc" id="aclass_curso_html_a27f82eca5cfd8b51b70ff861f8a1d62b"><div class="ttname"><a href="class_curso.html#a27f82eca5cfd8b51b70ff861f8a1d62b">Curso::_horasAdicionais</a></div><div class="ttdeci">int _horasAdicionais</div><div class="ttdef"><b>Definição</b> Curso.hpp:51</div></div>
+<div class="ttc" id="aclass_curso_html_a2c1d5e8aede50cb210111f549dfd8394"><div class="ttname"><a href="class_curso.html#a2c1d5e8aede50cb210111f549dfd8394">Curso::HORAS_ADIC_SI</a></div><div class="ttdeci">static constexpr int HORAS_ADIC_SI</div><div class="ttdef"><b>Definição</b> Curso.hpp:41</div></div>
+<div class="ttc" id="aclass_curso_html_a42033a2d6e86049d71da612fa85d3d4c"><div class="ttname"><a href="class_curso.html#a42033a2d6e86049d71da612fa85d3d4c">Curso::getHorasTotaisObrigatorias</a></div><div class="ttdeci">int getHorasTotaisObrigatorias() const</div><div class="ttdoc">Obtem o total de horas obrigatorias exigidas pelo curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:52</div></div>
+<div class="ttc" id="aclass_curso_html_a48408832a3e0545367a19e98182b969c"><div class="ttname"><a href="class_curso.html#a48408832a3e0545367a19e98182b969c">Curso::_semestreIngresso</a></div><div class="ttdeci">std::string _semestreIngresso</div><div class="ttdef"><b>Definição</b> Curso.hpp:47</div></div>
+<div class="ttc" id="aclass_curso_html_a4f587d337741aa0b397d8c8667a347c3"><div class="ttname"><a href="class_curso.html#a4f587d337741aa0b397d8c8667a347c3">Curso::getHorasTotaisFormacaoLivre</a></div><div class="ttdeci">int getHorasTotaisFormacaoLivre() const</div><div class="ttdoc">Obtem o total de horas de formacao livre exigidas pelo curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:62</div></div>
+<div class="ttc" id="aclass_curso_html_a505095b6901e91f7976f0c13e1df3314"><div class="ttname"><a href="class_curso.html#a505095b6901e91f7976f0c13e1df3314">Curso::getHorasTotaisOptativas</a></div><div class="ttdeci">int getHorasTotaisOptativas() const</div><div class="ttdoc">Obtem o total de horas optativas exigidas pelo curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:57</div></div>
+<div class="ttc" id="aclass_curso_html_a677a7f53414b654f3111e8ad4b0f6c48"><div class="ttname"><a href="class_curso.html#a677a7f53414b654f3111e8ad4b0f6c48">Curso::_nome</a></div><div class="ttdeci">std::string _nome</div><div class="ttdef"><b>Definição</b> Curso.hpp:46</div></div>
+<div class="ttc" id="aclass_curso_html_a699a2544ad8d093430ec927fc200153e"><div class="ttname"><a href="class_curso.html#a699a2544ad8d093430ec927fc200153e">Curso::getHorasAdicionais</a></div><div class="ttdeci">int getHorasAdicionais() const</div><div class="ttdoc">Obtem o total de horas adicionais exigidas pelo curriculo do curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:67</div></div>
+<div class="ttc" id="aclass_curso_html_a6d57c5bcf9e3e2c21d71cfb0213790e5"><div class="ttname"><a href="class_curso.html#a6d57c5bcf9e3e2c21d71cfb0213790e5">Curso::OPCAO_CC</a></div><div class="ttdeci">static constexpr int OPCAO_CC</div><div class="ttdef"><b>Definição</b> Curso.hpp:22</div></div>
+<div class="ttc" id="aclass_curso_html_a7108e6320bbc5f8a7934d140cf43ba81"><div class="ttname"><a href="class_curso.html#a7108e6320bbc5f8a7934d140cf43ba81">Curso::HORAS_OBRIG_CC_NOVO</a></div><div class="ttdeci">static constexpr int HORAS_OBRIG_CC_NOVO</div><div class="ttdef"><b>Definição</b> Curso.hpp:32</div></div>
+<div class="ttc" id="aclass_curso_html_a765473a1109741c2634cfae9d06e5bc3"><div class="ttname"><a href="class_curso.html#a765473a1109741c2634cfae9d06e5bc3">Curso::ANO_REFORMA_CC</a></div><div class="ttdeci">static constexpr int ANO_REFORMA_CC</div><div class="ttdef"><b>Definição</b> Curso.hpp:24</div></div>
+<div class="ttc" id="aclass_curso_html_a7904e239bad3a279dc0a44bdeb51a42a"><div class="ttname"><a href="class_curso.html#a7904e239bad3a279dc0a44bdeb51a42a">Curso::HORAS_OPT_CC_ANTIGO</a></div><div class="ttdeci">static constexpr int HORAS_OPT_CC_ANTIGO</div><div class="ttdef"><b>Definição</b> Curso.hpp:27</div></div>
+<div class="ttc" id="aclass_curso_html_a7bc639ffb42d9ca46cec1d76021bda4d"><div class="ttname"><a href="class_curso.html#a7bc639ffb42d9ca46cec1d76021bda4d">Curso::_horasTotaisOptativas</a></div><div class="ttdeci">int _horasTotaisOptativas</div><div class="ttdef"><b>Definição</b> Curso.hpp:49</div></div>
+<div class="ttc" id="aclass_curso_html_a89fae1b9bac54a57897fa106a40e9a17"><div class="ttname"><a href="class_curso.html#a89fae1b9bac54a57897fa106a40e9a17">Curso::HORAS_TOTAIS_CC_ANTIGO</a></div><div class="ttdeci">static constexpr int HORAS_TOTAIS_CC_ANTIGO</div><div class="ttdef"><b>Definição</b> Curso.hpp:30</div></div>
+<div class="ttc" id="aclass_curso_html_a8f605e7abe592ed6655b49cca9610650"><div class="ttname"><a href="class_curso.html#a8f605e7abe592ed6655b49cca9610650">Curso::HORAS_ADIC_CC_NOVO</a></div><div class="ttdeci">static constexpr int HORAS_ADIC_CC_NOVO</div><div class="ttdef"><b>Definição</b> Curso.hpp:35</div></div>
+<div class="ttc" id="aclass_curso_html_a8fabb897f24bef45817c0e533fde0bf9"><div class="ttname"><a href="class_curso.html#a8fabb897f24bef45817c0e533fde0bf9">Curso::validarSemestreIngresso</a></div><div class="ttdeci">static void validarSemestreIngresso(const std::string &amp;semIngresso)</div><div class="ttdoc">Valida se o identificador do semestre de ingresso segue o formato AAAA/01 ou AAAA/02.</div><div class="ttdef"><b>Definição</b> Curso.cpp:29</div></div>
+<div class="ttc" id="aclass_curso_html_a996cf27f1a81e933190d7ee2f075e9d3"><div class="ttname"><a href="class_curso.html#a996cf27f1a81e933190d7ee2f075e9d3">Curso::validarOpcaoCurso</a></div><div class="ttdeci">static void validarOpcaoCurso(int opcao)</div><div class="ttdoc">Valida se a opcao numerica de curso e permitida (1 para CC ou 2 para SI).</div><div class="ttdef"><b>Definição</b> Curso.cpp:21</div></div>
+<div class="ttc" id="aclass_curso_html_aa426caa533903f979f41d496d80793a1"><div class="ttname"><a href="class_curso.html#aa426caa533903f979f41d496d80793a1">Curso::HORAS_LIVRE_CC_NOVO</a></div><div class="ttdeci">static constexpr int HORAS_LIVRE_CC_NOVO</div><div class="ttdef"><b>Definição</b> Curso.hpp:34</div></div>
+<div class="ttc" id="aclass_curso_html_aa52ad44ca35219bfbf15657088e0b3ef"><div class="ttname"><a href="class_curso.html#aa52ad44ca35219bfbf15657088e0b3ef">Curso::HORAS_OPT_SI</a></div><div class="ttdeci">static constexpr int HORAS_OPT_SI</div><div class="ttdef"><b>Definição</b> Curso.hpp:39</div></div>
+<div class="ttc" id="aclass_curso_html_aa8bb88ca44677819bc6c463d6551709d"><div class="ttname"><a href="class_curso.html#aa8bb88ca44677819bc6c463d6551709d">Curso::HORAS_TOTAIS_CC_NOVO</a></div><div class="ttdeci">static constexpr int HORAS_TOTAIS_CC_NOVO</div><div class="ttdef"><b>Definição</b> Curso.hpp:36</div></div>
+<div class="ttc" id="aclass_curso_html_aae14a954b40039b740dda5565665589f"><div class="ttname"><a href="class_curso.html#aae14a954b40039b740dda5565665589f">Curso::OPCAO_SI</a></div><div class="ttdeci">static constexpr int OPCAO_SI</div><div class="ttdef"><b>Definição</b> Curso.hpp:23</div></div>
+<div class="ttc" id="aclass_curso_html_aae204a908881245dc6ecfbd8385b312c"><div class="ttname"><a href="class_curso.html#aae204a908881245dc6ecfbd8385b312c">Curso::getOpcaoCurso</a></div><div class="ttdeci">int getOpcaoCurso() const</div><div class="ttdoc">Obtem o codigo numerico da opcao de curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:37</div></div>
+<div class="ttc" id="aclass_curso_html_abe6a9c6dc7b0251a1d6e23fa6f27aec8"><div class="ttname"><a href="class_curso.html#abe6a9c6dc7b0251a1d6e23fa6f27aec8">Curso::getSemestreIngresso</a></div><div class="ttdeci">std::string getSemestreIngresso() const</div><div class="ttdoc">Obtem o semestre de ingresso do estudante no curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:47</div></div>
+<div class="ttc" id="aclass_curso_html_ac1be7579915c99dfed9d6df695133f8c"><div class="ttname"><a href="class_curso.html#ac1be7579915c99dfed9d6df695133f8c">Curso::_horasTotaisCurso</a></div><div class="ttdeci">int _horasTotaisCurso</div><div class="ttdef"><b>Definição</b> Curso.hpp:52</div></div>
+<div class="ttc" id="aclass_curso_html_ac1e2dcc01bd2908ec954596813fd7e47"><div class="ttname"><a href="class_curso.html#ac1e2dcc01bd2908ec954596813fd7e47">Curso::HORAS_OBRIG_SI</a></div><div class="ttdeci">static constexpr int HORAS_OBRIG_SI</div><div class="ttdef"><b>Definição</b> Curso.hpp:38</div></div>
+<div class="ttc" id="aclass_curso_html_ac6334fc85cb597ff9b4d4376ee247315"><div class="ttname"><a href="class_curso.html#ac6334fc85cb597ff9b4d4376ee247315">Curso::_opcaoCurso</a></div><div class="ttdeci">int _opcaoCurso</div><div class="ttdef"><b>Definição</b> Curso.hpp:45</div></div>
+<div class="ttc" id="aclass_curso_html_ae139ebeadd9c44bb0125bbdd8a8d6e99"><div class="ttname"><a href="class_curso.html#ae139ebeadd9c44bb0125bbdd8a8d6e99">Curso::HORAS_LIVRE_SI</a></div><div class="ttdeci">static constexpr int HORAS_LIVRE_SI</div><div class="ttdef"><b>Definição</b> Curso.hpp:40</div></div>
+<div class="ttc" id="aclass_curso_html_ae243413b9f635cfcf47250c28a2dc119"><div class="ttname"><a href="class_curso.html#ae243413b9f635cfcf47250c28a2dc119">Curso::HORAS_ADIC_CC_ANTIGO</a></div><div class="ttdeci">static constexpr int HORAS_ADIC_CC_ANTIGO</div><div class="ttdef"><b>Definição</b> Curso.hpp:29</div></div>
+<div class="ttc" id="aclass_curso_html_ae42f37688730fe89e06cfeac4e8a38a5"><div class="ttname"><a href="class_curso.html#ae42f37688730fe89e06cfeac4e8a38a5">Curso::getHorasTotaisCurso</a></div><div class="ttdeci">int getHorasTotaisCurso() const</div><div class="ttdoc">Obtem a carga horaria total exigida para a conclusao do curso.</div><div class="ttdef"><b>Definição</b> Curso.cpp:72</div></div>
+<div class="ttc" id="aclass_curso_html_af314db1fa2cfba91a1d8f6f7de4a57c0"><div class="ttname"><a href="class_curso.html#af314db1fa2cfba91a1d8f6f7de4a57c0">Curso::serializar</a></div><div class="ttdeci">std::string serializar() const</div><div class="ttdoc">Serializa os dados do curso em uma linha de texto delimitada por &#39;|&#39;.</div><div class="ttdef"><b>Definição</b> Curso.cpp:109</div></div>
+<div class="ttc" id="aclass_curso_html_af3c4334f1762b08717d6608557137538"><div class="ttname"><a href="class_curso.html#af3c4334f1762b08717d6608557137538">Curso::HORAS_OBRIG_CC_ANTIGO</a></div><div class="ttdeci">static constexpr int HORAS_OBRIG_CC_ANTIGO</div><div class="ttdef"><b>Definição</b> Curso.hpp:26</div></div>
+<div class="ttc" id="aclass_curso_html_af9a3dfab024ccf2f92c1b4475046c640"><div class="ttname"><a href="class_curso.html#af9a3dfab024ccf2f92c1b4475046c640">Curso::Curso</a></div><div class="ttdeci">Curso(int opcaoCurso, const std::string &amp;semestreIngresso)</div><div class="ttdoc">Construtor parametrizado que valida e inicializa definitivamente o curso (RAII).</div><div class="ttdef"><b>Definição</b> Curso.cpp:6</div></div>
+<div class="ttc" id="aclass_curso_html_afeab478167b790acfb25c08796161f9a"><div class="ttname"><a href="class_curso.html#afeab478167b790acfb25c08796161f9a">Curso::configurarHorasPorCurriculo</a></div><div class="ttdeci">void configurarHorasPorCurriculo()</div><div class="ttdoc">Define o nome do curso e distribui as cargas horarias de acordo com o curriculo.</div><div class="ttdef"><b>Definição</b> Curso.cpp:77</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
@@ -209,7 +230,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_curso_8hpp_so
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_curso_8hpp.html">Curso.hpp</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

@@ -1,0 +1,47 @@
+<map id="src/MenuDisciplina.cpp" name="src/MenuDisciplina.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="462,5,620,32"/>
+<area shape="rect" id="Node000002" href="$_menu_disciplina_8hpp.html" title="Declaração da classe MenuDisciplina para gerenciamento das disciplinas do semestre atual." alt="" coords="404,80,539,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="531,31,496,70,492,67,527,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,229,77,256"/>
+<area shape="poly" id="edge25_Node000001_Node000005" title=" " alt="" coords="460,28,361,47,306,62,254,82,197,114,145,151,66,220,62,217,142,147,195,109,252,78,305,57,360,42,464,25"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="100,229,179,256"/>
+<area shape="poly" id="edge28_Node000001_Node000007" title=" " alt="" coords="463,34,401,51,328,76,254,111,220,132,188,157,165,185,151,216,146,214,161,182,184,153,217,128,252,106,326,71,400,46,468,31"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="502,379,559,405"/>
+<area shape="poly" id="edge27_Node000001_Node000010" title=" " alt="" coords="548,30,574,89,585,127,589,167,589,244,585,279,575,312,548,367,545,364,570,310,580,277,584,244,584,167,579,128,569,90,547,35"/>
+<area shape="rect" id="Node000011" href="$_disciplina_8hpp.html" title="Declaração da classe que representa uma disciplina cursada pelo estudante." alt="" coords="643,229,746,256"/>
+<area shape="poly" id="edge24_Node000001_Node000011" title=" " alt="" coords="557,30,583,52,607,78,653,150,685,216,680,214,649,153,603,82,579,56,557,35"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="674,80,741,107"/>
+<area shape="poly" id="edge26_Node000001_Node000017" title=" " alt="" coords="570,30,667,73,662,74,570,35"/>
+<area shape="rect" id="Node000003" href="$_menu_8hpp.html" title="Declaracao da classe abstrata Menu, base desacoplada de todas as telas do sistema." alt="" coords="198,155,276,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="429,109,292,152,290,148,433,105"/>
+<area shape="rect" id="Node000008" href="$_semestre_atual_8hpp.html" title="Declaração da classe SemestreAtual." alt="" coords="406,155,538,181"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="473,105,474,140,469,138,471,110"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="570,528,624,555"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="249,179,269,201,286,228,306,270,312,316,312,393,319,430,338,459,367,483,403,501,443,515,483,525,557,538,552,537,482,530,441,520,401,506,364,487,334,463,314,432,306,394,306,316,301,272,281,231,265,205,249,184"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="201,184,91,226,88,221,204,180"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="203,229,271,256"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="238,179,240,214,234,213,236,184"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="218,184,170,222,166,218,222,180"/>
+<area shape="poly" id="edge23_Node000008_Node000004" title=" " alt="" coords="451,183,426,206,396,236,372,274,365,294,362,316,362,393,368,424,383,450,405,472,433,490,497,516,558,534,552,533,495,521,431,495,402,476,378,453,363,426,357,394,357,316,360,293,367,271,392,233,423,202,455,180"/>
+<area shape="rect" id="Node000009" href="$_semestre_8hpp.html" title="Declaração da classe base abstrata Semestre." alt="" coords="396,304,499,331"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="471,180,455,290,450,287,468,184"/>
+<area shape="poly" id="edge22_Node000008_Node000010" title=" " alt="" coords="477,180,513,303,527,365,522,363,508,305,474,184"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="510,179,644,223,639,225,511,185"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="454,328,471,364,493,404,536,465,578,517,573,516,532,468,488,407,466,366,452,333"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="463,329,507,369,502,368,461,334"/>
+<area shape="poly" id="edge21_Node000011_Node000004" title=" " alt="" coords="746,245,806,252,870,264,927,280,949,290,963,302,968,317,963,332,935,377,898,415,855,448,808,475,761,496,716,513,639,534,638,529,714,508,759,491,806,470,852,443,894,411,931,374,959,330,963,317,959,306,946,295,925,285,869,269,805,258,746,251"/>
+<area shape="rect" id="Node000012" href="$_controle_frequencia_8hpp.html" title="Declaração da classe ControleFrequencia, responsável pelo controle de faltas." alt="" coords="789,304,949,331"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="725,254,827,297,822,298,725,259"/>
+<area shape="rect" id="Node000013" href="$_diario_atividades_8hpp.html" title="Declaração da classe DiarioAtividades, que gerencia as atividades avaliativas de uma disciplina." alt="" coords="624,304,765,331"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="696,254,697,290,692,287,693,259"/>
+<area shape="poly" id="edge20_Node000013_Node000004" title=" " alt="" coords="674,330,647,353,625,380,611,413,602,449,598,514,594,511,597,448,605,412,620,377,644,349,670,332"/>
+<area shape="poly" id="edge19_Node000013_Node000010" title=" " alt="" coords="668,330,574,374,572,369,663,332"/>
+<area shape="rect" id="Node000014" href="$_atividade_avaliativa_8hpp.html" title="Declaracao da classe AtividadeAvaliativa, que representa uma atividade com nota." alt="" coords="634,379,792,405"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="699,329,708,365,704,362,696,333"/>
+<area shape="poly" id="edge18_Node000014_Node000004" title=" " alt="" coords="706,405,618,518,615,513,701,407"/>
+<area shape="rect" id="Node000015" href="$_data_8hpp.html" title="Declaracao da classe Data, que representa e valida uma data no formato DD/MM." alt="" coords="685,453,760,480"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="716,404,721,440,717,437,713,408"/>
+<area shape="poly" id="edge16_Node000015_Node000004" title=" " alt="" coords="703,480,633,523,631,517,698,481"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="688,528,756,555"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="724,479,724,514,720,511,720,482"/>
+</map>

@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema Acadêmico: Código-Fonte de include/DiarioAtividades.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema Acadêmico
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_diario_atividades_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DiarioAtividades.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_diario_atividades_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef DIARIOATIVIDADES_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define DIARIOATIVIDADES_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_atividade_avaliativa_8hpp.html">AtividadeAvaliativa.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_diario_atividades.html">   19</a></span><span class="keyword">class </span><a class="code hl_function" href="class_diario_atividades.html#ab4234f39564a401f9962e3138c7adda1">DiarioAtividades</a> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_diario_atividades.html#a92ec8f4f5bc4fbb6faf33ae1d5ee31ca">   22</a></span>    std::vector&lt;AtividadeAvaliativa&gt; <a class="code hl_variable" href="class_diario_atividades.html#a92ec8f4f5bc4fbb6faf33ae1d5ee31ca">_atividades</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_diario_atividades.html#a741c4ca44d9c5a69729928f69247632b">   23</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_diario_atividades.html#a741c4ca44d9c5a69729928f69247632b">_contadorId</a>;                              </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_diario_atividades.html#ae7ec9578e9f308d4b095bf5a62144841">compararDataMaisAntiga</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a>&amp; b);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_diario_atividades.html#ab4234f39564a401f9962e3138c7adda1">DiarioAtividades</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diario_atividades.html#aeb39063df0584f2fbad5b563f04338d2">adicionarAtividade</a>(<span class="keyword">const</span> std::string&amp; nome, <span class="keyword">const</span> std::string&amp; dataInput, <span class="keywordtype">float</span> valorMaximo);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diario_atividades.html#aeb39063df0584f2fbad5b563f04338d2">adicionarAtividade</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keyword">const</span> std::string&amp; nome, <span class="keyword">const</span> std::string&amp; dataInput, <span class="keywordtype">float</span> valorMaximo, <span class="keywordtype">float</span> notaObtida, <span class="keywordtype">bool</span> concluida);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diario_atividades.html#a58cc8ca43423ff2608fb2f62ff00ae34">removerAtividade</a>(<span class="keywordtype">int</span> idAtividade);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_class" href="class_atividade_avaliativa.html">AtividadeAvaliativa</a>* <a class="code hl_function" href="class_diario_atividades.html#a3c40068882733aaa2300f693e68b9127">buscarAtividade</a>(<span class="keywordtype">int</span> idAtividade);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diario_atividades.html#a31d02aaa95c431299ea93dd4b0780891">ordenarAtividades</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">const</span> std::vector&lt;AtividadeAvaliativa&gt;&amp; <a class="code hl_function" href="class_diario_atividades.html#a27594d08d3c5cffe0a899f7f2e3fe124">getAtividades</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_diario_atividades.html#a2b5798639675f67f3c704e1de6bc919c">obterValorTotalPlanejado</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_diario_atividades.html#aa2eb5b818b3e366ffb6e7f4998704b2e">obterValorTotalConcluido</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_diario_atividades.html#ac652e12b4590a738558259044f0ab828">obterNotaTotalParcial</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_diario_atividades.html#a4adcbf1294cb1b8a105791f61033c16b">obterMediaParcial</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_diario_atividades.html#abe5d68d4800bdcaf86bfdd490e81e1ac">calcularPercentualAproveitamento</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">char</span> <a class="code hl_function" href="class_diario_atividades.html#ac04b8ebbdcc1f3456558599d2253e9e6">obterConceitoParcial</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>};</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_atividade_avaliativa_8hpp_html"><div class="ttname"><a href="_atividade_avaliativa_8hpp.html">AtividadeAvaliativa.hpp</a></div><div class="ttdoc">Declaracao da classe AtividadeAvaliativa, que representa uma atividade com nota.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html"><div class="ttname"><a href="class_atividade_avaliativa.html">AtividadeAvaliativa</a></div><div class="ttdoc">Representa uma atividade avaliativa (prova, trabalho etc.) com data, valor e nota obtida.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:18</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a27594d08d3c5cffe0a899f7f2e3fe124"><div class="ttname"><a href="class_diario_atividades.html#a27594d08d3c5cffe0a899f7f2e3fe124">DiarioAtividades::getAtividades</a></div><div class="ttdeci">const std::vector&lt; AtividadeAvaliativa &gt; &amp; getAtividades() const</div><div class="ttdoc">Obtém as atividades cadastradas.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:70</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a2b5798639675f67f3c704e1de6bc919c"><div class="ttname"><a href="class_diario_atividades.html#a2b5798639675f67f3c704e1de6bc919c">DiarioAtividades::obterValorTotalPlanejado</a></div><div class="ttdeci">float obterValorTotalPlanejado() const</div><div class="ttdoc">Calcula a soma dos valores máximos de todas as atividades.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:75</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a31d02aaa95c431299ea93dd4b0780891"><div class="ttname"><a href="class_diario_atividades.html#a31d02aaa95c431299ea93dd4b0780891">DiarioAtividades::ordenarAtividades</a></div><div class="ttdeci">void ordenarAtividades()</div><div class="ttdoc">Ordena as atividades da data mais antiga para a mais recente.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:14</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a3c40068882733aaa2300f693e68b9127"><div class="ttname"><a href="class_diario_atividades.html#a3c40068882733aaa2300f693e68b9127">DiarioAtividades::buscarAtividade</a></div><div class="ttdeci">AtividadeAvaliativa * buscarAtividade(int idAtividade)</div><div class="ttdoc">Busca uma atividade pelo identificador.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:58</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a4adcbf1294cb1b8a105791f61033c16b"><div class="ttname"><a href="class_diario_atividades.html#a4adcbf1294cb1b8a105791f61033c16b">DiarioAtividades::obterMediaParcial</a></div><div class="ttdeci">float obterMediaParcial() const</div><div class="ttdoc">Calcula a média parcial (60% do valor total das atividades concluídas).</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:111</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a58cc8ca43423ff2608fb2f62ff00ae34"><div class="ttname"><a href="class_diario_atividades.html#a58cc8ca43423ff2608fb2f62ff00ae34">DiarioAtividades::removerAtividade</a></div><div class="ttdeci">void removerAtividade(int idAtividade)</div><div class="ttdoc">Remove uma atividade do diário.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:40</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a741c4ca44d9c5a69729928f69247632b"><div class="ttname"><a href="class_diario_atividades.html#a741c4ca44d9c5a69729928f69247632b">DiarioAtividades::_contadorId</a></div><div class="ttdeci">int _contadorId</div><div class="ttdoc">Próximo identificador a ser atribuído a uma nova atividade.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.hpp:23</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_a92ec8f4f5bc4fbb6faf33ae1d5ee31ca"><div class="ttname"><a href="class_diario_atividades.html#a92ec8f4f5bc4fbb6faf33ae1d5ee31ca">DiarioAtividades::_atividades</a></div><div class="ttdeci">std::vector&lt; AtividadeAvaliativa &gt; _atividades</div><div class="ttdoc">Atividades cadastradas, ordenadas por data.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.hpp:22</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_aa2eb5b818b3e366ffb6e7f4998704b2e"><div class="ttname"><a href="class_diario_atividades.html#aa2eb5b818b3e366ffb6e7f4998704b2e">DiarioAtividades::obterValorTotalConcluido</a></div><div class="ttdeci">float obterValorTotalConcluido() const</div><div class="ttdoc">Calcula a soma dos valores máximos das atividades já concluídas.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:85</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_ab4234f39564a401f9962e3138c7adda1"><div class="ttname"><a href="class_diario_atividades.html#ab4234f39564a401f9962e3138c7adda1">DiarioAtividades::DiarioAtividades</a></div><div class="ttdeci">DiarioAtividades()</div><div class="ttdoc">Cria um diário vazio, com o contador de identificadores em zero.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:7</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_abe5d68d4800bdcaf86bfdd490e81e1ac"><div class="ttname"><a href="class_diario_atividades.html#abe5d68d4800bdcaf86bfdd490e81e1ac">DiarioAtividades::calcularPercentualAproveitamento</a></div><div class="ttdeci">float calcularPercentualAproveitamento() const</div><div class="ttdoc">Calcula o percentual de aproveitamento nas atividades concluídas.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:116</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_ac04b8ebbdcc1f3456558599d2253e9e6"><div class="ttname"><a href="class_diario_atividades.html#ac04b8ebbdcc1f3456558599d2253e9e6">DiarioAtividades::obterConceitoParcial</a></div><div class="ttdeci">char obterConceitoParcial() const</div><div class="ttdoc">Obtém o conceito parcial com base no percentual de aproveitamento.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:126</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_ac652e12b4590a738558259044f0ab828"><div class="ttname"><a href="class_diario_atividades.html#ac652e12b4590a738558259044f0ab828">DiarioAtividades::obterNotaTotalParcial</a></div><div class="ttdeci">float obterNotaTotalParcial() const</div><div class="ttdoc">Calcula a soma das notas obtidas nas atividades concluídas.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:98</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_ae7ec9578e9f308d4b095bf5a62144841"><div class="ttname"><a href="class_diario_atividades.html#ae7ec9578e9f308d4b095bf5a62144841">DiarioAtividades::compararDataMaisAntiga</a></div><div class="ttdeci">static bool compararDataMaisAntiga(const AtividadeAvaliativa &amp;a, const AtividadeAvaliativa &amp;b)</div><div class="ttdoc">Critério de comparação usado na ordenação das atividades.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:9</div></div>
+<div class="ttc" id="aclass_diario_atividades_html_aeb39063df0584f2fbad5b563f04338d2"><div class="ttname"><a href="class_diario_atividades.html#aeb39063df0584f2fbad5b563f04338d2">DiarioAtividades::adicionarAtividade</a></div><div class="ttdeci">void adicionarAtividade(const std::string &amp;nome, const std::string &amp;dataInput, float valorMaximo)</div><div class="ttdoc">Adiciona uma nova atividade, ainda sem nota.</div><div class="ttdef"><b>Definição</b> DiarioAtividades.cpp:19</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_diario_atividades_8hpp.html">DiarioAtividades.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

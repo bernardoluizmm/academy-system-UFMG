@@ -1,0 +1,5 @@
+<map id="AtividadeAvaliativa" name="AtividadeAvaliativa">
+<area shape="rect" id="Node000001" title="Representa uma atividade avaliativa (prova, trabalho etc.) com data, valor e nota obtida." alt="" coords="5,253,150,664"/>
+<area shape="rect" id="Node000002" href="$class_data.html" title="Representa uma data composta apenas por dia e mes (sem ano), validada na construcao." alt="" coords="14,5,141,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,178,80,237,75,236,78,184"/>
+</map>

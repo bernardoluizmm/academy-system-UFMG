@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Hierarquia de Classes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('hierarchy.html
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -122,31 +115,99 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('hierarchy.html
 <p><a href="hierarchy.html">Ir para a hierarquia de classes (texto)</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#a_atividade_avaliativa" loading="lazy" alt=""/>
-<!-- MAP 0 -->
+<map name="a_atividade_avaliativa" id="a_atividade_avaliativa">
+<area shape="rect" href="class_atividade_avaliativa.html" title="Representa uma atividade avaliativa (prova, trabalho etc.) com data, valor e nota obtida." alt="" coords="5,5,138,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" usemap="#a_controle_frequencia" loading="lazy" alt=""/>
-<!-- MAP 1 -->
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#a_calculador_conceito" loading="lazy" alt=""/>
+<map name="a_calculador_conceito" id="a_calculador_conceito">
+<area shape="rect" href="class_calculador_conceito.html" title="Classe utilitária (apenas métodos estáticos) que converte um percentual de nota em conceito." alt="" coords="5,5,141,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" usemap="#a_curso" loading="lazy" alt=""/>
-<!-- MAP 2 -->
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#a_calculador_max_faltas" loading="lazy" alt=""/>
+<map name="a_calculador_max_faltas" id="a_calculador_max_faltas">
+<area shape="rect" href="class_calculador_max_faltas.html" title="Classe utilitária (apenas métodos estáticos) para calcular o limite de faltas de uma disciplina." alt="" coords="5,5,150,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" usemap="#a_disciplina" loading="lazy" alt=""/>
-<!-- MAP 3 -->
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#a_calculador_media" loading="lazy" alt=""/>
+<map name="a_calculador_media" id="a_calculador_media">
+<area shape="rect" href="class_calculador_media.html" title="Classe utilitária (apenas métodos estáticos) para cálculo da média." alt="" coords="5,5,124,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#a_estudante" loading="lazy" alt=""/>
-<!-- MAP 4 -->
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#a_controle_frequencia" loading="lazy" alt=""/>
+<map name="a_controle_frequencia" id="a_controle_frequencia">
+<area shape="rect" href="class_controle_frequencia.html" title="Controla as faltas de uma disciplina em relação ao limite máximo permitido." alt="" coords="5,5,140,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" usemap="#a_gerenciador_perfil" loading="lazy" alt=""/>
-<!-- MAP 5 -->
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#a_curso" loading="lazy" alt=""/>
+<map name="a_curso" id="a_curso">
+<area shape="rect" href="class_curso.html" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria." alt="" coords="5,5,62,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" usemap="#a_ponto_grafico" loading="lazy" alt=""/>
-<!-- MAP 6 -->
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#a_data" loading="lazy" alt=""/>
+<map name="a_data" id="a_data">
+<area shape="rect" href="class_data.html" title="Representa uma data composta apenas por dia e mes (sem ano), validada na construcao." alt="" coords="5,5,55,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" usemap="#a_semestre" loading="lazy" alt=""/>
-<!-- MAP 7 -->
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#a_diario_atividades" loading="lazy" alt=""/>
+<map name="a_diario_atividades" id="a_diario_atividades">
+<area shape="rect" href="class_diario_atividades.html" title="Gerencia as atividades avaliativas de uma disciplina e calcula totais, média e conceito parciais." alt="" coords="5,5,122,32"/>
+</map>
 </td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" usemap="#a_tela" loading="lazy" alt=""/>
-<!-- MAP 8 -->
+<tr><td><img src="inherit_graph_8.png" border="0" usemap="#a_disciplina" loading="lazy" alt=""/>
+<map name="a_disciplina" id="a_disciplina">
+<area shape="rect" href="class_disciplina.html" title="Representa uma disciplina, com seus dados cadastrais, controle de frequência e diário de atividades a..." alt="" coords="5,5,84,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_9.png" border="0" usemap="#a_estudante" loading="lazy" alt=""/>
+<map name="a_estudante" id="a_estudante">
+<area shape="rect" href="class_estudante.html" title="Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar." alt="" coords="5,5,86,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#a_gerenciador_arquivo" loading="lazy" alt=""/>
+<map name="a_gerenciador_arquivo" id="a_gerenciador_arquivo">
+<area shape="rect" href="class_gerenciador_arquivo.html" title="Salva e carrega o perfil do Estudante em um arquivo de texto." alt="" coords="5,5,141,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_11.png" border="0" usemap="#a_historico_escolar" loading="lazy" alt=""/>
+<map name="a_historico_escolar" id="a_historico_escolar">
+<area shape="rect" href="class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno." alt="" coords="5,5,123,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_12.png" border="0" usemap="#a_menu" loading="lazy" alt=""/>
+<map name="a_menu" id="a_menu">
+<area shape="rect" href="class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,183,59,209"/>
+<area shape="rect" href="class_menu_atividade_avaliativa.html" title="Menu responsavel pelo gerenciamento das atividades avaliativas das disciplinas do semestre atual." alt="" coords="120,5,284,32"/>
+<area shape="poly" title=" " alt="" coords="37,167,59,104,79,70,105,42,127,30,123,35,108,46,83,74,64,106,42,168"/>
+<area shape="rect" href="class_menu_cadastro_usuario.html" title="Tela que coleta e valida todos os dados cadastrais e instancia o Estudante via RAII." alt="" coords="127,56,278,83"/>
+<area shape="poly" title=" " alt="" coords="44,167,69,128,86,109,105,92,130,81,127,85,108,97,89,113,73,132,49,170"/>
+<area shape="rect" href="class_menu_carregar_usuario.html" title="Tela que carrega o perfil do estudante a partir do arquivo de perfil em um std::unique_ptr." alt="" coords="128,107,276,133"/>
+<area shape="poly" title=" " alt="" coords="60,171,105,143,139,132,135,136,108,148,64,175"/>
+<area shape="rect" href="class_menu_detalhamento_disciplina.html" title="Menu somente&#45;leitura responsavel por exibir informacoes detalhadas das disciplinas do semestre atual." alt="" coords="107,157,298,184"/>
+<area shape="poly" title=" " alt="" coords="73,188,110,183,107,187,76,192"/>
+<area shape="rect" href="class_menu_disciplina.html" title="Menu responsável pelas operações de criação, edição, listagem e exclusão de disciplinas." alt="" coords="147,208,258,235"/>
+<area shape="poly" title=" " alt="" coords="73,200,149,211,145,215,75,205"/>
+<area shape="rect" href="class_menu_frequencia.html" title="Menu para gerenciar as faltas das disciplinas do semestre atual." alt="" coords="144,259,261,285"/>
+<area shape="poly" title=" " alt="" coords="62,216,108,244,145,259,141,261,106,249,62,222"/>
+<area shape="rect" href="class_menu_inicial.html" title="Representa o menu de entrada exibido ao iniciar a aplicação." alt="" coords="159,309,246,336"/>
+<area shape="poly" title=" " alt="" coords="47,221,73,260,89,279,108,295,133,308,161,317,156,318,131,313,105,300,86,283,69,264,46,226"/>
+<area shape="rect" href="class_menu_principal.html" title="Tela principal: mostra o resumo academico e empilha as telas de gerenciamento especificas." alt="" coords="151,360,254,387"/>
+<area shape="poly" title=" " alt="" coords="40,222,64,286,83,318,108,346,128,358,153,368,148,368,126,363,105,350,79,322,59,288,38,227"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_13.png" border="0" usemap="#a_seletor_menu" loading="lazy" alt=""/>
+<map name="a_seletor_menu" id="a_seletor_menu">
+<area shape="rect" href="class_seletor_menu.html" title="Controla o laco principal do programa utilizando uma pilha de telas (LIFO)." alt="" coords="5,5,100,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_14.png" border="0" usemap="#a_semestre" loading="lazy" alt=""/>
+<map name="a_semestre" id="a_semestre">
+<area shape="rect" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="5,31,83,57"/>
+<area shape="rect" href="class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas." alt="" coords="152,5,259,32"/>
+<area shape="poly" title=" " alt="" coords="97,33,153,26,149,28,99,38"/>
+<area shape="rect" href="class_semestre_consolidado.html" title="Semestre já encerrado, com NSG e horas fixos." alt="" coords="131,56,280,83"/>
+<area shape="poly" title=" " alt="" coords="98,50,133,57,128,58,98,55"/>
+</map>
 </td></tr>
 </table>
 </div><!-- contents -->
@@ -155,7 +216,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('hierarchy.html
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência da Classe Estudante</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_estudant
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,7 +112,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_estudant
 </div><!--header-->
 <div class="contents">
 
-<p>Representa o estudante e fornece acesso ao seu curso e ao semestre atual.  
+<p>Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar.  
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_estudante_8hpp_source.html">Estudante.hpp</a>&gt;</code></p>
@@ -127,43 +120,64 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_estudant
 Diagrama de colaboração para Estudante:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_estudante__coll__graph.png" border="0" usemap="#a_estudante_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="a_estudante_coll__map" id="a_estudante_coll__map">
+<area shape="rect" title="Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar." alt="" coords="36,1708,266,2028"/>
+<area shape="rect" href="class_curso.html" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria." alt="" coords="5,927,216,1636"/>
+<area shape="poly" title=" " alt="" coords="136,1633,141,1692,136,1691,135,1638"/>
+<area shape="rect" href="class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno." alt="" coords="241,1140,453,1423"/>
+<area shape="poly" title=" " alt="" coords="302,1420,212,1693,207,1691,298,1425"/>
+<area shape="rect" href="class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas." alt="" coords="261,508,432,855"/>
+<area shape="poly" title=" " alt="" coords="347,852,349,1123,344,1123,346,857"/>
+<area shape="rect" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="244,5,449,459"/>
+<area shape="poly" title=" " alt="" coords="347,471,349,509,344,508,347,477"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:a8e79d64a78306f61317c21a0a22b07d8" id="r_a8e79d64a78306f61317c21a0a22b07d8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8e79d64a78306f61317c21a0a22b07d8">Estudante</a> (std::string nome, <a class="el" href="class_curso.html">Curso</a> curso, std::string semestreIngresso, SemestreAtual semestreAtual)</td></tr>
-<tr class="memdesc:a8e79d64a78306f61317c21a0a22b07d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói um estudante.  <br /></td></tr>
+<tr class="memitem:a20dc5edc66c7c4abc0a2441c20b23538" id="r_a20dc5edc66c7c4abc0a2441c20b23538"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a20dc5edc66c7c4abc0a2441c20b23538">Estudante</a> (const std::string &amp;nome, const <a class="el" href="class_curso.html">Curso</a> &amp;curso, const <a class="el" href="class_historico_escolar.html">HistoricoEscolar</a> &amp;historico)</td></tr>
+<tr class="memdesc:a20dc5edc66c7c4abc0a2441c20b23538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado da classe <a class="el" href="class_estudante.html" title="Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar.">Estudante</a> (RAII).  <br /></td></tr>
 <tr class="memitem:ae3b9a6b8be82f04b781a0d416457bcad" id="r_ae3b9a6b8be82f04b781a0d416457bcad"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ae3b9a6b8be82f04b781a0d416457bcad">getNome</a> () const</td></tr>
-<tr class="memdesc:ae3b9a6b8be82f04b781a0d416457bcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do estudante.  <br /></td></tr>
-<tr class="memitem:afc7b89dcf158b7e597548b5960187a15" id="r_afc7b89dcf158b7e597548b5960187a15"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afc7b89dcf158b7e597548b5960187a15">setNome</a> (const std::string &amp;nome)</td></tr>
-<tr class="memdesc:afc7b89dcf158b7e597548b5960187a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o nome do estudante.  <br /></td></tr>
-<tr class="memitem:a798b9538b500ff2e1f38d16e71a5cec4" id="r_a798b9538b500ff2e1f38d16e71a5cec4"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a798b9538b500ff2e1f38d16e71a5cec4">getSemestreIngresso</a> () const</td></tr>
-<tr class="memdesc:a798b9538b500ff2e1f38d16e71a5cec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o semestre de ingresso.  <br /></td></tr>
-<tr class="memitem:a3490a41c92d1b661d3a37a8aa9a7bff0" id="r_a3490a41c92d1b661d3a37a8aa9a7bff0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3490a41c92d1b661d3a37a8aa9a7bff0">setSemestreIngresso</a> (const std::string &amp;semestre)</td></tr>
-<tr class="memdesc:a3490a41c92d1b661d3a37a8aa9a7bff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o semestre de ingresso.  <br /></td></tr>
+<tr class="memdesc:ae3b9a6b8be82f04b781a0d416457bcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o nome do estudante.  <br /></td></tr>
 <tr class="memitem:a20de5c82ec73dac00821cc6a696bb773" id="r_a20de5c82ec73dac00821cc6a696bb773"><td class="memItemLeft">const <a class="el" href="class_curso.html">Curso</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a20de5c82ec73dac00821cc6a696bb773">getCurso</a> () const</td></tr>
-<tr class="memdesc:a20de5c82ec73dac00821cc6a696bb773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso somente-leitura ao curso.  <br /></td></tr>
-<tr class="memitem:a650e1bfa170347a0980f34017ffa006e" id="r_a650e1bfa170347a0980f34017ffa006e"><td class="memItemLeft"><a class="el" href="class_curso.html">Curso</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a650e1bfa170347a0980f34017ffa006e">getCurso</a> ()</td></tr>
-<tr class="memdesc:a650e1bfa170347a0980f34017ffa006e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso mutável ao curso.  <br /></td></tr>
-<tr class="memitem:aabbaf1ad2f6cb145229d4b533438743b" id="r_aabbaf1ad2f6cb145229d4b533438743b"><td class="memItemLeft">const SemestreAtual &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aabbaf1ad2f6cb145229d4b533438743b">getSemestreAtual</a> () const</td></tr>
-<tr class="memdesc:aabbaf1ad2f6cb145229d4b533438743b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso somente-leitura ao semestre atual.  <br /></td></tr>
-<tr class="memitem:aea9065bfcd227cb71d32ed43def08721" id="r_aea9065bfcd227cb71d32ed43def08721"><td class="memItemLeft">SemestreAtual &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aea9065bfcd227cb71d32ed43def08721">getSemestreAtual</a> ()</td></tr>
-<tr class="memdesc:aea9065bfcd227cb71d32ed43def08721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso mutável ao semestre atual.  <br /></td></tr>
+<tr class="memdesc:a20de5c82ec73dac00821cc6a696bb773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem uma referencia constante (somente leitura) para o curso do estudante.  <br /></td></tr>
+<tr class="memitem:a053e5f712b093edeff752aafd3f922a0" id="r_a053e5f712b093edeff752aafd3f922a0"><td class="memItemLeft">const <a class="el" href="class_historico_escolar.html">HistoricoEscolar</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a053e5f712b093edeff752aafd3f922a0">getHistorico</a> () const</td></tr>
+<tr class="memdesc:a053e5f712b093edeff752aafd3f922a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem uma referencia constante para o historico escolar do estudante.  <br /></td></tr>
+<tr class="memitem:a81eebb67156f95a3fa2ffe0a9bdbc956" id="r_a81eebb67156f95a3fa2ffe0a9bdbc956"><td class="memItemLeft"><a class="el" href="class_historico_escolar.html">HistoricoEscolar</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a81eebb67156f95a3fa2ffe0a9bdbc956">getHistoricoEditavel</a> ()</td></tr>
+<tr class="memdesc:a81eebb67156f95a3fa2ffe0a9bdbc956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem uma referencia editavel para o historico escolar do estudante.  <br /></td></tr>
+<tr class="memitem:a59dc1679278841b6978888504a2572b7" id="r_a59dc1679278841b6978888504a2572b7"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a59dc1679278841b6978888504a2572b7">calcularPercentualCursoCompleto</a> () const</td></tr>
+<tr class="memdesc:a59dc1679278841b6978888504a2572b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o percentual de conclusao total do curso.  <br /></td></tr>
+<tr class="memitem:a05f1fce09c145692e51bcaea6c577db2" id="r_a05f1fce09c145692e51bcaea6c577db2"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a05f1fce09c145692e51bcaea6c577db2">calcularPercentualObrigatorias</a> () const</td></tr>
+<tr class="memdesc:a05f1fce09c145692e51bcaea6c577db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o percentual de conclusao da carga horaria de disciplinas obrigatorias.  <br /></td></tr>
+<tr class="memitem:a588b6eac3999eed00ba8d2db2574afb9" id="r_a588b6eac3999eed00ba8d2db2574afb9"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a588b6eac3999eed00ba8d2db2574afb9">calcularPercentualOptativas</a> () const</td></tr>
+<tr class="memdesc:a588b6eac3999eed00ba8d2db2574afb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o percentual de conclusao da carga horaria de disciplinas optativas.  <br /></td></tr>
+<tr class="memitem:a67d4b238735fe8c7671f0d0c7408044e" id="r_a67d4b238735fe8c7671f0d0c7408044e"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a67d4b238735fe8c7671f0d0c7408044e">calcularPercentualFormacaoLivre</a> () const</td></tr>
+<tr class="memdesc:a67d4b238735fe8c7671f0d0c7408044e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o percentual de conclusao da carga horaria de formacao livre.  <br /></td></tr>
+<tr class="memitem:a94010437b6b19d70f1acdb119b816fc1" id="r_a94010437b6b19d70f1acdb119b816fc1"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a94010437b6b19d70f1acdb119b816fc1">serializar</a> () const</td></tr>
+<tr class="memdesc:a94010437b6b19d70f1acdb119b816fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializa todos os dados do estudante em formato textual.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Membros públicos estáticos</h2></td></tr>
+<tr class="memitem:ab3fc9d62cc06e577527a267cc6e74fb9" id="r_ab3fc9d62cc06e577527a267cc6e74fb9"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab3fc9d62cc06e577527a267cc6e74fb9">validarNome</a> (const std::string &amp;nome)</td></tr>
+<tr class="memdesc:ab3fc9d62cc06e577527a267cc6e74fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida se o nome informado para o estudante respeita os limites de tamanho (1 a 100 caracteres).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Membros privados</h2></td></tr>
+<tr class="memitem:a4282c405d844d74ac01ce35878be1439" id="r_a4282c405d844d74ac01ce35878be1439"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a4282c405d844d74ac01ce35878be1439">calcularPercentual</a> (int horasCumpridas, int horasRequeridas) const</td></tr>
+<tr class="memdesc:a4282c405d844d74ac01ce35878be1439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o percentual base de horas cumpridas em relação a uma meta exigida.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
-<tr class="memitem:a3fd97bb77a73589022054684d4c91f73" id="r_a3fd97bb77a73589022054684d4c91f73"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a3fd97bb77a73589022054684d4c91f73">nome_</a></td></tr>
-<tr class="memitem:ad7e4423ca7f0eb8b5752879f0837e6ce" id="r_ad7e4423ca7f0eb8b5752879f0837e6ce"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ad7e4423ca7f0eb8b5752879f0837e6ce">semestreIngresso_</a></td></tr>
-<tr class="memitem:a3e9925d1d2476273bc8f46c5775ab2d5" id="r_a3e9925d1d2476273bc8f46c5775ab2d5"><td class="memItemLeft"><a class="el" href="class_curso.html">Curso</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3e9925d1d2476273bc8f46c5775ab2d5">curso_</a></td></tr>
-<tr class="memitem:a88278743716f93dff1253d62bf1e3113" id="r_a88278743716f93dff1253d62bf1e3113"><td class="memItemLeft">SemestreAtual&#160;</td><td class="memItemRight"><a class="el" href="#a88278743716f93dff1253d62bf1e3113">semestreAtual_</a></td></tr>
+<tr class="memitem:aa4f04a4eadb3774daacc6c98d917f232" id="r_aa4f04a4eadb3774daacc6c98d917f232"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aa4f04a4eadb3774daacc6c98d917f232">_nome</a></td></tr>
+<tr class="memitem:ad5ff6f2cdf88deab606103165df6838a" id="r_ad5ff6f2cdf88deab606103165df6838a"><td class="memItemLeft"><a class="el" href="class_curso.html">Curso</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad5ff6f2cdf88deab606103165df6838a">_curso</a></td></tr>
+<tr class="memitem:a95d729b13091624c33158646861d1523" id="r_a95d729b13091624c33158646861d1523"><td class="memItemLeft"><a class="el" href="class_historico_escolar.html">HistoricoEscolar</a>&#160;</td><td class="memItemRight"><a class="el" href="#a95d729b13091624c33158646861d1523">_historico</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Representa o estudante e fornece acesso ao seu curso e ao semestre atual. </p>
-<p>O <a class="el" href="class_estudante.html" title="Representa o estudante e fornece acesso ao seu curso e ao semestre atual.">Estudante</a> é dono do <a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a> e do SemestreAtual (composição por valor). Os acessores não-const permitem que as telas e o <a class="el" href="class_gerenciador_perfil.html" title="Classe utilitária (sem estado) para persistência do perfil em arquivo .txt.">GerenciadorPerfil</a> modifiquem esses objetos diretamente. </p>
+<div class="textblock"><p>Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar. </p>
+<p>Segue estritamente o principio RAII: o objeto so pode ser instanciado com todos os seus dados validados (nome, curso e historico), mantendo sua identidade e vinculo curricular imutaveis apos a construcao. Fornece metodos para consulta cadastral, manipulacao do historico escolar, calculo do progresso de integralizacao e serializacao completa do perfil. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
-<a id="a8e79d64a78306f61317c21a0a22b07d8" name="a8e79d64a78306f61317c21a0a22b07d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e79d64a78306f61317c21a0a22b07d8">&#9670;&#160;</a></span>Estudante()</h2>
+<a id="a20dc5edc66c7c4abc0a2441c20b23538" name="a20dc5edc66c7c4abc0a2441c20b23538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20dc5edc66c7c4abc0a2441c20b23538">&#9670;&#160;</a></span>Estudante()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,33 +185,33 @@ Atributos Privados</h2></td></tr>
         <tr>
           <td class="memname">Estudante::Estudante </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_curso.html">Curso</a></td>          <td class="paramname"><span class="paramname"><em>curso</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="class_curso.html">Curso</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>curso</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>semestreIngresso</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SemestreAtual</td>          <td class="paramname"><span class="paramname"><em>semestreAtual</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="class_historico_escolar.html">HistoricoEscolar</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>historico</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constrói um estudante. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
+<p>Construtor parametrizado da classe <a class="el" href="class_estudante.html" title="Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar.">Estudante</a> (RAII). </p>
+<p>Define o nome, o curso e o historico escolar no momento do cadastro ou carregamento do perfil. Uma vez construido o objeto, o nome e o curso nao podem ser alterados. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome do estudante. </td></tr>
-    <tr><td class="paramname">curso</td><td><a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a> do estudante (copiado/movido para o objeto). </td></tr>
-    <tr><td class="paramname">semestreIngresso</td><td>Semestre de ingresso (ex: "2024/01"). </td></tr>
-    <tr><td class="paramname">semestreAtual</td><td>Semestre em curso (copiado/movido para o objeto). </td></tr>
+    <tr><td class="paramname">nome</td><td>Nome do estudante (deve conter entre 1 e 100 caracteres). </td></tr>
+    <tr><td class="paramname">curso</td><td>Objeto <a class="el" href="class_curso.html" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria.">Curso</a> devidamente configurado. </td></tr>
+    <tr><td class="paramname">historico</td><td>Objeto <a class="el" href="class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno.">HistoricoEscolar</a> do estudante. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome informado for vazio ou exceder 100 caracteres. </td></tr>
   </table>
   </dd>
 </dl>
@@ -205,28 +219,128 @@ Atributos Privados</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
-<a id="a650e1bfa170347a0980f34017ffa006e" name="a650e1bfa170347a0980f34017ffa006e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a650e1bfa170347a0980f34017ffa006e">&#9670;&#160;</a></span>getCurso() <span class="overload">[1/2]</span></h2>
+<a id="a4282c405d844d74ac01ce35878be1439" name="a4282c405d844d74ac01ce35878be1439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4282c405d844d74ac01ce35878be1439">&#9670;&#160;</a></span>calcularPercentual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Estudante::calcularPercentual </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasCumpridas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasRequeridas</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calcula o percentual base de horas cumpridas em relação a uma meta exigida. </p>
+<p>Método auxiliar genérico que centraliza a lógica matemática de porcentagem. Implementa programação defensiva para evitar divisão por zero e aplica um teto máximo, garantindo que o progresso nunca ultrapasse 100%.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">horasCumpridas</td><td>Total de horas já integralizadas pelo estudante em uma categoria específica. </td></tr>
+    <tr><td class="paramname">horasRequeridas</td><td>Total de horas exigidas pelo currículo do curso para essa mesma categoria. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Percentual de conclusão (de 0.0f a 100.0f). Se horasRequeridas for &lt;= 0, retorna 0.0f. </dd></dl>
+
+</div>
+</div>
+<a id="a59dc1679278841b6978888504a2572b7" name="a59dc1679278841b6978888504a2572b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59dc1679278841b6978888504a2572b7">&#9670;&#160;</a></span>calcularPercentualCursoCompleto()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_curso.html">Curso</a> &amp; Estudante::getCurso </td>
+          <td class="memname">float Estudante::calcularPercentualCursoCompleto </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Acesso mutável ao curso. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Referência ao <a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a>. </dd></dl>
+<p>Calcula o percentual de conclusao total do curso. </p>
+<p>Relaciona o total de horas integralizadas no historico com a carga horaria total exigida pelo curriculo do curso, limitando o teto em 100%. </p><dl class="section return"><dt>Retorna</dt><dd>Percentual de conclusao total (de 0.0f a 100.0f). </dd></dl>
+
+</div>
+</div>
+<a id="a67d4b238735fe8c7671f0d0c7408044e" name="a67d4b238735fe8c7671f0d0c7408044e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d4b238735fe8c7671f0d0c7408044e">&#9670;&#160;</a></span>calcularPercentualFormacaoLivre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Estudante::calcularPercentualFormacaoLivre </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula o percentual de conclusao da carga horaria de formacao livre. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Percentual de horas de formacao livre cumpridas (de 0.0f a 100.0f). </dd></dl>
+
+</div>
+</div>
+<a id="a05f1fce09c145692e51bcaea6c577db2" name="a05f1fce09c145692e51bcaea6c577db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05f1fce09c145692e51bcaea6c577db2">&#9670;&#160;</a></span>calcularPercentualObrigatorias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Estudante::calcularPercentualObrigatorias </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula o percentual de conclusao da carga horaria de disciplinas obrigatorias. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Percentual de horas obrigatorias cumpridas (de 0.0f a 100.0f). </dd></dl>
+
+</div>
+</div>
+<a id="a588b6eac3999eed00ba8d2db2574afb9" name="a588b6eac3999eed00ba8d2db2574afb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588b6eac3999eed00ba8d2db2574afb9">&#9670;&#160;</a></span>calcularPercentualOptativas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Estudante::calcularPercentualOptativas </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula o percentual de conclusao da carga horaria de disciplinas optativas. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Percentual de horas optativas cumpridas (de 0.0f a 100.0f). </dd></dl>
 
 </div>
 </div>
 <a id="a20de5c82ec73dac00821cc6a696bb773" name="a20de5c82ec73dac00821cc6a696bb773"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20de5c82ec73dac00821cc6a696bb773">&#9670;&#160;</a></span>getCurso() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a20de5c82ec73dac00821cc6a696bb773">&#9670;&#160;</a></span>getCurso()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,8 +354,48 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Acesso somente-leitura ao curso. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Referência constante ao <a class="el" href="class_curso.html" title="Representa o curso do estudante.">Curso</a>. </dd></dl>
+<p>Obtem uma referencia constante (somente leitura) para o curso do estudante. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referencia constante para o objeto <a class="el" href="class_curso.html" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria.">Curso</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a053e5f712b093edeff752aafd3f922a0" name="a053e5f712b093edeff752aafd3f922a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053e5f712b093edeff752aafd3f922a0">&#9670;&#160;</a></span>getHistorico()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_historico_escolar.html">HistoricoEscolar</a> &amp; Estudante::getHistorico </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtem uma referencia constante para o historico escolar do estudante. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referencia constante para o objeto <a class="el" href="class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno.">HistoricoEscolar</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a81eebb67156f95a3fa2ffe0a9bdbc956" name="a81eebb67156f95a3fa2ffe0a9bdbc956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81eebb67156f95a3fa2ffe0a9bdbc956">&#9670;&#160;</a></span>getHistoricoEditavel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_historico_escolar.html">HistoricoEscolar</a> &amp; Estudante::getHistoricoEditavel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtem uma referencia editavel para o historico escolar do estudante. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Referencia para o objeto <a class="el" href="class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno.">HistoricoEscolar</a> permitindo modificacoes na vida academica. </dd></dl>
 
 </div>
 </div>
@@ -260,39 +414,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna o nome do estudante. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Nome do estudante. </dd></dl>
+<p>Obtem o nome do estudante. </p>
+<dl class="section return"><dt>Retorna</dt><dd>String contendo o nome do estudante. </dd></dl>
 
 </div>
 </div>
-<a id="aea9065bfcd227cb71d32ed43def08721" name="aea9065bfcd227cb71d32ed43def08721"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea9065bfcd227cb71d32ed43def08721">&#9670;&#160;</a></span>getSemestreAtual() <span class="overload">[1/2]</span></h2>
+<a id="a94010437b6b19d70f1acdb119b816fc1" name="a94010437b6b19d70f1acdb119b816fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94010437b6b19d70f1acdb119b816fc1">&#9670;&#160;</a></span>serializar()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SemestreAtual &amp; Estudante::getSemestreAtual </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Acesso mutável ao semestre atual. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Referência ao SemestreAtual. </dd></dl>
-
-</div>
-</div>
-<a id="aabbaf1ad2f6cb145229d4b533438743b" name="aabbaf1ad2f6cb145229d4b533438743b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabbaf1ad2f6cb145229d4b533438743b">&#9670;&#160;</a></span>getSemestreAtual() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const SemestreAtual &amp; Estudante::getSemestreAtual </td>
+          <td class="memname">std::string Estudante::serializar </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -300,75 +434,44 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Acesso somente-leitura ao semestre atual. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Referência constante ao SemestreAtual. </dd></dl>
+<p>Serializa todos os dados do estudante em formato textual. </p>
+<p>Concatena o registro do estudante, a serializacao do curso e a serializacao do historico escolar em multiplas linhas delimitadas por '|'. </p><dl class="section return"><dt>Retorna</dt><dd>String formatada pronta para gravacao em arquivo. </dd></dl>
 
 </div>
 </div>
-<a id="a798b9538b500ff2e1f38d16e71a5cec4" name="a798b9538b500ff2e1f38d16e71a5cec4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a798b9538b500ff2e1f38d16e71a5cec4">&#9670;&#160;</a></span>getSemestreIngresso()</h2>
+<a id="ab3fc9d62cc06e577527a267cc6e74fb9" name="ab3fc9d62cc06e577527a267cc6e74fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fc9d62cc06e577527a267cc6e74fb9">&#9670;&#160;</a></span>validarNome()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Estudante::getSemestreIngresso </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna o semestre de ingresso. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Semestre de ingresso (ex: "2024/01"). </dd></dl>
-
-</div>
-</div>
-<a id="afc7b89dcf158b7e597548b5960187a15" name="afc7b89dcf158b7e597548b5960187a15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc7b89dcf158b7e597548b5960187a15">&#9670;&#160;</a></span>setNome()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Estudante::setNome </td>
+          <td class="memname">void Estudante::validarNome </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Altera o nome do estudante. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
+<p>Valida se o nome informado para o estudante respeita os limites de tamanho (1 a 100 caracteres). </p>
+<p>Metodo estatico utilizado como barricada tanto pelos fluxos de cadastro/carregamento quanto pelo construtor parametrizado da classe. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Novo nome. </td></tr>
+    <tr><td class="paramname">nome</td><td>String contendo o nome a ser verificado. </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a3490a41c92d1b661d3a37a8aa9a7bff0" name="a3490a41c92d1b661d3a37a8aa9a7bff0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3490a41c92d1b661d3a37a8aa9a7bff0">&#9670;&#160;</a></span>setSemestreIngresso()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Estudante::setSemestreIngresso </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>semestre</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Altera o semestre de ingresso. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">semestre</td><td>Novo semestre de ingresso. </td></tr>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o nome for vazio ou possuir mais de 100 caracteres. </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,8 +479,8 @@ Atributos Privados</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
-<a id="a3e9925d1d2476273bc8f46c5775ab2d5" name="a3e9925d1d2476273bc8f46c5775ab2d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e9925d1d2476273bc8f46c5775ab2d5">&#9670;&#160;</a></span>curso_</h2>
+<a id="ad5ff6f2cdf88deab606103165df6838a" name="ad5ff6f2cdf88deab606103165df6838a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ff6f2cdf88deab606103165df6838a">&#9670;&#160;</a></span>_curso</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -386,7 +489,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_curso.html">Curso</a> Estudante::curso_</td>
+          <td class="memname"><a class="el" href="class_curso.html">Curso</a> Estudante::_curso</td>
         </tr>
       </table>
   </td>
@@ -395,11 +498,12 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Dados do vincular currical (imutavel apos construcao). </p>
 
 </div>
 </div>
-<a id="a3fd97bb77a73589022054684d4c91f73" name="a3fd97bb77a73589022054684d4c91f73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fd97bb77a73589022054684d4c91f73">&#9670;&#160;</a></span>nome_</h2>
+<a id="a95d729b13091624c33158646861d1523" name="a95d729b13091624c33158646861d1523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d729b13091624c33158646861d1523">&#9670;&#160;</a></span>_historico</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +512,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Estudante::nome_</td>
+          <td class="memname"><a class="el" href="class_historico_escolar.html">HistoricoEscolar</a> Estudante::_historico</td>
         </tr>
       </table>
   </td>
@@ -417,11 +521,12 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Historico contendo os semestres consolidados e o semestre atual. </p>
 
 </div>
 </div>
-<a id="a88278743716f93dff1253d62bf1e3113" name="a88278743716f93dff1253d62bf1e3113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88278743716f93dff1253d62bf1e3113">&#9670;&#160;</a></span>semestreAtual_</h2>
+<a id="aa4f04a4eadb3774daacc6c98d917f232" name="aa4f04a4eadb3774daacc6c98d917f232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f04a4eadb3774daacc6c98d917f232">&#9670;&#160;</a></span>_nome</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -430,7 +535,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SemestreAtual Estudante::semestreAtual_</td>
+          <td class="memname">std::string Estudante::_nome</td>
         </tr>
       </table>
   </td>
@@ -439,33 +544,13 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Nome de identificacao do estudante (imutavel apos construcao). </p>
 
 </div>
 </div>
-<a id="ad7e4423ca7f0eb8b5752879f0837e6ce" name="ad7e4423ca7f0eb8b5752879f0837e6ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7e4423ca7f0eb8b5752879f0837e6ce">&#9670;&#160;</a></span>semestreIngresso_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Estudante::semestreIngresso_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>include/<a class="el" href="_estudante_8hpp_source.html">Estudante.hpp</a></li>
+<li>src/<a class="el" href="_estudante_8cpp.html">Estudante.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -481,7 +566,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="class_estudante.html">Estudante</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

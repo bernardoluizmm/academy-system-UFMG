@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência do Arquivo include/Semestre.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_semestre_8hpp
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -118,15 +111,118 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_semestre_8hpp
   <div class="headertitle"><div class="title">Referência do Arquivo Semestre.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+
+<p>Declaração da classe base abstrata <a class="el" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo.">Semestre</a>.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para Semestre.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="_semestre_8hpp__incl.png" border="0" usemap="#ainclude_2_semestre_8hpp" loading="lazy" alt=""/></div>
+<map name="ainclude_2_semestre_8hpp" id="ainclude_2_semestre_8hpp">
+<area shape="rect" title="Declaração da classe base abstrata Semestre." alt="" coords="5,5,153,32"/>
+<area shape="rect" title=" " alt="" coords="12,80,66,107"/>
+<area shape="poly" title=" " alt="" coords="74,31,56,68,51,65,70,34"/>
+<area shape="rect" title=" " alt="" coords="90,80,148,107"/>
+<area shape="poly" title=" " alt="" coords="87,30,107,66,102,66,85,35"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo:</div>
 <div class="dyncontent">
 <div class="center"><img src="_semestre_8hpp__dep__incl.png" border="0" usemap="#ainclude_2_semestre_8hppdep" loading="lazy" alt=""/></div>
-<!-- MAP 0 -->
+<map name="ainclude_2_semestre_8hppdep" id="ainclude_2_semestre_8hppdep">
+<area shape="rect" title="Declaração da classe base abstrata Semestre." alt="" coords="1013,5,1161,32"/>
+<area shape="rect" href="_semestre_atual_8hpp.html" title="Declaração da classe SemestreAtual." alt="" coords="681,80,858,107"/>
+<area shape="poly" title=" " alt="" coords="1014,37,826,82,824,77,1019,35"/>
+<area shape="rect" href="_menu_cadastro_usuario_8cpp.html" title=" " alt="" coords="979,469,1177,496"/>
+<area shape="poly" title=" " alt="" coords="1029,37,995,58,968,82,952,104,945,124,943,175,943,335,946,381,953,399,968,420,983,435,1001,448,1040,469,1035,468,998,452,980,439,964,423,949,402,941,382,938,335,938,175,940,123,948,102,964,78,992,53,1024,39"/>
+<area shape="rect" href="_semestre_consolidado_8hpp.html" title="Declaração da classe SemestreConsolidado." alt="" coords="977,80,1197,107"/>
+<area shape="poly" title=" " alt="" coords="1089,46,1089,81,1085,78,1085,50"/>
+<area shape="rect" href="_curso_8cpp.html" title=" " alt="" coords="1221,80,1324,107"/>
+<area shape="poly" title=" " alt="" coords="1133,35,1242,79,1237,79,1133,41"/>
+<area shape="rect" href="_semestre_8cpp.html" title=" " alt="" coords="1348,80,1472,107"/>
+<area shape="poly" title=" " alt="" coords="1158,33,1356,79,1351,80,1158,39"/>
+<area shape="rect" href="_historico_escolar_8hpp.html" title="Declaração da classe HistoricoEscolar." alt="" coords="985,163,1173,189"/>
+<area shape="poly" title=" " alt="" coords="833,108,1033,162,1027,162,833,114"/>
+<area shape="rect" href="_menu_atividade_avaliativa_8cpp.html" title=" " alt="" coords="743,469,954,496"/>
+<area shape="poly" title=" " alt="" coords="800,114,831,140,860,173,883,213,890,235,892,257,892,335,888,374,879,412,856,471,853,467,874,411,883,373,887,335,887,257,885,236,878,215,856,176,827,144,800,119"/>
+<area shape="rect" href="_menu_atividade_avaliativa_8hpp.html" title="Declaracao do menu de gerenciamento de atividades avaliativas." alt="" coords="618,395,852,421"/>
+<area shape="poly" title=" " alt="" coords="793,116,807,134,816,154,820,176,816,198,801,257,781,314,743,396,740,392,776,312,796,256,811,197,814,176,811,155,802,137,792,121"/>
+<area shape="rect" href="_menu_detalhamento_disciplina_8hpp.html" title="Declaracao do menu de detalhamento de disciplinas." alt="" coords="232,155,411,197"/>
+<area shape="poly" title=" " alt="" coords="677,111,425,157,413,159,411,155,424,152,682,108"/>
+<area shape="rect" href="_menu_disciplina_8hpp.html" title="Declaração da classe MenuDisciplina para gerenciamento das disciplinas do semestre atual." alt="" coords="12,163,192,189"/>
+<area shape="poly" title=" " alt="" coords="663,106,460,128,221,157,174,164,171,160,220,152,459,123,668,103"/>
+<area shape="rect" href="_menu_frequencia_8hpp.html" title="Declaracao da classe MenuFrequencia, menu de controle de faltas." alt="" coords="436,163,623,189"/>
+<area shape="poly" title=" " alt="" coords="715,113,568,165,566,160,720,111"/>
+<area shape="rect" href="_semestre_atual_8cpp.html" title=" " alt="" coords="647,163,802,189"/>
+<area shape="poly" title=" " alt="" coords="757,118,733,164,729,161,753,122"/>
+<area shape="rect" href="_estudante_8hpp.html" title="Declaracao da classe Estudante para representacao do perfil academico do usuario." alt="" coords="1407,245,1557,272"/>
+<area shape="poly" title=" " alt="" coords="1157,190,1421,244,1415,245,1157,196"/>
+<area shape="rect" href="_historico_escolar_8cpp.html" title=" " alt="" coords="997,245,1161,272"/>
+<area shape="poly" title=" " alt="" coords="1081,203,1081,247,1077,244,1077,207"/>
+<area shape="rect" href="_gerenciador_arquivo_8hpp.html" title="Declaracao da classe GerenciadorArquivo, responsavel pela persistencia do perfil." alt="" coords="1620,320,1826,347"/>
+<area shape="poly" title=" " alt="" coords="1539,274,1683,319,1678,319,1538,280"/>
+<area shape="rect" href="_menu_cadastro_usuario_8hpp.html" title="Declaracao da tela de cadastro de um novo perfil de estudante." alt="" coords="1175,395,1396,421"/>
+<area shape="poly" title=" " alt="" coords="1455,281,1303,397,1301,392,1450,282"/>
+<area shape="rect" href="_menu_carregar_usuario_8hpp.html" title="Declaracao da tela de carregamento de um perfil de estudante ja salvo." alt="" coords="1421,395,1639,421"/>
+<area shape="poly" title=" " alt="" coords="1467,283,1456,316,1455,331,1459,345,1480,373,1508,395,1502,393,1476,376,1454,348,1450,331,1451,314,1463,286"/>
+<area shape="rect" href="_menu_inicial_8hpp.html" title="Declaração da classe MenuInicial para a tela de abertura do sistema." alt="" coords="1868,395,2026,421"/>
+<area shape="poly" title=" " alt="" coords="1572,260,1633,266,1701,277,1772,293,1839,318,1869,334,1897,355,1938,395,1933,393,1893,359,1866,339,1837,322,1770,298,1700,282,1633,271,1572,266"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="2015,469,2111,496"/>
+<area shape="poly" title=" " alt="" coords="1572,265,1717,284,1799,299,1878,317,1937,329,1985,336,2007,342,2028,353,2047,369,2067,393,2075,413,2076,434,2069,471,2066,467,2071,433,2069,414,2062,396,2044,373,2025,357,2005,347,1984,341,1936,334,1877,323,1797,304,1716,289,1572,270"/>
+<area shape="rect" href="_menu_principal_8hpp.html" title="Declaracao da tela principal do sistema." alt="" coords="978,395,1151,421"/>
+<area shape="poly" title=" " alt="" coords="1434,277,1101,397,1100,391,1429,278"/>
+<area shape="rect" href="_estudante_8cpp.html" title=" " alt="" coords="1469,320,1596,347"/>
+<area shape="poly" title=" " alt="" coords="1500,282,1526,321,1521,319,1498,287"/>
+<area shape="poly" title=" " alt="" coords="1634,349,1363,397,1362,391,1629,350"/>
+<area shape="poly" title=" " alt="" coords="1678,352,1564,397,1563,391,1673,353"/>
+<area shape="poly" title=" " alt="" coords="1777,349,1910,394,1905,394,1776,354"/>
+<area shape="poly" title=" " alt="" coords="1842,342,1958,360,2007,375,2039,393,2053,411,2061,431,2065,471,2061,468,2056,433,2048,413,2036,397,2005,380,1957,366,1841,347"/>
+<area shape="poly" title=" " alt="" coords="1607,347,1163,397,1152,399,1151,393,1163,392,1602,347"/>
+<area shape="rect" href="_gerenciador_arquivo_8cpp.html" title=" " alt="" coords="1663,395,1845,421"/>
+<area shape="poly" title=" " alt="" coords="1736,359,1751,396,1746,393,1733,364"/>
+<area shape="poly" title=" " alt="" coords="1238,426,1115,471,1114,466,1233,427"/>
+<area shape="rect" href="_menu_inicial_8cpp.html" title=" " alt="" coords="1463,469,1597,496"/>
+<area shape="poly" title=" " alt="" coords="1343,423,1490,469,1484,468,1342,429"/>
+<area shape="poly" title=" " alt="" coords="1532,435,1532,471,1528,467,1528,439"/>
+<area shape="rect" href="_menu_carregar_usuario_8cpp.html" title=" " alt="" coords="1216,469,1411,496"/>
+<area shape="poly" title=" " alt="" coords="1481,426,1352,471,1351,466,1475,427"/>
+<area shape="poly" title=" " alt="" coords="1862,424,1598,472,1597,467,1857,425"/>
+<area shape="poly" title=" " alt="" coords="1981,427,2045,469,2040,468,1979,433"/>
+<area shape="poly" title=" " alt="" coords="1071,435,1078,471,1073,467,1068,439"/>
+<area shape="poly" title=" " alt="" coords="1123,423,1273,469,1267,468,1122,429"/>
+<area shape="poly" title=" " alt="" coords="1015,426,887,471,886,466,1010,427"/>
+<area shape="rect" href="_menu_principal_8cpp.html" title=" " alt="" coords="455,469,605,496"/>
+<area shape="poly" title=" " alt="" coords="965,423,606,474,605,468,960,423"/>
+<area shape="poly" title=" " alt="" coords="768,427,831,469,826,468,767,432"/>
+<area shape="poly" title=" " alt="" coords="687,427,566,471,565,466,682,427"/>
+<area shape="poly" title=" " alt="" coords="399,202,430,220,456,244,476,272,492,303,515,368,527,427,531,471,527,467,522,428,510,370,487,305,471,275,452,247,427,224,399,207"/>
+<area shape="rect" href="_menu_detalhamento_disciplina_8cpp.html" title=" " alt="" coords="204,245,442,272"/>
+<area shape="poly" title=" " alt="" coords="323,211,325,246,320,244,321,216"/>
+<area shape="poly" title=" " alt="" coords="59,199,38,214,18,232,9,251,9,261,13,271,56,321,107,362,165,396,227,422,289,443,349,457,457,476,451,476,348,462,288,448,225,427,163,401,104,367,52,325,9,273,4,262,3,250,14,229,34,210,61,195"/>
+<area shape="rect" href="_menu_disciplina_8cpp.html" title=" " alt="" coords="23,245,180,272"/>
+<area shape="poly" title=" " alt="" coords="102,202,104,246,99,245,101,208"/>
+<area shape="poly" title=" " alt="" coords="532,203,532,470,527,468,527,206"/>
+<area shape="rect" href="_menu_frequencia_8cpp.html" title=" " alt="" coords="568,245,732,272"/>
+<area shape="poly" title=" " alt="" coords="561,195,634,245,628,245,560,201"/>
+<area shape="poly" title=" " alt="" coords="1086,120,1082,164,1078,161,1083,124"/>
+<area shape="rect" href="_semestre_consolidado_8cpp.html" title=" " alt="" coords="1197,163,1393,189"/>
+<area shape="poly" title=" " alt="" coords="1134,110,1265,162,1260,162,1133,115"/>
+</map>
 </div>
 </div>
 <p><a href="_semestre_8hpp_source.html">Ir para o código-fonte desse arquivo.</a></p>
-</div><!-- contents -->
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:Semestre" id="r_Semestre"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html">Semestre</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe base abstrata que representa um semestre letivo.  <a href="class_semestre.html#details">Mais...</a><br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Declaração da classe base abstrata <a class="el" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo.">Semestre</a>. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -140,7 +236,7 @@ Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_semestre_8hpp.html">Semestre.hpp</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

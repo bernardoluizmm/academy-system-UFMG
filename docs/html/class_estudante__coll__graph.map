@@ -1,0 +1,11 @@
+<map id="Estudante" name="Estudante">
+<area shape="rect" id="Node000001" title="Agregado raiz que representa o estudante e compoe as informacoes de seu curso e historico escolar." alt="" coords="36,1708,266,2028"/>
+<area shape="rect" id="Node000002" href="$class_curso.html" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria." alt="" coords="5,927,216,1636"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,1633,141,1692,136,1691,135,1638"/>
+<area shape="rect" id="Node000003" href="$class_historico_escolar.html" title="Reúne os semestres consolidados e o semestre atual do aluno." alt="" coords="241,1140,453,1423"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="302,1420,212,1693,207,1691,298,1425"/>
+<area shape="rect" id="Node000004" href="$class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas." alt="" coords="261,508,432,855"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="347,852,349,1123,344,1123,346,857"/>
+<area shape="rect" id="Node000005" href="$class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="244,5,449,459"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="347,471,349,509,344,508,347,477"/>
+</map>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência da Classe SemestreConsolidado</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_semestre
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,34 +112,98 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_semestre
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo.">Semestre</a> já encerrado, com NSG e horas fixos.  
+ <a href="#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_semestre_consolidado_8hpp_source.html">SemestreConsolidado.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de hierarquia da classe SemestreConsolidado:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_semestre_consolidado__inherit__graph.png" border="0" usemap="#a_semestre_consolidado_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="a_semestre_consolidado_inherit__map" id="a_semestre_consolidado_inherit__map">
+<area shape="rect" title="Semestre já encerrado, com NSG e horas fixos." alt="" coords="22,507,193,789"/>
+<area shape="rect" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="5,5,210,459"/>
+<area shape="poly" title=" " alt="" coords="108,471,110,507,105,506,107,476"/>
+</map>
 </div>
 <div class="dynheader">
 Diagrama de colaboração para SemestreConsolidado:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_semestre_consolidado__coll__graph.png" border="0" usemap="#a_semestre_consolidado_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="a_semestre_consolidado_coll__map" id="a_semestre_consolidado_coll__map">
+<area shape="rect" title="Semestre já encerrado, com NSG e horas fixos." alt="" coords="22,507,193,789"/>
+<area shape="rect" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo." alt="" coords="5,5,210,459"/>
+<area shape="poly" title=" " alt="" coords="108,471,110,507,105,506,107,476"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:a04702f0c049836f485b62e0c3a2dc7aa" id="r_a04702f0c049836f485b62e0c3a2dc7aa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a04702f0c049836f485b62e0c3a2dc7aa">SemestreConsolidado</a> (const std::string &amp;periodo, double nsg, std::vector&lt; <a class="el" href="class_disciplina.html">Disciplina</a> &gt; disciplinas)</td></tr>
-<tr class="memitem:a04dab06b2d6b2fd281406c908e73c030" id="r_a04dab06b2d6b2fd281406c908e73c030"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a04dab06b2d6b2fd281406c908e73c030">getNSG</a> () const override</td></tr>
-<tr class="memitem:a88eb40382905edb731365f156ef47b9d" id="r_a88eb40382905edb731365f156ef47b9d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88eb40382905edb731365f156ef47b9d">setNSG</a> (double nsg)</td></tr>
-<tr class="memitem:adf743a02699143d1bbd02519e6159c66" id="r_adf743a02699143d1bbd02519e6159c66"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#adf743a02699143d1bbd02519e6159c66">calcularTotalHoras</a> () const</td></tr>
+<tr class="memitem:a63f12bf62405318f21e34a15089c6119" id="r_a63f12bf62405318f21e34a15089c6119"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a63f12bf62405318f21e34a15089c6119">SemestreConsolidado</a> (const std::string &amp;identificador, float nsgFixo, int horasObrigatorias, int horasOptativas, int horasFormacaoLivre, bool trancado=false)</td></tr>
+<tr class="memdesc:a63f12bf62405318f21e34a15089c6119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor.  <br /></td></tr>
+<tr class="memitem:a9675bf0c53abf547e08b50d4e8fb9bb0" id="r_a9675bf0c53abf547e08b50d4e8fb9bb0"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#a9675bf0c53abf547e08b50d4e8fb9bb0">~SemestreConsolidado</a> ()</td></tr>
+<tr class="memdesc:a9675bf0c53abf547e08b50d4e8fb9bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor.  <br /></td></tr>
+<tr class="memitem:ae52987b97ac0e35083048b0873aaaf5d" id="r_ae52987b97ac0e35083048b0873aaaf5d"><td class="memItemLeft">virtual float&#160;</td><td class="memItemRight"><a class="el" href="#ae52987b97ac0e35083048b0873aaaf5d">calcularNSG</a> () const override</td></tr>
+<tr class="memdesc:ae52987b97ac0e35083048b0873aaaf5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o NSG fixo do semestre.  <br /></td></tr>
+<tr class="memitem:a429aab58a22d8a0414c4c6b8414298d1" id="r_a429aab58a22d8a0414c4c6b8414298d1"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#a429aab58a22d8a0414c4c6b8414298d1">getHorasIntegralizadas</a> () const override</td></tr>
+<tr class="memdesc:a429aab58a22d8a0414c4c6b8414298d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o total de horas integralizadas (0 se trancado).  <br /></td></tr>
+<tr class="memitem:ab49b51af4bec8c3886dead73e4e6c6dc" id="r_ab49b51af4bec8c3886dead73e4e6c6dc"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#ab49b51af4bec8c3886dead73e4e6c6dc">getHorasObrigatorias</a> () const override</td></tr>
+<tr class="memdesc:ab49b51af4bec8c3886dead73e4e6c6dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna as horas obrigatórias (0 se trancado).  <br /></td></tr>
+<tr class="memitem:a8d8eb28d341a22ee3f382d2559959ad0" id="r_a8d8eb28d341a22ee3f382d2559959ad0"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#a8d8eb28d341a22ee3f382d2559959ad0">getHorasOptativas</a> () const override</td></tr>
+<tr class="memdesc:a8d8eb28d341a22ee3f382d2559959ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna as horas optativas (0 se trancado).  <br /></td></tr>
+<tr class="memitem:aa09b600f8b81fe3392a7fa4d563d96b5" id="r_aa09b600f8b81fe3392a7fa4d563d96b5"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#aa09b600f8b81fe3392a7fa4d563d96b5">getHorasFormacaoLivre</a> () const override</td></tr>
+<tr class="memdesc:aa09b600f8b81fe3392a7fa4d563d96b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna as horas de formação livre (0 se trancado).  <br /></td></tr>
+<tr class="memitem:a97b6f75b2c74ae3570920937acd1e11c" id="r_a97b6f75b2c74ae3570920937acd1e11c"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a97b6f75b2c74ae3570920937acd1e11c">serializar</a> () const</td></tr>
+<tr class="memdesc:a97b6f75b2c74ae3570920937acd1e11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializa o semestre em texto.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_semestre"><td colspan="2">Membros Públicos herdados de <a class="el" href="class_semestre.html">Semestre</a></td></tr>
+<tr class="memitem:af74574cd3f6e7456e15c3295c93dc8d3 pub_methods_class_semestre" id="r_af74574cd3f6e7456e15c3295c93dc8d3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#af74574cd3f6e7456e15c3295c93dc8d3">Semestre</a> (const std::string &amp;identificador, bool trancado=false)</td></tr>
+<tr class="memdesc:af74574cd3f6e7456e15c3295c93dc8d3 pub_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constroi um semestre validando o identificador.  <br /></td></tr>
+<tr class="memitem:ad21d2637b446c0a673148c3d37ffe55c pub_methods_class_semestre" id="r_ad21d2637b446c0a673148c3d37ffe55c"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#ad21d2637b446c0a673148c3d37ffe55c">~Semestre</a> ()=default</td></tr>
+<tr class="memdesc:ad21d2637b446c0a673148c3d37ffe55c pub_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual.  <br /></td></tr>
+<tr class="memitem:adb1d3b76a76a7636d3682708fe97b8cd pub_methods_class_semestre" id="r_adb1d3b76a76a7636d3682708fe97b8cd"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#adb1d3b76a76a7636d3682708fe97b8cd">getIdentificador</a> () const</td></tr>
+<tr class="memdesc:adb1d3b76a76a7636d3682708fe97b8cd pub_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o identificador do semestre.  <br /></td></tr>
+<tr class="memitem:ac49fbb4bd6fa987627fff6d85ecd9484 pub_methods_class_semestre" id="r_ac49fbb4bd6fa987627fff6d85ecd9484"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#ac49fbb4bd6fa987627fff6d85ecd9484">isTrancado</a> () const</td></tr>
+<tr class="memdesc:ac49fbb4bd6fa987627fff6d85ecd9484 pub_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informa se o semestre foi trancado.  <br /></td></tr>
+<tr class="memitem:ac1949f11b7b53376ccb3f61061e5df06 pub_methods_class_semestre" id="r_ac1949f11b7b53376ccb3f61061e5df06"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#ac1949f11b7b53376ccb3f61061e5df06">setTrancado</a> (bool estado)</td></tr>
+<tr class="memdesc:ac1949f11b7b53376ccb3f61061e5df06 pub_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o estado de trancamento.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
-<tr class="memitem:ab218d1180a4e13989d9587f2f40693d3" id="r_ab218d1180a4e13989d9587f2f40693d3"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ab218d1180a4e13989d9587f2f40693d3">_nsg</a></td></tr>
+<tr class="memitem:ac562cbae6131a576ea5614cde429d816" id="r_ac562cbae6131a576ea5614cde429d816"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ac562cbae6131a576ea5614cde429d816">_nsgFixo</a></td></tr>
+<tr class="memdesc:ac562cbae6131a576ea5614cde429d816"><td class="mdescLeft">&#160;</td><td class="mdescRight">NSG final do semestre.  <br /></td></tr>
+<tr class="memitem:a47b93fe322281309200c7b165e05ab26" id="r_a47b93fe322281309200c7b165e05ab26"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a47b93fe322281309200c7b165e05ab26">_horasObrigatorias</a></td></tr>
+<tr class="memdesc:a47b93fe322281309200c7b165e05ab26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horas obrigatórias integralizadas.  <br /></td></tr>
+<tr class="memitem:a2f17945724707fcb43f636bd10708f13" id="r_a2f17945724707fcb43f636bd10708f13"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2f17945724707fcb43f636bd10708f13">_horasOptativas</a></td></tr>
+<tr class="memdesc:a2f17945724707fcb43f636bd10708f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horas optativas integralizadas.  <br /></td></tr>
+<tr class="memitem:a616c92363e2f985d055a9e4b3862a553" id="r_a616c92363e2f985d055a9e4b3862a553"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a616c92363e2f985d055a9e4b3862a553">_horasFormacaoLivre</a></td></tr>
+<tr class="memdesc:a616c92363e2f985d055a9e4b3862a553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horas de formação livre integralizadas.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Outros membros herdados</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_semestre"><td colspan="2">Membros públicos estáticos herdados de <a class="el" href="class_semestre.html">Semestre</a></td></tr>
+<tr class="memitem:af3ab284e9b7a6a90abe0d4f949b59de0 pub_static_methods_class_semestre" id="r_af3ab284e9b7a6a90abe0d4f949b59de0"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#af3ab284e9b7a6a90abe0d4f949b59de0">proximoIdentificadorSemestre</a> (const std::string &amp;idAtual)</td></tr>
+<tr class="memdesc:af3ab284e9b7a6a90abe0d4f949b59de0 pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o identificador do semestre seguinte.  <br /></td></tr>
+<tr class="memitem:a9f4f80070be0811db5a9e896b0704257 pub_static_methods_class_semestre" id="r_a9f4f80070be0811db5a9e896b0704257"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#a9f4f80070be0811db5a9e896b0704257">extrairAno</a> (const std::string &amp;idStr)</td></tr>
+<tr class="memdesc:a9f4f80070be0811db5a9e896b0704257 pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrai o ano de um identificador.  <br /></td></tr>
+<tr class="memitem:a383f696844611f11601821c00282d764 pub_static_methods_class_semestre" id="r_a383f696844611f11601821c00282d764"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#a383f696844611f11601821c00282d764">extrairPeriodo</a> (const std::string &amp;idStr)</td></tr>
+<tr class="memdesc:a383f696844611f11601821c00282d764 pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrai o período de um identificador.  <br /></td></tr>
+<tr class="memitem:af6bae207b3b658f16807ec417cce4309 pub_static_methods_class_semestre" id="r_af6bae207b3b658f16807ec417cce4309"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#af6bae207b3b658f16807ec417cce4309">validarFormatoIdentificador</a> (const std::string &amp;idStr)</td></tr>
+<tr class="memdesc:af6bae207b3b658f16807ec417cce4309 pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o formato de um identificador de semestre.  <br /></td></tr>
+<tr class="memitem:a298ff9e5d46311e3891612ec03491d29 pub_static_methods_class_semestre" id="r_a298ff9e5d46311e3891612ec03491d29"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#a298ff9e5d46311e3891612ec03491d29">validarNSG</a> (float nsg)</td></tr>
+<tr class="memdesc:a298ff9e5d46311e3891612ec03491d29 pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida um valor de NSG.  <br /></td></tr>
+<tr class="memitem:a7299dd303af2bc813bbd67db8a5b8de4 pub_static_methods_class_semestre" id="r_a7299dd303af2bc813bbd67db8a5b8de4"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#a7299dd303af2bc813bbd67db8a5b8de4">validarHoras</a> (int horas)</td></tr>
+<tr class="memdesc:a7299dd303af2bc813bbd67db8a5b8de4 pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida uma carga horária.  <br /></td></tr>
+<tr class="memitem:ad3a70c22a11865b1873f1222d81180ca pub_static_methods_class_semestre" id="r_ad3a70c22a11865b1873f1222d81180ca"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#ad3a70c22a11865b1873f1222d81180ca">validarIntervaloSemestres</a> (const std::string &amp;semIngresso, const std::string &amp;semAtual)</td></tr>
+<tr class="memdesc:ad3a70c22a11865b1873f1222d81180ca pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o intervalo entre semestre de ingresso e semestre atual.  <br /></td></tr>
+<tr class="memitem:a8a3d69fbcf8b827478c2726c67c2386e pub_static_methods_class_semestre" id="r_a8a3d69fbcf8b827478c2726c67c2386e"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="class_semestre.html#a8a3d69fbcf8b827478c2726c67c2386e">gerarSemestresAnteriores</a> (const std::string &amp;semIngresso, const std::string &amp;semAtual)</td></tr>
+<tr class="memdesc:a8a3d69fbcf8b827478c2726c67c2386e pub_static_methods_class_semestre"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a lista de semestres entre o ingresso e o atual (exclusivo).  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
-<a id="a04702f0c049836f485b62e0c3a2dc7aa" name="a04702f0c049836f485b62e0c3a2dc7aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04702f0c049836f485b62e0c3a2dc7aa">&#9670;&#160;</a></span>SemestreConsolidado()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p><a class="el" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo.">Semestre</a> já encerrado, com NSG e horas fixos. </p>
+<p>Se o semestre for trancado, NSG e horas são sempre retornados como zero. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
+<a id="a63f12bf62405318f21e34a15089c6119" name="a63f12bf62405318f21e34a15089c6119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f12bf62405318f21e34a15089c6119">&#9670;&#160;</a></span>SemestreConsolidado()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,43 +211,59 @@ Atributos Privados</h2></td></tr>
         <tr>
           <td class="memname">SemestreConsolidado::SemestreConsolidado </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>periodo</em></span>, </td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>identificador</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>nsg</em></span>, </td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>nsgFixo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_disciplina.html">Disciplina</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>disciplinas</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasObrigatorias</em></span>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
-<a id="adf743a02699143d1bbd02519e6159c66" name="adf743a02699143d1bbd02519e6159c66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf743a02699143d1bbd02519e6159c66">&#9670;&#160;</a></span>calcularTotalHoras()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">int SemestreConsolidado::calcularTotalHoras </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasOptativas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasFormacaoLivre</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>trancado</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construtor. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">identificador</td><td>Identificador do semestre (AAAA/01 ou AAAA/02). </td></tr>
+    <tr><td class="paramname">nsgFixo</td><td>NSG final (0 a 100). </td></tr>
+    <tr><td class="paramname">horasObrigatorias</td><td>Horas obrigatórias (múltiplo de 15). </td></tr>
+    <tr><td class="paramname">horasOptativas</td><td>Horas optativas (múltiplo de 15). </td></tr>
+    <tr><td class="paramname">horasFormacaoLivre</td><td>Horas de formação livre (múltiplo de 15). </td></tr>
+    <tr><td class="paramname">trancado</td><td>Se true, os valores numéricos são ignorados. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se algum valor for inválido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a04dab06b2d6b2fd281406c908e73c030" name="a04dab06b2d6b2fd281406c908e73c030"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04dab06b2d6b2fd281406c908e73c030">&#9670;&#160;</a></span>getNSG()</h2>
+<a id="a9675bf0c53abf547e08b50d4e8fb9bb0" name="a9675bf0c53abf547e08b50d4e8fb9bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9675bf0c53abf547e08b50d4e8fb9bb0">&#9670;&#160;</a></span>~SemestreConsolidado()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +272,35 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double SemestreConsolidado::getNSG </td>
+          <td class="memname">virtual SemestreConsolidado::~SemestreConsolidado </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destrutor. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
+<a id="ae52987b97ac0e35083048b0873aaaf5d" name="ae52987b97ac0e35083048b0873aaaf5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52987b97ac0e35083048b0873aaaf5d">&#9670;&#160;</a></span>calcularNSG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SemestreConsolidado::calcularNSG </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -207,33 +308,20 @@ Atributos Privados</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a88eb40382905edb731365f156ef47b9d" name="a88eb40382905edb731365f156ef47b9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88eb40382905edb731365f156ef47b9d">&#9670;&#160;</a></span>setNSG()</h2>
+<p>Obtem o NSG fixo do semestre. </p>
+<dl class="section return"><dt>Retorna</dt><dd>NSG final, ou 0 se o semestre foi trancado. </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SemestreConsolidado::setNSG </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>nsg</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Implementa <a class="el" href="class_semestre.html#ad2ac272c2bd41ae8c425ec28a7d584d6">Semestre</a>.</p>
 
 </div>
 </div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
-<a id="ab218d1180a4e13989d9587f2f40693d3" name="ab218d1180a4e13989d9587f2f40693d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab218d1180a4e13989d9587f2f40693d3">&#9670;&#160;</a></span>_nsg</h2>
+<a id="aa09b600f8b81fe3392a7fa4d563d96b5" name="aa09b600f8b81fe3392a7fa4d563d96b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa09b600f8b81fe3392a7fa4d563d96b5">&#9670;&#160;</a></span>getHorasFormacaoLivre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +330,144 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double SemestreConsolidado::_nsg</td>
+          <td class="memname">int SemestreConsolidado::getHorasFormacaoLivre </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna as horas de formação livre (0 se trancado). </p>
+
+<p>Implementa <a class="el" href="class_semestre.html#ae4cd4321f1e7fab49013d6ba8ae04639">Semestre</a>.</p>
+
+</div>
+</div>
+<a id="a429aab58a22d8a0414c4c6b8414298d1" name="a429aab58a22d8a0414c4c6b8414298d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a429aab58a22d8a0414c4c6b8414298d1">&#9670;&#160;</a></span>getHorasIntegralizadas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SemestreConsolidado::getHorasIntegralizadas </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna o total de horas integralizadas (0 se trancado). </p>
+
+<p>Implementa <a class="el" href="class_semestre.html#aa6d97e8083b2872e621a8efc68e58ee4">Semestre</a>.</p>
+
+</div>
+</div>
+<a id="ab49b51af4bec8c3886dead73e4e6c6dc" name="ab49b51af4bec8c3886dead73e4e6c6dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49b51af4bec8c3886dead73e4e6c6dc">&#9670;&#160;</a></span>getHorasObrigatorias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SemestreConsolidado::getHorasObrigatorias </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna as horas obrigatórias (0 se trancado). </p>
+
+<p>Implementa <a class="el" href="class_semestre.html#a9405211f42140b4eea8f2bc124f7afc9">Semestre</a>.</p>
+
+</div>
+</div>
+<a id="a8d8eb28d341a22ee3f382d2559959ad0" name="a8d8eb28d341a22ee3f382d2559959ad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8eb28d341a22ee3f382d2559959ad0">&#9670;&#160;</a></span>getHorasOptativas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SemestreConsolidado::getHorasOptativas </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna as horas optativas (0 se trancado). </p>
+
+<p>Implementa <a class="el" href="class_semestre.html#a62253c8b3c1c97189dab8f98f5aa6df6">Semestre</a>.</p>
+
+</div>
+</div>
+<a id="a97b6f75b2c74ae3570920937acd1e11c" name="a97b6f75b2c74ae3570920937acd1e11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b6f75b2c74ae3570920937acd1e11c">&#9670;&#160;</a></span>serializar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SemestreConsolidado::serializar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serializa o semestre em texto. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Linha no formato SEMESTRE_CONSOLIDADO|id|nsg|obrig|optat|livre|trancado. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
+<a id="a616c92363e2f985d055a9e4b3862a553" name="a616c92363e2f985d055a9e4b3862a553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a616c92363e2f985d055a9e4b3862a553">&#9670;&#160;</a></span>_horasFormacaoLivre</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SemestreConsolidado::_horasFormacaoLivre</td>
         </tr>
       </table>
   </td>
@@ -252,10 +477,85 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Horas de formação livre integralizadas. </p>
+
 </div>
 </div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<a id="a47b93fe322281309200c7b165e05ab26" name="a47b93fe322281309200c7b165e05ab26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47b93fe322281309200c7b165e05ab26">&#9670;&#160;</a></span>_horasObrigatorias</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SemestreConsolidado::_horasObrigatorias</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Horas obrigatórias integralizadas. </p>
+
+</div>
+</div>
+<a id="a2f17945724707fcb43f636bd10708f13" name="a2f17945724707fcb43f636bd10708f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f17945724707fcb43f636bd10708f13">&#9670;&#160;</a></span>_horasOptativas</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SemestreConsolidado::_horasOptativas</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Horas optativas integralizadas. </p>
+
+</div>
+</div>
+<a id="ac562cbae6131a576ea5614cde429d816" name="ac562cbae6131a576ea5614cde429d816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac562cbae6131a576ea5614cde429d816">&#9670;&#160;</a></span>_nsgFixo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SemestreConsolidado::_nsgFixo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>NSG final do semestre. </p>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>include/<a class="el" href="_semestre_consolidado_8hpp_source.html">SemestreConsolidado.hpp</a></li>
+<li>src/<a class="el" href="_semestre_consolidado_8cpp.html">SemestreConsolidado.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -271,7 +571,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="class_semestre_consolidado.html">SemestreConsolidado</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

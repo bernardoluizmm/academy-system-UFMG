@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Lista dos Membros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_estudant
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -121,26 +114,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_estudant
 
 <p>Esta é a lista de todos os membros de <a class="el" href="class_estudante.html">Estudante</a>, incluindo os membros herdados.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a3e9925d1d2476273bc8f46c5775ab2d5">curso_</a></td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a8e79d64a78306f61317c21a0a22b07d8">Estudante</a>(std::string nome, Curso curso, std::string semestreIngresso, SemestreAtual semestreAtual)</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a20de5c82ec73dac00821cc6a696bb773">getCurso</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a650e1bfa170347a0980f34017ffa006e">getCurso</a>()</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#ad5ff6f2cdf88deab606103165df6838a">_curso</a></td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a95d729b13091624c33158646861d1523">_historico</a></td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#aa4f04a4eadb3774daacc6c98d917f232">_nome</a></td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a4282c405d844d74ac01ce35878be1439">calcularPercentual</a>(int horasCumpridas, int horasRequeridas) const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a59dc1679278841b6978888504a2572b7">calcularPercentualCursoCompleto</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a67d4b238735fe8c7671f0d0c7408044e">calcularPercentualFormacaoLivre</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a05f1fce09c145692e51bcaea6c577db2">calcularPercentualObrigatorias</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a588b6eac3999eed00ba8d2db2574afb9">calcularPercentualOptativas</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a20dc5edc66c7c4abc0a2441c20b23538">Estudante</a>(const std::string &amp;nome, const Curso &amp;curso, const HistoricoEscolar &amp;historico)</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a20de5c82ec73dac00821cc6a696bb773">getCurso</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a053e5f712b093edeff752aafd3f922a0">getHistorico</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a81eebb67156f95a3fa2ffe0a9bdbc956">getHistoricoEditavel</a>()</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#ae3b9a6b8be82f04b781a0d416457bcad">getNome</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#aabbaf1ad2f6cb145229d4b533438743b">getSemestreAtual</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#aea9065bfcd227cb71d32ed43def08721">getSemestreAtual</a>()</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a798b9538b500ff2e1f38d16e71a5cec4">getSemestreIngresso</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a3fd97bb77a73589022054684d4c91f73">nome_</a></td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a88278743716f93dff1253d62bf1e3113">semestreAtual_</a></td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#ad7e4423ca7f0eb8b5752879f0837e6ce">semestreIngresso_</a></td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#afc7b89dcf158b7e597548b5960187a15">setNome</a>(const std::string &amp;nome)</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#a3490a41c92d1b661d3a37a8aa9a7bff0">setSemestreIngresso</a>(const std::string &amp;semestre)</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_estudante.html#a94010437b6b19d70f1acdb119b816fc1">serializar</a>() const</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_estudante.html#ab3fc9d62cc06e577527a267cc6e74fb9">validarNome</a>(const std::string &amp;nome)</td><td class="entry"><a class="el" href="class_estudante.html">Estudante</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

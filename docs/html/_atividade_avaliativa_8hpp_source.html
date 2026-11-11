@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Código-Fonte de include/AtividadeAvaliativa.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_atividade_ava
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,51 +112,88 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_atividade_ava
 </div><!--header-->
 <div class="contents">
 <a href="_atividade_avaliativa_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef ATIVIDADE_AVALIATIVA_HPP</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define ATIVIDADE_AVALIATIVA_HPP</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef ATIVIDADEAVALIATIVA_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define ATIVIDADEAVALIATIVA_HPP</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">AtividadeAvaliativa</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">   17</a></span>    std::string <a class="code hl_variable" href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">_nome</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a05636ebfe30a2f8ef235deb6cef6e8cf">   20</a></span>    std::string <a class="code hl_variable" href="class_atividade_avaliativa.html#a05636ebfe30a2f8ef235deb6cef6e8cf">_dataEntrega</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a7848660771f422112dbe6104d6ba886b">   23</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#a7848660771f422112dbe6104d6ba886b">_valorMaximo</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#aae65bc898449e97a1591b6d879102082">   26</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#aae65bc898449e97a1591b6d879102082">_notaObtida</a>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">   35</a></span>    <a class="code hl_function" href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">AtividadeAvaliativa</a>(<span class="keyword">const</span> std::string&amp; nome, <span class="keyword">const</span> std::string&amp; dataEntrega, <span class="keywordtype">double</span> valorMaximo);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">   41</a></span>    std::string <a class="code hl_function" href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">getNome</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#ad85c38fc343fc051ca2ab2b8a6a17f6e">   47</a></span>    std::string <a class="code hl_function" href="class_atividade_avaliativa.html#ad85c38fc343fc051ca2ab2b8a6a17f6e">getDataEntrega</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a6cee3491503410611833d03ceb4f6eb5">   53</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a6cee3491503410611833d03ceb4f6eb5">getValorMaximo</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a14a75da4161c078f06093a24e919994b">   59</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a14a75da4161c078f06093a24e919994b">getNotaObtida</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a6196d7258c1d4301f7b88a18f7e3fda3">   65</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a6196d7258c1d4301f7b88a18f7e3fda3">calcularAproveitamento</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a2ac096701a6e5cf3d75d594b4b16ef81">   72</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a2ac096701a6e5cf3d75d594b4b16ef81">registrarNota</a>(<span class="keywordtype">double</span> nota);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_data_8hpp.html">Data.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html">   17</a></span><span class="keyword">class </span><a class="code hl_function" href="class_atividade_avaliativa.html#a6f7b640e61ac8fac40106e8cf83a3f11">AtividadeAvaliativa</a> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a8de70ece5aa8132494e12056377c275f">   20</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#a8de70ece5aa8132494e12056377c275f">_id</a>;            </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">   21</a></span>    std::string <a class="code hl_variable" href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">_nome</a>;  </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a68cab80ebfc0a5ff76fa7e0b103c76c2">   22</a></span>    <a class="code hl_class" href="class_data.html">Data</a> <a class="code hl_variable" href="class_atividade_avaliativa.html#a68cab80ebfc0a5ff76fa7e0b103c76c2">_data</a>;         </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a090af2df6ec942bc2cde79a0dcc276c6">   23</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#a090af2df6ec942bc2cde79a0dcc276c6">_valor</a>;       </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a5481611ecd8d674b6da6425514464212">   24</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#a5481611ecd8d674b6da6425514464212">_notaObtida</a>;  </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_atividade_avaliativa.html#a59553bf4c98d529e819aa930e473a385">   25</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_atividade_avaliativa.html#a59553bf4c98d529e819aa930e473a385">_concluida</a>;    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a1e99c4c7578a4329b7b4c9ea1f8dcb1a">validarNome</a>(<span class="keyword">const</span> std::string&amp; nome);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a00a2b031f96c88e09565acca8a0f2292">validarValorMaximo</a>(<span class="keywordtype">float</span> valor);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="class_atividade_avaliativa.html#a6f7b640e61ac8fac40106e8cf83a3f11">AtividadeAvaliativa</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keyword">const</span> std::string&amp; nome, <span class="keyword">const</span> std::string&amp; data, <span class="keywordtype">float</span> valorMaximo);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="class_atividade_avaliativa.html#a6f7b640e61ac8fac40106e8cf83a3f11">AtividadeAvaliativa</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keyword">const</span> std::string&amp; nome, <span class="keyword">const</span> std::string&amp; data, <span class="keywordtype">float</span> valorMaximo, <span class="keywordtype">float</span> notaObtida, <span class="keywordtype">bool</span> concluida);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a64b49d6c67d6727c804dc6c0b029a332">getId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    std::string <a class="code hl_function" href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">getNome</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_data.html">Data</a>&amp; <a class="code hl_function" href="class_atividade_avaliativa.html#a3ad82a79373767c8835a3f0e78a8b499">getData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a4fdef85202cb9fde8bfb63c2dd9af12a">getValorMaximo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a467f7fba4dc10d0ea14b4f4cc625b4a1">getNotaObtida</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_atividade_avaliativa.html#aad3d4d7df59bb639ea9a473a2bc887c6">isConcluida</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a7dccd2f8cb7bb81e7b9ec68c92b56720">setNome</a>(<span class="keyword">const</span> std::string&amp; novoNome);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a61ca8fe75f831327ed05051ce5539fd3">setData</a>(<span class="keyword">const</span> std::string&amp; novaData);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a26cdf03ace20b97a689dc9c54aaabfe7">setValorMaximo</a>(<span class="keywordtype">float</span> novoValor);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atividade_avaliativa.html#adb297ab8b25daa61e5f8d69b26c3b5a4">setNotaObtida</a>(<span class="keywordtype">float</span> novaNota);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a6832661bd4f972463e3a748f242cef50">removerLancamentoNota</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_atividade_avaliativa.html#a817ceb50c3e34dffbb8ad9c56fc4d11a">obterMedia</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">char</span> <a class="code hl_function" href="class_atividade_avaliativa.html#afd110071aa80c525603449f39beb798e">obterConceito</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    std::string <a class="code hl_function" href="class_atividade_avaliativa.html#ae1f97af1842d693acefaae75d729f908">serializar</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// ATIVIDADE_AVALIATIVA_HPP</span></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a05636ebfe30a2f8ef235deb6cef6e8cf"><div class="ttname"><a href="class_atividade_avaliativa.html#a05636ebfe30a2f8ef235deb6cef6e8cf">AtividadeAvaliativa::_dataEntrega</a></div><div class="ttdeci">std::string _dataEntrega</div><div class="ttdoc">Data prevista de entrega ou aplicação (formato DD/MM/AAAA).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:20</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a14a75da4161c078f06093a24e919994b"><div class="ttname"><a href="class_atividade_avaliativa.html#a14a75da4161c078f06093a24e919994b">AtividadeAvaliativa::getNotaObtida</a></div><div class="ttdeci">double getNotaObtida() const</div><div class="ttdoc">Retorna a pontuação obtida pelo estudante.</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a2ac096701a6e5cf3d75d594b4b16ef81"><div class="ttname"><a href="class_atividade_avaliativa.html#a2ac096701a6e5cf3d75d594b4b16ef81">AtividadeAvaliativa::registrarNota</a></div><div class="ttdeci">bool registrarNota(double nota)</div><div class="ttdoc">Registra ou atualiza a nota obtida na atividade.</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a460ef977b4697f86ec4350e723eaf5d2"><div class="ttname"><a href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">AtividadeAvaliativa::_nome</a></div><div class="ttdeci">std::string _nome</div><div class="ttdoc">Descrição ou título da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:17</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a4e60e4143a728ca1ac93cb26973a8f27"><div class="ttname"><a href="class_atividade_avaliativa.html#a4e60e4143a728ca1ac93cb26973a8f27">AtividadeAvaliativa::AtividadeAvaliativa</a></div><div class="ttdeci">AtividadeAvaliativa(const std::string &amp;nome, const std::string &amp;dataEntrega, double valorMaximo)</div><div class="ttdoc">Construtor de AtividadeAvaliativa.</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a6196d7258c1d4301f7b88a18f7e3fda3"><div class="ttname"><a href="class_atividade_avaliativa.html#a6196d7258c1d4301f7b88a18f7e3fda3">AtividadeAvaliativa::calcularAproveitamento</a></div><div class="ttdeci">double calcularAproveitamento() const</div><div class="ttdoc">Calcula o aproveitamento percentual obtido na atividade.</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a6857f1b75dc0c601bb3cfa8593fc47a3"><div class="ttname"><a href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">AtividadeAvaliativa::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdoc">Retorna o nome da atividade avaliativa.</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a6cee3491503410611833d03ceb4f6eb5"><div class="ttname"><a href="class_atividade_avaliativa.html#a6cee3491503410611833d03ceb4f6eb5">AtividadeAvaliativa::getValorMaximo</a></div><div class="ttdeci">double getValorMaximo() const</div><div class="ttdoc">Retorna a pontuação máxima possível da atividade.</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_a7848660771f422112dbe6104d6ba886b"><div class="ttname"><a href="class_atividade_avaliativa.html#a7848660771f422112dbe6104d6ba886b">AtividadeAvaliativa::_valorMaximo</a></div><div class="ttdeci">double _valorMaximo</div><div class="ttdoc">Pontuação máxima que a atividade distribui.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:23</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_aae65bc898449e97a1591b6d879102082"><div class="ttname"><a href="class_atividade_avaliativa.html#aae65bc898449e97a1591b6d879102082">AtividadeAvaliativa::_notaObtida</a></div><div class="ttdeci">double _notaObtida</div><div class="ttdoc">Nota obtida pelo estudante (inicialmente 0.0).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:26</div></div>
-<div class="ttc" id="aclass_atividade_avaliativa_html_ad85c38fc343fc051ca2ab2b8a6a17f6e"><div class="ttname"><a href="class_atividade_avaliativa.html#ad85c38fc343fc051ca2ab2b8a6a17f6e">AtividadeAvaliativa::getDataEntrega</a></div><div class="ttdeci">std::string getDataEntrega() const</div><div class="ttdoc">Retorna a data de realização ou entrega da atividade.</div></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_data_8hpp_html"><div class="ttname"><a href="_data_8hpp.html">Data.hpp</a></div><div class="ttdoc">Declaracao da classe Data, que representa e valida uma data no formato DD/MM.</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a00a2b031f96c88e09565acca8a0f2292"><div class="ttname"><a href="class_atividade_avaliativa.html#a00a2b031f96c88e09565acca8a0f2292">AtividadeAvaliativa::validarValorMaximo</a></div><div class="ttdeci">static void validarValorMaximo(float valor)</div><div class="ttdoc">Valida se o valor maximo da atividade e estritamente positivo.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:15</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a090af2df6ec942bc2cde79a0dcc276c6"><div class="ttname"><a href="class_atividade_avaliativa.html#a090af2df6ec942bc2cde79a0dcc276c6">AtividadeAvaliativa::_valor</a></div><div class="ttdeci">float _valor</div><div class="ttdoc">Valor maximo (pontuacao total) da atividade; sempre maior que zero.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:23</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a1e99c4c7578a4329b7b4c9ea1f8dcb1a"><div class="ttname"><a href="class_atividade_avaliativa.html#a1e99c4c7578a4329b7b4c9ea1f8dcb1a">AtividadeAvaliativa::validarNome</a></div><div class="ttdeci">static void validarNome(const std::string &amp;nome)</div><div class="ttdoc">Valida se o nome da atividade respeita os limites de tamanho (1 a 24 caracteres).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:7</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a26cdf03ace20b97a689dc9c54aaabfe7"><div class="ttname"><a href="class_atividade_avaliativa.html#a26cdf03ace20b97a689dc9c54aaabfe7">AtividadeAvaliativa::setValorMaximo</a></div><div class="ttdeci">void setValorMaximo(float novoValor)</div><div class="ttdoc">Altera o valor maximo da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:82</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a3ad82a79373767c8835a3f0e78a8b499"><div class="ttname"><a href="class_atividade_avaliativa.html#a3ad82a79373767c8835a3f0e78a8b499">AtividadeAvaliativa::getData</a></div><div class="ttdeci">const Data &amp; getData() const</div><div class="ttdoc">Obtem a data da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:51</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a460ef977b4697f86ec4350e723eaf5d2"><div class="ttname"><a href="class_atividade_avaliativa.html#a460ef977b4697f86ec4350e723eaf5d2">AtividadeAvaliativa::_nome</a></div><div class="ttdeci">std::string _nome</div><div class="ttdoc">Nome da atividade (1 a 24 caracteres).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:21</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a467f7fba4dc10d0ea14b4f4cc625b4a1"><div class="ttname"><a href="class_atividade_avaliativa.html#a467f7fba4dc10d0ea14b4f4cc625b4a1">AtividadeAvaliativa::getNotaObtida</a></div><div class="ttdeci">float getNotaObtida() const</div><div class="ttdoc">Obtem a nota obtida na atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:61</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a4fdef85202cb9fde8bfb63c2dd9af12a"><div class="ttname"><a href="class_atividade_avaliativa.html#a4fdef85202cb9fde8bfb63c2dd9af12a">AtividadeAvaliativa::getValorMaximo</a></div><div class="ttdeci">float getValorMaximo() const</div><div class="ttdoc">Obtem o valor maximo da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:56</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a5481611ecd8d674b6da6425514464212"><div class="ttname"><a href="class_atividade_avaliativa.html#a5481611ecd8d674b6da6425514464212">AtividadeAvaliativa::_notaObtida</a></div><div class="ttdeci">float _notaObtida</div><div class="ttdoc">Nota obtida; 0 enquanto a atividade nao estiver concluida.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:24</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a59553bf4c98d529e819aa930e473a385"><div class="ttname"><a href="class_atividade_avaliativa.html#a59553bf4c98d529e819aa930e473a385">AtividadeAvaliativa::_concluida</a></div><div class="ttdeci">bool _concluida</div><div class="ttdoc">Indica se a nota ja foi lancada.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:25</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a61ca8fe75f831327ed05051ce5539fd3"><div class="ttname"><a href="class_atividade_avaliativa.html#a61ca8fe75f831327ed05051ce5539fd3">AtividadeAvaliativa::setData</a></div><div class="ttdeci">void setData(const std::string &amp;novaData)</div><div class="ttdoc">Altera a data da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:77</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a64b49d6c67d6727c804dc6c0b029a332"><div class="ttname"><a href="class_atividade_avaliativa.html#a64b49d6c67d6727c804dc6c0b029a332">AtividadeAvaliativa::getId</a></div><div class="ttdeci">int getId() const</div><div class="ttdoc">Obtem o identificador da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:41</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a6832661bd4f972463e3a748f242cef50"><div class="ttname"><a href="class_atividade_avaliativa.html#a6832661bd4f972463e3a748f242cef50">AtividadeAvaliativa::removerLancamentoNota</a></div><div class="ttdeci">void removerLancamentoNota()</div><div class="ttdoc">Remove a nota lancada: zera a nota e marca a atividade como nao concluida.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:102</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a6857f1b75dc0c601bb3cfa8593fc47a3"><div class="ttname"><a href="class_atividade_avaliativa.html#a6857f1b75dc0c601bb3cfa8593fc47a3">AtividadeAvaliativa::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdoc">Obtem o nome da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:46</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a68cab80ebfc0a5ff76fa7e0b103c76c2"><div class="ttname"><a href="class_atividade_avaliativa.html#a68cab80ebfc0a5ff76fa7e0b103c76c2">AtividadeAvaliativa::_data</a></div><div class="ttdeci">Data _data</div><div class="ttdoc">Data da atividade (DD/MM).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:22</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a6f7b640e61ac8fac40106e8cf83a3f11"><div class="ttname"><a href="class_atividade_avaliativa.html#a6f7b640e61ac8fac40106e8cf83a3f11">AtividadeAvaliativa::AtividadeAvaliativa</a></div><div class="ttdeci">AtividadeAvaliativa(int id, const std::string &amp;nome, const std::string &amp;data, float valorMaximo)</div><div class="ttdoc">Constroi uma atividade ainda nao concluida (sem nota lancada).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:23</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a7dccd2f8cb7bb81e7b9ec68c92b56720"><div class="ttname"><a href="class_atividade_avaliativa.html#a7dccd2f8cb7bb81e7b9ec68c92b56720">AtividadeAvaliativa::setNome</a></div><div class="ttdeci">void setNome(const std::string &amp;novoNome)</div><div class="ttdoc">Altera o nome da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:71</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a817ceb50c3e34dffbb8ad9c56fc4d11a"><div class="ttname"><a href="class_atividade_avaliativa.html#a817ceb50c3e34dffbb8ad9c56fc4d11a">AtividadeAvaliativa::obterMedia</a></div><div class="ttdeci">float obterMedia() const</div><div class="ttdoc">Calcula a media da atividade (60% do valor maximo).</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:108</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_a8de70ece5aa8132494e12056377c275f"><div class="ttname"><a href="class_atividade_avaliativa.html#a8de70ece5aa8132494e12056377c275f">AtividadeAvaliativa::_id</a></div><div class="ttdeci">int _id</div><div class="ttdoc">Identificador da atividade.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.hpp:20</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_aad3d4d7df59bb639ea9a473a2bc887c6"><div class="ttname"><a href="class_atividade_avaliativa.html#aad3d4d7df59bb639ea9a473a2bc887c6">AtividadeAvaliativa::isConcluida</a></div><div class="ttdeci">bool isConcluida() const</div><div class="ttdoc">Informa se a atividade ja foi concluida.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:66</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_adb297ab8b25daa61e5f8d69b26c3b5a4"><div class="ttname"><a href="class_atividade_avaliativa.html#adb297ab8b25daa61e5f8d69b26c3b5a4">AtividadeAvaliativa::setNotaObtida</a></div><div class="ttdeci">void setNotaObtida(float novaNota)</div><div class="ttdoc">Lanca a nota obtida e marca a atividade como concluida.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:92</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_ae1f97af1842d693acefaae75d729f908"><div class="ttname"><a href="class_atividade_avaliativa.html#ae1f97af1842d693acefaae75d729f908">AtividadeAvaliativa::serializar</a></div><div class="ttdeci">std::string serializar() const</div><div class="ttdoc">Serializa a atividade em uma linha de texto, para persistencia em arquivo.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:123</div></div>
+<div class="ttc" id="aclass_atividade_avaliativa_html_afd110071aa80c525603449f39beb798e"><div class="ttname"><a href="class_atividade_avaliativa.html#afd110071aa80c525603449f39beb798e">AtividadeAvaliativa::obterConceito</a></div><div class="ttdeci">char obterConceito() const</div><div class="ttdoc">Obtem o conceito da atividade, a partir do percentual da nota em relacao ao valor maximo.</div><div class="ttdef"><b>Definição</b> AtividadeAvaliativa.cpp:113</div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdoc">Representa uma data composta apenas por dia e mes (sem ano), validada na construcao.</div><div class="ttdef"><b>Definição</b> Data.hpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
@@ -171,7 +201,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_atividade_ava
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_atividade_avaliativa_8hpp.html">AtividadeAvaliativa.hpp</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>

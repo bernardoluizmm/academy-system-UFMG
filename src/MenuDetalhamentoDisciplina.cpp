@@ -69,8 +69,7 @@ void MenuDetalhamentoDisciplina::exibirDetalhamentoDisciplina(const Disciplina& 
 
 void MenuDetalhamentoDisciplina::fluxoDetalharDisciplinaEspecifica() 
 {
-    SemestreAtual* semAtual = this->_estudante.getHistoricoEditavel().getSemestreAtual();
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+    if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << "[AVISO] Nenhuma disciplina cadastrada no semestre atual.\n";
         return;
@@ -82,7 +81,7 @@ void MenuDetalhamentoDisciplina::fluxoDetalharDisciplinaEspecifica()
         return;
     }
 
-    const Disciplina* disc = semAtual->buscarDisciplina(idDisc);
+    const Disciplina* disc = this->_semestreAtual.buscarDisciplina(idDisc);
     if (disc == nullptr) 
     {
         std::cout << "[ERRO] Disciplina com ID " << idDisc << " nao encontrada.\n";
@@ -134,17 +133,20 @@ void MenuDetalhamentoDisciplina::exibir()
 }
 Menu* MenuDetalhamentoDisciplina::processarEntrada() 
 {
+     while (true)
     {
         int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
-        if (opcao == 1) 
+        if (opcao == 1)
         {
             this->fluxoDetalharDisciplinaEspecifica();
             return this;
-        } else if (opcao == 2) 
+        }
+        else if (opcao == 2)
         {
             this->fluxoDetalharTodasDisciplinas();
             return this;
-        } else if (opcao == 0) 
+        }
+        else if (opcao == 0)
         {
             return nullptr;
         }

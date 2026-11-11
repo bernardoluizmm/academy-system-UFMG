@@ -1,0 +1,7 @@
+<map id="Semestre" name="Semestre">
+<area shape="rect" id="Node000001" title="Classe base abstrata que representa um semestre letivo." alt="" coords="86,5,291,459"/>
+<area shape="rect" id="Node000002" href="$class_semestre_atual.html" title="Semestre em andamento, que gerencia as disciplinas cursadas." alt="" coords="5,507,176,853"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,471,131,507,126,506,135,476"/>
+<area shape="rect" id="Node000003" href="$class_semestre_consolidado.html" title="Semestre já encerrado, com NSG e horas fixos." alt="" coords="200,539,371,821"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="241,471,258,539,252,539,240,476"/>
+</map>

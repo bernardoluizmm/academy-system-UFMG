@@ -1,0 +1,5 @@
+<map id="MenuCadastroUsuario" name="MenuCadastroUsuario">
+<area shape="rect" id="Node000001" title="Tela que coleta e valida todos os dados cadastrais e instancia o Estudante via RAII." alt="" coords="5,251,206,405"/>
+<area shape="rect" id="Node000002" href="$class_menu.html" title="Classe base abstrata das telas de interacao via terminal." alt="" coords="5,5,206,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,215,108,252,103,250,105,220"/>
+</map>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sistema Acadêmico: Referência da Classe Curso</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -38,38 +33,40 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.17.0 -->
+<!-- Gerado por Doxygen 1.18.0 -->
 <script type="text/javascript">
 let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',true);
-  init_search();
-});
-</script>
 <div id="main-nav-mobile">
 <div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
 <label class="main-menu-btn" for="main-menu-state">
 <span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
-<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+<span id="searchBoxPos1"></span>
 </div>
 </div><!-- main-nav-mobile -->
 <div id="main-nav">
   <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2" style="float:right">
+    <li id="searchBoxPos2">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
@@ -84,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="nav-sync" class="sync"></div>
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="splitbar" class="ui-resizable-handle">
   </div>
 </div>
 <script type="text/javascript">
@@ -94,10 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_curso.ht
 <div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<div id="MSearchSelectWindow">
 </div>
 
 <!-- iframe showing the search results (closed by default) -->
@@ -119,7 +112,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_curso.ht
 </div><!--header-->
 <div class="contents">
 
-<p>Representa o curso do estudante.  
+<p>Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria.  
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_curso_8hpp_source.html">Curso.hpp</a>&gt;</code></p>
@@ -127,61 +120,84 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_curso.ht
 Diagrama de colaboração para Curso:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_curso__coll__graph.png" border="0" usemap="#a_curso_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="a_curso_coll__map" id="a_curso_coll__map">
+<area shape="rect" title="Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria." alt="" coords="5,5,216,715"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:a92d0bb778c24a6cf7f41cc7a6998ad5f" id="r_a92d0bb778c24a6cf7f41cc7a6998ad5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a92d0bb778c24a6cf7f41cc7a6998ad5f">Curso</a> (std::string nome, int horasObrigatorias, int horasOptativas, int horasFormacaoLivre)</td></tr>
-<tr class="memdesc:a92d0bb778c24a6cf7f41cc7a6998ad5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor do curso.  <br /></td></tr>
+<tr class="memitem:af9a3dfab024ccf2f92c1b4475046c640" id="r_af9a3dfab024ccf2f92c1b4475046c640"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af9a3dfab024ccf2f92c1b4475046c640">Curso</a> (int opcaoCurso, const std::string &amp;semestreIngresso)</td></tr>
+<tr class="memdesc:af9a3dfab024ccf2f92c1b4475046c640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado que valida e inicializa definitivamente o curso (RAII).  <br /></td></tr>
+<tr class="memitem:aae204a908881245dc6ecfbd8385b312c" id="r_aae204a908881245dc6ecfbd8385b312c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aae204a908881245dc6ecfbd8385b312c">getOpcaoCurso</a> () const</td></tr>
+<tr class="memdesc:aae204a908881245dc6ecfbd8385b312c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o codigo numerico da opcao de curso.  <br /></td></tr>
 <tr class="memitem:a2066ca332151f5b22959c2f4912ad0af" id="r_a2066ca332151f5b22959c2f4912ad0af"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a2066ca332151f5b22959c2f4912ad0af">getNome</a> () const</td></tr>
-<tr class="memdesc:a2066ca332151f5b22959c2f4912ad0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do curso.  <br /></td></tr>
-<tr class="memitem:afe036248775d8e99dbafcd19f6bf18d4" id="r_afe036248775d8e99dbafcd19f6bf18d4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afe036248775d8e99dbafcd19f6bf18d4">setNome</a> (const std::string &amp;nome)</td></tr>
-<tr class="memdesc:afe036248775d8e99dbafcd19f6bf18d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o nome do curso.  <br /></td></tr>
-<tr class="memitem:a9219003312df727c98c1f16d4fe0a8fe" id="r_a9219003312df727c98c1f16d4fe0a8fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a9219003312df727c98c1f16d4fe0a8fe">getHorasObrigatorias</a> () const</td></tr>
-<tr class="memdesc:a9219003312df727c98c1f16d4fe0a8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna as horas exigidas em disciplinas obrigatórias.  <br /></td></tr>
-<tr class="memitem:a362f36c836e6ece34e5747311490a406" id="r_a362f36c836e6ece34e5747311490a406"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a362f36c836e6ece34e5747311490a406">getHorasOptativas</a> () const</td></tr>
-<tr class="memdesc:a362f36c836e6ece34e5747311490a406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna as horas exigidas em disciplinas optativas.  <br /></td></tr>
-<tr class="memitem:a09fc26afad2da50ab2edbb6562999343" id="r_a09fc26afad2da50ab2edbb6562999343"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a09fc26afad2da50ab2edbb6562999343">getHorasFormacaoLivre</a> () const</td></tr>
-<tr class="memdesc:a09fc26afad2da50ab2edbb6562999343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna as horas exigidas em formação livre.  <br /></td></tr>
-<tr class="memitem:a14fe3a455727a18d351a8b01c07dc246" id="r_a14fe3a455727a18d351a8b01c07dc246"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a14fe3a455727a18d351a8b01c07dc246">setHorasFormacaoLivre</a> (int horas)</td></tr>
-<tr class="memdesc:a14fe3a455727a18d351a8b01c07dc246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera as horas exigidas em formação livre.  <br /></td></tr>
-<tr class="memitem:aeeb23e54d54bc4149f0d72a5d5cc7ffa" id="r_aeeb23e54d54bc4149f0d72a5d5cc7ffa"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aeeb23e54d54bc4149f0d72a5d5cc7ffa">getTotalHorasExigidas</a> () const</td></tr>
-<tr class="memdesc:aeeb23e54d54bc4149f0d72a5d5cc7ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o total de horas exigidas pelo curso.  <br /></td></tr>
-<tr class="memitem:ac46f70496845f302d2d21a0ea051b630" id="r_ac46f70496845f302d2d21a0ea051b630"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac46f70496845f302d2d21a0ea051b630">adicionarSemestreConsolidado</a> (<a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a> sem)</td></tr>
-<tr class="memdesc:ac46f70496845f302d2d21a0ea051b630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um semestre consolidado à lista.  <br /></td></tr>
-<tr class="memitem:a811d0b5cd4fcb49b061e478320a466ed" id="r_a811d0b5cd4fcb49b061e478320a466ed"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a811d0b5cd4fcb49b061e478320a466ed">removerSemestreConsolidado</a> (int indice)</td></tr>
-<tr class="memdesc:a811d0b5cd4fcb49b061e478320a466ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o semestre consolidado no índice informado.  <br /></td></tr>
-<tr class="memitem:a77f1abd6ba92d7aca5a38a8d458592ce" id="r_a77f1abd6ba92d7aca5a38a8d458592ce"><td class="memItemLeft">const std::vector&lt; <a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a77f1abd6ba92d7aca5a38a8d458592ce">getSemestresConsolidados</a> () const</td></tr>
-<tr class="memdesc:a77f1abd6ba92d7aca5a38a8d458592ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso somente leitura à lista de semestres consolidados.  <br /></td></tr>
-<tr class="memitem:aad17d9d1c858b7c8aff15ad51dbb48aa" id="r_aad17d9d1c858b7c8aff15ad51dbb48aa"><td class="memItemLeft">std::vector&lt; <a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aad17d9d1c858b7c8aff15ad51dbb48aa">getSemestresConsolidados</a> ()</td></tr>
-<tr class="memdesc:aad17d9d1c858b7c8aff15ad51dbb48aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acesso mutável à lista de semestres consolidados.  <br /></td></tr>
-<tr class="memitem:aabed7a9fe6fc913af1ed3764b00f03a7" id="r_aabed7a9fe6fc913af1ed3764b00f03a7"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aabed7a9fe6fc913af1ed3764b00f03a7">calcularPercentualIntegralizacao</a> () const</td></tr>
-<tr class="memdesc:aabed7a9fe6fc913af1ed3764b00f03a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o percentual de integralização do curso.  <br /></td></tr>
-<tr class="memitem:a51640d91a33702bbd29dea20cc47b941" id="r_a51640d91a33702bbd29dea20cc47b941"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a51640d91a33702bbd29dea20cc47b941">calcularPercentualCategoria</a> (<a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a> categoria) const</td></tr>
-<tr class="memdesc:a51640d91a33702bbd29dea20cc47b941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o percentual de integralização de uma categoria.  <br /></td></tr>
-<tr class="memitem:a3ad353980a1995382cd530e5403fc268" id="r_a3ad353980a1995382cd530e5403fc268"><td class="memItemLeft">std::vector&lt; <a class="el" href="struct_ponto_grafico.html">PontoGrafico</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3ad353980a1995382cd530e5403fc268">gerarDadosGrafico</a> () const</td></tr>
-<tr class="memdesc:a3ad353980a1995382cd530e5403fc268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera os dados para o gráfico de evolução do NSG.  <br /></td></tr>
+<tr class="memdesc:a2066ca332151f5b22959c2f4912ad0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o nome do curso.  <br /></td></tr>
+<tr class="memitem:abe6a9c6dc7b0251a1d6e23fa6f27aec8" id="r_abe6a9c6dc7b0251a1d6e23fa6f27aec8"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#abe6a9c6dc7b0251a1d6e23fa6f27aec8">getSemestreIngresso</a> () const</td></tr>
+<tr class="memdesc:abe6a9c6dc7b0251a1d6e23fa6f27aec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o semestre de ingresso do estudante no curso.  <br /></td></tr>
+<tr class="memitem:a42033a2d6e86049d71da612fa85d3d4c" id="r_a42033a2d6e86049d71da612fa85d3d4c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a42033a2d6e86049d71da612fa85d3d4c">getHorasTotaisObrigatorias</a> () const</td></tr>
+<tr class="memdesc:a42033a2d6e86049d71da612fa85d3d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o total de horas obrigatorias exigidas pelo curso.  <br /></td></tr>
+<tr class="memitem:a505095b6901e91f7976f0c13e1df3314" id="r_a505095b6901e91f7976f0c13e1df3314"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a505095b6901e91f7976f0c13e1df3314">getHorasTotaisOptativas</a> () const</td></tr>
+<tr class="memdesc:a505095b6901e91f7976f0c13e1df3314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o total de horas optativas exigidas pelo curso.  <br /></td></tr>
+<tr class="memitem:a4f587d337741aa0b397d8c8667a347c3" id="r_a4f587d337741aa0b397d8c8667a347c3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a4f587d337741aa0b397d8c8667a347c3">getHorasTotaisFormacaoLivre</a> () const</td></tr>
+<tr class="memdesc:a4f587d337741aa0b397d8c8667a347c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o total de horas de formacao livre exigidas pelo curso.  <br /></td></tr>
+<tr class="memitem:a699a2544ad8d093430ec927fc200153e" id="r_a699a2544ad8d093430ec927fc200153e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a699a2544ad8d093430ec927fc200153e">getHorasAdicionais</a> () const</td></tr>
+<tr class="memdesc:a699a2544ad8d093430ec927fc200153e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem o total de horas adicionais exigidas pelo curriculo do curso.  <br /></td></tr>
+<tr class="memitem:ae42f37688730fe89e06cfeac4e8a38a5" id="r_ae42f37688730fe89e06cfeac4e8a38a5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae42f37688730fe89e06cfeac4e8a38a5">getHorasTotaisCurso</a> () const</td></tr>
+<tr class="memdesc:ae42f37688730fe89e06cfeac4e8a38a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtem a carga horaria total exigida para a conclusao do curso.  <br /></td></tr>
+<tr class="memitem:af314db1fa2cfba91a1d8f6f7de4a57c0" id="r_af314db1fa2cfba91a1d8f6f7de4a57c0"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#af314db1fa2cfba91a1d8f6f7de4a57c0">serializar</a> () const</td></tr>
+<tr class="memdesc:af314db1fa2cfba91a1d8f6f7de4a57c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializa os dados do curso em uma linha de texto delimitada por '|'.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Membros públicos estáticos</h2></td></tr>
+<tr class="memitem:a996cf27f1a81e933190d7ee2f075e9d3" id="r_a996cf27f1a81e933190d7ee2f075e9d3"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a996cf27f1a81e933190d7ee2f075e9d3">validarOpcaoCurso</a> (int opcao)</td></tr>
+<tr class="memdesc:a996cf27f1a81e933190d7ee2f075e9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida se a opcao numerica de curso e permitida (1 para CC ou 2 para SI).  <br /></td></tr>
+<tr class="memitem:a8fabb897f24bef45817c0e533fde0bf9" id="r_a8fabb897f24bef45817c0e533fde0bf9"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8fabb897f24bef45817c0e533fde0bf9">validarSemestreIngresso</a> (const std::string &amp;semIngresso)</td></tr>
+<tr class="memdesc:a8fabb897f24bef45817c0e533fde0bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida se o identificador do semestre de ingresso segue o formato AAAA/01 ou AAAA/02.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Atributos Públicos Estáticos</h2></td></tr>
+<tr class="memitem:a6d57c5bcf9e3e2c21d71cfb0213790e5" id="r_a6d57c5bcf9e3e2c21d71cfb0213790e5"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a6d57c5bcf9e3e2c21d71cfb0213790e5">OPCAO_CC</a> = 1</td></tr>
+<tr class="memitem:aae14a954b40039b740dda5565665589f" id="r_aae14a954b40039b740dda5565665589f"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#aae14a954b40039b740dda5565665589f">OPCAO_SI</a> = 2</td></tr>
+<tr class="memitem:a765473a1109741c2634cfae9d06e5bc3" id="r_a765473a1109741c2634cfae9d06e5bc3"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a765473a1109741c2634cfae9d06e5bc3">ANO_REFORMA_CC</a> = 2025</td></tr>
+<tr class="memitem:af3c4334f1762b08717d6608557137538" id="r_af3c4334f1762b08717d6608557137538"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#af3c4334f1762b08717d6608557137538">HORAS_OBRIG_CC_ANTIGO</a> = 2040</td></tr>
+<tr class="memitem:a7904e239bad3a279dc0a44bdeb51a42a" id="r_a7904e239bad3a279dc0a44bdeb51a42a"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a7904e239bad3a279dc0a44bdeb51a42a">HORAS_OPT_CC_ANTIGO</a> = 1020</td></tr>
+<tr class="memitem:a0b4a0d24e1325ddf6ce237bfc6bc7de4" id="r_a0b4a0d24e1325ddf6ce237bfc6bc7de4"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a0b4a0d24e1325ddf6ce237bfc6bc7de4">HORAS_LIVRE_CC_ANTIGO</a> = 60</td></tr>
+<tr class="memitem:ae243413b9f635cfcf47250c28a2dc119" id="r_ae243413b9f635cfcf47250c28a2dc119"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#ae243413b9f635cfcf47250c28a2dc119">HORAS_ADIC_CC_ANTIGO</a> = 120</td></tr>
+<tr class="memitem:a89fae1b9bac54a57897fa106a40e9a17" id="r_a89fae1b9bac54a57897fa106a40e9a17"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a89fae1b9bac54a57897fa106a40e9a17">HORAS_TOTAIS_CC_ANTIGO</a> = 3240</td></tr>
+<tr class="memitem:a7108e6320bbc5f8a7934d140cf43ba81" id="r_a7108e6320bbc5f8a7934d140cf43ba81"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a7108e6320bbc5f8a7934d140cf43ba81">HORAS_OBRIG_CC_NOVO</a> = 1980</td></tr>
+<tr class="memitem:a17a31f57d7fa95361c80c1b356109edd" id="r_a17a31f57d7fa95361c80c1b356109edd"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a17a31f57d7fa95361c80c1b356109edd">HORAS_OPT_CC_NOVO</a> = 1110</td></tr>
+<tr class="memitem:aa426caa533903f979f41d496d80793a1" id="r_aa426caa533903f979f41d496d80793a1"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#aa426caa533903f979f41d496d80793a1">HORAS_LIVRE_CC_NOVO</a> = 120</td></tr>
+<tr class="memitem:a8f605e7abe592ed6655b49cca9610650" id="r_a8f605e7abe592ed6655b49cca9610650"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a8f605e7abe592ed6655b49cca9610650">HORAS_ADIC_CC_NOVO</a> = 0</td></tr>
+<tr class="memitem:aa8bb88ca44677819bc6c463d6551709d" id="r_aa8bb88ca44677819bc6c463d6551709d"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#aa8bb88ca44677819bc6c463d6551709d">HORAS_TOTAIS_CC_NOVO</a> = 3210</td></tr>
+<tr class="memitem:ac1e2dcc01bd2908ec954596813fd7e47" id="r_ac1e2dcc01bd2908ec954596813fd7e47"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#ac1e2dcc01bd2908ec954596813fd7e47">HORAS_OBRIG_SI</a> = 2100</td></tr>
+<tr class="memitem:aa52ad44ca35219bfbf15657088e0b3ef" id="r_aa52ad44ca35219bfbf15657088e0b3ef"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#aa52ad44ca35219bfbf15657088e0b3ef">HORAS_OPT_SI</a> = 780</td></tr>
+<tr class="memitem:ae139ebeadd9c44bb0125bbdd8a8d6e99" id="r_ae139ebeadd9c44bb0125bbdd8a8d6e99"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#ae139ebeadd9c44bb0125bbdd8a8d6e99">HORAS_LIVRE_SI</a> = 120</td></tr>
+<tr class="memitem:a2c1d5e8aede50cb210111f549dfd8394" id="r_a2c1d5e8aede50cb210111f549dfd8394"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a2c1d5e8aede50cb210111f549dfd8394">HORAS_ADIC_SI</a> = 0</td></tr>
+<tr class="memitem:a011ab4e7253fe114e9f0c1a6359c9ef9" id="r_a011ab4e7253fe114e9f0c1a6359c9ef9"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a011ab4e7253fe114e9f0c1a6359c9ef9">HORAS_TOTAIS_SI</a> = 3000</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Membros privados</h2></td></tr>
+<tr class="memitem:afeab478167b790acfb25c08796161f9a" id="r_afeab478167b790acfb25c08796161f9a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afeab478167b790acfb25c08796161f9a">configurarHorasPorCurriculo</a> ()</td></tr>
+<tr class="memdesc:afeab478167b790acfb25c08796161f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o nome do curso e distribui as cargas horarias de acordo com o curriculo.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
+<tr class="memitem:ac6334fc85cb597ff9b4d4376ee247315" id="r_ac6334fc85cb597ff9b4d4376ee247315"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac6334fc85cb597ff9b4d4376ee247315">_opcaoCurso</a></td></tr>
 <tr class="memitem:a677a7f53414b654f3111e8ad4b0f6c48" id="r_a677a7f53414b654f3111e8ad4b0f6c48"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a677a7f53414b654f3111e8ad4b0f6c48">_nome</a></td></tr>
-<tr class="memdesc:a677a7f53414b654f3111e8ad4b0f6c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nome do curso (ex: "Ciência da Computação").  <br /></td></tr>
-<tr class="memitem:a26c1008274b11e2d4e018e8a296c72c8" id="r_a26c1008274b11e2d4e018e8a296c72c8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a26c1008274b11e2d4e018e8a296c72c8">_horasObrigatorias</a></td></tr>
-<tr class="memdesc:a26c1008274b11e2d4e018e8a296c72c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horas exigidas em disciplinas obrigatórias.  <br /></td></tr>
-<tr class="memitem:a462df0679cd4c3211d40996267abb12a" id="r_a462df0679cd4c3211d40996267abb12a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a462df0679cd4c3211d40996267abb12a">_horasOptativas</a></td></tr>
-<tr class="memdesc:a462df0679cd4c3211d40996267abb12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horas exigidas em disciplinas optativas.  <br /></td></tr>
-<tr class="memitem:a6ce6b591154426a5428fd154e8c9a2e8" id="r_a6ce6b591154426a5428fd154e8c9a2e8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a6ce6b591154426a5428fd154e8c9a2e8">_horasFormacaoLivre</a></td></tr>
-<tr class="memdesc:a6ce6b591154426a5428fd154e8c9a2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horas exigidas em formação livre.  <br /></td></tr>
-<tr class="memitem:ad2377d986bbdddfb5ea062ad7246263b" id="r_ad2377d986bbdddfb5ea062ad7246263b"><td class="memItemLeft">std::vector&lt; <a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad2377d986bbdddfb5ea062ad7246263b">_semestresConsolidados</a></td></tr>
-<tr class="memdesc:ad2377d986bbdddfb5ea062ad7246263b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista ordenada de semestres consolidados.  <br /></td></tr>
+<tr class="memitem:a48408832a3e0545367a19e98182b969c" id="r_a48408832a3e0545367a19e98182b969c"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a48408832a3e0545367a19e98182b969c">_semestreIngresso</a></td></tr>
+<tr class="memitem:a2566ff4421c70a8531322fe0b88559ee" id="r_a2566ff4421c70a8531322fe0b88559ee"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2566ff4421c70a8531322fe0b88559ee">_horasTotaisObrigatorias</a></td></tr>
+<tr class="memitem:a7bc639ffb42d9ca46cec1d76021bda4d" id="r_a7bc639ffb42d9ca46cec1d76021bda4d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7bc639ffb42d9ca46cec1d76021bda4d">_horasTotaisOptativas</a></td></tr>
+<tr class="memitem:a25be99bd668324d42925dc75da084d97" id="r_a25be99bd668324d42925dc75da084d97"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a25be99bd668324d42925dc75da084d97">_horasTotaisFormacaoLivre</a></td></tr>
+<tr class="memitem:a27f82eca5cfd8b51b70ff861f8a1d62b" id="r_a27f82eca5cfd8b51b70ff861f8a1d62b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a27f82eca5cfd8b51b70ff861f8a1d62b">_horasAdicionais</a></td></tr>
+<tr class="memitem:ac1be7579915c99dfed9d6df695133f8c" id="r_ac1be7579915c99dfed9d6df695133f8c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac1be7579915c99dfed9d6df695133f8c">_horasTotaisCurso</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Representa o curso do estudante. </p>
-<p>Armazena os limites curriculares de horas (obrigatórias, optativas e formação livre) e o histórico de semestres consolidados. </p>
+<div class="textblock"><p>Representa o curso de graduacao do estudante e guarda as suas metas de carga horaria. </p>
+<p>Configura automaticamente as horas exigidas (obrigatorias, optativas, formacao livre e adicionais) no momento da construcao com base na opcao do curso (Ciencia da Computacao ou Sistemas de Informacao) e no ano do semestre de ingresso. Segue o principio RAII: nasce completo e imutavel. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
-<a id="a92d0bb778c24a6cf7f41cc7a6998ad5f" name="a92d0bb778c24a6cf7f41cc7a6998ad5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92d0bb778c24a6cf7f41cc7a6998ad5f">&#9670;&#160;</a></span>Curso()</h2>
+<a id="af9a3dfab024ccf2f92c1b4475046c640" name="af9a3dfab024ccf2f92c1b4475046c640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a3dfab024ccf2f92c1b4475046c640">&#9670;&#160;</a></span>Curso()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,34 +205,27 @@ Atributos Privados</h2></td></tr>
         <tr>
           <td class="memname">Curso::Curso </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>opcaoCurso</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasObrigatorias</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasOptativas</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horasFormacaoLivre</em></span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>semestreIngresso</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construtor do curso. </p>
-<p>A lista de semestres consolidados começa vazia.</p>
+<p>Construtor parametrizado que valida e inicializa definitivamente o curso (RAII). </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome do curso. </td></tr>
-    <tr><td class="paramname">horasObrigatorias</td><td>Horas exigidas em obrigatórias. </td></tr>
-    <tr><td class="paramname">horasOptativas</td><td>Horas exigidas em optativas. </td></tr>
-    <tr><td class="paramname">horasFormacaoLivre</td><td>Horas exigidas em formação livre. </td></tr>
+    <tr><td class="paramname">opcaoCurso</td><td>Codigo do curso (1 para Ciencia da Computacao, 2 para Sistemas de Informacao). </td></tr>
+    <tr><td class="paramname">semestreIngresso</td><td>Identificador do semestre de ingresso (formato "AAAA/01" ou "AAAA/02"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a opcao de curso ou o formato do semestre forem invalidos. </td></tr>
   </table>
   </dd>
 </dl>
@@ -224,65 +233,41 @@ Atributos Privados</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
-<a id="ac46f70496845f302d2d21a0ea051b630" name="ac46f70496845f302d2d21a0ea051b630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac46f70496845f302d2d21a0ea051b630">&#9670;&#160;</a></span>adicionarSemestreConsolidado()</h2>
+<a id="afeab478167b790acfb25c08796161f9a" name="afeab478167b790acfb25c08796161f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeab478167b790acfb25c08796161f9a">&#9670;&#160;</a></span>configurarHorasPorCurriculo()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Curso::adicionarSemestreConsolidado </td>
+          <td class="memname">void Curso::configurarHorasPorCurriculo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a></td>          <td class="paramname"><span class="paramname"><em>sem</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Adiciona um semestre consolidado à lista. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sem</td><td>Semestre consolidado a ser adicionado. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Define o nome do curso e distribui as cargas horarias de acordo com o curriculo. </p>
 
 </div>
 </div>
-<a id="a51640d91a33702bbd29dea20cc47b941" name="a51640d91a33702bbd29dea20cc47b941"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51640d91a33702bbd29dea20cc47b941">&#9670;&#160;</a></span>calcularPercentualCategoria()</h2>
+<a id="a699a2544ad8d093430ec927fc200153e" name="a699a2544ad8d093430ec927fc200153e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699a2544ad8d093430ec927fc200153e">&#9670;&#160;</a></span>getHorasAdicionais()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Curso::calcularPercentualCategoria </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_categoria_disciplina_8hpp.html#a2ff0d7140937a4b0be3fce0a8df55f9d">CategoriaDisciplina</a></td>          <td class="paramname"><span class="paramname"><em>categoria</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calcula o percentual de integralização de uma categoria. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">categoria</td><td>Categoria curricular a ser avaliada. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>(horas cursadas na categoria / horas exigidas da categoria) * 100, limitado ao máximo de 100.0. </dd></dl>
-
-</div>
-</div>
-<a id="aabed7a9fe6fc913af1ed3764b00f03a7" name="aabed7a9fe6fc913af1ed3764b00f03a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabed7a9fe6fc913af1ed3764b00f03a7">&#9670;&#160;</a></span>calcularPercentualIntegralizacao()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Curso::calcularPercentualIntegralizacao </td>
+          <td class="memname">int Curso::getHorasAdicionais </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -290,19 +275,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calcula o percentual de integralização do curso. </p>
-<dl class="section return"><dt>Retorna</dt><dd>(total de horas cursadas / <a class="el" href="#aeeb23e54d54bc4149f0d72a5d5cc7ffa" title="Retorna o total de horas exigidas pelo curso.">getTotalHorasExigidas()</a>) * 100. </dd></dl>
+<p>Obtem o total de horas adicionais exigidas pelo curriculo do curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Carga horaria adicional em horas. </dd></dl>
 
 </div>
 </div>
-<a id="a3ad353980a1995382cd530e5403fc268" name="a3ad353980a1995382cd530e5403fc268"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ad353980a1995382cd530e5403fc268">&#9670;&#160;</a></span>gerarDadosGrafico()</h2>
+<a id="ae42f37688730fe89e06cfeac4e8a38a5" name="ae42f37688730fe89e06cfeac4e8a38a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae42f37688730fe89e06cfeac4e8a38a5">&#9670;&#160;</a></span>getHorasTotaisCurso()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="struct_ponto_grafico.html">PontoGrafico</a> &gt; Curso::gerarDadosGrafico </td>
+          <td class="memname">int Curso::getHorasTotaisCurso </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -310,20 +295,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gera os dados para o gráfico de evolução do NSG. </p>
-<p>Retorna pares (período, NSG) de cada semestre consolidado, filtrando os semestres com NSG == 0.</p>
-<dl class="section return"><dt>Retorna</dt><dd>Vetor de <a class="el" href="struct_ponto_grafico.html" title="Armazena os dados de um ponto do gráfico de evolução de desempenho.">PontoGrafico</a>; vazio se não houver semestres consolidados. </dd></dl>
+<p>Obtem a carga horaria total exigida para a conclusao do curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Carga horaria total do curso em horas. </dd></dl>
 
 </div>
 </div>
-<a id="a09fc26afad2da50ab2edbb6562999343" name="a09fc26afad2da50ab2edbb6562999343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09fc26afad2da50ab2edbb6562999343">&#9670;&#160;</a></span>getHorasFormacaoLivre()</h2>
+<a id="a4f587d337741aa0b397d8c8667a347c3" name="a4f587d337741aa0b397d8c8667a347c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f587d337741aa0b397d8c8667a347c3">&#9670;&#160;</a></span>getHorasTotaisFormacaoLivre()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Curso::getHorasFormacaoLivre </td>
+          <td class="memname">int Curso::getHorasTotaisFormacaoLivre </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -331,19 +315,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna as horas exigidas em formação livre. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Horas de formação livre exigidas. </dd></dl>
+<p>Obtem o total de horas de formacao livre exigidas pelo curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Carga horaria de formacao livre total em horas. </dd></dl>
 
 </div>
 </div>
-<a id="a9219003312df727c98c1f16d4fe0a8fe" name="a9219003312df727c98c1f16d4fe0a8fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9219003312df727c98c1f16d4fe0a8fe">&#9670;&#160;</a></span>getHorasObrigatorias()</h2>
+<a id="a42033a2d6e86049d71da612fa85d3d4c" name="a42033a2d6e86049d71da612fa85d3d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42033a2d6e86049d71da612fa85d3d4c">&#9670;&#160;</a></span>getHorasTotaisObrigatorias()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Curso::getHorasObrigatorias </td>
+          <td class="memname">int Curso::getHorasTotaisObrigatorias </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -351,19 +335,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna as horas exigidas em disciplinas obrigatórias. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Horas obrigatórias exigidas. </dd></dl>
+<p>Obtem o total de horas obrigatorias exigidas pelo curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Carga horaria obrigatoria total em horas. </dd></dl>
 
 </div>
 </div>
-<a id="a362f36c836e6ece34e5747311490a406" name="a362f36c836e6ece34e5747311490a406"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a362f36c836e6ece34e5747311490a406">&#9670;&#160;</a></span>getHorasOptativas()</h2>
+<a id="a505095b6901e91f7976f0c13e1df3314" name="a505095b6901e91f7976f0c13e1df3314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505095b6901e91f7976f0c13e1df3314">&#9670;&#160;</a></span>getHorasTotaisOptativas()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Curso::getHorasOptativas </td>
+          <td class="memname">int Curso::getHorasTotaisOptativas </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -371,8 +355,8 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna as horas exigidas em disciplinas optativas. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Horas optativas exigidas. </dd></dl>
+<p>Obtem o total de horas optativas exigidas pelo curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Carga horaria optativa total em horas. </dd></dl>
 
 </div>
 </div>
@@ -391,40 +375,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna o nome do curso. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Nome do curso. </dd></dl>
+<p>Obtem o nome do curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>String com o nome do curso ("Ciencia da Computacao" ou "Sistemas de Informacao"). </dd></dl>
 
 </div>
 </div>
-<a id="aad17d9d1c858b7c8aff15ad51dbb48aa" name="aad17d9d1c858b7c8aff15ad51dbb48aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad17d9d1c858b7c8aff15ad51dbb48aa">&#9670;&#160;</a></span>getSemestresConsolidados() <span class="overload">[1/2]</span></h2>
+<a id="aae204a908881245dc6ecfbd8385b312c" name="aae204a908881245dc6ecfbd8385b312c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae204a908881245dc6ecfbd8385b312c">&#9670;&#160;</a></span>getOpcaoCurso()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a> &gt; &amp; Curso::getSemestresConsolidados </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Acesso mutável à lista de semestres consolidados. </p>
-<p>Usado, por exemplo, para edição do NSG de um semestre.</p>
-<dl class="section return"><dt>Retorna</dt><dd>Referência ao vetor de semestres. </dd></dl>
-
-</div>
-</div>
-<a id="a77f1abd6ba92d7aca5a38a8d458592ce" name="a77f1abd6ba92d7aca5a38a8d458592ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77f1abd6ba92d7aca5a38a8d458592ce">&#9670;&#160;</a></span>getSemestresConsolidados() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a> &gt; &amp; Curso::getSemestresConsolidados </td>
+          <td class="memname">int Curso::getOpcaoCurso </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -432,19 +395,19 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Acesso somente leitura à lista de semestres consolidados. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Referência constante ao vetor de semestres. </dd></dl>
+<p>Obtem o codigo numerico da opcao de curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Inteiro representando a opcao (1 ou 2). </dd></dl>
 
 </div>
 </div>
-<a id="aeeb23e54d54bc4149f0d72a5d5cc7ffa" name="aeeb23e54d54bc4149f0d72a5d5cc7ffa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeb23e54d54bc4149f0d72a5d5cc7ffa">&#9670;&#160;</a></span>getTotalHorasExigidas()</h2>
+<a id="abe6a9c6dc7b0251a1d6e23fa6f27aec8" name="abe6a9c6dc7b0251a1d6e23fa6f27aec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe6a9c6dc7b0251a1d6e23fa6f27aec8">&#9670;&#160;</a></span>getSemestreIngresso()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Curso::getTotalHorasExigidas </td>
+          <td class="memname">std::string Curso::getSemestreIngresso </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -452,81 +415,103 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retorna o total de horas exigidas pelo curso. </p>
-<dl class="section return"><dt>Retorna</dt><dd>horasObrigatorias_ + horasOptativas_ + horasFormacaoLivre_. </dd></dl>
+<p>Obtem o semestre de ingresso do estudante no curso. </p>
+<dl class="section return"><dt>Retorna</dt><dd>String com o identificador do semestre de ingresso. </dd></dl>
 
 </div>
 </div>
-<a id="a811d0b5cd4fcb49b061e478320a466ed" name="a811d0b5cd4fcb49b061e478320a466ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a811d0b5cd4fcb49b061e478320a466ed">&#9670;&#160;</a></span>removerSemestreConsolidado()</h2>
+<a id="af314db1fa2cfba91a1d8f6f7de4a57c0" name="af314db1fa2cfba91a1d8f6f7de4a57c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af314db1fa2cfba91a1d8f6f7de4a57c0">&#9670;&#160;</a></span>serializar()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Curso::removerSemestreConsolidado </td>
+          <td class="memname">std::string Curso::serializar </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>indice</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remove o semestre consolidado no índice informado. </p>
+<p>Serializa os dados do curso em uma linha de texto delimitada por '|'. </p>
+<dl class="section return"><dt>Retorna</dt><dd>String no formato "CURSO|&lt;opcaoCurso&gt;|&lt;semestreIngresso&gt;". </dd></dl>
+
+</div>
+</div>
+<a id="a996cf27f1a81e933190d7ee2f075e9d3" name="a996cf27f1a81e933190d7ee2f075e9d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996cf27f1a81e933190d7ee2f075e9d3">&#9670;&#160;</a></span>validarOpcaoCurso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Curso::validarOpcaoCurso </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>opcao</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida se a opcao numerica de curso e permitida (1 para CC ou 2 para SI). </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">indice</td><td>Posição do semestre na lista. </td></tr>
+    <tr><td class="paramname">opcao</td><td>Codigo do curso a ser validado. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>true se removido com sucesso; false se o índice for inválido. </dd></dl>
-
-</div>
-</div>
-<a id="a14fe3a455727a18d351a8b01c07dc246" name="a14fe3a455727a18d351a8b01c07dc246"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14fe3a455727a18d351a8b01c07dc246">&#9670;&#160;</a></span>setHorasFormacaoLivre()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Curso::setHorasFormacaoLivre </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horas</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Altera as horas exigidas em formação livre. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">horas</td><td>Nova quantidade de horas. </td></tr>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a opcao for diferente de OPCAO_CC e OPCAO_SI. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="afe036248775d8e99dbafcd19f6bf18d4" name="afe036248775d8e99dbafcd19f6bf18d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe036248775d8e99dbafcd19f6bf18d4">&#9670;&#160;</a></span>setNome()</h2>
+<a id="a8fabb897f24bef45817c0e533fde0bf9" name="a8fabb897f24bef45817c0e533fde0bf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fabb897f24bef45817c0e533fde0bf9">&#9670;&#160;</a></span>validarSemestreIngresso()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Curso::setNome </td>
+          <td class="memname">void Curso::validarSemestreIngresso </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>nome</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>semIngresso</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Altera o nome do curso. </p>
+<p>Valida se o identificador do semestre de ingresso segue o formato AAAA/01 ou AAAA/02. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Novo nome. </td></tr>
+    <tr><td class="paramname">semIngresso</td><td>String do semestre de ingresso. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Se o formato do semestre for invalido. </td></tr>
   </table>
   </dd>
 </dl>
@@ -534,8 +519,8 @@ Atributos Privados</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
-<a id="a6ce6b591154426a5428fd154e8c9a2e8" name="a6ce6b591154426a5428fd154e8c9a2e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ce6b591154426a5428fd154e8c9a2e8">&#9670;&#160;</a></span>_horasFormacaoLivre</h2>
+<a id="a27f82eca5cfd8b51b70ff861f8a1d62b" name="a27f82eca5cfd8b51b70ff861f8a1d62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f82eca5cfd8b51b70ff861f8a1d62b">&#9670;&#160;</a></span>_horasAdicionais</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -544,7 +529,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Curso::_horasFormacaoLivre</td>
+          <td class="memname">int Curso::_horasAdicionais</td>
         </tr>
       </table>
   </td>
@@ -553,13 +538,12 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Horas exigidas em formação livre. </p>
+<p>Carga horaria adicional exigida pelo curriculo (quando aplicavel). </p>
 
 </div>
 </div>
-<a id="a26c1008274b11e2d4e018e8a296c72c8" name="a26c1008274b11e2d4e018e8a296c72c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26c1008274b11e2d4e018e8a296c72c8">&#9670;&#160;</a></span>_horasObrigatorias</h2>
+<a id="ac1be7579915c99dfed9d6df695133f8c" name="ac1be7579915c99dfed9d6df695133f8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1be7579915c99dfed9d6df695133f8c">&#9670;&#160;</a></span>_horasTotaisCurso</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -568,7 +552,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Curso::_horasObrigatorias</td>
+          <td class="memname">int Curso::_horasTotaisCurso</td>
         </tr>
       </table>
   </td>
@@ -577,13 +561,12 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Horas exigidas em disciplinas obrigatórias. </p>
+<p>Carga horaria total necessaria para a integralizacao do curso. </p>
 
 </div>
 </div>
-<a id="a462df0679cd4c3211d40996267abb12a" name="a462df0679cd4c3211d40996267abb12a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a462df0679cd4c3211d40996267abb12a">&#9670;&#160;</a></span>_horasOptativas</h2>
+<a id="a25be99bd668324d42925dc75da084d97" name="a25be99bd668324d42925dc75da084d97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25be99bd668324d42925dc75da084d97">&#9670;&#160;</a></span>_horasTotaisFormacaoLivre</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,7 +575,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Curso::_horasOptativas</td>
+          <td class="memname">int Curso::_horasTotaisFormacaoLivre</td>
         </tr>
       </table>
   </td>
@@ -601,8 +584,53 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Carga horaria total exigida em disciplinas de formacao livre. </p>
 
-<p>Horas exigidas em disciplinas optativas. </p>
+</div>
+</div>
+<a id="a2566ff4421c70a8531322fe0b88559ee" name="a2566ff4421c70a8531322fe0b88559ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2566ff4421c70a8531322fe0b88559ee">&#9670;&#160;</a></span>_horasTotaisObrigatorias</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::_horasTotaisObrigatorias</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Carga horaria total exigida em disciplinas obrigatorias. </p>
+
+</div>
+</div>
+<a id="a7bc639ffb42d9ca46cec1d76021bda4d" name="a7bc639ffb42d9ca46cec1d76021bda4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc639ffb42d9ca46cec1d76021bda4d">&#9670;&#160;</a></span>_horasTotaisOptativas</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::_horasTotaisOptativas</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Carga horaria total exigida em disciplinas optativas. </p>
 
 </div>
 </div>
@@ -625,13 +653,12 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Nome do curso (ex: "Ciência da Computação"). </p>
+<p>Nome por extenso do curso. </p>
 
 </div>
 </div>
-<a id="ad2377d986bbdddfb5ea062ad7246263b" name="ad2377d986bbdddfb5ea062ad7246263b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2377d986bbdddfb5ea062ad7246263b">&#9670;&#160;</a></span>_semestresConsolidados</h2>
+<a id="ac6334fc85cb597ff9b4d4376ee247315" name="ac6334fc85cb597ff9b4d4376ee247315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6334fc85cb597ff9b4d4376ee247315">&#9670;&#160;</a></span>_opcaoCurso</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -640,7 +667,7 @@ Atributos Privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_semestre_consolidado.html">SemestreConsolidado</a>&gt; Curso::_semestresConsolidados</td>
+          <td class="memname">int Curso::_opcaoCurso</td>
         </tr>
       </table>
   </td>
@@ -649,13 +676,450 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Lista ordenada de semestres consolidados. </p>
+<p>Codigo da opcao de curso (1 = CC, 2 = SI). </p>
 
 </div>
 </div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<a id="a48408832a3e0545367a19e98182b969c" name="a48408832a3e0545367a19e98182b969c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48408832a3e0545367a19e98182b969c">&#9670;&#160;</a></span>_semestreIngresso</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Curso::_semestreIngresso</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_semestre.html" title="Classe base abstrata que representa um semestre letivo.">Semestre</a> de ingresso no formato "AAAA/01" ou "AAAA/02". </p>
+
+</div>
+</div>
+<a id="a765473a1109741c2634cfae9d06e5bc3" name="a765473a1109741c2634cfae9d06e5bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765473a1109741c2634cfae9d06e5bc3">&#9670;&#160;</a></span>ANO_REFORMA_CC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::ANO_REFORMA_CC = 2025</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Ano de inicio do novo curriculo de CC. </p>
+
+</div>
+</div>
+<a id="ae243413b9f635cfcf47250c28a2dc119" name="ae243413b9f635cfcf47250c28a2dc119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae243413b9f635cfcf47250c28a2dc119">&#9670;&#160;</a></span>HORAS_ADIC_CC_ANTIGO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_ADIC_CC_ANTIGO = 120</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas adicionais de CC (ingresso &lt; 2025). </p>
+
+</div>
+</div>
+<a id="a8f605e7abe592ed6655b49cca9610650" name="a8f605e7abe592ed6655b49cca9610650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f605e7abe592ed6655b49cca9610650">&#9670;&#160;</a></span>HORAS_ADIC_CC_NOVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_ADIC_CC_NOVO = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas adicionais de CC (ingresso &gt;= 2025). </p>
+
+</div>
+</div>
+<a id="a2c1d5e8aede50cb210111f549dfd8394" name="a2c1d5e8aede50cb210111f549dfd8394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1d5e8aede50cb210111f549dfd8394">&#9670;&#160;</a></span>HORAS_ADIC_SI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_ADIC_SI = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas adicionais de SI. </p>
+
+</div>
+</div>
+<a id="a0b4a0d24e1325ddf6ce237bfc6bc7de4" name="a0b4a0d24e1325ddf6ce237bfc6bc7de4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4a0d24e1325ddf6ce237bfc6bc7de4">&#9670;&#160;</a></span>HORAS_LIVRE_CC_ANTIGO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_LIVRE_CC_ANTIGO = 60</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas de formacao livre de CC (ingresso &lt; 2025). </p>
+
+</div>
+</div>
+<a id="aa426caa533903f979f41d496d80793a1" name="aa426caa533903f979f41d496d80793a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa426caa533903f979f41d496d80793a1">&#9670;&#160;</a></span>HORAS_LIVRE_CC_NOVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_LIVRE_CC_NOVO = 120</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas de formacao livre de CC (ingresso &gt;= 2025). </p>
+
+</div>
+</div>
+<a id="ae139ebeadd9c44bb0125bbdd8a8d6e99" name="ae139ebeadd9c44bb0125bbdd8a8d6e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae139ebeadd9c44bb0125bbdd8a8d6e99">&#9670;&#160;</a></span>HORAS_LIVRE_SI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_LIVRE_SI = 120</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas de formacao livre de SI. </p>
+
+</div>
+</div>
+<a id="af3c4334f1762b08717d6608557137538" name="af3c4334f1762b08717d6608557137538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3c4334f1762b08717d6608557137538">&#9670;&#160;</a></span>HORAS_OBRIG_CC_ANTIGO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_OBRIG_CC_ANTIGO = 2040</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas obrigatorias de CC (ingresso &lt; 2025). </p>
+
+</div>
+</div>
+<a id="a7108e6320bbc5f8a7934d140cf43ba81" name="a7108e6320bbc5f8a7934d140cf43ba81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7108e6320bbc5f8a7934d140cf43ba81">&#9670;&#160;</a></span>HORAS_OBRIG_CC_NOVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_OBRIG_CC_NOVO = 1980</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas obrigatorias de CC (ingresso &gt;= 2025). </p>
+
+</div>
+</div>
+<a id="ac1e2dcc01bd2908ec954596813fd7e47" name="ac1e2dcc01bd2908ec954596813fd7e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1e2dcc01bd2908ec954596813fd7e47">&#9670;&#160;</a></span>HORAS_OBRIG_SI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_OBRIG_SI = 2100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas obrigatorias de SI. </p>
+
+</div>
+</div>
+<a id="a7904e239bad3a279dc0a44bdeb51a42a" name="a7904e239bad3a279dc0a44bdeb51a42a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7904e239bad3a279dc0a44bdeb51a42a">&#9670;&#160;</a></span>HORAS_OPT_CC_ANTIGO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_OPT_CC_ANTIGO = 1020</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas optativas de CC (ingresso &lt; 2025). </p>
+
+</div>
+</div>
+<a id="a17a31f57d7fa95361c80c1b356109edd" name="a17a31f57d7fa95361c80c1b356109edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a31f57d7fa95361c80c1b356109edd">&#9670;&#160;</a></span>HORAS_OPT_CC_NOVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_OPT_CC_NOVO = 1110</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas optativas de CC (ingresso &gt;= 2025). </p>
+
+</div>
+</div>
+<a id="aa52ad44ca35219bfbf15657088e0b3ef" name="aa52ad44ca35219bfbf15657088e0b3ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52ad44ca35219bfbf15657088e0b3ef">&#9670;&#160;</a></span>HORAS_OPT_SI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_OPT_SI = 780</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Horas optativas de SI. </p>
+
+</div>
+</div>
+<a id="a89fae1b9bac54a57897fa106a40e9a17" name="a89fae1b9bac54a57897fa106a40e9a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89fae1b9bac54a57897fa106a40e9a17">&#9670;&#160;</a></span>HORAS_TOTAIS_CC_ANTIGO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_TOTAIS_CC_ANTIGO = 3240</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Total de horas de CC (ingresso &lt; 2025). </p>
+
+</div>
+</div>
+<a id="aa8bb88ca44677819bc6c463d6551709d" name="aa8bb88ca44677819bc6c463d6551709d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8bb88ca44677819bc6c463d6551709d">&#9670;&#160;</a></span>HORAS_TOTAIS_CC_NOVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_TOTAIS_CC_NOVO = 3210</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Total de horas de CC (ingresso &gt;= 2025). </p>
+
+</div>
+</div>
+<a id="a011ab4e7253fe114e9f0c1a6359c9ef9" name="a011ab4e7253fe114e9f0c1a6359c9ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a011ab4e7253fe114e9f0c1a6359c9ef9">&#9670;&#160;</a></span>HORAS_TOTAIS_SI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::HORAS_TOTAIS_SI = 3000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Total de horas de SI. </p>
+
+</div>
+</div>
+<a id="a6d57c5bcf9e3e2c21d71cfb0213790e5" name="a6d57c5bcf9e3e2c21d71cfb0213790e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d57c5bcf9e3e2c21d71cfb0213790e5">&#9670;&#160;</a></span>OPCAO_CC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::OPCAO_CC = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Codigo da opcao Ciencia da Computacao. </p>
+
+</div>
+</div>
+<a id="aae14a954b40039b740dda5565665589f" name="aae14a954b40039b740dda5565665589f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae14a954b40039b740dda5565665589f">&#9670;&#160;</a></span>OPCAO_SI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Curso::OPCAO_SI = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Codigo da opcao Sistemas de Informacao. </p>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>include/<a class="el" href="_curso_8hpp_source.html">Curso.hpp</a></li>
+<li>src/<a class="el" href="_curso_8cpp.html">Curso.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -671,7 +1135,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a href="class_curso.html">Curso</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
 </body>
