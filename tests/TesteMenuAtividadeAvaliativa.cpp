@@ -142,4 +142,53 @@ TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [positivo] cria atividad
     CHECK(contem(r.saida, "Atividade 'Prova 1' adicionada com sucesso!"));
 }
 
+TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [positivo] grava nome, data e valor informados")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "1\n1\nProva 1\n15/03\n10\n");
+
+    REQUIRE(c.totalAtividades() == 1);
+    const AtividadeAvaliativa& a = c.disciplina()->avaliacoes().getAtividades()[0];
+    CHECK(a.getNome() == "Prova 1");
+    CHECK(a.getData().getDataValidada() == "15/03");
+    CHECK(a.getValorMaximo() == doctest::Approx(10.0f));
+    CHECK_FALSE(a.isConcluida());
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [positivo] permanece no menu")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n1\nProva 1\n15/03\n10\n");
+    CHECK(r.proximo == &menu);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [negativo] nome invalido e pedido novamente")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+    const std::string nomeLongo(200, 'N');
+
+    Resultado r = executar(menu, "1\n1\n" + nomeLongo + "\nProva 1\n15/03\n10\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    REQUIRE(c.totalAtividades() == 1);
+    CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getNome() == "Prova 1");
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [negativo] data invalida e pedida novamente")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n1\nProva 1\n32/13\n15/03\n10\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    REQUIRE(c.totalAtividades() == 1);
+    CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getData().getDataValidada() == "15/03");
+}
+
 
