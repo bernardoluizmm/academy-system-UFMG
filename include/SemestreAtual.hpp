@@ -34,11 +34,12 @@ public:
     /**
          * @brief Calcula o NSG ponderado pela carga horária.
          *
-          * Disciplinas sem atividades concluídas são ignoradas no cálculo.
+         * Disciplinas sem atividades concluídas são ignoradas no cálculo.
          * @return NSG entre 0 e 100 (0 se não houver disciplinas).
+         */
     virtual float calcularNSG() const override;
 
-    **
+    /**
      * @brief Soma as horas integralizadas do semestre (obrigatorias + optativas + formacao livre).
      * @return Total de horas integralizadas.
      * @see getHorasObrigatorias

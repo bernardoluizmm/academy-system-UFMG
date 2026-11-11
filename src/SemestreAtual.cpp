@@ -151,7 +151,7 @@ const Disciplina* SemestreAtual::buscarDisciplina(int idDisciplina) const
         }
     }
    return nullptr;
-+}
+}
 
 const std::vector<Disciplina>& SemestreAtual::getDisciplinas() const 
 {
