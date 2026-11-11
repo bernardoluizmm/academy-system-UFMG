@@ -306,3 +306,28 @@ TEST_CASE("Disciplina::setCargaHoraria [positivo] recalcula o limite de faltas")
     d.setCargaHoraria(90);
     CHECK(d.frequencia().getMaxFaltas() == CalculadorMaxFaltas::calcularDiasMaximosFalta(90, 50));
 }
+
+TEST_CASE("Disciplina::setCargaHoraria [negativo] valor invalido lanca excecao e preserva carga e limite")
+{
+    Disciplina d = criarDisciplinaValida();
+    const int limiteAntes = d.frequencia().getMaxFaltas();
+
+    CHECK_THROWS_AS(d.setCargaHoraria(20), std::invalid_argument);
+    CHECK(d.getCargaHoraria() == 60);
+    CHECK(d.frequencia().getMaxFaltas() == limiteAntes);
+}
+
+TEST_CASE("Disciplina::setDuracaoAulaMinutos [positivo] altera a duracao")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setDuracaoAulaMinutos(100);
+    CHECK(d.getDuracaoAulaMinutos() == 100);
+}
+
+TEST_CASE("Disciplina::setDuracaoAulaMinutos [positivo] recalcula o limite de faltas")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setDuracaoAulaMinutos(100);
+    CHECK(d.frequencia().getMaxFaltas() == CalculadorMaxFaltas::calcularDiasMaximosFalta(60, 100));
+}
+
