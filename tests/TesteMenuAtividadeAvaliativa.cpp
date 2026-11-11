@@ -66,3 +66,34 @@ Resultado executar(Menu& menu, const std::string& entrada)
     {
         return texto.find(trecho) != std::string::npos;
     }
+     struct Cenario
+    {
+        SemestreAtual semestre;
+
+        explicit Cenario(bool comAtividade = false)
+            : semestre("2026/01")
+        {
+            semestre.adicionarDisciplina("COD001", "T1", "Programacao", "Prof. Ana", "Sala 101",
+                                         60, 50, "Obrigatoria", "Seg 10h");
+            if (comAtividade)
+            {
+                disciplina()->avaliacoes().adicionarAtividade(1, "Prova 1", "15/03", 10.0f, 0.0f, false);
+            }
+        }
+
+        Disciplina* disciplina()
+        {
+            return semestre.buscarDisciplina(1);
+        }
+
+        AtividadeAvaliativa* atividade()
+        {
+            return disciplina()->avaliacoes().buscarAtividade(1);
+        }
+
+        int totalAtividades()
+        {
+            return static_cast<int>(disciplina()->avaliacoes().getAtividades().size());
+        }
+    };
+}
