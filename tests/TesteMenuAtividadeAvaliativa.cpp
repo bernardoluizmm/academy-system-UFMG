@@ -413,3 +413,20 @@ TEST_CASE("MenuAtividadeAvaliativa - editar com opcao invalida mostra erro")
     Resultado r = executar(menu, "3\n1\n1\n9\n0\n");
     CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 5."));
 }
+TEST_CASE("MenuAtividadeAvaliativa - apagar em disciplina sem atividades mostra aviso")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "4\n1\n");
+    CHECK(contem(r.saida, "[AVISO] Esta disciplina nao possui atividades cadastradas."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa - apagar com ID 0 cancela sem apagar")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "4\n1\n0\n");
+    CHECK(c.totalAtividades() == 1);
+}
