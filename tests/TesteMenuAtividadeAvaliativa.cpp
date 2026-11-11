@@ -97,3 +97,30 @@ Resultado executar(Menu& menu, const std::string& entrada)
         }
     };
 }
+TEST_CASE("MenuAtividadeAvaliativa - constroi com um semestre")
+{
+    SemestreAtual semestre("2026/01");
+    CHECK_NOTHROW(MenuAtividadeAvaliativa menu(semestre));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa - exibir mostra titulo e opcoes")
+{
+    SemestreAtual semestre("2026/01");
+    MenuAtividadeAvaliativa menu(semestre);
+    std::string saida = exibirMenu(menu);
+
+    CHECK(contem(saida, "GERENCIAMENTO DE ATIVIDADES AVALIATIVAS"));
+    CHECK(contem(saida, "1 - Criar nova atividade avaliativa"));
+    CHECK(contem(saida, "2 - Lancar / Atualizar nota obtida em atividade"));
+    CHECK(contem(saida, "3 - Editar atividade avaliativa existente"));
+    CHECK(contem(saida, "4 - Apagar atividade avaliativa existente"));
+    CHECK(contem(saida, "0 - Voltar ao Menu Principal"));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa - exibir com semestre vazio mostra aviso")
+{
+    SemestreAtual semestre("2026/01");
+    MenuAtividadeAvaliativa menu(semestre);
+
+    CHECK(contem(exibirMenu(menu), "Nenhuma disciplina cadastrada no semestre atual."));
+}
