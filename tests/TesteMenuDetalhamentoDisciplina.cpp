@@ -80,3 +80,9 @@ namespace
         disciplina->avaliacoes().adicionarAtividade(idAtividade, "Prova 1", "15/03", valor, nota, concluida);
     }
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - constroi com um semestre")
+{
+    SemestreAtual semestre("2026/01");
+    CHECK_NOTHROW(MenuDetalhamentoDisciplina menu(semestre));
+}
