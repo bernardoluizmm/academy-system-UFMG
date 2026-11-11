@@ -191,4 +191,42 @@ TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [negativo] data invalida
     CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getData().getDataValidada() == "15/03");
 }
 
+TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [negativo] valor invalido e pedido novamente")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n1\nProva 1\n15/03\n-5\n10\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    REQUIRE(c.totalAtividades() == 1);
+    CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getValorMaximo() == doctest::Approx(10.0f));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoLancarNota [limite] disciplina sem atividades mostra aviso")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n");
+    CHECK(contem(r.saida, "[AVISO] Esta disciplina nao possui atividades cadastradas."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoLancarNota [limite] ID 0 cancela sem lancar nota")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "2\n1\n0\n");
+    CHECK_FALSE(c.atividade()->isConcluida());
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoLancarNota [negativo] atividade inexistente mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n999\n");
+    CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
+}
 
