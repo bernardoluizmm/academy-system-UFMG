@@ -230,3 +230,74 @@ TEST_CASE("MenuAtividadeAvaliativa::fluxoLancarNota [negativo] atividade inexist
     CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
 }
 
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoLancarNota [positivo] lanca nota valida")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n" + c.id() + "\n8\n");
+
+    CHECK(contem(r.saida, "Nota lancada com sucesso!"));
+    CHECK(c.atividade()->isConcluida());
+    CHECK(c.atividade()->getNotaObtida() == doctest::Approx(8.0f));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoLancarNota [negativo] nota acima do valor maximo e pedida novamente")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "2\n1\n" + c.id() + "\n15\n8\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    CHECK(c.atividade()->getNotaObtida() == doctest::Approx(8.0f));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [limite] disciplina sem atividades mostra aviso")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n");
+    CHECK(contem(r.saida, "[AVISO] Esta disciplina nao possui atividades cadastradas."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [limite] ID 0 cancela a edicao")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n0\n");
+    CHECK_FALSE(contem(r.saida, "EDITANDO ATIVIDADE"));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [negativo] atividade inexistente mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n999\n");
+    CHECK(contem(r.saida, "[ERRO] Atividade com ID 999 nao encontrada."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] exibe o submenu de edicao")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n" + c.id() + "\n0\n");
+    CHECK(contem(r.saida, "--- EDITANDO ATIVIDADE [" + c.id() + "] Prova 1 ---"));
+    CHECK(contem(r.saida, "5 - Remover lancamento de nota (marcar como Pendente)"));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoEditarAtividade [positivo] opcao 1 altera o nome")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n" + c.id() + "\n1\nProva Final\n0\n");
+
+    CHECK(contem(r.saida, "Atividade atualizada com sucesso!"));
+    CHECK(c.atividade()->getNome() == "Prova Final");
+}
