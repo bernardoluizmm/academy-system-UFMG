@@ -39,3 +39,29 @@ TEST_CASE("AtividadeAvaliativa - validadores e construtor invalido") {
     CHECK_THROWS_AS(AtividadeAvaliativa(1, "OK", "30/02", 30.0f), std::invalid_argument);
     CHECK_THROWS_AS(AtividadeAvaliativa(1, "OK", "10/04", -1.0f), std::invalid_argument);
 }
+
+TEST_CASE("AtividadeAvaliativa - setters e restricoes") {
+    AtividadeAvaliativa atividade(5, "TP", "10/04", 20.0f);
+    atividade.setNome("TP Final");
+    CHECK(atividade.getNome() == "TP Final");
+    CHECK_THROWS_AS(atividade.setNome(""), std::invalid_argument);
+    CHECK(atividade.getNome() == "TP Final");
+    atividade.setData("12/05");
+    CHECK(atividade.getData().getDataValidada() == "12/05");
+    CHECK_THROWS_AS(atividade.setData("31/02"), std::invalid_argument);
+    CHECK(atividade.getData().getDataValidada() == "12/05");
+    atividade.setValorMaximo(25.0f);
+    CHECK(atividade.getValorMaximo() == doctest::Approx(25.0f));
+    CHECK_THROWS_AS(atividade.setValorMaximo(0.0f), std::invalid_argument);
+    atividade.setNotaObtida(20.0f);
+    CHECK(atividade.isConcluida() == true);
+    CHECK(atividade.getNotaObtida() == doctest::Approx(20.0f));
+    CHECK_THROWS_AS(atividade.setNotaObtida(-1.0f), std::invalid_argument);
+    CHECK_THROWS_AS(atividade.setNotaObtida(26.0f), std::invalid_argument);
+    CHECK_THROWS_AS(atividade.setValorMaximo(19.0f), std::invalid_argument);
+    CHECK(atividade.getValorMaximo() == doctest::Approx(25.0f));
+    atividade.removerLancamentoNota();
+    CHECK(atividade.getNotaObtida() == doctest::Approx(0.0f));
+    CHECK(atividade.isConcluida() == false);
+    CHECK(atividade.obterConceito() == '-');
+}
