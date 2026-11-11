@@ -117,3 +117,15 @@ TEST_CASE("Disciplina::validarNome [limite] aceita de 1 a 26 caracteres")
     CHECK_NOTHROW(Disciplina::validarNome("A"));
     CHECK_NOTHROW(Disciplina::validarNome(std::string(26, 'N')));
 }
+
+TEST_CASE("Disciplina::validarNome [negativo] rejeita vazio e mais de 26 caracteres")
+{
+    CHECK_THROWS_AS(Disciplina::validarNome(""), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarNome(std::string(27, 'N')), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::validarProfessor [limite] aceita de 1 a 100 caracteres")
+{
+    CHECK_NOTHROW(Disciplina::validarProfessor("A"));
+    CHECK_NOTHROW(Disciplina::validarProfessor(std::string(100, 'P')));
+}
