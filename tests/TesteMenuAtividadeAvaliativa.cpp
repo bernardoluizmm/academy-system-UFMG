@@ -133,3 +133,26 @@ TEST_CASE("MenuAtividadeAvaliativa - exibir disciplina sem atividades mostra avi
     CHECK(contem(saida, "Disciplina [1] COD001 - Programacao"));
     CHECK(contem(saida, "(Nenhuma atividade avaliativa cadastrada)"));
 }
+TEST_CASE("MenuAtividadeAvaliativa - exibir atividade pendente aparece na tabela")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+    std::string saida = exibirMenu(menu);
+
+    CHECK(contem(saida, "Nota Obtida"));
+    CHECK(contem(saida, "Prova 1"));
+    CHECK(contem(saida, "15/03"));
+    CHECK(contem(saida, "10.00"));
+    CHECK(contem(saida, "Pendente"));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa - exibir atividade concluida mostra a nota")
+{
+    Cenario c(true);
+    c.atividade()->setNotaObtida(7.5f);
+    MenuAtividadeAvaliativa menu(c.semestre);
+    std::string saida = exibirMenu(menu);
+
+    CHECK(contem(saida, "7.50"));
+    CHECK_FALSE(contem(saida, "Pendente"));
+}
