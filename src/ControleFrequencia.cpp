@@ -3,7 +3,13 @@
 
 ControleFrequencia::ControleFrequencia(int maxFaltas)
     : _maxFaltas(maxFaltas),
-      _faltasAtuais(0) {}
+      _faltasAtuais(0) 
+      {
+        if (maxFaltas < 0)
+        {
+            throw std::invalid_argument("O maximo de faltas nao pode ser negativo.");
+        }
+      }
 
 int ControleFrequencia::getMaxFaltas() const 
 { 
@@ -17,6 +23,11 @@ int ControleFrequencia::getFaltasAtuais() const
 
 void ControleFrequencia::setMaxFaltas(int novoMaxFaltas) 
 {
+    if (novoMaxFaltas < 0)
+    {
+        throw std::invalid_argument("O maximo de faltas nao pode ser negativo.");
+    }
+
     this->_maxFaltas = novoMaxFaltas;
     if (this->_faltasAtuais > this->_maxFaltas) 
     {
