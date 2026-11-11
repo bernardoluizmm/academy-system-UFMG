@@ -48,3 +48,21 @@ TEST_CASE("Inicialização do Construtor Parametrizado")
     }
 }
 
+TEST_CASE("Métodos Getters")
+{
+    Curso curso(Curso::OPCAO_SI, "2025/01");
+    HistoricoEscolar historico("2025/02");
+    Estudante estudante("Luana", curso, historico);
+
+    CHECK(estudante.getNome() == "Luana");
+    CHECK(estudante.getCurso().getOpcaoCurso() == Curso::OPCAO_SI);
+    CHECK(estudante.getCurso().getNome() == "Sistemas de Informacao");
+    CHECK(estudante.getCurso().getSemestreIngresso() == "2025/01");
+
+    SemestreConsolidado semestre("2025/01", 88.5f, 300, 60, 0, false);
+    estudante.getHistoricoEditavel().adicionarSemestreConsolidado(semestre);
+
+    CHECK(estudante.getHistorico().getSemestresPassados().size() == 1);
+    CHECK(estudante.getHistorico().calcularTotalHorasIntegralizadas() == 360);
+}
+
