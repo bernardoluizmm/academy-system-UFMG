@@ -141,3 +141,15 @@ TEST_CASE("Disciplina::validarSalaBloco [limite] aceita de 1 a 100 caracteres")
     CHECK_NOTHROW(Disciplina::validarSalaBloco("A"));
     CHECK_NOTHROW(Disciplina::validarSalaBloco(std::string(100, 'S')));
 }
+
+TEST_CASE("Disciplina::validarSalaBloco [negativo] rejeita vazio e mais de 100 caracteres")
+{
+    CHECK_THROWS_AS(Disciplina::validarSalaBloco(""), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarSalaBloco(std::string(101, 'S')), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::validarHorarioDias [limite] aceita de 1 a 100 caracteres")
+{
+    CHECK_NOTHROW(Disciplina::validarHorarioDias("A"));
+    CHECK_NOTHROW(Disciplina::validarHorarioDias(std::string(100, 'H')));
+}
