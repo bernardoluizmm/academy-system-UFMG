@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <algorithm>
 
-DiarioAtividades::DiarioAtividades() : _contadorId(0) {}
+DiarioAtividades::DiarioAtividades() : _contadorId(1) {}
 
 bool DiarioAtividades::compararDataMaisAntiga(const AtividadeAvaliativa& a, const AtividadeAvaliativa& b) 
 {
