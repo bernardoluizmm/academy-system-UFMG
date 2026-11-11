@@ -138,3 +138,12 @@ TEST_CASE("MenuDetalhamentoDisciplina - opcao invalida mostra erro e pede nova e
     CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 2."));
     CHECK(r.proximo == nullptr);
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - opcao 1 sem disciplinas mostra aviso")
+{
+    SemestreAtual semestre("2026/01");
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "1\n");
+    CHECK(contem(r.saida, "[AVISO] Nenhuma disciplina cadastrada no semestre atual."));
+}
