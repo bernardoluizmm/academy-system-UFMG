@@ -206,3 +206,54 @@ TEST_CASE("Disciplina - setter invalido lanca excecao e preserva o valor anterio
     CHECK(disciplina.getDuracaoAulaMinutos() == 50);
 }
 
+TEST_CASE("Disciplina - alterar carga horaria ou duracao recalcula o limite de faltas")
+{
+    Disciplina disciplina = criarDisciplina(1, 60, 50);
+    REQUIRE(disciplina.frequencia().getMaxFaltas() == 15);
+
+    disciplina.setCargaHoraria(90);
+    CHECK(disciplina.getCargaHoraria() == 90);
+    CHECK(disciplina.frequencia().getMaxFaltas() == 22);
+
+    disciplina.setDuracaoAulaMinutos(100);
+    CHECK(disciplina.getDuracaoAulaMinutos() == 100);
+    CHECK(disciplina.frequencia().getMaxFaltas() == 11);
+}
+
+TEST_CASE("Disciplina - reduzir o limite nao deixa as faltas acima do maximo")
+{
+    Disciplina disciplina = criarDisciplina(1, 60, 50);
+    disciplina.frequencia().setFaltasAtuais(14);
+
+    disciplina.setDuracaoAulaMinutos(100);
+
+    CHECK(disciplina.frequencia().getMaxFaltas() == 7);
+    CHECK(disciplina.frequencia().getFaltasAtuais() == 7);
+}
+
+TEST_CASE("Disciplina - controle de frequencia")
+{
+    Disciplina disciplina = criarDisciplina(1, 15, 50);
+    REQUIRE(disciplina.frequencia().getMaxFaltas() == 3);
+
+    disciplina.frequencia().adicionarFalta();
+    disciplina.frequencia().adicionarFalta();
+    CHECK(disciplina.frequencia().getFaltasAtuais() == 2);
+
+    disciplina.frequencia().removerFalta();
+    CHECK(disciplina.frequencia().getFaltasAtuais() == 1);
+
+    disciplina.frequencia().adicionarFalta();
+    disciplina.frequencia().adicionarFalta();
+    CHECK_THROWS_AS(disciplina.frequencia().adicionarFalta(), std::invalid_argument);
+    CHECK(disciplina.frequencia().getFaltasAtuais() == 3);
+}
+
+TEST_CASE("Disciplina - acesso const a frequencia e avaliacoes")
+{
+    const Disciplina disciplina = criarDisciplina();
+
+    CHECK(disciplina.frequencia().getMaxFaltas() == 15);
+    CHECK(disciplina.avaliacoes().getAtividades().empty());
+}
+
