@@ -348,3 +348,21 @@ TEST_CASE("MenuAtividadeAvaliativa - editar o nome")
     CHECK(contem(r.saida, "Atividade atualizada com sucesso!"));
     CHECK(c.atividade()->getNome() == "Prova Final");
 }
+TEST_CASE("MenuAtividadeAvaliativa - editar a data")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "3\n1\n1\n2\n20/04\n0\n");
+    CHECK(c.atividade()->getData().getDataValidada() == "20/04");
+}
+TEST_CASE("MenuAtividadeAvaliativa - editar com data invalida mostra erro e mantem a data")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n1\n2\n32/13\n0\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    CHECK(c.atividade()->getData().getDataValidada() == "15/03");
+}
