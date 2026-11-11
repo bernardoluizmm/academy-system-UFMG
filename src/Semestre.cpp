@@ -113,6 +113,7 @@ std::string Semestre::proximoIdentificadorSemestre(const std::string& idAtual)
     }
     return fluxo.str();
 }
+
 std::vector<std::string> Semestre::gerarSemestresAnteriores(const std::string& semIngresso, const std::string& semAtual) 
 {
     Semestre::validarIntervaloSemestres(semIngresso, semAtual);
