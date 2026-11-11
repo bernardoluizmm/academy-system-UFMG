@@ -82,9 +82,14 @@ public:
     virtual int getHorasFormacaoLivre() const = 0;
 
    /**
-     * @brief Calcula o identificador do semestre seguinte.
-     * @param idAtual Identificador atual (ex.: "2026/02").
-     * @return Identificador seguinte (ex.: "2027/01").
+      * @brief Calcula o identificador do semestre seguinte.
+     *
+     * "AAAA/01" gera "AAAA/02" e "AAAA/02" gera "(AAAA+1)/01".
+     *
+     * @param idAtual Identificador do semestre atual (deve estar em formato valido).
+     * @return Identificador do semestre seguinte. Pode ser invalido (ex.: "2101/01"), caso
+     *         em que o construtor de Semestre lancara excecao ao receber o resultado.
+     * @warning Nao valida @p idAtual; use validarFormatoIdentificador antes, se necessario.
      */
     static std::string proximoIdentificadorSemestre(const std::string& idAtual);
 
