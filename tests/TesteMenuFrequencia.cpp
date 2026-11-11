@@ -59,3 +59,33 @@ TEST_CASE("Exibicao do MenuFrequencia - Semestre vazio e com disciplinas")
         CHECK(textoImpresso.find("Max Faltas") != std::string::npos);
     }
 }
+
+TEST_CASE("Processar Entrada - Navegacao basica, opcoes invalidas e EOF") 
+{
+    SemestreAtual semestre("2026/02");
+    MenuFrequencia menu(semestre);
+
+    SUBCASE("Opcao 0 - Voltar ao Menu Principal retorna nullptr") 
+    {
+        RedirecionadorIO io("0\n");
+        Menu* proximoMenu = menu.processarEntrada();
+        CHECK(proximoMenu == nullptr);
+    }
+
+    SUBCASE("Opcoes invalidas e entradas nao numericas repetem o laco ate ler 0") 
+    {
+        RedirecionadorIO io("-1\n9\nabc\n0\n");
+        Menu* proximoMenu = menu.processarEntrada();
+
+        CHECK(proximoMenu == nullptr);
+        std::string textoImpresso = io.saida.str();
+        CHECK(textoImpresso.find("[ERRO] Opcao invalida. Escolha entre 0 e 3.") != std::string::npos);
+        CHECK(textoImpresso.find("Erro: Tipo de entrada incorreto. Tente novamente.") != std::string::npos);
+    }
+
+    SUBCASE("Excecao de Fim de Fluxo (EOF)") 
+    {
+        RedirecionadorIO io("");
+        CHECK_THROWS_AS(menu.processarEntrada(), std::runtime_error);
+    }
+}
