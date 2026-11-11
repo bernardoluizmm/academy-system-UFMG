@@ -174,3 +174,11 @@ TEST_CASE("MenuAtividadeAvaliativa - opcao invalida mostra erro e pede nova entr
     CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 4."));
     CHECK(r.proximo == nullptr);
 }
+TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina com semestre vazio mostra aviso")
+{
+    SemestreAtual semestre("2026/01");
+    MenuAtividadeAvaliativa menu(semestre);
+
+    Resultado r = executar(menu, "1\n");
+    CHECK(contem(r.saida, "[AVISO] Cadastre pelo menos uma disciplina antes de gerenciar atividades."));
+}
