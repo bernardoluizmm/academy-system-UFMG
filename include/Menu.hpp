@@ -5,42 +5,30 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-#include "Estudante.hpp"
-#include "GerenciadorArquivo.hpp"
 
 /**
  * @file Menu.hpp
- * @brief Declaração da classe abstrata Menu, base de todas as telas do sistema.
+ * @brief Declaracao da classe abstrata Menu, base desacoplada de todas as telas do sistema.
  */
 
 /**
  * @class Menu
- * @brief Classe base abstrata das telas de interação via terminal.
+ * @brief Classe base abstrata das telas de interacao via terminal.
  *
- * Guarda referências ao Estudante e ao GerenciadorArquivo, que são
- * compartilhados entre as telas (o Menu não é dono desses objetos).
- * Também oferece utilitários de leitura de entrada. Cada tela concreta
- * implementa exibir() e processarEntrada(), que devolve a próxima tela.
+ * Totalmente desacoplada das classes de dominio: oferece apenas o contrato polimorfico
+ * de exibicao e transicao de telas (para uso na pilha do SeletorMenu) e os utilitarios
+ * de leitura e sanitizacao de entrada.
  */
 class Menu 
 {
 protected:
-    Estudante& _estudante;                   ///< Estudante manipulado pelas telas (não pertence ao Menu).
-    GerenciadorArquivo& _gerenciadorArquivo; ///< Gerenciador de persistência do perfil (não pertence ao Menu).
-
     /**
-     * @brief Lê uma linha do terminal e a converte para o tipo T, repetindo até ser válida.
-     *
-     * A entrada só é aceita se a linha contiver exatamente um valor do tipo T,
-     * sem caracteres sobrando (espaços no final são ignorados). Em caso de
-     * entrada inválida, exibe uma mensagem de erro e pede novamente.
-     * Para std::string existe uma especialização que devolve a linha sem
-     * espaços nas pontas e não aceita linha vazia.
+     * @brief Le uma linha do terminal e a converte para o tipo T, repetindo ate ser valida.
      *
      * @tparam T       Tipo esperado da entrada (ex: int, float, std::string).
      * @param mensagem Texto exibido antes de cada leitura.
      * @return Valor lido e convertido.
-     * @throws std::runtime_error Se o fluxo de entrada terminar (EOF) antes de uma entrada válida.
+     * @throws std::runtime_error Se o fluxo de entrada terminar (EOF) antes de uma entrada valida.
      */
     template <typename T>
     T entradaSanitizada(const std::string& mensagem)
@@ -75,49 +63,46 @@ protected:
     }
 
     /**
-     * @brief Pede ao usuário que confirme o cadastro de um dado que não poderá ser alterado depois.
-     *
-     * Repete a pergunta até receber 1 ou 2.
-     *
-     * @return true se o usuário digitou 1 (Sim); false se digitou 2 (Não).
+     * @brief Pede ao usuario que confirme o cadastro de um dado que nao podera ser alterado depois.
+     * @return true se o usuario digitou 1 (Sim); false se digitou 2 (Nao).
      */
     bool confirmarDadoImutavel();
 
 public:
     /**
-     * @brief Constrói um menu associado ao estudante e ao gerenciador de arquivo.
-     * @param estudante          Estudante manipulado pela tela (deve viver mais que o Menu).
-     * @param gerenciadorArquivo Gerenciador usado para salvar e carregar o perfil (deve viver mais que o Menu).
+     * @brief Construtor padrao.
      */
-    Menu(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo);
+    Menu();
 
     /**
-     * @brief Destrutor virtual, para permitir a destruição correta via ponteiro de Menu.
+     * @brief Destrutor virtual, para permitir a destruicao correta via ponteiro de Menu.
      */
     virtual ~Menu();
 
     /**
-     * @brief Exibe o conteúdo da tela no terminal.
+     * @brief Exibe o conteudo da tela no terminal.
      */
     virtual void exibir() = 0;
 
     /**
-     * @brief Lê a entrada do usuário e decide qual será a próxima tela.
-     * @return Ponteiro para a próxima tela a ser exibida.
+     * @brief Le a entrada do usuario e decide a transicao na pilha de menus.
+     * @return Ponteiro para uma nova tela a empilhar, @c this para permanecer na tela atual,
+     *         ou @c nullptr para desempilhar a tela atual e voltar a tela anterior.
      */
     virtual Menu* processarEntrada() = 0;
+
+    /**
+     * @brief Indica ao SeletorMenu se, ao avancar para uma nova tela, a pilha anterior deve ser substituida.
+     * @return @c true se a nova tela deve substituir toda a pilha anterior (ex.: entrada no MenuPrincipal);
+     *         @c false (padrao) para apenas empilhar a nova tela sobre a atual.
+     */
+    virtual bool substituirPilhaAoTransicionar() const;
 };
 
 /**
- * @brief Especialização de Menu::entradaSanitizada para std::string.
- *
- * Remove espaços, tabulações e quebras de linha das pontas e rejeita linhas vazias.
- *
- * @param mensagem Texto exibido antes de cada leitura.
- * @return Texto digitado, sem espaços nas pontas.
- * @throws std::runtime_error Se o fluxo de entrada terminar (EOF).
+ * @brief Especializacao de Menu::entradaSanitizada para std::string.
  */
-    template <>
-    std::string Menu::entradaSanitizada<std::string>(const std::string& mensagem);
+template <>
+std::string Menu::entradaSanitizada<std::string>(const std::string& mensagem);
 
 #endif
