@@ -182,3 +182,13 @@ TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina com semestre vazio mo
     Resultado r = executar(menu, "1\n");
     CHECK(contem(r.saida, "[AVISO] Cadastre pelo menos uma disciplina antes de gerenciar atividades."));
 }
+TEST_CASE("MenuAtividadeAvaliativa - selecionar disciplina lista as disciplinas")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n0\n");
+
+    CHECK(contem(r.saida, "Disciplinas do semestre atual:"));
+    CHECK(contem(r.saida, "[1] COD001 - Programacao"));
+}
