@@ -331,3 +331,20 @@ TEST_CASE("Disciplina::setDuracaoAulaMinutos [positivo] recalcula o limite de fa
     CHECK(d.frequencia().getMaxFaltas() == CalculadorMaxFaltas::calcularDiasMaximosFalta(60, 100));
 }
 
+TEST_CASE("Disciplina::setDuracaoAulaMinutos [negativo] valor invalido lanca excecao e preserva duracao e limite")
+{
+    Disciplina d = criarDisciplinaValida();
+    const int limiteAntes = d.frequencia().getMaxFaltas();
+
+    CHECK_THROWS_AS(d.setDuracaoAulaMinutos(49), std::invalid_argument);
+    CHECK(d.getDuracaoAulaMinutos() == 50);
+    CHECK(d.frequencia().getMaxFaltas() == limiteAntes);
+}
+
+TEST_CASE("Disciplina::frequencia [positivo] versao nao const permite alterar o controle")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.frequencia().setMaxFaltas(10);
+    CHECK(d.frequencia().getMaxFaltas() == 10);
+}
+
