@@ -186,3 +186,60 @@ TEST_CASE("HistoricoEscolar - totais de horas somam todos os semestres passados"
     CHECK(historico.calcularTotalHorasIntegralizadas() == 165);
 }
 
+TEST_CASE("HistoricoEscolar - construtor de copia faz copia profunda")
+{
+    HistoricoEscolar original("2026/01");
+    original.adicionarSemestreConsolidado(SemestreConsolidado("2025/02", 80.0f, 60, 0, 0));
+
+    HistoricoEscolar copia(original);
+
+    CHECK(copia.getSemestresPassados().size() == 1);
+    CHECK(copia.getSemestreAtual() != original.getSemestreAtual());  
+
+    adicionar(*copia.getSemestreAtual(), "PDS2", 60);
+    CHECK(copia.getSemestreAtual()->getDisciplinas().size() == 1);
+    CHECK(original.getSemestreAtual()->getDisciplinas().empty());     
+}
+
+TEST_CASE("HistoricoEscolar - operator= faz copia profunda")
+{
+    HistoricoEscolar origem("2026/01");
+    adicionar(*origem.getSemestreAtual(), "PDS2", 60);
+    origem.adicionarSemestreConsolidado(SemestreConsolidado("2025/02", 80.0f, 60, 0, 0));
+
+    HistoricoEscolar destino("2030/02");
+    destino = origem;
+
+    CHECK(destino.getSemestreAtual()->getIdentificador() == "2026/01");
+    CHECK(destino.getSemestreAtual()->getDisciplinas().size() == 1);
+    CHECK(destino.getSemestresPassados().size() == 1);
+    CHECK(destino.getSemestreAtual() != origem.getSemestreAtual());
+
+    
+    adicionar(*destino.getSemestreAtual(), "ED", 60);
+    CHECK(origem.getSemestreAtual()->getDisciplinas().size() == 1);
+}
+
+TEST_CASE("HistoricoEscolar - autoatribuicao nao quebra o objeto")
+{
+    HistoricoEscolar historico("2026/01");
+    adicionar(*historico.getSemestreAtual(), "PDS2", 60);
+
+    HistoricoEscolar* mesmo = &historico;
+    historico = *mesmo;
+
+    REQUIRE(historico.getSemestreAtual() != nullptr);
+    CHECK(historico.getSemestreAtual()->getIdentificador() == "2026/01");
+    CHECK(historico.getSemestreAtual()->getDisciplinas().size() == 1);
+}
+
+TEST_CASE("HistoricoEscolar - serializar")
+{
+    HistoricoEscolar historico("2026/01");
+    historico.consolidarSemestreAtual();
+
+   
+    CHECK(historico.serializar() ==
+          "SEMESTRE_CONSOLIDADO|2026/01|0|0|0|0|0\n"
+          "SEMESTRE_ATUAL|2026/02\n");
+}
