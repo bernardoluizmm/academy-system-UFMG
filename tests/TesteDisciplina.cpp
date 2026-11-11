@@ -129,3 +129,15 @@ TEST_CASE("Disciplina::validarProfessor [limite] aceita de 1 a 100 caracteres")
     CHECK_NOTHROW(Disciplina::validarProfessor("A"));
     CHECK_NOTHROW(Disciplina::validarProfessor(std::string(100, 'P')));
 }
+
+TEST_CASE("Disciplina::validarProfessor [negativo] rejeita vazio e mais de 100 caracteres")
+{
+    CHECK_THROWS_AS(Disciplina::validarProfessor(""), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarProfessor(std::string(101, 'P')), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::validarSalaBloco [limite] aceita de 1 a 100 caracteres")
+{
+    CHECK_NOTHROW(Disciplina::validarSalaBloco("A"));
+    CHECK_NOTHROW(Disciplina::validarSalaBloco(std::string(100, 'S')));
+}
