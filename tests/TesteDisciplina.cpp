@@ -61,3 +61,23 @@ TEST_CASE("Disciplina::Disciplina [limite] carga horaria minima (15h) e aceita")
 {
     CHECK_NOTHROW(Disciplina(1, "C", "T", "N", "P", "S", 15, 50, "Optativa", "H"));
 }
+
+TEST_CASE("Disciplina::Disciplina [negativo] duracao da aula abaixo de 50 lanca excecao")
+{
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "S", 60, 49, "Optativa", "H"), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::Disciplina [limite] duracao de 50 minutos e aceita")
+{
+    CHECK_NOTHROW(Disciplina(1, "C", "T", "N", "P", "S", 60, 50, "Optativa", "H"));
+}
+
+TEST_CASE("Disciplina::Disciplina [negativo] campos de texto vazios lancam excecao")
+{
+    CHECK_THROWS_AS(Disciplina(1, "", "T", "N", "P", "S", 60, 50, "Optativa", "H"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina(1, "C", "", "N", "P", "S", 60, 50, "Optativa", "H"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "", "P", "S", 60, 50, "Optativa", "H"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "", "S", 60, 50, "Optativa", "H"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "", 60, 50, "Optativa", "H"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina(1, "C", "T", "N", "P", "S", 60, 50, "Optativa", ""), std::invalid_argument);
+}
