@@ -66,3 +66,63 @@ TEST_CASE("Métodos Getters")
     CHECK(estudante.getHistorico().calcularTotalHorasIntegralizadas() == 360);
 }
 
+TEST_CASE("Calculo de Percentuais de Integralizacao")
+{
+    Curso curso(Curso::OPCAO_CC, "2025/01");
+    HistoricoEscolar historico("2026/01");
+    Estudante estudante("Estudante Teste", curso, historico);
+
+    SUBCASE("Estado Inicial - 0 em todas as categorias") 
+    {
+        CHECK(estudante.calcularPercentualObrigatorias() == doctest::Approx(0.0f));
+        CHECK(estudante.calcularPercentualOptativas() == doctest::Approx(0.0f));
+        CHECK(estudante.calcularPercentualFormacaoLivre() == doctest::Approx(0.0f));
+        CHECK(estudante.calcularPercentualCursoCompleto() == doctest::Approx(0.0f));
+    }
+
+    SUBCASE("Progresso de metade do curso de cada tipo") 
+    { 
+    
+        SemestreConsolidado sem1("2025/01", 85.0f, 990, 555, 60, false);
+        estudante.getHistoricoEditavel().adicionarSemestreConsolidado(sem1);
+
+        CHECK(estudante.calcularPercentualObrigatorias() == doctest::Approx(50.0f));
+        CHECK(estudante.calcularPercentualOptativas() == doctest::Approx(50.0f));
+        CHECK(estudante.calcularPercentualFormacaoLivre() == doctest::Approx(50.0f));
+        CHECK(estudante.calcularPercentualCursoCompleto() == doctest::Approx(50.0f));
+    }
+
+    SUBCASE("Edge Case - Curso Completo") 
+    {
+        SemestreConsolidado sem1("2025/01", 90.0f, 1980, 1110, 120, false);
+        estudante.getHistoricoEditavel().adicionarSemestreConsolidado(sem1);
+
+        CHECK(estudante.calcularPercentualObrigatorias() == doctest::Approx(100.0f));
+        CHECK(estudante.calcularPercentualOptativas() == doctest::Approx(100.0f));
+        CHECK(estudante.calcularPercentualFormacaoLivre() == doctest::Approx(100.0f));
+        CHECK(estudante.calcularPercentualCursoCompleto() == doctest::Approx(100.0f));
+    }
+
+    SUBCASE("Edge Case - Horas excedentes devem travar no teto de 100%") 
+    {
+    
+        SemestreConsolidado semExcedente("2025/01", 95.0f, 2400, 1500, 240, false);
+        estudante.getHistoricoEditavel().adicionarSemestreConsolidado(semExcedente);
+
+        CHECK(estudante.calcularPercentualObrigatorias() == doctest::Approx(100.0f));
+        CHECK(estudante.calcularPercentualOptativas() == doctest::Approx(100.0f));
+        CHECK(estudante.calcularPercentualFormacaoLivre() == doctest::Approx(100.0f));
+        CHECK(estudante.calcularPercentualCursoCompleto() == doctest::Approx(100.0f));
+    }
+
+    SUBCASE("Edge Case - Semestre trancado nao altera percentuais") 
+    {
+        SemestreConsolidado semTrancado("2025/01", 90.0f, 300, 120, 60, true);
+        estudante.getHistoricoEditavel().adicionarSemestreConsolidado(semTrancado);
+
+        CHECK(estudante.calcularPercentualObrigatorias() == doctest::Approx(0.0f));
+        CHECK(estudante.calcularPercentualOptativas() == doctest::Approx(0.0f));
+        CHECK(estudante.calcularPercentualFormacaoLivre() == doctest::Approx(0.0f));
+        CHECK(estudante.calcularPercentualCursoCompleto() == doctest::Approx(0.0f));
+        }
+}
