@@ -366,3 +366,21 @@ TEST_CASE("MenuAtividadeAvaliativa - editar com data invalida mostra erro e mant
     CHECK(contem(r.saida, "[ERRO]"));
     CHECK(c.atividade()->getData().getDataValidada() == "15/03");
 }
+TEST_CASE("MenuAtividadeAvaliativa - editar o valor")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "3\n1\n1\n3\n20\n0\n");
+    CHECK(c.atividade()->getValorMaximo() == doctest::Approx(20.0f));
+}
+TEST_CASE("MenuAtividadeAvaliativa - editar com valor invalido mostra erro e mantem o valor")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n1\n3\n-1\n0\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    CHECK(c.atividade()->getValorMaximo() == doctest::Approx(10.0f));
+}
