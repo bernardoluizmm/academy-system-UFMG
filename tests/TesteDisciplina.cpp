@@ -172,3 +172,23 @@ TEST_CASE("Disciplina::validarCargaHoraria [negativo] rejeita zero, negativo e n
     CHECK_THROWS_AS(Disciplina::validarCargaHoraria(-15), std::invalid_argument);
     CHECK_THROWS_AS(Disciplina::validarCargaHoraria(16), std::invalid_argument);
 }
+
+TEST_CASE("Disciplina::validarDuracaoAulaMinutos [limite] aceita 50 e rejeita 49")
+{
+    CHECK_NOTHROW(Disciplina::validarDuracaoAulaMinutos(50));
+    CHECK_THROWS_AS(Disciplina::validarDuracaoAulaMinutos(49), std::invalid_argument);
+}
+
+TEST_CASE("Disciplina::validarTipo [positivo] aceita os tres tipos validos")
+{
+    CHECK_NOTHROW(Disciplina::validarTipo("Obrigatoria"));
+    CHECK_NOTHROW(Disciplina::validarTipo("Optativa"));
+    CHECK_NOTHROW(Disciplina::validarTipo("Formacao Livre"));
+}
+
+TEST_CASE("Disciplina::validarTipo [negativo] rejeita vazio e tipo desconhecido (case-sensitive)")
+{
+    CHECK_THROWS_AS(Disciplina::validarTipo(""), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarTipo("optativa"), std::invalid_argument);
+    CHECK_THROWS_AS(Disciplina::validarTipo("Qualquer"), std::invalid_argument);
+}
