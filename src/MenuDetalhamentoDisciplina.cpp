@@ -109,19 +109,17 @@ void MenuDetalhamentoDisciplina::fluxoDetalharTodasDisciplinas() const
 
 void MenuDetalhamentoDisciplina::exibir() 
 {
-    const SemestreAtual* semAtual = this->_estudante.getHistorico().getSemestreAtual();
-
     std::cout << "\n========================================================================\n";
     std::cout << "           DETALHAMENTO DE DISCIPLINAS E ATIVIDADES AVALIATIVAS         \n";
     std::cout << "========================================================================\n";
 
-    if (semAtual == nullptr || semAtual->getDisciplinas().empty()) 
+   if (this->_semestreAtual.getDisciplinas().empty()) 
     {
         std::cout << " Nenhuma disciplina cadastrada no semestre atual.\n";
     } else 
     {
         std::cout << "Disciplinas disponiveis no semestre atual:\n";
-        const std::vector<Disciplina>& disciplinas = semAtual->getDisciplinas();
+        const std::vector<Disciplina>& disciplinas = this->_semestreAtual.getDisciplinas();
         for (std::vector<Disciplina>::const_iterator it = disciplinas.begin(); it != disciplinas.end(); ++it) 
         {
             std::cout << "  [" << it->getId() << "] " << it->getCodigo() << " - " << it->getNome() << "\n";
@@ -136,20 +134,19 @@ void MenuDetalhamentoDisciplina::exibir()
 }
 Menu* MenuDetalhamentoDisciplina::processarEntrada() 
 {
-    while (true) 
     {
         int opcao = this->entradaSanitizada<int>("Escolha uma opcao: ");
         if (opcao == 1) 
         {
             this->fluxoDetalharDisciplinaEspecifica();
-            return new MenuDetalhamentoDisciplina(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 2) 
         {
             this->fluxoDetalharTodasDisciplinas();
-            return new MenuDetalhamentoDisciplina(this->_estudante, this->_gerenciadorArquivo);
+            return this;
         } else if (opcao == 0) 
         {
-            return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+            return nullptr;
         }
         std::cout << "[ERRO] Opcao invalida. Escolha entre 0 e 2.\n";
     }
