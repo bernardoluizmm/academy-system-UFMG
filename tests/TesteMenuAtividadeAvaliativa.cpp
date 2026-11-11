@@ -55,3 +55,32 @@ TEST_CASE("MenuAtividadeAvaliativa::exibir [positivo] atividade pendente aparece
     CHECK(contem(saida, "Pendente"));
 }
 
+TEST_CASE("MenuAtividadeAvaliativa::exibir [positivo] atividade concluida mostra a nota")
+{
+    Cenario c(true);
+    c.atividade()->setNotaObtida(7.5f);
+    MenuAtividadeAvaliativa menu(c.semestre);
+    const std::string saida = exibirMenu(menu);
+
+    CHECK(contem(saida, "7.50"));
+    CHECK_FALSE(contem(saida, "Pendente"));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::processarEntrada [positivo] opcao 0 retorna nullptr")
+{
+    SemestreAtual semestre;
+    MenuAtividadeAvaliativa menu(semestre);
+
+    Resultado r = executar(menu, "0\n");
+    CHECK(r.proximo == nullptr);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::processarEntrada [negativo] opcao invalida exibe erro")
+{
+    SemestreAtual semestre;
+    MenuAtividadeAvaliativa menu(semestre);
+
+    Resultado r = executar(menu, "9\n0\n");
+    CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 4."));
+}
+
