@@ -1,0 +1,124 @@
+#include "doctest.h"
+#include "MenuInicial.hpp"
+#include "MenuCarregarUsuario.hpp"
+#include "MenuCadastroUsuario.hpp"
+#include "Estudante.hpp"
+#include "GerenciadorArquivo.hpp"
+#include <sstream>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+
+namespace 
+{
+    struct RedirecionadorIO 
+    {
+        std::stringstream entrada;
+        std::stringstream saida;
+        std::streambuf* cinOriginal;
+        std::streambuf* coutOriginal;
+
+        RedirecionadorIO(const std::string& textoEntrada = "") 
+            : entrada(textoEntrada),
+              cinOriginal(std::cin.rdbuf(entrada.rdbuf())),
+              coutOriginal(std::cout.rdbuf(saida.rdbuf())) 
+        {}
+
+        ~RedirecionadorIO() 
+        {
+            std::cin.rdbuf(cinOriginal);
+            std::cout.rdbuf(coutOriginal);
+        }
+    };
+}
+
+TEST_CASE("Exibicao do Menu Inicial e comportamento na pilha") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    RedirecionadorIO io;
+    menu.exibir();
+
+    std::string textoImpresso = io.saida.str();
+    CHECK(textoImpresso.find("SISTEMA DE GESTAO ACADEMICA - UFMG (PDS II)") != std::string::npos);
+    CHECK(textoImpresso.find("1 - Carregar perfil salvo") != std::string::npos);
+    CHECK(textoImpresso.find("2 - Criar novo perfil de estudante") != std::string::npos);
+    CHECK(textoImpresso.find("0 - Sair do programa") != std::string::npos);
+    CHECK(menu.substituirPilhaAoTransicionar() == false);
+}
+
+TEST_CASE("Processar Entrada - Happy Path (Opcoes 0, 1 e 2)") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    SUBCASE("Opcao 0 - Sair do programa retorna nullptr") 
+    {
+        RedirecionadorIO io("0\n");
+        Menu* proximoMenu = menu.processarEntrada();
+
+        CHECK(proximoMenu == nullptr);
+        CHECK(io.saida.str().find("Encerrando o sistema...") != std::string::npos);
+    }
+
+    SUBCASE("Opcao 1 - Transiciona para MenuCarregarUsuario") 
+    {
+        RedirecionadorIO io("1\n");
+        std::unique_ptr<Menu> proximoMenu(menu.processarEntrada());
+
+        REQUIRE(proximoMenu != nullptr);
+        CHECK(dynamic_cast<MenuCarregarUsuario*>(proximoMenu.get()) != nullptr);
+        CHECK(proximoMenu->substituirPilhaAoTransicionar() == true);
+    }
+
+    SUBCASE("Opcao 2 - Transiciona para MenuCadastroUsuario") 
+    {
+        RedirecionadorIO io("2\n");
+        std::unique_ptr<Menu> proximoMenu(menu.processarEntrada());
+
+        REQUIRE(proximoMenu != nullptr);
+        CHECK(dynamic_cast<MenuCadastroUsuario*>(proximoMenu.get()) != nullptr);
+        CHECK(proximoMenu->substituirPilhaAoTransicionar() == true);
+    }
+}
+
+TEST_CASE("Processar Entrada - Edge Cases: Opcoes fora do intervalo e entradas nao numericas") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    SUBCASE("Opcoes inteiras invalidas (-1 e 3) acionam default e repetem o laco ate ler 0") 
+    {
+        RedirecionadorIO io("-1\n3\n0\n");
+        Menu* proximoMenu = menu.processarEntrada();
+
+        CHECK(proximoMenu == nullptr);
+        std::string textoImpresso = io.saida.str();
+        CHECK(textoImpresso.find("[ERRO] Opcao invalida. Escolha 1, 2 ou 0.") != std::string::npos);
+        CHECK(textoImpresso.find("Encerrando o sistema...") != std::string::npos);
+    }
+
+    SUBCASE("Entradas com texto ou lixo na linha sao rejeitadas antes de aceitar opcao valida") 
+    {
+        RedirecionadorIO io("abc\n1 lixo\n2\n");
+        std::unique_ptr<Menu> proximoMenu(menu.processarEntrada());
+
+        REQUIRE(proximoMenu != nullptr);
+        CHECK(dynamic_cast<MenuCadastroUsuario*>(proximoMenu.get()) != nullptr);
+        CHECK(io.saida.str().find("Erro: Tipo de entrada incorreto. Tente novamente.") != std::string::npos);
+    }
+}
+
+TEST_CASE("Processar Entrada - Excecao de Fim de Fluxo (EOF)") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    RedirecionadorIO io("");
+    CHECK_THROWS_AS(menu.processarEntrada(), std::runtime_error);
+}
