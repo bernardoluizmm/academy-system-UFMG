@@ -213,3 +213,32 @@ TEST_CASE("Disciplina::setCodigoTurma [positivo] altera a turma")
     d.setCodigoTurma("T2");
     CHECK(d.getCodigoTurma() == "T2");
 }
+
+TEST_CASE("Disciplina::setCodigoTurma [negativo] valor invalido lanca excecao e preserva o anterior")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK_THROWS_AS(d.setCodigoTurma(std::string(7, 'T')), std::invalid_argument);
+    CHECK(d.getCodigoTurma() == "T1");
+}
+
+TEST_CASE("Disciplina::setNome [positivo] altera o nome")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setNome("Algoritmos");
+    CHECK(d.getNome() == "Algoritmos");
+}
+
+TEST_CASE("Disciplina::setNome [negativo] valor invalido lanca excecao e preserva o anterior")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK_THROWS_AS(d.setNome(std::string(27, 'N')), std::invalid_argument);
+    CHECK(d.getNome() == "Programacao");
+}
+
+TEST_CASE("Disciplina::setProfessor [positivo] altera o professor")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setProfessor("Prof. Bruno");
+    CHECK(d.getProfessor() == "Prof. Bruno");
+}
+
