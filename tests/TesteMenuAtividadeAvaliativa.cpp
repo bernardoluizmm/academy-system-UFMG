@@ -227,3 +227,15 @@ TEST_CASE("MenuAtividadeAvaliativa - criar atividade com dados validos")
     CHECK(a.getValorMaximo() == doctest::Approx(10.0f));
     CHECK_FALSE(a.isConcluida());
 }
+TEST_CASE("MenuAtividadeAvaliativa - criar atividade pede de novo um nome invalido")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+    std::string nomeLongo(200, 'N');
+
+    Resultado r = executar(menu, "1\n1\n" + nomeLongo + "\nProva 1\n15/03\n10\n");
+
+    CHECK(contem(r.saida, "[ERRO]"));
+    REQUIRE(c.totalAtividades() == 1);
+    CHECK(c.disciplina()->avaliacoes().getAtividades()[0].getNome() == "Prova 1");
+}
