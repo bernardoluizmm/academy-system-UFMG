@@ -192,3 +192,24 @@ TEST_CASE("Disciplina::validarTipo [negativo] rejeita vazio e tipo desconhecido 
     CHECK_THROWS_AS(Disciplina::validarTipo("optativa"), std::invalid_argument);
     CHECK_THROWS_AS(Disciplina::validarTipo("Qualquer"), std::invalid_argument);
 }
+
+TEST_CASE("Disciplina::setCodigo [positivo] altera o codigo")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setCodigo("NOVO");
+    CHECK(d.getCodigo() == "NOVO");
+}
+
+TEST_CASE("Disciplina::setCodigo [negativo] valor invalido lanca excecao e preserva o anterior")
+{
+    Disciplina d = criarDisciplinaValida();
+    CHECK_THROWS_AS(d.setCodigo(""), std::invalid_argument);
+    CHECK(d.getCodigo() == "COD001");
+}
+
+TEST_CASE("Disciplina::setCodigoTurma [positivo] altera a turma")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.setCodigoTurma("T2");
+    CHECK(d.getCodigoTurma() == "T2");
+}
