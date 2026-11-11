@@ -6,10 +6,10 @@
 #define CALCULADORMAXFALTAS_HPP
 
 /**
- * @class CalcularMaxFaltas
+ * @class CalculadorMaxFaltas
  * @brief Classe utilitária (apenas métodos estáticos) para calcular o limite de faltas de uma disciplina.
  */
-class CalcularMaxFaltas 
+class CalculadorMaxFaltas 
 {
 public:
     /**

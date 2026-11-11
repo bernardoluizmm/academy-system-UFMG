@@ -1,11 +1,11 @@
 #include "CalculadorMaxFaltas.hpp"
 #include <stdexcept>
 
-int CalcularMaxFaltas::calcularDiasMaximosFalta(int cargaHorariaHoras, int duracaoAulaMinutos) 
+int CalculadorMaxFaltas::calcularDiasMaximosFalta(int cargaHorariaHoras, int duracaoAulaMinutos) 
 {
-    if (cargaHorariaHoras <= 0 || cargaHorariaHoras % 15 != 0) 
+    if (cargaHorariaHoras <= 0 || cargaHorariaHoras % 15 != 0 || cargaHorariaHoras >= 180) 
     {
-        throw std::invalid_argument("A carga horaria deve ser maior que zero e divisivel por 15.");
+        throw std::invalid_argument("A carga horaria deve ser maior que zero, menor ou igual a 180 e divisivel por 15.");
     }
     if (duracaoAulaMinutos < 50) 
     {
