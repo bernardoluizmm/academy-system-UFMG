@@ -405,3 +405,11 @@ TEST_CASE("MenuAtividadeAvaliativa - editar removendo o lancamento de nota")
     executar(menu, "3\n1\n1\n5\n0\n");
     CHECK_FALSE(c.atividade()->isConcluida());
 }
+TEST_CASE("MenuAtividadeAvaliativa - editar com opcao invalida mostra erro")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "3\n1\n1\n9\n0\n");
+    CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 5."));
+}
