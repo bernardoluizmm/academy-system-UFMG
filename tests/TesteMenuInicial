@@ -48,3 +48,39 @@ TEST_CASE("Exibicao do Menu Inicial e comportamento na pilha")
     CHECK(textoImpresso.find("0 - Sair do programa") != std::string::npos);
     CHECK(menu.substituirPilhaAoTransicionar() == false);
 }
+
+TEST_CASE("Processar Entrada - Happy Path (Opcoes 0, 1 e 2)") 
+{
+    std::unique_ptr<Estudante> estudante(nullptr);
+    GerenciadorArquivo gerenciador("teste_menu_inicial.txt");
+    MenuInicial menu(estudante, gerenciador);
+
+    SUBCASE("Opcao 0 - Sair do programa retorna nullptr") 
+    {
+        RedirecionadorIO io("0\n");
+        Menu* proximoMenu = menu.processarEntrada();
+
+        CHECK(proximoMenu == nullptr);
+        CHECK(io.saida.str().find("Encerrando o sistema...") != std::string::npos);
+    }
+
+    SUBCASE("Opcao 1 - Transiciona para MenuCarregarUsuario") 
+    {
+        RedirecionadorIO io("1\n");
+        std::unique_ptr<Menu> proximoMenu(menu.processarEntrada());
+
+        REQUIRE(proximoMenu != nullptr);
+        CHECK(dynamic_cast<MenuCarregarUsuario*>(proximoMenu.get()) != nullptr);
+        CHECK(proximoMenu->substituirPilhaAoTransicionar() == true);
+    }
+
+    SUBCASE("Opcao 2 - Transiciona para MenuCadastroUsuario") 
+    {
+        RedirecionadorIO io("2\n");
+        std::unique_ptr<Menu> proximoMenu(menu.processarEntrada());
+
+        REQUIRE(proximoMenu != nullptr);
+        CHECK(dynamic_cast<MenuCadastroUsuario*>(proximoMenu.get()) != nullptr);
+        CHECK(proximoMenu->substituirPilhaAoTransicionar() == true);
+    }
+}
