@@ -103,9 +103,6 @@ public:
     /** @brief Retorna as disciplinas (somente leitura). */
     const std::vector<Disciplina>& getDisciplinas() const;
 
-    /** @brief Retorna as disciplinas (acesso editável). */
-    std::vector<Disciplina>& getDisciplinasEditavel();
-
     /**
      * @brief Serializa o semestre e suas disciplinas em texto.
      * @return Texto iniciado por SEMESTRE_ATUAL|id, seguido das disciplinas.

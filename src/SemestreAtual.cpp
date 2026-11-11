@@ -164,10 +164,6 @@ const std::vector<Disciplina>& SemestreAtual::getDisciplinas() const
     return this->_disciplinas;
 }
 
-std::vector<Disciplina>& SemestreAtual::getDisciplinasEditavel() 
-{
-    return this->_disciplinas;
-}
 std::string SemestreAtual::serializar() const 
 {
     std::ostringstream oss;
