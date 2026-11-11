@@ -42,37 +42,10 @@ public:
 
     /** @brief Destrutor. */
     virtual ~SemestreConsolidado();
-
-    /**
-     * @brief Define o NSG fixo.
-     * @param nsgFixo Valor entre 0 e 100.
-     * @throws std::invalid_argument Se fora do intervalo.
+  /**
+     * @brief Obtem o NSG fixo do semestre.
+     * @return NSG final, ou 0 se o semestre foi trancado.
      */
-
-    void setNSGFixo(float nsgFixo);
-
-    /**
-     * @brief Define as horas obrigatórias.
-     * @param horasObrigatorias Valor não negativo e divisível por 15.
-     * @throws std::invalid_argument Se inválido.
-     */
-    void setHorasObrigatorias(int horasObrigatorias);
-
-    /**
-     * @brief Define as horas optativas.
-     * @param horasOptativas Valor não negativo e divisível por 15.
-     * @throws std::invalid_argument Se inválido.
-     */
-    void setHorasOptativas(int horasOptativas);
-
-    /**
-     * @brief Define as horas de formação livre.
-     * @param horasFormacaoLivre Valor não negativo e divisível por 15.
-     * @throws std::invalid_argument Se inválido.
-     */
-    void setHorasFormacaoLivre(int horasFormacaoLivre);
-
-    /** @brief Retorna o NSG fixo (0 se trancado). */
     virtual float calcularNSG() const override;
 
     /** @brief Retorna o total de horas integralizadas (0 se trancado). */

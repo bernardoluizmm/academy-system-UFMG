@@ -13,38 +13,18 @@ SemestreConsolidado::SemestreConsolidado(const std::string& identificador,
       _horasOptativas(0),
       _horasFormacaoLivre(0) 
 {
-    if (!this->isTrancado()) 
+    if (!this->isTrancado())
     {
-        this->setNSGFixo(nsgFixo);
-        this->setHorasObrigatorias(horasObrigatorias);
-        this->setHorasOptativas(horasOptativas);
-        this->setHorasFormacaoLivre(horasFormacaoLivre);
-    }
-}
-
-SemestreConsolidado::~SemestreConsolidado() {}
-void SemestreConsolidado::setNSGFixo(float nsgFixo) 
-{
     Semestre::validarNSG(nsgFixo);
-    this->_nsgFixo = nsgFixo;
-}
-
-void SemestreConsolidado::setHorasObrigatorias(int horasObrigatorias) 
-{
     Semestre::validarHoras(horasObrigatorias);
-    this->_horasObrigatorias = horasObrigatorias;
-}
-
-void SemestreConsolidado::setHorasOptativas(int horasOptativas) 
-{
     Semestre::validarHoras(horasOptativas);
-    this->_horasOptativas = horasOptativas;
-}
-
-void SemestreConsolidado::setHorasFormacaoLivre(int horasFormacaoLivre) 
-{
     Semestre::validarHoras(horasFormacaoLivre);
+
+    this->_nsgFixo = nsgFixo;
+    this->_horasObrigatorias = horasObrigatorias;
+    this->_horasOptativas = horasOptativas;
     this->_horasFormacaoLivre = horasFormacaoLivre;
+    }
 }
 
 float SemestreConsolidado::calcularNSG() const 
