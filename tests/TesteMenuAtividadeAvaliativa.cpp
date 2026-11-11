@@ -102,7 +102,6 @@ TEST_CASE("MenuAtividadeAvaliativa - constroi com um semestre")
     SemestreAtual semestre("2026/01");
     CHECK_NOTHROW(MenuAtividadeAvaliativa menu(semestre));
 }
-
 TEST_CASE("MenuAtividadeAvaliativa - exibir mostra titulo e opcoes")
 {
     SemestreAtual semestre("2026/01");
@@ -116,7 +115,6 @@ TEST_CASE("MenuAtividadeAvaliativa - exibir mostra titulo e opcoes")
     CHECK(contem(saida, "4 - Apagar atividade avaliativa existente"));
     CHECK(contem(saida, "0 - Voltar ao Menu Principal"));
 }
-
 TEST_CASE("MenuAtividadeAvaliativa - exibir com semestre vazio mostra aviso")
 {
     SemestreAtual semestre("2026/01");
@@ -145,7 +143,6 @@ TEST_CASE("MenuAtividadeAvaliativa - exibir atividade pendente aparece na tabela
     CHECK(contem(saida, "10.00"));
     CHECK(contem(saida, "Pendente"));
 }
-
 TEST_CASE("MenuAtividadeAvaliativa - exibir atividade concluida mostra a nota")
 {
     Cenario c(true);
@@ -268,4 +265,12 @@ TEST_CASE("MenuAtividadeAvaliativa - lancar nota em disciplina sem atividades mo
 
     Resultado r = executar(menu, "2\n1\n");
     CHECK(contem(r.saida, "[AVISO] Esta disciplina nao possui atividades cadastradas."));
+}
+TEST_CASE("MenuAtividadeAvaliativa - lancar nota com ID 0 cancela")
+{
+    Cenario c(true);
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    executar(menu, "2\n1\n0\n");
+    CHECK_FALSE(c.atividade()->isConcluida());
 }
