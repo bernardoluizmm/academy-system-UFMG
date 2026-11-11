@@ -112,3 +112,34 @@ TEST_CASE("MenuAtividadeAvaliativa::selecionarDisciplina [positivo] lista as dis
     CHECK(contem(r.saida, "[1] COD001 - Programacao"));
 }
 
+TEST_CASE("MenuAtividadeAvaliativa::selecionarDisciplina [limite] ID 0 cancela sem erro")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n0\n");
+    CHECK_FALSE(contem(r.saida, "[ERRO]"));
+    CHECK(c.totalAtividades() == 0);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::selecionarDisciplina [negativo] ID inexistente mostra erro")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n99\n");
+    CHECK(contem(r.saida, "[ERRO] Disciplina com ID 99 nao encontrada."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::fluxoCriarAtividade [positivo] cria atividade com dados validos")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n1\nProva 1\n15/03\n10\n");
+
+    REQUIRE(c.totalAtividades() == 1);
+    CHECK(contem(r.saida, "Atividade 'Prova 1' adicionada com sucesso!"));
+}
+
+
