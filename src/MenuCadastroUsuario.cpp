@@ -5,12 +5,15 @@
 #include <vector>
 #include <stdexcept>
 
-MenuCadastroUsuario::MenuCadastroUsuario(Estudante& estudante, GerenciadorArquivo& gerenciadorArquivo)
-    : Menu(estudante, gerenciadorArquivo) 
+MenuCadastroUsuario::MenuCadastroUsuario(std::unique_ptr<Estudante>& estudante, GerenciadorArquivo& gerenciadorArquivo)
+    : Menu(), _estudante(estudante), _gerenciadorArquivo(gerenciadorArquivo) 
 {}
 
-MenuCadastroUsuario::~MenuCadastroUsuario() 
-{}
+bool MenuCadastroUsuario::substituirPilhaAoTransicionar() const 
+{
+    return true;
+}
+
 void MenuCadastroUsuario::exibir() 
 {
     std::cout << "\n======================================================\n";
@@ -18,12 +21,14 @@ void MenuCadastroUsuario::exibir()
     std::cout << "======================================================\n";
     std::cout << "Atencao: Os dados informados nesta etapa sao definitivos.\n";
 }
+
 Menu* MenuCadastroUsuario::processarEntrada() 
 {
-    Estudante novoEstudante;
-    std::vector<std::string> semestresAnteriores;
+    std::string nomeTemporario;
+    int opcaoCurso = Curso::OPCAO_CC;
     std::string semestreIngresso;
     std::string semestreAtualId;
+    std::vector<std::string> semestresAnteriores;
 
     while (true) 
     {
@@ -33,8 +38,8 @@ Menu* MenuCadastroUsuario::processarEntrada()
         {
             try 
             {
-                std::string nomeInput = this->entradaSanitizada<std::string>("Digite o nome do estudante: ");
-                novoEstudante.setNome(nomeInput);
+                nomeTemporario = this->entradaSanitizada<std::string>("Digite o nome do estudante: ");
+                Estudante::validarNome(nomeTemporario);
                 break;
             } catch (const std::invalid_argument& e) 
             {
@@ -42,8 +47,6 @@ Menu* MenuCadastroUsuario::processarEntrada()
             }
         }
 
-        Curso cursoEscolhido;
-        int opcaoCurso = 1;
         while (true) 
         {
             try 
@@ -52,7 +55,7 @@ Menu* MenuCadastroUsuario::processarEntrada()
                 std::cout << "1 - Ciencia da Computacao\n";
                 std::cout << "2 - Sistemas de Informacao\n";
                 opcaoCurso = this->entradaSanitizada<int>("Selecione o curso (1 ou 2): ");
-                cursoEscolhido.setOpcaoCurso(opcaoCurso);
+                Curso::validarOpcaoCurso(opcaoCurso);
                 break;
             } catch (const std::invalid_argument& e) 
             {
@@ -65,7 +68,7 @@ Menu* MenuCadastroUsuario::processarEntrada()
             try 
             {
                 semestreIngresso = this->entradaSanitizada<std::string>("Informe o semestre de ingresso (formato AAAA/01 ou AAAA/02): ");
-                cursoEscolhido.setSemestreIngresso(semestreIngresso);
+                Curso::validarSemestreIngresso(semestreIngresso);
                 break;
             } catch (const std::invalid_argument& e) 
             {
@@ -88,14 +91,12 @@ Menu* MenuCadastroUsuario::processarEntrada()
 
         if (this->confirmarDadoImutavel()) 
         {
-            cursoEscolhido.inicializarCurso(opcaoCurso, semestreIngresso);
-            novoEstudante.setCurso(cursoEscolhido);
-            novoEstudante.getHistoricoEditavel().definirSemestreAtual(semestreAtualId);
             break;
         }
     }
 
-    novoEstudante.getHistoricoEditavel().limparSemestresPassados();
+    Curso cursoEscolhido(opcaoCurso, semestreIngresso);
+    HistoricoEscolar historicoMontado(semestreAtualId);
 
     if (!semestresAnteriores.empty()) 
     {
@@ -129,20 +130,23 @@ Menu* MenuCadastroUsuario::processarEntrada()
                 if (this->confirmarDadoImutavel()) 
                 {
                     SemestreConsolidado semTrancado(idSem, 0.0f, 0, 0, 0, true);
-                    novoEstudante.getHistoricoEditavel().adicionarSemestreConsolidado(semTrancado);
+                    historicoMontado.adicionarSemestreConsolidado(semTrancado);
                     break;
                 }
                 continue;
             }
 
-            SemestreConsolidado semCons(idSem, 0.0f, 0, 0, 0, false);
+            float nsgSem = 0.0f;
+            int hObrig = 0;
+            int hOpt = 0;
+            int hLivre = 0;
 
             while (true) 
             {
                 try 
                 {
-                    float nsgSem = this->entradaSanitizada<float>("Informe o NSG do semestre " + idSem + " (0 a 100): ");
-                    semCons.setNSGFixo(nsgSem);
+                    nsgSem = this->entradaSanitizada<float>("Informe o NSG do semestre " + idSem + " (0 a 100): ");
+                    Semestre::validarNSG(nsgSem);
                     break;
                 } catch (const std::invalid_argument& e) 
                 {
@@ -154,8 +158,8 @@ Menu* MenuCadastroUsuario::processarEntrada()
             {
                 try 
                 {
-                    int hObrig = this->entradaSanitizada<int>("Horas OBRIGATORIAS integralizadas em " + idSem + " (multiplo de 15): ");
-                    semCons.setHorasObrigatorias(hObrig);
+                    hObrig = this->entradaSanitizada<int>("Horas OBRIGATORIAS integralizadas em " + idSem + " (multiplo de 15): ");
+                    Semestre::validarHoras(hObrig);
                     break;
                 } catch (const std::invalid_argument& e) 
                 {
@@ -167,8 +171,8 @@ Menu* MenuCadastroUsuario::processarEntrada()
             {
                 try 
                 {
-                    int hOpt = this->entradaSanitizada<int>("Horas OPTATIVAS integralizadas em " + idSem + " (multiplo de 15): ");
-                    semCons.setHorasOptativas(hOpt);
+                    hOpt = this->entradaSanitizada<int>("Horas OPTATIVAS integralizadas em " + idSem + " (multiplo de 15): ");
+                    Semestre::validarHoras(hOpt);
                     break;
                 } catch (const std::invalid_argument& e) 
                 {
@@ -180,8 +184,8 @@ Menu* MenuCadastroUsuario::processarEntrada()
             {
                 try 
                 {
-                    int hLivre = this->entradaSanitizada<int>("Horas de FORMACAO LIVRE integralizadas em " + idSem + " (multiplo de 15): ");
-                    semCons.setHorasFormacaoLivre(hLivre);
+                    hLivre = this->entradaSanitizada<int>("Horas de FORMACAO LIVRE integralizadas em " + idSem + " (multiplo de 15): ");
+                    Semestre::validarHoras(hLivre);
                     break;
                 } catch (const std::invalid_argument& e) 
                 {
@@ -191,13 +195,14 @@ Menu* MenuCadastroUsuario::processarEntrada()
 
             if (this->confirmarDadoImutavel()) 
             {
-                novoEstudante.getHistoricoEditavel().adicionarSemestreConsolidado(semCons);
+                SemestreConsolidado semCons(idSem, nsgSem, hObrig, hOpt, hLivre, false);
+                historicoMontado.adicionarSemestreConsolidado(semCons);
                 break;
             }
         }
     }
 
-    this->_estudante = novoEstudante;
-    std::cout << "\nSeja muito bem-vindo " << this->_estudante.getNome() << "!\n";
-    return new MenuPrincipal(this->_estudante, this->_gerenciadorArquivo);
+    this->_estudante.reset(new Estudante(nomeTemporario, cursoEscolhido, historicoMontado));
+    std::cout << "\nSeja muito bem-vindo " << this->_estudante->getNome() << "!\n";
+    return new MenuPrincipal(*(this->_estudante), this->_gerenciadorArquivo);
 }
