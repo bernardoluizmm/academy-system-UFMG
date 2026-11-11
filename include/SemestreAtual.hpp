@@ -98,6 +98,7 @@ public:
      * @return Ponteiro para a disciplina, ou nullptr se não existir.
      */
     Disciplina* buscarDisciplina(int idDisciplina);
+    const Disciplina* buscarDisciplina(int idDisciplina) const;
 
     /** @brief Retorna as disciplinas (somente leitura). */
     const std::vector<Disciplina>& getDisciplinas() const;
