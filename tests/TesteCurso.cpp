@@ -46,3 +46,48 @@ TEST_CASE("Validacao de Semestre de Ingresso")
         CHECK_THROWS_AS(Curso(Curso::OPCAO_SI, "invalido"), std::invalid_argument);
     }
 }
+
+TEST_CASE("Construtor e Configuracao de Horas por Curriculo") 
+{
+    SUBCASE("Ciencia da Computacao - Curriculo Antigo (Fronteira: 2024/02 < 2025)") 
+    {
+        Curso cursoCCAntigo(Curso::OPCAO_CC, "2024/02");
+
+        CHECK(cursoCCAntigo.getOpcaoCurso() == 1);
+        CHECK(cursoCCAntigo.getNome() == "Ciencia da Computacao");
+        CHECK(cursoCCAntigo.getSemestreIngresso() == "2024/02");
+        CHECK(cursoCCAntigo.getHorasTotaisObrigatorias() == 2040);
+        CHECK(cursoCCAntigo.getHorasTotaisOptativas() == 1020);
+        CHECK(cursoCCAntigo.getHorasTotaisFormacaoLivre() == 60);
+        CHECK(cursoCCAntigo.getHorasAdicionais() == 120);
+        CHECK(cursoCCAntigo.getHorasTotaisCurso() == 3240);
+    }
+
+    SUBCASE("Ciencia da Computacao - Curriculo Novo (Fronteira Exata: 2025/01 >= 2025)") 
+    {
+        Curso cursoCCNovo(Curso::OPCAO_CC, "2025/01");
+
+        CHECK(cursoCCNovo.getOpcaoCurso() == 1);
+        CHECK(cursoCCNovo.getNome() == "Ciencia da Computacao");
+        CHECK(cursoCCNovo.getSemestreIngresso() == "2025/01");
+        CHECK(cursoCCNovo.getHorasTotaisObrigatorias() == 1980);
+        CHECK(cursoCCNovo.getHorasTotaisOptativas() == 1110);
+        CHECK(cursoCCNovo.getHorasTotaisFormacaoLivre() == 120);
+        CHECK(cursoCCNovo.getHorasAdicionais() == 0);
+        CHECK(cursoCCNovo.getHorasTotaisCurso() == 3210);
+    }
+
+    SUBCASE("Sistemas de Informacao - Curriculo Unico") 
+    {
+        Curso cursoSI(Curso::OPCAO_SI, "2026/01");
+
+        CHECK(cursoSI.getOpcaoCurso() == 2);
+        CHECK(cursoSI.getNome() == "Sistemas de Informacao");
+        CHECK(cursoSI.getSemestreIngresso() == "2026/01");
+        CHECK(cursoSI.getHorasTotaisObrigatorias() == 2100);
+        CHECK(cursoSI.getHorasTotaisOptativas() == 780);
+        CHECK(cursoSI.getHorasTotaisFormacaoLivre() == 120);
+        CHECK(cursoSI.getHorasAdicionais() == 0);
+        CHECK(cursoSI.getHorasTotaisCurso() == 3000);
+    }
+}
