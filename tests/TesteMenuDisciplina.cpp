@@ -172,7 +172,7 @@ TEST_CASE("Fluxo Criar Disciplina - Happy Path, Tipos de Disciplina e Validacoes
 
     SUBCASE("Edge Cases - Erros de validacao em todos os campos antes de valores validos") 
     {
-        std::string nomeLongo(23, 'A');
+        std::string nomeLongo(27, 'A'); 
         std::string codigoLongo(9, 'B');
         std::string turmaLonga(7, 'C');
         std::string profLongo(101, 'D');
@@ -197,7 +197,8 @@ TEST_CASE("Fluxo Criar Disciplina - Happy Path, Tipos de Disciplina e Validacoes
         CHECK(retorno == &menu);
         REQUIRE(semestre.getDisciplinas().size() == 1);
         std::string textoImpresso = io.saida.str();
-        CHECK(textoImpresso.find("O nome da disciplina deve ter entre 1 e 22 caracteres.") != std::string::npos);
+        
+        CHECK(textoImpresso.find("O nome da disciplina deve ter entre 1 e 26 caracteres.") != std::string::npos);
         CHECK(textoImpresso.find("O codigo da disciplina deve ter entre 1 e 8 caracteres.") != std::string::npos);
         CHECK(textoImpresso.find("O codigo da turma deve ter entre 1 e 6 caracteres.") != std::string::npos);
         CHECK(textoImpresso.find("O nome do professor deve ter entre 1 e 100 caracteres.") != std::string::npos);
