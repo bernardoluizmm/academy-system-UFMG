@@ -103,3 +103,63 @@ TEST_CASE("Disciplina - construtor rejeita dados invalidos")
     }
 }
 
+TEST_CASE("Disciplina - validadores estaticos")
+{
+    SUBCASE("codigo de 1 a 8 caracteres")
+    {
+        CHECK_NOTHROW(Disciplina::validarCodigo("A"));
+        CHECK_NOTHROW(Disciplina::validarCodigo("12345678"));
+        CHECK_THROWS_AS(Disciplina::validarCodigo(""), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarCodigo("123456789"), std::invalid_argument);
+    }
+
+    SUBCASE("turma de 1 a 6 caracteres")
+    {
+        CHECK_NOTHROW(Disciplina::validarCodigoTurma("A"));
+        CHECK_NOTHROW(Disciplina::validarCodigoTurma("123456"));
+        CHECK_THROWS_AS(Disciplina::validarCodigoTurma(""), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarCodigoTurma("1234567"), std::invalid_argument);
+    }
+
+    SUBCASE("nome de 1 a 26 caracteres")
+    {
+        CHECK_NOTHROW(Disciplina::validarNome(std::string(26, 'a')));
+        CHECK_THROWS_AS(Disciplina::validarNome(""), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarNome(std::string(27, 'a')), std::invalid_argument);
+    }
+
+    SUBCASE("professor, sala e horario de 1 a 100 caracteres")
+    {
+        CHECK_NOTHROW(Disciplina::validarProfessor(std::string(100, 'a')));
+        CHECK_NOTHROW(Disciplina::validarSalaBloco(std::string(100, 'a')));
+        CHECK_NOTHROW(Disciplina::validarHorarioDias(std::string(100, 'a')));
+        CHECK_THROWS_AS(Disciplina::validarProfessor(std::string(101, 'a')), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarSalaBloco(std::string(101, 'a')), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarHorarioDias(std::string(101, 'a')), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarProfessor(""), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarSalaBloco(""), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarHorarioDias(""), std::invalid_argument);
+    }
+
+    SUBCASE("carga horaria positiva e multipla de 15")
+    {
+        CHECK_NOTHROW(Disciplina::validarCargaHoraria(15));
+        CHECK_NOTHROW(Disciplina::validarCargaHoraria(90));
+        CHECK_THROWS_AS(Disciplina::validarCargaHoraria(0), std::invalid_argument);
+        CHECK_THROWS_AS(Disciplina::validarCargaHoraria(20), std::invalid_argument);
+    }
+
+    SUBCASE("duracao da aula de no minimo 50 minutos")
+    {
+        CHECK_NOTHROW(Disciplina::validarDuracaoAulaMinutos(50));
+        CHECK_NOTHROW(Disciplina::validarDuracaoAulaMinutos(100));
+        CHECK_THROWS_AS(Disciplina::validarDuracaoAulaMinutos(49), std::invalid_argument);
+    }
+
+    SUBCASE("tipo")
+    {
+        CHECK_NOTHROW(Disciplina::validarTipo("Optativa"));
+        CHECK_THROWS_AS(Disciplina::validarTipo("Outro"), std::invalid_argument);
+    }
+}
+
