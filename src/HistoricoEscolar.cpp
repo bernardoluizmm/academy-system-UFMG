@@ -1,37 +1,20 @@
 #include "HistoricoEscolar.hpp"
 #include <sstream>
 
-HistoricoEscolar::HistoricoEscolar()
-    : _semestreAtual(new SemestreAtual("2026/01")) 
-{
-}
-
 HistoricoEscolar::HistoricoEscolar(const HistoricoEscolar& outro)
     : _semestresPassados(outro._semestresPassados),
-      _semestreAtual(nullptr) 
+      _semestreAtual(new SemestreAtual(*(outro._semestreAtual))) 
 {
-    if (outro._semestreAtual != nullptr) 
-    {
-        this->_semestreAtual = new SemestreAtual(*(outro._semestreAtual));
-    } else 
-    {
-        this->_semestreAtual = new SemestreAtual("2026/01");
-    }
 }
 
 HistoricoEscolar& HistoricoEscolar::operator=(const HistoricoEscolar& outro) 
 {
     if (this != &outro) 
     {
-        this->_semestresPassados = outro._semestresPassados;
+        SemestreAtual* novoAtual = new SemestreAtual(*(outro._semestreAtual));
         delete this->_semestreAtual;
-        if (outro._semestreAtual != nullptr) 
-        {
-            this->_semestreAtual = new SemestreAtual(*(outro._semestreAtual));
-        } else 
-        {
-            this->_semestreAtual = new SemestreAtual("2026/01");
-        }
+        this->_semestreAtual = novoAtual;
+        this->_semestresPassados = outro._semestresPassados;
     }
     return *this;
 }
@@ -86,12 +69,15 @@ void HistoricoEscolar::consolidarSemestreAtual(bool trancado)
     int hOpt = trancado ? 0 : this->_semestreAtual->getHorasOptativas();
     int hLivre = trancado ? 0 : this->_semestreAtual->getHorasFormacaoLivre();
 
-    SemestreConsolidado novoConsolidado(idAtual, nsgFinal, hObrig, hOpt, hLivre, trancado);
-    this->_semestresPassados.push_back(novoConsolidado);
-
+     SemestreConsolidado novoConsolidado(idAtual, nsgFinal, hObrig, hOpt, hLivre, trancado);
+ 
     std::string proximoId = Semestre::proximoIdentificadorSemestre(idAtual);
-    delete this->_semestreAtual;
-    this->_semestreAtual = new SemestreAtual(proximoId);
+    SemestreAtual* novoAtual = new SemestreAtual(proximoId);
+    
+    this->_semestresPassados.push_back(novoConsolidado);
+     delete this->_semestreAtual;
+   
+    this->_semestreAtual = novoAtual;
 }
 
 float HistoricoEscolar::calcularNSGMedio() const 

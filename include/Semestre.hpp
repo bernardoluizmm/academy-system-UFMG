@@ -12,8 +12,10 @@
  * @class Semestre
  * @brief Classe base abstrata que representa um semestre letivo.
  *
- * Armazena o identificador (formato AAAA/01 ou AAAA/02) e o estado de
- * trancamento. As classes derivadas definem como NSG e horas são obtidos.
+ * Guarda o identificador (formato AAAA/01 ou AAAA/02) e o estado de trancamento,
+ * e define o contrato de calculo de NSG e de horas integralizadas que as classes
+ * derivadas (SemestreAtual e SemestreConsolidado) devem implementar.
+ * Tambem reune utilitarios estaticos de validacao e manipulacao de identificadores.
  */
 class Semestre 
 {
@@ -23,10 +25,11 @@ private:
 
 public:
     /**
-     * @brief Construtor.
-     * @param identificador Identificador no formato AAAA/01 ou AAAA/02.
-     * @param trancado Indica se o semestre está trancado (padrão: false).
-     * @throws std::invalid_argument Se o identificador for inválido.
+     * @brief Constroi um semestre validando o identificador.
+     * @param identificador Identificador do semestre (AAAA/01 ou AAAA/02, ano entre 2016 e 2100).
+     * @param trancado Indica se o semestre esta trancado (padrao: false).
+     * @throws std::invalid_argument Se o identificador nao respeitar o formato esperado.
+     * @see validarFormatoIdentificador
      */
     Semestre(const std::string& identificador, bool trancado = false);
 
@@ -40,14 +43,14 @@ public:
     const std::string& getIdentificador() const;
 
     /**
-     * @brief Informa se o semestre está trancado.
-     * @return true se trancado, false caso contrário.
+     * @brief Informa se o semestre foi trancado.
+     * @return @c true se o semestre esta trancado; @c false caso contrario.
      */
     bool isTrancado() const;
 
     /**
      * @brief Define o estado de trancamento.
-     * @param estado Novo estado.
+     * @param estado Novo estado (@c true para trancado).
      */
     void setTrancado(bool estado);
 
@@ -55,8 +58,7 @@ public:
      * @brief Calcula o NSG (Nota do Semestre Global) do semestre.
      * @return NSG entre 0 e 100.
      */
-
-     virtual float calcularNSG() const = 0;
+    virtual float calcularNSG() const = 0;
 
     /**
      * @brief Obtém o total de horas integralizadas.
@@ -64,19 +66,30 @@ public:
      */
     virtual int getHorasIntegralizadas() const = 0;
 
-    /** @brief Obtém as horas integralizadas em disciplinas obrigatórias. */
+    /** @brief Obtém as horas integralizadas em disciplinas obrigatórias.
+     * @return Horas obrigatorias integralizadas.
+     */
     virtual int getHorasObrigatorias() const = 0;
 
-    /** @brief Obtém as horas integralizadas em disciplinas optativas. */
+    /** @brief Obtém as horas integralizadas em disciplinas optativas.
+     * @return Horas optativas integralizadas.
+     */
     virtual int getHorasOptativas() const = 0;
 
-    /** @brief Obtém as horas integralizadas em formação livre. */
+    /** @brief Obtém as horas integralizadas em formação livre.
+     * @return Horas de formacao livre integralizadas.
+     */
     virtual int getHorasFormacaoLivre() const = 0;
 
    /**
-     * @brief Calcula o identificador do semestre seguinte.
-     * @param idAtual Identificador atual (ex.: "2026/02").
-     * @return Identificador seguinte (ex.: "2027/01").
+      * @brief Calcula o identificador do semestre seguinte.
+     *
+     * "AAAA/01" gera "AAAA/02" e "AAAA/02" gera "(AAAA+1)/01".
+     *
+     * @param idAtual Identificador do semestre atual (deve estar em formato valido).
+     * @return Identificador do semestre seguinte. Pode ser invalido (ex.: "2101/01"), caso
+     *         em que o construtor de Semestre lancara excecao ao receber o resultado.
+     * @warning Nao valida @p idAtual; use validarFormatoIdentificador antes, se necessario.
      */
     static std::string proximoIdentificadorSemestre(const std::string& idAtual);
 

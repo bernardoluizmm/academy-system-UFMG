@@ -2,14 +2,8 @@
 #include <stdexcept>
 #include <sstream>
 
-SemestreAtual::SemestreAtual() : Semestre("2026/01", false), _contadorId(1) {}
-
 SemestreAtual::SemestreAtual(const std::string& identificador) : Semestre(identificador, false), _contadorId(1) {}
 
-SemestreAtual::~SemestreAtual() 
-{
-    this->_disciplinas.clear();
-}
 float SemestreAtual::calcularNSG() const 
 {
     if (this->_disciplinas.empty()) 
@@ -20,7 +14,10 @@ float SemestreAtual::calcularNSG() const
     int somaCargaHoraria = 0;
 
     for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
-    {
+    {   if (it->avaliacoes().obterValorTotalConcluido() <= 0.0f)
+        {
+             continue;  
+        }   
         somaPonderada += it->avaliacoes().calcularPercentualAproveitamento() * static_cast<float>(it->getCargaHoraria());
         somaCargaHoraria += it->getCargaHoraria();
     }
@@ -144,15 +141,23 @@ Disciplina* SemestreAtual::buscarDisciplina(int idDisciplina)
     return nullptr;
 }
 
+const Disciplina* SemestreAtual::buscarDisciplina(int idDisciplina) const 
+{
+    for (std::vector<Disciplina>::const_iterator it = this->_disciplinas.begin(); it != this->_disciplinas.end(); ++it) 
+    {
+        if (it->getId() == idDisciplina) 
+        {
+            return &(*it);
+        }
+    }
+   return nullptr;
+}
+
 const std::vector<Disciplina>& SemestreAtual::getDisciplinas() const 
 {
     return this->_disciplinas;
 }
 
-std::vector<Disciplina>& SemestreAtual::getDisciplinasEditavel() 
-{
-    return this->_disciplinas;
-}
 std::string SemestreAtual::serializar() const 
 {
     std::ostringstream oss;

@@ -6,11 +6,10 @@
 Semestre::Semestre(const std::string& identificador, bool trancado)
     : _identificador(identificador), _trancado(trancado) 
 {
-    if (!validarFormatoIdentificador(_identificador)) {
-        throw std::invalid_argument(
-            "Identificador de semestre invalido."
-        );
-    }
+    if (!validarFormatoIdentificador(_identificador))
+     {
+        throw std::invalid_argument("Identificador de semestre invalido.");
+     }
 }
 
 const std::string& Semestre::getIdentificador() const 
@@ -114,6 +113,7 @@ std::string Semestre::proximoIdentificadorSemestre(const std::string& idAtual)
     }
     return fluxo.str();
 }
+
 std::vector<std::string> Semestre::gerarSemestresAnteriores(const std::string& semIngresso, const std::string& semAtual) 
 {
     Semestre::validarIntervaloSemestres(semIngresso, semAtual);
