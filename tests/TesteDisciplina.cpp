@@ -348,3 +348,27 @@ TEST_CASE("Disciplina::frequencia [positivo] versao nao const permite alterar o 
     CHECK(d.frequencia().getMaxFaltas() == 10);
 }
 
+TEST_CASE("Disciplina::frequencia [positivo] versao const permite leitura")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.frequencia().setMaxFaltas(10);
+    const Disciplina& cd = d;
+    CHECK(cd.frequencia().getMaxFaltas() == 10);
+}
+
+TEST_CASE("Disciplina::avaliacoes [positivo] versao nao const permite adicionar atividade")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.avaliacoes().adicionarAtividade("Prova 1", "15/03", 10.0f);
+    CHECK(d.avaliacoes().getAtividades().size() == 1);
+}
+
+TEST_CASE("Disciplina::avaliacoes [positivo] versao const permite leitura")
+{
+    Disciplina d = criarDisciplinaValida();
+    d.avaliacoes().adicionarAtividade("Prova 1", "15/03", 10.0f);
+    const Disciplina& cd = d;
+    REQUIRE(cd.avaliacoes().getAtividades().size() == 1);
+    CHECK(cd.avaliacoes().getAtividades()[0].getNome() == "Prova 1");
+}
+
