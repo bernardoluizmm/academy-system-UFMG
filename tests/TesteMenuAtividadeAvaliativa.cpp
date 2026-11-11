@@ -84,3 +84,31 @@ TEST_CASE("MenuAtividadeAvaliativa::processarEntrada [negativo] opcao invalida e
     CHECK(contem(r.saida, "[ERRO] Opcao invalida. Escolha entre 0 e 4."));
 }
 
+TEST_CASE("MenuAtividadeAvaliativa::processarEntrada [negativo] opcao invalida pede nova entrada")
+{
+    SemestreAtual semestre;
+    MenuAtividadeAvaliativa menu(semestre);
+
+    Resultado r = executar(menu, "9\n0\n");
+    CHECK(r.proximo == nullptr);
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::selecionarDisciplina [limite] semestre vazio mostra aviso")
+{
+    SemestreAtual semestre;
+    MenuAtividadeAvaliativa menu(semestre);
+
+    Resultado r = executar(menu, "1\n");
+    CHECK(contem(r.saida, "[AVISO] Cadastre pelo menos uma disciplina antes de gerenciar atividades."));
+}
+
+TEST_CASE("MenuAtividadeAvaliativa::selecionarDisciplina [positivo] lista as disciplinas")
+{
+    Cenario c;
+    MenuAtividadeAvaliativa menu(c.semestre);
+
+    Resultado r = executar(menu, "1\n0\n");
+    CHECK(contem(r.saida, "Disciplinas do semestre atual:"));
+    CHECK(contem(r.saida, "[1] COD001 - Programacao"));
+}
+
