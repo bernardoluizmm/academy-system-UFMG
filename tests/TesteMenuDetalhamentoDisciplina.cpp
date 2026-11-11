@@ -200,3 +200,17 @@ TEST_CASE("MenuDetalhamentoDisciplina - disciplina sem atividades mostra cabecal
     CHECK(contem(r.saida, "Atividade Avaliativa"));
     CHECK(contem(r.saida, "TOTAL"));
 }
+
+TEST_CASE("MenuDetalhamentoDisciplina - atividade pendente aparece como Pendente")
+{
+    SemestreAtual semestre("2026/01");
+    adicionarDisciplina(semestre);
+    adicionarAtividade(semestre, 1, 1, 10.0f, 0.0f, false);
+    MenuDetalhamentoDisciplina menu(semestre);
+
+    Resultado r = executar(menu, "1\n1\n");
+
+    CHECK(contem(r.saida, "Prova 1"));
+    CHECK(contem(r.saida, "15/03"));
+    CHECK(contem(r.saida, "Pendente"));
+}
