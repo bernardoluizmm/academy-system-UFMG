@@ -72,4 +72,11 @@ namespace
         semestre.adicionarDisciplina("COD001", "T1", nome, "Prof. Ana", "Sala 101",
                                      60, 50, "Obrigatoria", "Seg 10h");
     }
+
+    void adicionarAtividade(SemestreAtual& semestre, int idDisciplina, int idAtividade, float valor, float nota, bool concluida)
+    {
+        Disciplina* disciplina = semestre.buscarDisciplina(idDisciplina);
+        REQUIRE(disciplina != nullptr);
+        disciplina->avaliacoes().adicionarAtividade(idAtividade, "Prova 1", "15/03", valor, nota, concluida);
+    }
 }
