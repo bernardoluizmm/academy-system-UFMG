@@ -25,10 +25,11 @@ private:
 
 public:
     /**
-     * @brief Construtor.
-     * @param identificador Identificador no formato AAAA/01 ou AAAA/02.
-     * @param trancado Indica se o semestre está trancado (padrão: false).
-     * @throws std::invalid_argument Se o identificador for inválido.
+     * @brief Constroi um semestre validando o identificador.
+     * @param identificador Identificador do semestre (AAAA/01 ou AAAA/02, ano entre 2016 e 2100).
+     * @param trancado Indica se o semestre esta trancado (padrao: false).
+     * @throws std::invalid_argument Se o identificador nao respeitar o formato esperado.
+     * @see validarFormatoIdentificador
      */
     Semestre(const std::string& identificador, bool trancado = false);
 
