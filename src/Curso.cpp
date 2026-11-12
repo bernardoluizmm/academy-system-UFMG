@@ -3,6 +3,9 @@
 #include <stdexcept>
 #include <sstream>
 
+const int Curso::OPCAO_SI;
+const int Curso::OPCAO_CC;
+
 Curso::Curso(int opcaoCurso, const std::string& semestreIngresso) 
     : _opcaoCurso(opcaoCurso),
       _nome(""),

@@ -25,17 +25,17 @@ $(BIN_MAIN): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 test: $(BIN_TEST)
-	./$(BIN_TEST).exe
+	./$(BIN_TEST)
 
 $(BIN_TEST): $(OBJS_SEM_MAIN) $(TEST_OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 $(BUILD_DIR)/test_%.o: $(TEST_DIR)/%.cpp
-	@if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 coverage:

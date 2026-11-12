@@ -325,7 +325,7 @@ TEST_CASE("Disciplina - remover atividade por id")
     disciplina.avaliacoes().adicionarAtividade("TP1", "10/04", 30.0f);
     disciplina.avaliacoes().adicionarAtividade("TP2", "10/05", 70.0f);
 
-    disciplina.avaliacoes().removerAtividade(0);
+    disciplina.avaliacoes().removerAtividade(1);
 
     REQUIRE(disciplina.avaliacoes().getAtividades().size() == 1);
     CHECK(disciplina.avaliacoes().getAtividades()[0].getNome() == "TP2");
@@ -373,7 +373,7 @@ TEST_CASE("Disciplina - serializar")
         std::string texto = disciplina.serializar();
 
         CHECK(texto.substr(0, 11) == "DISCIPLINA|");
-        CHECK(contem(texto, "ATIVIDADE|0|TP1|"));
-        CHECK(contem(texto, "ATIVIDADE|1|TP2|"));
+        CHECK(contem(texto, "ATIVIDADE|1|TP1|"));
+        CHECK(contem(texto, "ATIVIDADE|2|TP2|"));
     }
 }

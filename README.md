@@ -1,27 +1,27 @@
-Sistema Acadêmico
+Sistema de Acompanhamento Estudantil
+
+Um sistema feito por alunos de computação da UFMG para alunos de computação da UFMG que busca centralizar as principais informações que um estudante pode precisar no 
+contexto acadêmico. 
 
 Trabalho prático da disciplina de Programação e Desenvolvimento de Software 2 (PDS2), UFMG, 2026/2. Grupo 42.
+Integrantes:
+1 - Bernardo Koji Fuzikawa Bicalho Cotta 
+2 - Bernardo Luiz Magri Mendes
+3 - Lucas da Silva Venturini
+4 - Pedro Calijorne Soares Dias Alves
+5 - Samuel Coelho Facco
 
-Integrantes
+Sobre:
+Durante a graduação, as informações acadêmicas de um estudante ficam espalhadas  em vários locais: as notas são lançadas em um local diferente a cada disciplina,algumas na aba notas do moodle, outras no sigaUFMG, por e-mail, etc; a assiduidade nem sempre é recorrentemente atualizada e os planos de ensino não podem ser
+acessados de maneira unificada. Toda essa descentralização de informações dos sistemas afastam o acesso à informações relevantes do dia a dia acadêmico do 
+estudante.
 
-Bernardo Luiz Magri Mendes, Bernardo Koji Fuzikawa Bicalho Cotta, Lucas da Silva Venturini, Pedro Calijorne Soares Dias Alves e Samuel Coelho Facco.
+Nesse contexto, surge o nosso programa: uma plataforma centralizadora que permite o estudante lançar todas essas informações que consideramos relevantes na rotina acadêmica. Ele permite o estudante visualizar, em um só lugar, o percentual de horas do curso que já foram integralizadas no total, além de
+separá-las por tipo de integralização(obrigatórias, formação livre e optativas), o NSG parcial do semestre atual, o NSG médio(média aritmética dos NSGs), o NSG "global"(parâmetro que explicita o rendimento total do aluno no curso até então,  o cálculo considera que todos os semestres são um só), nota total obtida nas disciplinas em curso, o número de faltas e o número máximo de faltas permitidas em uma disciplina, conceito obtido na atividade e na disciplina(parcial), média parcial de uma disciplina e data das atividades avaliativas. 
 
-Sobre o projeto
+O sistema foi construído em C++11 seguindo as boas práticas de POO, Programação Orientada a Objetos, e coloca em prática a maioria dos conceitos vistos em sala de aula, como: encapsulamento, herança, composição, biblioteca STL, polimorfismo, programação defensiva, tratamento de exceção, etc. Além disso, ele roda no 
+próprio terminal. 
+Em relação aos diretórios, a disposição ficou assim: src/: contém os arquivos de código-fonte (.cpp) onde estão implementadas as lógicas das classes, include/: guarda os arquivos de cabeçalho (.hpp) com as declarações das classes e interfaces do sistema, tests/: armazena os arquivos de testes unitários automatizados desenvolvidos com a biblioteca doctest, build/: diretório gerado na compilação para armazenar arquivos objeto (.o) e mapeamento de dependências (.d), third_party/: contém bibliotecas externas auxiliares, como o arquivo doctest.h, docs/: reservado para a documentação técnica em HTML gerada pelo Doxygen, design/: armazena arquivos de modelagem e diagramas de classe da arquitetura, matriculas/: diretório utilizado para a persistência de dados, guardando os arquivos .txt com as informações salvas de cada estudante, raiz do projeto: contém os arquivos de configuração geral, como o Makefile (automação), Doxyfile (configuração de documentação), .gitignore e o README.md.
 
-Durante a graduação, as informações acadêmicas de um estudante ficam espalhadas: as notas de cada atividade vão para planilhas ou para o caderno, a conta das faltas é feita de cabeça perto do fim do semestre, e quase ninguém sabe dizer ao certo quanto do curso já cumpriu em cada categoria de disciplinas. O problema que o grupo escolheu tratar é justamente esse: reunir tudo num só lugar, de forma que o estudante acompanhe o semestre em andamento e também a trajetória do curso como um todo.
-
-O sistema é um programa em C++ que roda no terminal e mantém o perfil acadêmico de um estudante. Para o semestre atual, ele controla as disciplinas, as atividades avaliativas com suas notas e o limite de faltas de cada matéria, calculando o conceito parcial e a Nota Semestral Global (NSG). Para os semestres anteriores, guarda um histórico consolidado, a partir do qual calcula o percentual de integralização do curso por categoria (obrigatórias, optativas e formação livre) e mostra um gráfico de evolução da NSG. O perfil é salvo em arquivo de texto, então os dados continuam disponíveis na próxima vez que o programa for aberto.
-
-A escolha foi motivada por ser um problema que o próprio grupo vive, o que ajuda a decidir o que realmente faz falta na ferramenta. Além disso, o domínio rende uma boa modelagem orientada a objetos: composição entre classes (disciplina, atividade, frequência), herança com polimorfismo (semestres e telas) e persistência em arquivo, que são justamente os conceitos trabalhados na disciplina.
-
-Objetivos
-
-O objetivo principal é oferecer ao estudante uma ferramenta simples para acompanhar a vida acadêmica sem depender apenas dos sistemas da UFMG, que normalmente não proporciona a melhor experiência de usuário. Para isso, o sistema permite cadastrar disciplinas, atividades avaliativas e notas do semestre atual, controlar as faltas de cada disciplina em relação ao limite permitido e calcular o conceito parcial de cada matéria e a NSG do semestre. Também mantém o histórico de semestres consolidados, acompanha o progresso de integralização do curso por categoria, exibe a evolução da NSG ao longo dos semestres e salva e carrega o perfil do estudante em arquivo .txt.
-
-Organização do código
-
-O projeto segue o padrão C++11/14 e usa composição por valor e containers da STL, sem alocação manual de memória. A interface é feita com cin/cout, e cada funcionalidade fica numa tela própria, todas herdando de uma classe abstrata Tela. Uma classe Menu apenas controla o loop principal e chama a tela escolhida.
-
-As classes se dividem em quatro grupos. As classes de base são AtividadeAvaliativa, ControleFrequencia, CategoriaDisciplina e PontoGrafico. O domínio é formado por Disciplina e pela hierarquia Semestre, com SemestreAtual e SemestreConsolidado. O modelo e a persistência ficam a cargo de Curso, Estudante e GerenciadorPerfil. A apresentação reúne Tela, TelaMenuPrincipal, TelaPerfil, TelaPainel, TelaDisciplinas, TelaAtividades, TelaFrequencia, TelaHistorico e Menu.
-
-Os cabeçalhos (.hpp), com as assinaturas e a documentação de cada classe, ficam na pasta include/, e as implementações (.cpp) ficam em src/. As pastas design/ e tests/ guardam, respectivamente, os cartões CRC e as user stories, e os testes.
+Compilação e execução:
+O projeto utiliza um Makefile automatizado que gerencia a compilação separada de objetos e rastreia dependências. Os testes também podem ser compilados por meio do makefile. Além disso, utilizamos o gcov para verificar a cobertura dos nossos testes e incluimos essa estrutura no makefile.
